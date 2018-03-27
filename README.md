@@ -3,6 +3,8 @@ A project with the aim to identifying from ERM data the early signals associated
 
 ### Background 
 
+
+
 ### Primary Data Source
 
 The primary source of data is the MIMIC dataset provided by the MIT. MIMIC is a shorthand for *Medical Information Mart for Intensive Care* and is associated with over 40,000 patients that had stayed in the critical care units of Beth Israel Deaconess Medical Center between 2001 and 2012. It would be an understatement to say that the data is rich and filled with potential for ground-breaking data science work. 
@@ -23,4 +25,4 @@ As part of this iniatitive, we will map existing datasets with the MIMIC-III dat
 
 - Drugbank [link](https://www.drugbank.ca)
  
-- NADAC (National Average Drug Acquisition Cost)[link](https://data.medicaid.gov/Drug-Pricing-and-Payment/NADAC-National-Average-Drug-Acquisition-Cost-/a4y5-998d)
+- NADAC (National Average Drug Acquisition Cost) [link](https://data.medicaid.gov/Drug-Pricing-and-Payment/NADAC-National-Average-Drug-Acquisition-Cost-/a4y5-998d)
