@@ -1,6 +1,8 @@
 # Signals of Death
 A project with the aim to identifying from ERM data the early signals associated with dying and gross suffering leading to the moment of death.
 
+<img width=260px src=https://raw.githubusercontent.com/mikkokotila/signals-of-death/master/death.png>
+
 ### Background 
 
 The old saying suggests that the only thing certain in life is death and taxes. Yet, while taxes are actually evaded by many, death is evaded by nobody. In other words, death is the only certainty in our life. That, and the fact that we can't accurately predict when we are going to die. Yet very few research have focused on the moment of death, and the moments leading to it. So how does death look like from the quantitative perspective? Given the right dataset, what can we learn about the vital signs in the moment of death, and the minutes, hours, days, weeks, and months leading to that moment? This research iniatitive aims to answer these, and other related questions, in a comprehensive way. 
