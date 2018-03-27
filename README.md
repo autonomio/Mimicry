@@ -29,6 +29,7 @@ The primary source of data is the MIMIC-III dataset provided by the MIT. MIMIC i
 
 NOTE: In order to access the dataset, you need to go through several hoops, which is understandable given the qualities the dataset has and the concerns that come with it. You can learn more about the requirements [here](https://mimic.physionet.org/gettingstarted/access/)
 
+
 ### Complimentary Data Sources
 
 As part of this iniatitive, we will map existing datasets with the MIMIC-III data. 
@@ -36,3 +37,11 @@ As part of this iniatitive, we will map existing datasets with the MIMIC-III dat
 - Drugbank [link](https://www.drugbank.ca)
  
 - NADAC (National Average Drug Acquisition Cost) [link](https://data.medicaid.gov/Drug-Pricing-and-Payment/NADAC-National-Average-Drug-Acquisition-Cost-/a4y5-998d)
+
+
+### Related Research 
+
+**Reproducibility in critical care: a mortality prediction case study**
+
+A meta-analysis of the mortality prediction studies using the MIMIC-III dataset. [LINK]
+(http://alistairewj.github.io/papers/reproducibility-critical-care-final.pdf)
