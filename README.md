@@ -13,14 +13,14 @@ The primary source of data is the MIMIC dataset provided by the MIT. MIMIC is a 
 
 3) Familiarize with the brilliant data manual [here](https://mimic.physionet.org/about/mimic/)
 
+4) Find examples of research that use MIMIC-III dataset [here](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=MIMIC-III&btnG=)
+
 NOTE: In order to access the dataset, you need to go through several hoops, which is understandable given the qualities the dataset has and the concerns that come with it. You can learn more about the requirements [here](https://mimic.physionet.org/gettingstarted/access/)
 
 ### Complimentary Data Sources
 
 As part of this iniatitive, we will map existing datasets with the MIMIC-III data. 
 
-Drugbank:
-https://www.drugbank.ca
+- Drugbank [link](https://www.drugbank.ca)
  
-NADAC (National Average Drug Acquisition Cost):
-https://data.medicaid.gov/Drug-Pricing-and-Payment/NADAC-National-Average-Drug-Acquisition-Cost-/a4y5-998d
+- NADAC (National Average Drug Acquisition Cost)[link](https://data.medicaid.gov/Drug-Pricing-and-Payment/NADAC-National-Average-Drug-Acquisition-Cost-/a4y5-998d)
