@@ -1,5 +1,5 @@
-# Signals of Death
-A project with the aim to identifying from ERM data the early signals associated with dying and gross suffering leading to the moment of death. 
+# Mimicry
+A project that focuses on extracting valuable insights from ERM data, and more specifically the MIMIC-III dataset. Currently the reasearch interest is particularly in death, and the moments leading to death, and the associated signals available within the dataset. A secondary focus is on establishing visualization best practices for similar data. 
 
 <img width=260px src=https://raw.githubusercontent.com/mikkokotila/signals-of-death/master/death.png>
 
