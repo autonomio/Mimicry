@@ -44,3 +44,7 @@ As part of this iniatitive, we will map existing datasets with the MIMIC-III dat
 **Reproducibility in critical care: a mortality prediction case study**
 
 A meta-analysis of the mortality prediction studies using the MIMIC-III dataset. [[LINK]](http://alistairewj.github.io/papers/reproducibility-critical-care-final.pdf)
+
+**Machine Learning Benchmarks for MIMIC-III**
+
+Python suite to construct benchmark machine learning datasets from the MIMIC-III clinical database.[[LINK]](https://github.com/YerevaNN/mimic3-benchmarks)
