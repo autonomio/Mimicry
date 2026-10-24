@@ -27,7 +27,9 @@ complaint) would be needed for the ED leg itself and requires its own DUA.
 ## The triage moment as a whole (feature blocks)
 
 - **Presentation**: age/gender/race/insurance/language/marital, admission
-  type/location, admitting provider experience, anchor year group.
+  type/location, admitting provider experience. Anchor year group is used
+  for era cross-tabs only, never as a model feature (era leaks secular
+  drift and is not prospectively usable).
 - **Structured history**: prior admission/ICU counts, prior LOS, days since
   discharge, prior-year utilization, prior Charlson max, 9 prior-dx bucket
   flags (cardiac/heart-failure/stroke/renal/COPD/diabetes/onc/sepsis/liver),
@@ -35,7 +37,7 @@ complaint) would be needed for the ED leg itself and requires its own DUA.
 - **Current condition**: same 9 dx buckets for this admission + Charlson +
   HCFA-DRG (top 30) + APR severity/mortality — retrospective descriptors
   of the underlying condition triage perceived.
-- **System ("gov") state**: admission hour + night flag + true year group.
+- **System ("gov") state**: admission hour + night flag.
 
 ## Hard date-shifting limits (verified empirically)
 
@@ -48,13 +50,13 @@ weekdays are exactly uniform). Time-of-day survives (lab draws show the real
 
 ## Findings (2026-10-24)
 
-- **Units are highly predictable**: multinomial logreg accuracy 0.51 (vs 0.22
+- **Units are highly predictable**: multinomial logreg accuracy 0.50 (vs 0.22
   majority); per-unit OvR AUC 0.78–0.97. NeuroIMC/NeuroSD/CVICU most
-  rule-bound (0.92–0.96); SICU/TSICU least (0.78–0.79).
+  rule-bound (0.92–0.95); SICU/TSICU least (0.78–0.79).
 - Unit assignment is driven by diagnosis/procedure (cardiac-surgery DRGs →
   CVICU +3.3..+4.7; craniotomy/stroke DRGs → neuro units; vent/respiratory
   DRGs → MICU), then admission type and history.
-- **Direct ICU (<6h)**: AUC 0.824 full vs 0.812 presentation-only —
+- **Direct ICU (<6h)**: AUC 0.824 full vs 0.813 presentation-only —
   history + system state add a real but modest +0.011.
 - **Operational rhythms**: direct-ICU rate collapses at midnight (~0.35),
   runs ~0.8 overnight, dips mid-morning/mid-afternoon; CVICU share halves

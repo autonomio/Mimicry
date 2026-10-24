@@ -23,14 +23,18 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 DB = "/srv/mimic-iv/db/mimic4-v31.db"
 
 COHORT_SQL = """
-WITH first_stay AS (
-  SELECT s.stay_id, s.subject_id, s.intime, s.first_careunit,
-         p.anchor_age, p.gender, a.admission_type, a.hospital_expire_flag AS y
+WITH ranked AS (
+  SELECT s.stay_id, s.subject_id, s.intime, s.first_careunit, s.los,
+         p.anchor_age, p.gender, a.admission_type, a.hospital_expire_flag AS y,
+         row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) AS rn
   FROM mimiciv_icu.icustays s
   JOIN mimiciv_hosp.patients p USING (subject_id)
   JOIN mimiciv_hosp.admissions a USING (hadm_id)
-  WHERE s.los >= 0.25
-  QUALIFY row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) = 1
+),
+first_stay AS (
+  SELECT stay_id, subject_id, intime, first_careunit,
+         anchor_age, gender, admission_type, y
+  FROM ranked WHERE rn = 1 AND los >= 0.25
 ),
 vitals AS (
   SELECT e.stay_id,

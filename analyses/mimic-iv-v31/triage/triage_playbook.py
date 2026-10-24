@@ -7,14 +7,15 @@ diagnoses via ICD prefixes, DRG via code, nothing else).
 
 Feature blocks (all structured):
   PRESENT: age/gender/race/insurance/language/marital, admission type/location,
-    provider experience, anchor year, current-admission dx buckets + Charlson
+    provider experience, current-admission dx buckets + Charlson
     + HCFA-DRG(top30) + APR severity/mortality (retrospective descriptors).
   HISTORY: prior admissions/ICU counts, prior LOS, days since discharge,
     prior-year utilization, prior Charlson max, 9 prior-dx bucket flags,
     prior procedure count, prior max lactate/creatinine.
-  SYSTEM ("gov situation"): hour of day + night flag + true anchor year.
+  SYSTEM ("gov situation"): hour of day + night flag.
     Bed census, weekday and season are UNRECOVERABLE: per-patient whole-day
     date offsets destroy cross-patient simultaneity (verified empirically).
+    Anchor year group is used for era cross-tabs only, never as a feature.
 Outcomes: first_careunit (multiclass), direct ICU <6h (binary).
 Plus: presentation-only vs full ablation, hour/night/year cross-tabs.
 
@@ -156,11 +157,14 @@ plabs AS (
   GROUP BY 1
 ),
 prov AS (
-  SELECT b.stay_id, COUNT(p2.hadm_id) AS prov_n_prior,
+  SELECT b.stay_id,
+    CASE WHEN ANY_VALUE(b.admit_provider_id) IS NULL THEN NULL
+         ELSE COUNT(p2.hadm_id) END AS prov_n_prior,
     MAX(CASE WHEN b.admit_provider_id IS NULL THEN 1 ELSE 0 END) AS prov_null
   FROM base b
   LEFT JOIN mimiciv_hosp.admissions p2
-    ON p2.admit_provider_id = b.admit_provider_id AND p2.admittime < b.admittime
+    ON b.admit_provider_id IS NOT NULL
+   AND p2.admit_provider_id = b.admit_provider_id AND p2.admittime < b.admittime
   GROUP BY 1
 )
 SELECT b.stay_id, COALESCE(u.n_prior_adm, 0) AS n_prior_adm,
@@ -238,10 +242,12 @@ ORDER BY 1
 # random whole-day offsets (shifted span covers 63+ years vs 14 real years),
 # so cross-patient simultaneity is destroyed. Verified: lab-draw hours show
 # the real clinical pattern (time-of-day preserved) while admission weekdays
-# are uniform (weekday/season destroyed). System state therefore = hour of
-# day + night flag + true anchor year only. No census, weekday, or month.
+# are uniform (weekday/season destroyed). System-state features = hour of
+# day + night flag only; anchor_year_group is era stratification for the
+# by-year cross-tab, not a model feature (era is not knowable prospectively
+# in a usable way and leaks secular drift). No census, weekday, or month.
 
-CATS = ["gender", "anchor_year_group", "admission_type", "admission_location", "insurance",
+CATS = ["gender", "admission_type", "admission_location", "insurance",
         "language", "marital_status", "race", "drg_top30"]
 NUM = ["anchor_age", "prov_n_prior", "prov_null",
        "n_prior_adm", "n_prior_icu", "prior_los_total", "prior_los_max",
@@ -254,7 +260,7 @@ NUM = ["anchor_age", "prov_n_prior", "prov_null",
        "hour", "night"]
 MISS = ["days_since_last", "prior_charlson_max", "prior_lact_max",
         "prior_creat_max", "prov_n_prior", "apr_sev", "apr_mort"]
-PRESENT = ["anchor_age", "anchor_year_group", "prov_null", "gender", "admission_type",
+PRESENT = ["anchor_age", "prov_null", "gender", "admission_type",
            "admission_location", "insurance", "language", "marital_status",
            "race", "prov_n_prior", "dx_cardiac", "dx_hf", "dx_stroke",
            "dx_renal", "dx_copd", "dx_diab", "dx_onc", "dx_sepsis", "dx_liver",

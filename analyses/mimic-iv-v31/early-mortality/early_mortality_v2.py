@@ -46,11 +46,12 @@ SELECT f.stay_id, l.itemid,
   REGR_SLOPE(l.valuenum, date_diff('day', l.charttime, f.admittime)) AS slope,
   AVG(CASE WHEN l.flag = 'abnormal' THEN 1.0 ELSE 0.0 END) AS abn,
   MAX(l.valuenum) AS maxv, COUNT(*) AS n
-FROM (SELECT s.stay_id, s.subject_id, a.admittime
-      FROM mimiciv_icu.icustays s
-      JOIN mimiciv_hosp.admissions a USING (hadm_id)
-      WHERE s.los >= 0.25
-      QUALIFY row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) = 1) f
+FROM (SELECT stay_id, subject_id, admittime FROM (
+        SELECT s.stay_id, s.subject_id, a.admittime, s.los,
+               row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) AS rn
+        FROM mimiciv_icu.icustays s
+        JOIN mimiciv_hosp.admissions a USING (hadm_id))
+      WHERE rn = 1 AND los >= 0.25) f
 JOIN mimiciv_hosp.labevents l
   ON l.subject_id = f.subject_id
  AND l.charttime < f.admittime AND l.charttime >= f.admittime - INTERVAL 365 DAY
@@ -62,14 +63,18 @@ GROUP BY 1, 2
 DB = "/srv/mimic-iv/db/mimic4-v31.db"
 
 COHORT_SQL = """
-WITH first_stay AS (
-  SELECT s.stay_id, s.subject_id, s.intime, s.first_careunit,
-         p.anchor_age, p.gender, a.admission_type, a.hospital_expire_flag AS y
+WITH ranked AS (
+  SELECT s.stay_id, s.subject_id, s.intime, s.first_careunit, s.los,
+         p.anchor_age, p.gender, a.admission_type, a.hospital_expire_flag AS y,
+         row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) AS rn
   FROM mimiciv_icu.icustays s
   JOIN mimiciv_hosp.patients p USING (subject_id)
   JOIN mimiciv_hosp.admissions a USING (hadm_id)
-  WHERE s.los >= 0.25
-  QUALIFY row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) = 1
+),
+first_stay AS (
+  SELECT stay_id, subject_id, intime, first_careunit,
+         anchor_age, gender, admission_type, y
+  FROM ranked WHERE rn = 1 AND los >= 0.25
 ),
 vitals AS (
   SELECT e.stay_id,

@@ -6,8 +6,10 @@ ICU stay — the actually useful direction, unlike trajectories-into-death.
 ## Design
 
 - **Population**: first ICU stay per hospitalization with LOS ≥ 6h
-  (landmark at 6h; 84,703 stays).
-- **Outcome**: `hospital_expire_flag` — 9,270 events (10.9%).
+  (landmark at 6h; 84,468 stays). First stay is picked per admission
+  *before* the LOS filter, so short first stays exclude the admission
+  instead of promoting a later stay.
+- **Outcome**: `hospital_expire_flag` — 9,233 events (10.9%).
 - **Features** (all strictly within `[intime, intime + 6h)`):
   demographics (age, gender, admission type, first care unit), HR/RR/SpO2/MAP
   (median/min/max), temperature median, GCS min/median, lactate + creatinine
@@ -26,8 +28,8 @@ Only aggregate metrics are printed; no row-level data leaves s0.
 
 ## Results (`metrics.txt`, deterministic since the ORDER BY fix)
 
-- **AUC 0.838, AP 0.47** (base rate 0.11) on 16,941 held-out stays.
-- Risk deciles spread 0.35% → 48.1% mortality — well stratified.
+- **AUC 0.839, AP 0.470** (base rate 0.11) on 16,894 held-out stays.
+- Risk deciles spread 0.36% → 48.9% mortality — well stratified.
 - Largest risk coefficients: Neuro SICU, age, lactate, medical ICU;
   most protective: CVICU, surgical same-day/elective admission, high GCS.
 
@@ -41,12 +43,13 @@ more labs, additional landmarks) happens on logreg.
 
 ## v1 (`early_mortality_v1.py`, `metrics_v1.txt`)
 
-- **logreg**: AUC 0.8358, AP 0.4528, Brier 0.0769.
-- **HGB** (300 trees, no early stopping): **AUC 0.8587, AP 0.4871,
-  Brier 0.0738** — wins on all three metrics.
+- **logreg**: AUC 0.8389, AP 0.4698, Brier 0.0754 — identical to the
+  base script's output (all three scripts share one cohort/split/seed).
+- **HGB** (300 trees, no early stopping): **AUC 0.8615, AP 0.5162,
+  Brier 0.0716** — wins on all three metrics.
 - Both models are well calibrated (predicted ≈ observed in every decile).
-- HGB permutation importance: GCS median dominates (0.075 AUC drop), then
-  care unit (0.045), age (0.035), admission type, lactate, creatinine.
+- HGB permutation importance: GCS median dominates (0.071 AUC drop), then
+  care unit (0.043), age (0.033), admission type, lactate, creatinine.
 - Bit-identical across re-runs (verified): fixed row order + seed, no
   early-stopping subsample randomness.
 
@@ -55,11 +58,12 @@ more labs, additional landmarks) happens on logreg.
 - Adds **prior-year lab trajectories** for 21 tests: last value, OLS slope
   vs days-before-admission, abnormal fraction, max, count, missing flag
   (125 features). Same split as v1, so numbers compare directly.
-- **Base: AUC 0.8358 / AP 0.4528 → base+history: AUC 0.8546 / AP 0.4771**
-  (+0.019 / +0.024). History-labs alone buy nearly as much as HGB did.
-- Top history drivers are **utilization, not values**: creatinine/BUN/WBC
-  measurement counts, Hb/platelet missingness. Slopes and abnormal fractions
-  don't crack the top 12 — how often you were tested beats the trend.
+- **Base: AUC 0.8389 / AP 0.4698 → base+history: AUC 0.8587 / AP 0.4909**
+  (+0.020 / +0.021). History-labs alone buy nearly as much as HGB did.
+- Top history drivers are **utilization, not values**: Hb/potassium/sodium
+  missingness, AST/glucose/WBC/creatinine measurement counts. Slopes and
+  abnormal fractions don't crack the top 12 — how often you were tested
+  beats the trend.
   (Single-coefficient signs inside correlated per-test groups shouldn't be
   over-read; grouped ablation is the follow-up.)
 
