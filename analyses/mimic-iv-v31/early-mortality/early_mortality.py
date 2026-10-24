@@ -86,6 +86,7 @@ FROM first_stay f
 LEFT JOIN vitals v USING (stay_id)
 LEFT JOIN gcs g USING (stay_id)
 LEFT JOIN labs l USING (stay_id)
+ORDER BY f.stay_id
 """
 
 

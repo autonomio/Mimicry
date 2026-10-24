@@ -24,12 +24,23 @@ ICU stay — the actually useful direction, unlike trajectories-into-death.
 
 Only aggregate metrics are printed; no row-level data leaves s0.
 
-## Results (`metrics.txt`)
+## Results (`metrics.txt`, deterministic since the ORDER BY fix)
 
 - **AUC 0.838, AP 0.47** (base rate 0.11) on 16,941 held-out stays.
 - Risk deciles spread 0.35% → 48.1% mortality — well stratified.
 - Largest risk coefficients: Neuro SICU, age, lactate, medical ICU;
   most protective: CVICU, surgical same-day/elective admission, high GCS.
+
+## v1 (`early_mortality_v1.py`, `metrics_v1.txt`)
+
+- **logreg**: AUC 0.8358, AP 0.4528, Brier 0.0769.
+- **HGB** (300 trees, no early stopping): **AUC 0.8587, AP 0.4871,
+  Brier 0.0738** — wins on all three metrics.
+- Both models are well calibrated (predicted ≈ observed in every decile).
+- HGB permutation importance: GCS median dominates (0.075 AUC drop), then
+  care unit (0.045), age (0.035), admission type, lactate, creatinine.
+- Bit-identical across re-runs (verified): fixed row order + seed, no
+  early-stopping subsample randomness.
 
 ## Limitations / next
 
