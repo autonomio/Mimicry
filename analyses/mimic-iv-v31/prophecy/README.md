@@ -68,10 +68,54 @@ prophecy-aware protocol: predict, but blind the prediction from
 the withdrawal decision, or the 0.90 combined AUC is a
 self-licking ice cream cone.
 
+## Adversarial battery (`adversarial.py`)
+
+Every headline above, attacked:
+
+![or specs](adv_or.png)
+
+- **Richer adjustment** (SOFA subscores, vent/pressor/RRT@48,
+  lactate, creatinine): OR rises 3.89 -> **4.09**, E-value 7.7.
+  An unmeasured confounder needs OR 7.7 on both sides.
+- **Timing split**: DNR<24h OR 3.48, DNR 24-48h OR 7.45 — later
+  DNR tracks unfolding decline (indication gradient), yet even
+  day-1 DNR carries 3.5x.
+- **SOFA tertiles**: low 5.71 / mid 3.67 / high 3.57. Largest
+  where physiology says "fine" — the decision does the work in
+  low-SOFA deaths (neuro catastrophes, comfort transitions).
+- **1:1 PS matching** (rich covariates, balance 0.76 -> 0.04):
+  OR **2.91 [2.64-3.20]** — attenuated, decisively above 1.
+- **Unit-rate IV** (first-stage F=1609): direction confirmed,
+  magnitude not credible (risk-diff 0.79 vs OLS 0.21) — LATE on
+  marginal patients plus residual unit case-mix. Reported as
+  direction-only.
+- **Discontinuity**: regression-adjusted for pre-slope, pre-level,
+  SOFA, age, sepsis — HR coef -1.53 (p=3.5e-12), MAP -1.24
+  (p=3.4e-34). Off-center placebo cuts null (p=0.07-0.78).
+  Survivor-with-DNR falsification: slopes go UP (+0.13/+0.10,
+  p<1e-5) — the break marks the fork, not the timestamp.
+- **Prediction out-of-sample**: 5-fold CV confirms ALL AUCs
+  (0.814/0.784/0.762, no optimism). FC gaps significant at 6h
+  (0.052 [0.025-0.076]) and 12h (0.067 [0.039-0.093]), gone at
+  24h (0.029 [-0.004-0.061]) — withdrawal patterns contribute
+  only at short horizons.
+- **Case-mix caveat**: full-code decedents die 2.3x later
+  (median 219h vs 97h) with different cause mix — the FC gap
+  conflates prophecy-free signal with a different dying
+  population. Stated, not solved.
+
+![cv auc](adv_auc.png)
+
+Net: the central numbers survive matching, placebos,
+falsification, cross-validation, and case-mix scrutiny. The IV
+magnitude fails credibility (reported honestly). The 24h FC gap
+vanishing bounds the prophecy contribution to short horizons.
+
 ## Reproduce
 
 ```sh
 /srv/mimic-iv/.venv/bin/python /tmp/prophecy.py  # ~8 min warm on s0
+/srv/mimic-iv/.venv/bin/python /tmp/adversarial.py  # ~12 min warm
 ```
 
 then `make_plots.py`. Raw log: `prophecy.out`. Stay-level
