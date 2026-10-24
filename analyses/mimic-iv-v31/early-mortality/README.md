@@ -50,6 +50,19 @@ more labs, additional landmarks) happens on logreg.
 - Bit-identical across re-runs (verified): fixed row order + seed, no
   early-stopping subsample randomness.
 
+## v2 (`early_mortality_v2.py`, `metrics_v2.txt`)
+
+- Adds **prior-year lab trajectories** for 21 tests: last value, OLS slope
+  vs days-before-admission, abnormal fraction, max, count, missing flag
+  (125 features). Same split as v1, so numbers compare directly.
+- **Base: AUC 0.8358 / AP 0.4528 → base+history: AUC 0.8546 / AP 0.4771**
+  (+0.019 / +0.024). History-labs alone buy nearly as much as HGB did.
+- Top history drivers are **utilization, not values**: creatinine/BUN/WBC
+  measurement counts, Hb/platelet missingness. Slopes and abnormal fractions
+  don't crack the top 12 — how often you were tested beats the trend.
+  (Single-coefficient signs inside correlated per-test groups shouldn't be
+  over-read; grouped ablation is the follow-up.)
+
 ## Limitations / next
 
 - No DNR/comfort-measures flag yet (`code_status` exists in chartevents).
