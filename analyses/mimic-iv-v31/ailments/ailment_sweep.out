@@ -1,356 +1,231 @@
 loading covariates...
 loading rx exposures...
 loading dx exposures...
-admissions: 546028, deaths: 11801, icu: 85242, elective: 13130
+admissions: 546028, deaths: 11801, icu: 85242, elective: 13130, late_icu: 16227
   constip: prev=0.3359 (dx=0.0555 rx=0.3349)
-  gerd: prev=0.2887 (dx=0.1293 rx=0.2769)
+  gerd: prev=0.2859 (dx=0.1293 rx=0.2739)
   sleep: prev=0.0872 (dx=0.0591 rx=0.0361)
   anxiety: prev=0.2186 (dx=0.0853 rx=0.1988)
   depress: prev=0.2214 (dx=0.1156 rx=0.1921)
   backpain: prev=0.3114 (dx=0.0507 rx=0.3042)
   headache: prev=0.0319 (dx=0.0307 rx=0.0047)
   allergy: prev=0.1094 (dx=0.0048 rx=0.1078)
-  hyperlip: prev=0.2595 (dx=0.1806 rx=0.2177)
+  hyperlip: prev=0.2452 (dx=0.1806 rx=0.1988)
   hypothy: prev=0.0768 (dx=0.0585 rx=0.0702)
   hyperten: prev=0.3462 (dx=0.2673 rx=0.3044)
   diabetes: prev=0.1936 (dx=0.1358 rx=0.1769)
   asthma_copd: prev=0.1545 (dx=0.0938 rx=0.1304)
-  anemia: prev=0.1648 (dx=0.0454 rx=0.1492)
+  anemia: prev=0.1486 (dx=0.0454 rx=0.1310)
   uti: prev=0.1421 (dx=0.0616 rx=0.1215)
   obesity: prev=0.0620 (dx=0.0620 rx=0.0000)
 [death] n=546028 events=11801 (0.0216) cols=65
 [icu] n=546028 events=85242 (0.1561) cols=65
-[unexpected_icu] n=13130 events=2806 (0.2137) cols=47
-[death|constip] n_exp=183406 crude dx/rx/either=1.589/1.346/1.342 adj OR=0.975 [0.919-1.036] p=0.42
-[death|gerd] n_exp=157645 crude dx/rx/either=1.104/1.320/1.298 adj OR=0.922 [0.873-0.974] p=0.0037
-[death|sleep] n_exp=47606 crude dx/rx/either=1.166/0.949/1.094 adj OR=1.001 [0.932-1.076] p=0.97
-[death|anxiety] n_exp=119359 crude dx/rx/either=0.873/1.173/1.113 adj OR=1.164 [1.099-1.233] p=2.3e-07
-[death|depress] n_exp=120877 crude dx/rx/either=0.774/1.128/1.023 adj OR=0.893 [0.846-0.943] p=4.4e-05
-[death|backpain] n_exp=170046 crude dx/rx/either=0.893/1.186/1.168 adj OR=0.964 [0.909-1.021] p=0.21
-[death|headache] n_exp=17397 crude dx/rx/either=0.517/0.372/0.526 adj OR=0.827 [0.714-0.958] p=0.011
-[death|allergy] n_exp=59713 crude dx/rx/either=1.088/1.101/1.096 adj OR=1.042 [0.973-1.115] p=0.24
-[death|hyperlip] n_exp=141711 crude dx/rx/either=1.295/1.336/1.337 adj OR=0.777 [0.737-0.819] p=1e-20
-[death|hypothy] n_exp=41925 crude dx/rx/either=1.427/1.373/1.357 adj OR=0.960 [0.899-1.026] p=0.23
-[death|hyperten] n_exp=189021 crude dx/rx/either=1.340/1.381/1.331 adj OR=0.732 [0.692-0.774] p=2.3e-27
-[death|diabetes] n_exp=105735 crude dx/rx/either=1.232/1.378/1.355 adj OR=0.944 [0.883-1.010] p=0.097
-[death|asthma_copd] n_exp=84370 crude dx/rx/either=1.110/1.666/1.525 adj OR=1.132 [1.059-1.210] p=0.00027
-[death|anemia] n_exp=89972 crude dx/rx/either=1.293/1.453/1.447 adj OR=1.083 [1.024-1.145] p=0.0051
-[death|uti] n_exp=77600 crude dx/rx/either=1.640/1.338/1.443 adj OR=0.942 [0.887-1.000] p=0.052
-[death|obesity] n_exp=33870 crude dx/rx/either=0.850/nan/0.850 adj OR=0.876 [0.801-0.958] p=0.0037
-[icu|constip] n_exp=183406 crude dx/rx/either=0.804/0.889/0.888 adj OR=0.954 [0.931-0.978] p=0.0002
-[icu|gerd] n_exp=157645 crude dx/rx/either=0.837/0.946/0.926 adj OR=0.984 [0.961-1.007] p=0.18
-[icu|sleep] n_exp=47606 crude dx/rx/either=0.865/0.781/0.833 adj OR=0.937 [0.907-0.967] p=7e-05
-[icu|anxiety] n_exp=119359 crude dx/rx/either=0.700/0.779/0.749 adj OR=0.969 [0.945-0.994] p=0.016
-[icu|depress] n_exp=120877 crude dx/rx/either=0.684/0.856/0.779 adj OR=0.909 [0.888-0.931] p=5.9e-15
-[icu|backpain] n_exp=170046 crude dx/rx/either=0.693/0.804/0.791 adj OR=0.849 [0.828-0.870] p=1e-38
-[icu|headache] n_exp=17397 crude dx/rx/either=0.560/0.494/0.565 adj OR=0.905 [0.856-0.957] p=0.00046
-[icu|allergy] n_exp=59713 crude dx/rx/either=0.820/0.749/0.749 adj OR=0.874 [0.847-0.901] p=1.5e-17
-[icu|hyperlip] n_exp=141711 crude dx/rx/either=0.973/1.092/1.037 adj OR=0.904 [0.884-0.926] p=2.1e-17
-[icu|hypothy] n_exp=41925 crude dx/rx/either=0.979/1.016/1.003 adj OR=1.027 [0.996-1.059] p=0.088
-[icu|hyperten] n_exp=189021 crude dx/rx/either=0.933/1.005/0.936 adj OR=0.834 [0.815-0.854] p=1.7e-51
-[icu|diabetes] n_exp=105735 crude dx/rx/either=0.976/1.098/1.059 adj OR=1.051 [1.021-1.083] p=0.00092
-[icu|asthma_copd] n_exp=84370 crude dx/rx/either=0.961/1.173/1.088 adj OR=1.164 [1.128-1.200] p=7.7e-22
-[icu|anemia] n_exp=89972 crude dx/rx/either=0.993/0.975/0.967 adj OR=0.997 [0.972-1.023] p=0.8
-[icu|uti] n_exp=77600 crude dx/rx/either=1.094/0.878/0.911 adj OR=0.876 [0.851-0.900] p=1.1e-20
-[icu|obesity] n_exp=33870 crude dx/rx/either=0.860/nan/0.860 adj OR=0.978 [0.943-1.015] p=0.24
-[unexpected_icu|constip] n_exp=6023 crude dx/rx/either=0.178/0.373/0.372 adj OR=0.894 [0.778-1.028] p=0.12
-[unexpected_icu|gerd] n_exp=5206 crude dx/rx/either=0.504/0.388/0.396 adj OR=0.964 [0.845-1.101] p=0.59
-[unexpected_icu|sleep] n_exp=1714 crude dx/rx/either=0.369/0.430/0.393 adj OR=0.967 [0.800-1.169] p=0.73
-[unexpected_icu|anxiety] n_exp=4762 crude dx/rx/either=0.367/0.218/0.232 adj OR=0.710 [0.608-0.830] p=1.6e-05
-[unexpected_icu|depress] n_exp=3188 crude dx/rx/either=0.459/0.568/0.536 adj OR=1.023 [0.896-1.168] p=0.74
-[unexpected_icu|backpain] n_exp=5813 crude dx/rx/either=0.303/0.276/0.276 adj OR=0.684 [0.596-0.785] p=6.5e-08
-[unexpected_icu|headache] n_exp=515 crude dx/rx/either=0.351/0.103/0.350 adj OR=1.372 [0.984-1.913] p=0.062
-[unexpected_icu|allergy] n_exp=3064 crude dx/rx/either=0.253/0.220/0.221 adj OR=0.800 [0.667-0.959] p=0.016
-[unexpected_icu|hyperlip] n_exp=4607 crude dx/rx/either=0.756/0.982/0.809 adj OR=1.228 [1.081-1.395] p=0.0016
-[unexpected_icu|hypothy] n_exp=1192 crude dx/rx/either=0.754/0.961/0.926 adj OR=1.196 [1.010-1.417] p=0.038
-[unexpected_icu|hyperten] n_exp=6211 crude dx/rx/either=0.636/0.634/0.579 adj OR=0.969 [0.855-1.098] p=0.62
-[unexpected_icu|diabetes] n_exp=3171 crude dx/rx/either=0.680/0.529/0.547 adj OR=0.922 [0.778-1.092] p=0.35
-[unexpected_icu|asthma_copd] n_exp=2083 crude dx/rx/either=0.664/0.565/0.576 adj OR=1.110 [0.913-1.349] p=0.29
-[unexpected_icu|anemia] n_exp=2013 crude dx/rx/either=0.686/0.745/0.710 adj OR=1.136 [0.977-1.322] p=0.098
-[unexpected_icu|uti] n_exp=2792 crude dx/rx/either=0.580/0.231/0.261 adj OR=0.570 [0.479-0.679] p=2.4e-10
-[unexpected_icu|obesity] n_exp=853 crude dx/rx/either=0.538/nan/0.538 adj OR=1.003 [0.793-1.268] p=0.98
+[unexpected_icu] n=13130 events=950 (0.0724) cols=47
+[death|constip] n_exp=183406 crude dx/rx/either=1.589/1.346/1.342 adj OR=1.005 [0.946-1.068] p=0.86
+[death|gerd] n_exp=156096 crude dx/rx/either=1.104/1.337/1.312 adj OR=0.942 [0.892-0.996] p=0.034
+[death|sleep] n_exp=47606 crude dx/rx/either=1.166/0.949/1.094 adj OR=1.026 [0.956-1.102] p=0.47
+[death|anxiety] n_exp=119359 crude dx/rx/either=0.873/1.173/1.113 adj OR=1.202 [1.135-1.274] p=4.1e-10
+[death|depress] n_exp=120877 crude dx/rx/either=0.774/1.128/1.023 adj OR=0.918 [0.870-0.969] p=0.0018
+[death|backpain] n_exp=170046 crude dx/rx/either=0.893/1.186/1.168 adj OR=0.987 [0.931-1.047] p=0.67
+[death|headache] n_exp=17397 crude dx/rx/either=0.517/0.372/0.526 adj OR=0.857 [0.740-0.994] p=0.041
+[death|allergy] n_exp=59713 crude dx/rx/either=1.088/1.101/1.096 adj OR=1.063 [0.993-1.139] p=0.08
+[death|hyperlip] n_exp=133868 crude dx/rx/either=1.295/1.233/1.275 adj OR=0.742 [0.704-0.782] p=2.5e-28
+[death|hypothy] n_exp=41925 crude dx/rx/either=1.427/1.373/1.357 adj OR=0.969 [0.907-1.035] p=0.35
+[death|hyperten] n_exp=189021 crude dx/rx/either=1.340/1.381/1.331 adj OR=0.746 [0.705-0.790] p=3.2e-24
+[death|diabetes] n_exp=105735 crude dx/rx/either=1.232/1.378/1.355 adj OR=0.954 [0.892-1.021] p=0.17
+[death|asthma_copd] n_exp=84370 crude dx/rx/either=1.110/1.666/1.525 adj OR=1.162 [1.087-1.241] p=1e-05
+[death|anemia] n_exp=81120 crude dx/rx/either=1.293/1.353/1.362 adj OR=1.031 [0.974-1.091] p=0.29
+[death|uti] n_exp=77600 crude dx/rx/either=1.640/1.338/1.443 adj OR=0.963 [0.907-1.023] p=0.23
+[death|obesity] n_exp=33870 crude dx/rx/either=0.850/nan/0.850 adj OR=0.887 [0.812-0.970] p=0.0083
+[icu|constip] n_exp=183406 crude dx/rx/either=0.804/0.889/0.888 adj OR=0.988 [0.963-1.013] p=0.35
+[icu|gerd] n_exp=156096 crude dx/rx/either=0.837/0.957/0.935 adj OR=1.018 [0.994-1.043] p=0.14
+[icu|sleep] n_exp=47606 crude dx/rx/either=0.865/0.781/0.833 adj OR=0.958 [0.928-0.990] p=0.0096
+[icu|anxiety] n_exp=119359 crude dx/rx/either=0.700/0.779/0.749 adj OR=1.001 [0.976-1.027] p=0.92
+[icu|depress] n_exp=120877 crude dx/rx/either=0.684/0.856/0.779 adj OR=0.930 [0.908-0.953] p=2.4e-09
+[icu|backpain] n_exp=170046 crude dx/rx/either=0.693/0.804/0.791 adj OR=0.875 [0.854-0.898] p=1.5e-25
+[icu|headache] n_exp=17397 crude dx/rx/either=0.560/0.494/0.565 adj OR=0.929 [0.878-0.982] p=0.0098
+[icu|allergy] n_exp=59713 crude dx/rx/either=0.820/0.749/0.749 adj OR=0.902 [0.874-0.931] p=1e-10
+[icu|hyperlip] n_exp=133868 crude dx/rx/either=0.973/1.104/1.042 adj OR=0.908 [0.887-0.929] p=3.1e-16
+[icu|hypothy] n_exp=41925 crude dx/rx/either=0.979/1.016/1.003 adj OR=1.035 [1.004-1.068] p=0.027
+[icu|hyperten] n_exp=189021 crude dx/rx/either=0.933/1.005/0.936 adj OR=0.854 [0.834-0.875] p=2.2e-39
+[icu|diabetes] n_exp=105735 crude dx/rx/either=0.976/1.098/1.059 adj OR=1.085 [1.053-1.118] p=6.9e-08
+[icu|asthma_copd] n_exp=84370 crude dx/rx/either=0.961/1.173/1.088 adj OR=1.197 [1.161-1.235] p=2.3e-30
+[icu|anemia] n_exp=81120 crude dx/rx/either=0.993/0.956/0.951 adj OR=1.021 [0.995-1.048] p=0.11
+[icu|uti] n_exp=77600 crude dx/rx/either=1.094/0.878/0.911 adj OR=0.904 [0.879-0.929] p=1.2e-12
+[icu|obesity] n_exp=33870 crude dx/rx/either=0.860/nan/0.860 adj OR=0.988 [0.953-1.025] p=0.53
+[unexpected_icu|constip] n_exp=6023 crude dx/rx/either=0.316/0.539/0.537 adj OR=0.828 [0.673-1.019] p=0.075
+[unexpected_icu|gerd] n_exp=5189 crude dx/rx/either=0.742/0.607/0.612 adj OR=1.039 [0.857-1.259] p=0.7
+[unexpected_icu|sleep] n_exp=1714 crude dx/rx/either=0.585/0.760/0.671 adj OR=1.123 [0.872-1.448] p=0.37
+[unexpected_icu|anxiety] n_exp=4762 crude dx/rx/either=0.520/0.397/0.402 adj OR=0.826 [0.659-1.036] p=0.098
+[unexpected_icu|depress] n_exp=3188 crude dx/rx/either=0.655/0.884/0.826 adj OR=1.215 [1.010-1.461] p=0.039
+[unexpected_icu|backpain] n_exp=5813 crude dx/rx/either=0.417/0.458/0.452 adj OR=0.789 [0.644-0.966] p=0.022
+[unexpected_icu|headache] n_exp=515 crude dx/rx/either=0.605/0.177/0.589 adj OR=1.555 [0.993-2.436] p=0.054
+[unexpected_icu|allergy] n_exp=3064 crude dx/rx/either=0.083/0.446/0.440 adj OR=1.073 [0.833-1.382] p=0.59
+[unexpected_icu|hyperlip] n_exp=4102 crude dx/rx/either=0.959/1.420/1.105 adj OR=1.047 [0.869-1.260] p=0.63
+[unexpected_icu|hypothy] n_exp=1192 crude dx/rx/either=0.909/1.106/1.094 adj OR=1.119 [0.882-1.421] p=0.35
+[unexpected_icu|hyperten] n_exp=6211 crude dx/rx/either=0.876/0.929/0.843 adj OR=1.061 [0.881-1.277] p=0.53
+[unexpected_icu|diabetes] n_exp=3171 crude dx/rx/either=1.048/0.762/0.766 adj OR=0.836 [0.652-1.072] p=0.16
+[unexpected_icu|asthma_copd] n_exp=2083 crude dx/rx/either=0.939/0.765/0.776 adj OR=0.981 [0.747-1.287] p=0.89
+[unexpected_icu|anemia] n_exp=1830 crude dx/rx/either=0.890/1.029/1.015 adj OR=1.256 [1.015-1.556] p=0.036
+[unexpected_icu|uti] n_exp=2792 crude dx/rx/either=0.855/0.504/0.535 adj OR=0.856 [0.678-1.080] p=0.19
+[unexpected_icu|obesity] n_exp=853 crude dx/rx/either=0.683/nan/0.683 adj OR=0.882 [0.631-1.233] p=0.46
            outcome      ailment  adj_or         adj_p             q
-0              icu     hyperten  0.8345  1.657842e-51  7.957643e-50
-1              icu     backpain  0.8491  1.037803e-38  2.490728e-37
-2            death     hyperten  0.7320  2.323921e-27  3.718274e-26
-3              icu  asthma_copd  1.1638  7.683513e-22  9.220215e-21
-4            death     hyperlip  0.7769  1.045021e-20  8.589187e-20
-5              icu          uti  0.8755  1.073648e-20  8.589187e-20
-6              icu      allergy  0.8737  1.511473e-17  1.036439e-16
-7              icu     hyperlip  0.9044  2.105569e-17  1.263342e-16
-8              icu      depress  0.9095  5.937018e-15  3.166410e-14
-9   unexpected_icu          uti  0.5703  2.361100e-10  1.133328e-09
-10  unexpected_icu     backpain  0.6839  6.497691e-08  2.835356e-07
-11           death      anxiety  1.1639  2.334564e-07  9.338254e-07
-12  unexpected_icu      anxiety  0.7100  1.598094e-05  5.900654e-05
-13           death      depress  0.8932  4.440867e-05  1.522583e-04
-14             icu        sleep  0.9368  6.977852e-05  2.232913e-04
-15             icu      constip  0.9540  2.039665e-04  6.118994e-04
-16           death  asthma_copd  1.1321  2.714197e-04  7.663614e-04
-17             icu     headache  0.9050  4.633690e-04  1.235651e-03
-18             icu     diabetes  1.0513  9.231671e-04  2.332212e-03
-19  unexpected_icu     hyperlip  1.2281  1.553183e-03  3.727639e-03
-20           death      obesity  0.8760  3.696774e-03  8.075280e-03
-21           death         gerd  0.9220  3.701170e-03  8.075280e-03
-22           death       anemia  1.0828  5.062805e-03  1.056585e-02
-23           death     headache  0.8270  1.136334e-02  2.272668e-02
-24  unexpected_icu      allergy  0.7998  1.612555e-02  3.030416e-02
-25             icu      anxiety  0.9692  1.641475e-02  3.030416e-02
-26  unexpected_icu      hypothy  1.1964  3.825453e-02  6.800805e-02
-27           death          uti  0.9418  5.184967e-02  8.888515e-02
-28  unexpected_icu     headache  1.3716  6.247012e-02  1.033988e-01
-29             icu      hypothy  1.0272  8.777933e-02  1.404469e-01
-30           death     diabetes  0.9444  9.675130e-02  1.469263e-01
-31  unexpected_icu       anemia  1.1361  9.795087e-02  1.469263e-01
-32  unexpected_icu      constip  0.8942  1.163723e-01  1.692688e-01
-33             icu         gerd  0.9839  1.783592e-01  2.518012e-01
-34           death     backpain  0.9635  2.086701e-01  2.861761e-01
-35           death      hypothy  0.9605  2.337930e-01  3.060728e-01
-36           death      allergy  1.0415  2.416710e-01  3.060728e-01
-37             icu      obesity  0.9783  2.423076e-01  3.060728e-01
-38  unexpected_icu  asthma_copd  1.1101  2.945289e-01  3.624971e-01
-39  unexpected_icu     diabetes  0.9217  3.454171e-01  4.145005e-01
-40           death      constip  0.9754  4.157303e-01  4.867087e-01
-41  unexpected_icu         gerd  0.9643  5.900849e-01  6.743827e-01
-42  unexpected_icu     hyperten  0.9690  6.222675e-01  6.946242e-01
-43  unexpected_icu        sleep  0.9670  7.285731e-01  7.852537e-01
-44  unexpected_icu      depress  1.0230  7.361754e-01  7.852537e-01
-45             icu       anemia  0.9968  8.044964e-01  8.394745e-01
-46           death        sleep  1.0014  9.686679e-01  9.812230e-01
-47  unexpected_icu      obesity  1.0028  9.812230e-01  9.812230e-01
-HITS for stage 2: 17
+0              icu     hyperten  0.8542  2.179381e-39  1.046103e-37
+1              icu  asthma_copd  1.1972  2.320180e-30  5.568432e-29
+2            death     hyperlip  0.7420  2.500571e-28  4.000914e-27
+3              icu     backpain  0.8755  1.463463e-25  1.756156e-24
+4            death     hyperten  0.7462  3.223395e-24  3.094459e-23
+5              icu     hyperlip  0.9077  3.053135e-16  2.442508e-15
+6              icu          uti  0.9035  1.156269e-12  7.928704e-12
+7              icu      allergy  0.9020  1.020330e-10  6.121982e-10
+8            death      anxiety  1.2024  4.076480e-10  2.174123e-09
+9              icu      depress  0.9302  2.381968e-09  1.143345e-08
+10             icu     diabetes  1.0850  6.910146e-08  3.015337e-07
+11           death  asthma_copd  1.1615  9.988495e-06  3.995398e-05
+12           death      depress  0.9177  1.792249e-03  6.617535e-03
+13           death      obesity  0.8871  8.301024e-03  2.846065e-02
+14             icu        sleep  0.9585  9.639608e-03  2.942476e-02
+15             icu     headache  0.9287  9.808253e-03  2.942476e-02
+16  unexpected_icu     backpain  0.7889  2.171645e-02  6.131704e-02
+17             icu      hypothy  1.0352  2.729056e-02  7.277481e-02
+18           death         gerd  0.9421  3.400334e-02  8.590317e-02
+19  unexpected_icu       anemia  1.2564  3.640468e-02  8.737123e-02
+20  unexpected_icu      depress  1.2148  3.891468e-02  8.894783e-02
+21           death     headache  0.8573  4.096076e-02  8.936893e-02
+22  unexpected_icu     headache  1.5554  5.353676e-02  1.117289e-01
+23  unexpected_icu      constip  0.8282  7.528298e-02  1.505660e-01
+24           death      allergy  1.0634  7.986476e-02  1.533403e-01
+25  unexpected_icu      anxiety  0.8262  9.839737e-02  1.816567e-01
+26             icu       anemia  1.0214  1.104120e-01  1.962879e-01
+27             icu         gerd  1.0182  1.374286e-01  2.355919e-01
+28  unexpected_icu     diabetes  0.8362  1.587315e-01  2.627280e-01
+29           death     diabetes  0.9544  1.746545e-01  2.794472e-01
+30  unexpected_icu          uti  0.8559  1.895389e-01  2.934796e-01
+31           death          uti  0.9632  2.263228e-01  3.394841e-01
+32           death       anemia  1.0309  2.933863e-01  4.267438e-01
+33             icu      constip  0.9880  3.474494e-01  4.732866e-01
+34           death      hypothy  0.9689  3.493324e-01  4.732866e-01
+35  unexpected_icu      hypothy  1.1192  3.549650e-01  4.732866e-01
+36  unexpected_icu        sleep  1.1235  3.688124e-01  4.784593e-01
+37  unexpected_icu      obesity  0.8819  4.623641e-01  5.810865e-01
+38           death        sleep  1.0265  4.721328e-01  5.810865e-01
+39             icu      obesity  0.9882  5.250536e-01  6.248679e-01
+40  unexpected_icu     hyperten  1.0606  5.337413e-01  6.248679e-01
+41  unexpected_icu      allergy  1.0726  5.873390e-01  6.712446e-01
+42  unexpected_icu     hyperlip  1.0466  6.311539e-01  7.045439e-01
+43           death     backpain  0.9873  6.677991e-01  7.285081e-01
+44  unexpected_icu         gerd  1.0389  6.970711e-01  7.435425e-01
+45           death      constip  1.0054  8.614267e-01  8.988800e-01
+46  unexpected_icu  asthma_copd  0.9806  8.879436e-01  9.068360e-01
+47             icu      anxiety  1.0013  9.214791e-01  9.214791e-01
+HITS for stage 2: 8
 === stage2 icu|hyperten ===
-  adjusted dx OR=0.919 [0.896-0.944] p=2.1e-10
-  adjusted rx OR=0.851 [0.832-0.871] p=1.9e-42
-  matched pairs=77380 exp=0.1287 ctl=0.1536 OR=0.808 [0.785-0.832] mcnemar p=2.6e-46
-    anchor_age: 0.601 -> -0.105
-    n_prior: 0.692 -> 0.039
-    prior_los_total: 0.610 -> 0.040
-    prior_year_n: 1.011 -> 0.128
-    prior_charlson: 0.863 -> -0.074
-  [dose_1 vs ref] OR=0.794 [0.765-0.823] p=2.2e-35
-  [dose_2+ vs ref] OR=0.849 [0.827-0.872] p=7e-33
-  [dose_coded_only vs ref] OR=0.854 [0.813-0.897] p=2.6e-10
-  [rec_remote vs ref] OR=0.844 [0.816-0.872] p=1.8e-23
-  [rec_recent vs ref] OR=0.831 [0.811-0.852] p=9.6e-50
-=== stage2 icu|backpain ===
-  adjusted dx OR=0.864 [0.828-0.902] p=1.8e-11
-  adjusted rx OR=0.854 [0.834-0.876] p=5e-36
-  matched pairs=66303 exp=0.1152 ctl=0.1442 OR=0.771 [0.747-0.797] mcnemar p=8.4e-56
-    anchor_age: 0.067 -> -0.002
-    n_prior: 0.708 -> 0.088
-    prior_los_total: 0.654 -> 0.087
-    prior_year_n: 1.100 -> 0.091
-    prior_charlson: 0.434 -> -0.008
-  [dose_1 vs ref] OR=0.910 [0.874-0.948] p=5.5e-06
-  [dose_2+ vs ref] OR=0.833 [0.811-0.855] p=4e-42
-  [dose_coded_only vs ref] OR=0.802 [0.710-0.905] p=0.00035
-  [rec_remote vs ref] OR=0.832 [0.804-0.860] p=8.8e-27
-  [rec_recent vs ref] OR=0.855 [0.833-0.878] p=3.7e-31
-=== stage2 death|hyperten ===
-  adjusted dx OR=0.790 [0.745-0.838] p=3.5e-15
-  adjusted rx OR=0.747 [0.707-0.789] p=7.7e-26
-  matched pairs=77380 exp=0.0148 ctl=0.0235 OR=0.623 [0.578-0.671] mcnemar p=5.7e-36
-    anchor_age: 0.601 -> -0.105
-    n_prior: 0.692 -> 0.039
-    prior_los_total: 0.610 -> 0.040
-    prior_year_n: 1.011 -> 0.128
-    prior_charlson: 0.863 -> -0.074
-  [dose_1 vs ref] OR=0.652 [0.595-0.715] p=6.3e-20
-  [dose_2+ vs ref] OR=0.745 [0.700-0.793] p=5.1e-20
-  [dose_coded_only vs ref] OR=0.839 [0.752-0.936] p=0.0017
-  [rec_remote vs ref] OR=0.641 [0.593-0.693] p=8.3e-29
-  [rec_recent vs ref] OR=0.760 [0.717-0.805] p=1.1e-20
+  adjusted dx OR=0.945 [0.921-0.970] p=1.9e-05
+  adjusted rx OR=0.871 [0.851-0.892] p=1.2e-31
+  matched pairs=87803 exp=0.1318 ctl=0.1515 OR=0.847 [0.824-0.870] mcnemar p=5.5e-33
+    anchor_age: 0.601 -> -0.074
+    n_prior: 0.572 -> 0.024
+    prior_los_total: 0.673 -> 0.033
+    prior_year_n: 0.857 -> 0.097
+    prior_charlson: 0.863 -> -0.032
+  [dose_1 vs ref] OR=0.800 [0.772-0.830] p=4.6e-33
+  [dose_2+ vs ref] OR=0.877 [0.854-0.901] p=1e-21
+  [dose_coded_only vs ref] OR=0.869 [0.827-0.913] p=1.9e-08
+  [rec_remote vs ref] OR=0.906 [0.869-0.946] p=6.2e-06
+  [rec_recent vs ref] OR=0.846 [0.825-0.866] p=5.4e-42
 === stage2 icu|asthma_copd ===
-  adjusted dx OR=0.935 [0.895-0.976] p=0.0024
-  adjusted rx OR=1.230 [1.194-1.266] p=1e-42
-  matched pairs=45106 exp=0.1528 ctl=0.1456 OR=1.059 [1.021-1.099] mcnemar p=0.0023
-    anchor_age: 0.234 -> -0.133
-    n_prior: 0.715 -> 0.018
-    prior_los_total: 0.658 -> 0.020
-    prior_year_n: 1.006 -> 0.003
-    prior_charlson: 0.743 -> -0.141
-  [dose_1 vs ref] OR=1.049 [1.008-1.092] p=0.018
-  [dose_2+ vs ref] OR=1.352 [1.302-1.404] p=9.3e-56
-  [dose_coded_only vs ref] OR=0.891 [0.835-0.951] p=0.00052
-  [rec_remote vs ref] OR=1.173 [1.125-1.223] p=6.7e-14
-  [rec_recent vs ref] OR=1.159 [1.121-1.199] p=8.2e-18
+  adjusted dx OR=0.966 [0.925-1.009] p=0.12
+  adjusted rx OR=1.258 [1.222-1.296] p=7.7e-53
+  matched pairs=47301 exp=0.1545 ctl=0.1445 OR=1.082 [1.044-1.122] mcnemar p=1.5e-05
+    anchor_age: 0.234 -> -0.093
+    n_prior: 0.629 -> 0.008
+    prior_los_total: 0.723 -> 0.012
+    prior_year_n: 0.871 -> 0.006
+    prior_charlson: 0.743 -> -0.106
+  [dose_1 vs ref] OR=1.066 [1.024-1.110] p=0.0017
+  [dose_2+ vs ref] OR=1.397 [1.346-1.450] p=6e-69
+  [dose_coded_only vs ref] OR=0.912 [0.855-0.974] p=0.0057
+  [rec_remote vs ref] OR=1.076 [1.022-1.132] p=0.0052
+  [rec_recent vs ref] OR=1.231 [1.192-1.272] p=5.1e-36
 === stage2 death|hyperlip ===
-  adjusted dx OR=0.823 [0.777-0.871] p=2.6e-11
-  adjusted rx OR=0.783 [0.743-0.826] p=1.9e-19
-  matched pairs=88338 exp=0.0203 ctl=0.0277 OR=0.728 [0.684-0.774] mcnemar p=5.6e-24
-    anchor_age: 0.670 -> -0.091
-    n_prior: 0.618 -> 0.043
-    prior_los_total: 0.546 -> 0.042
-    prior_year_n: 0.884 -> 0.097
-    prior_charlson: 0.916 -> -0.014
-  [dose_1 vs ref] OR=0.785 [0.735-0.838] p=4.5e-13
-  [dose_2+ vs ref] OR=0.749 [0.698-0.804] p=1.3e-15
-  [dose_coded_only vs ref] OR=0.867 [0.789-0.954] p=0.0033
-  [rec_remote vs ref] OR=0.713 [0.660-0.771] p=1.1e-17
-  [rec_recent vs ref] OR=0.804 [0.760-0.850] p=2.5e-14
-=== stage2 icu|uti ===
-  adjusted dx OR=1.077 [1.039-1.116] p=4.2e-05
-  adjusted rx OR=0.846 [0.822-0.871] p=1.4e-29
-  matched pairs=61362 exp=0.1371 ctl=0.1590 OR=0.840 [0.814-0.867] mcnemar p=3.2e-27
-    anchor_age: 0.233 -> -0.075
-    n_prior: 0.711 -> 0.038
-    prior_los_total: 0.721 -> 0.058
-    prior_year_n: 1.103 -> 0.061
-    prior_charlson: 0.657 -> -0.098
-  [dose_1 vs ref] OR=0.854 [0.821-0.888] p=2.3e-15
-  [dose_2+ vs ref] OR=0.842 [0.812-0.874] p=6.4e-20
-  [dose_coded_only vs ref] OR=1.033 [0.977-1.093] p=0.25
-  [rec_remote vs ref] OR=0.899 [0.863-0.937] p=3.8e-07
-  [rec_recent vs ref] OR=0.864 [0.837-0.892] p=9.9e-20
-=== stage2 icu|allergy ===
-  adjusted dx OR=0.982 [0.870-1.108] p=0.77
-  adjusted rx OR=0.874 [0.848-0.902] p=3.3e-17
-  matched pairs=53065 exp=0.1230 ctl=0.1403 OR=0.859 [0.829-0.890] mcnemar p=6.8e-17
-    anchor_age: -0.154 -> -0.005
-    n_prior: 0.678 -> 0.024
-    prior_los_total: 0.678 -> 0.047
-    prior_year_n: 1.023 -> 0.036
-    prior_charlson: 0.318 -> -0.044
-  [dose_1 vs ref] OR=0.922 [0.885-0.961] p=0.00014
-  [dose_2+ vs ref] OR=0.832 [0.800-0.866] p=2.9e-19
-  [dose_coded_only vs ref] OR=0.907 [0.729-1.130] p=0.38
-  [rec_remote vs ref] OR=0.886 [0.846-0.929] p=5.5e-07
-  [rec_recent vs ref] OR=0.868 [0.837-0.900] p=1.3e-14
-=== stage2 unexpected_icu|uti ===
-  adjusted dx OR=1.250 [0.963-1.622] p=0.093
-  adjusted rx OR=0.507 [0.422-0.608] p=2.7e-13
-  matched pairs=2297 exp=0.0818 ctl=0.1284 OR=0.599 [0.493-0.729] mcnemar p=2.5e-07
-    anchor_age: -0.062 -> 0.018
-    n_prior: 0.568 -> 0.036
-    prior_los_total: 0.648 -> 0.076
-    prior_year_n: 1.044 -> 0.042
-    prior_charlson: 0.245 -> -0.093
-  [dose_1 vs ref] OR=0.531 [0.412-0.685] p=1.1e-06
-  [dose_2+ vs ref] OR=0.501 [0.397-0.633] p=6.7e-09
-  [dose_coded_only vs ref] OR=1.340 [0.886-2.026] p=0.17
-  [rec_remote vs ref] OR=0.665 [0.491-0.901] p=0.0084
-  [rec_recent vs ref] OR=0.544 [0.449-0.659] p=5.5e-10
-=== stage2 unexpected_icu|backpain ===
-  adjusted dx OR=0.649 [0.479-0.878] p=0.0051
-  adjusted rx OR=0.688 [0.599-0.789] p=9.8e-08
-  matched pairs=1986 exp=0.1495 ctl=0.1984 OR=0.704 [0.595-0.833] mcnemar p=4.7e-05
-    anchor_age: -0.199 -> 0.091
-    n_prior: 0.672 -> 0.084
-    prior_los_total: 0.659 -> 0.070
-    prior_year_n: 1.158 -> 0.124
-    prior_charlson: 0.232 -> -0.019
-  [dose_1 vs ref] OR=0.817 [0.669-0.998] p=0.048
-  [dose_2+ vs ref] OR=0.632 [0.542-0.737] p=4.5e-09
-  [dose_coded_only vs ref] OR=0.717 [0.355-1.449] p=0.35
-  [rec_remote vs ref] OR=0.648 [0.525-0.798] p=4.7e-05
-  [rec_recent vs ref] OR=0.695 [0.600-0.804] p=1e-06
+  adjusted dx OR=0.841 [0.795-0.890] p=2.6e-09
+  adjusted rx OR=0.717 [0.679-0.757] p=3.3e-33
+  matched pairs=92028 exp=0.0205 ctl=0.0284 OR=0.718 [0.676-0.763] mcnemar p=1.8e-27
+    anchor_age: 0.724 -> -0.063
+    n_prior: 0.460 -> 0.010
+    prior_los_total: 0.521 -> 0.008
+    prior_year_n: 0.647 -> 0.030
+    prior_charlson: 0.928 -> 0.012
+  [dose_1 vs ref] OR=0.718 [0.671-0.769] p=3.6e-21
+  [dose_2+ vs ref] OR=0.685 [0.638-0.737] p=1.8e-24
+  [dose_coded_only vs ref] OR=0.899 [0.824-0.982] p=0.018
+  [rec_remote vs ref] OR=0.718 [0.643-0.802] p=4.8e-09
+  [rec_recent vs ref] OR=0.742 [0.702-0.783] p=6.4e-27
+=== stage2 icu|backpain ===
+  adjusted dx OR=0.890 [0.853-0.928] p=6.6e-08
+  adjusted rx OR=0.880 [0.859-0.903] p=1.2e-23
+  matched pairs=74184 exp=0.1205 ctl=0.1493 OR=0.778 [0.755-0.802] mcnemar p=4.6e-60
+    anchor_age: 0.067 -> -0.045
+    n_prior: 0.635 -> 0.051
+    prior_los_total: 0.768 -> 0.061
+    prior_year_n: 1.037 -> 0.077
+    prior_charlson: 0.434 -> -0.092
+  [dose_1 vs ref] OR=0.926 [0.889-0.964] p=0.0002
+  [dose_2+ vs ref] OR=0.863 [0.841-0.887] p=3.9e-27
+  [dose_coded_only vs ref] OR=0.820 [0.727-0.926] p=0.0014
+  [rec_remote vs ref] OR=0.859 [0.824-0.895] p=4.9e-13
+  [rec_recent vs ref] OR=0.880 [0.857-0.903] p=6.2e-22
+=== stage2 death|hyperten ===
+  adjusted dx OR=0.812 [0.766-0.861] p=3.9e-12
+  adjusted rx OR=0.759 [0.719-0.802] p=2.9e-23
+  matched pairs=87803 exp=0.0162 ctl=0.0229 OR=0.701 [0.654-0.750] mcnemar p=1.9e-24
+    anchor_age: 0.601 -> -0.074
+    n_prior: 0.572 -> 0.024
+    prior_los_total: 0.673 -> 0.033
+    prior_year_n: 0.857 -> 0.097
+    prior_charlson: 0.863 -> -0.032
+  [dose_1 vs ref] OR=0.660 [0.603-0.724] p=6.4e-19
+  [dose_2+ vs ref] OR=0.764 [0.718-0.814] p=6.8e-17
+  [dose_coded_only vs ref] OR=0.857 [0.768-0.956] p=0.0057
+  [rec_remote vs ref] OR=0.740 [0.669-0.820] p=7.4e-09
+  [rec_recent vs ref] OR=0.750 [0.708-0.795] p=2.1e-22
 === stage2 death|anxiety ===
-  adjusted dx OR=1.007 [0.931-1.090] p=0.85
-  adjusted rx OR=1.205 [1.136-1.277] p=3.6e-10
-  matched pairs=76057 exp=0.0211 ctl=0.0188 OR=1.124 [1.046-1.207] mcnemar p=0.0016
-    anchor_age: -0.180 -> 0.074
-    n_prior: 0.676 -> 0.065
-    prior_los_total: 0.635 -> 0.065
-    prior_year_n: 1.036 -> 0.082
-    prior_charlson: 0.191 -> 0.035
-  [dose_1 vs ref] OR=1.080 [0.992-1.175] p=0.076
-  [dose_2+ vs ref] OR=1.267 [1.185-1.354] p=3.8e-12
-  [dose_coded_only vs ref] OR=0.849 [0.714-1.009] p=0.064
-  [rec_remote vs ref] OR=1.039 [0.954-1.130] p=0.38
-  [rec_recent vs ref] OR=1.230 [1.156-1.309] p=7.2e-11
-=== stage2 unexpected_icu|anxiety ===
-  adjusted dx OR=1.076 [0.861-1.346] p=0.52
-  adjusted rx OR=0.663 [0.565-0.777] p=3.7e-07
-  matched pairs=1869 exp=0.1429 ctl=0.1707 OR=0.810 [0.678-0.967] mcnemar p=0.022
-    anchor_age: -0.356 -> 0.022
-    n_prior: 0.698 -> 0.047
-    prior_los_total: 0.690 -> 0.026
-    prior_year_n: 1.192 -> 0.111
-    prior_charlson: 0.114 -> -0.006
-  [dose_1 vs ref] OR=1.018 [0.828-1.252] p=0.86
-  [dose_2+ vs ref] OR=0.497 [0.409-0.605] p=2.7e-12
-  [dose_coded_only vs ref] OR=1.505 [0.940-2.409] p=0.089
-  [rec_remote vs ref] OR=0.789 [0.619-1.006] p=0.055
-  [rec_recent vs ref] OR=0.686 [0.580-0.811] p=1.1e-05
-=== stage2 death|depress ===
-  adjusted dx OR=0.850 [0.791-0.913] p=9.5e-06
-  adjusted rx OR=0.902 [0.854-0.953] p=0.00022
-  matched pairs=89030 exp=0.0209 ctl=0.0237 OR=0.878 [0.824-0.936] mcnemar p=6.1e-05
-    anchor_age: 0.013 -> -0.056
-    n_prior: 0.682 -> 0.067
-    prior_los_total: 0.597 -> 0.058
-    prior_year_n: 0.954 -> 0.076
-    prior_charlson: 0.304 -> -0.025
-  [dose_1 vs ref] OR=0.943 [0.877-1.015] p=0.12
-  [dose_2+ vs ref] OR=0.869 [0.812-0.930] p=4.9e-05
-  [dose_coded_only vs ref] OR=0.879 [0.747-1.034] p=0.12
-  [rec_remote vs ref] OR=0.740 [0.680-0.805] p=2.8e-12
-  [rec_recent vs ref] OR=0.970 [0.914-1.028] p=0.31
+  adjusted dx OR=1.037 [0.959-1.121] p=0.37
+  adjusted rx OR=1.243 [1.172-1.318] p=3.4e-13
+  matched pairs=77754 exp=0.0226 ctl=0.0199 OR=1.138 [1.062-1.219] mcnemar p=0.00027
+    anchor_age: -0.180 -> 0.033
+    n_prior: 0.650 -> 0.046
+    prior_los_total: 0.766 -> 0.050
+    prior_year_n: 1.010 -> 0.070
+    prior_charlson: 0.191 -> -0.013
+  [dose_1 vs ref] OR=1.096 [1.007-1.193] p=0.033
+  [dose_2+ vs ref] OR=1.323 [1.237-1.415] p=4e-16
+  [dose_coded_only vs ref] OR=0.866 [0.728-1.031] p=0.11
+  [rec_remote vs ref] OR=0.856 [0.760-0.965] p=0.011
+  [rec_recent vs ref] OR=1.277 [1.203-1.356] p=1.5e-15
 === stage2 death|asthma_copd ===
-  adjusted dx OR=0.820 [0.743-0.905] p=7.9e-05
-  adjusted rx OR=1.185 [1.112-1.263] p=1.5e-07
-  matched pairs=45106 exp=0.0271 ctl=0.0269 OR=1.007 [0.929-1.092] mcnemar p=0.89
-    anchor_age: 0.234 -> -0.133
-    n_prior: 0.715 -> 0.018
-    prior_los_total: 0.658 -> 0.020
-    prior_year_n: 1.006 -> 0.003
-    prior_charlson: 0.743 -> -0.141
-  [dose_1 vs ref] OR=1.127 [1.037-1.226] p=0.005
-  [dose_2+ vs ref] OR=1.184 [1.093-1.283] p=3.4e-05
-  [dose_coded_only vs ref] OR=0.860 [0.736-1.004] p=0.056
-  [rec_remote vs ref] OR=0.984 [0.896-1.081] p=0.74
-  [rec_recent vs ref] OR=1.197 [1.116-1.285] p=5.9e-07
-=== stage2 unexpected_icu|hyperlip ===
-  adjusted dx OR=1.189 [1.024-1.382] p=0.023
-  adjusted rx OR=1.327 [1.168-1.507] p=1.3e-05
-  matched pairs=2754 exp=0.1964 ctl=0.1685 OR=1.213 [1.055-1.395] mcnemar p=0.0071
-    anchor_age: 0.519 -> -0.043
-    n_prior: 0.568 -> 0.016
-    prior_los_total: 0.535 -> 0.019
-    prior_year_n: 0.839 -> 0.045
-    prior_charlson: 0.626 -> -0.002
-  [dose_1 vs ref] OR=1.312 [1.139-1.511] p=0.00017
-  [dose_2+ vs ref] OR=1.281 [1.053-1.558] p=0.013
-  [dose_coded_only vs ref] OR=0.885 [0.691-1.134] p=0.33
-  [rec_remote vs ref] OR=0.994 [0.798-1.238] p=0.96
-  [rec_recent vs ref] OR=1.272 [1.117-1.449] p=0.00029
+  adjusted dx OR=0.848 [0.769-0.936] p=0.001
+  adjusted rx OR=1.203 [1.129-1.281] p=1e-08
+  matched pairs=47301 exp=0.0277 ctl=0.0270 OR=1.026 [0.949-1.110] mcnemar p=0.52
+    anchor_age: 0.234 -> -0.093
+    n_prior: 0.629 -> 0.008
+    prior_los_total: 0.723 -> 0.012
+    prior_year_n: 0.871 -> 0.006
+    prior_charlson: 0.743 -> -0.106
+  [dose_1 vs ref] OR=1.139 [1.047-1.238] p=0.0024
+  [dose_2+ vs ref] OR=1.224 [1.130-1.325] p=6e-07
+  [dose_coded_only vs ref] OR=0.889 [0.762-1.038] p=0.14
+  [rec_remote vs ref] OR=1.000 [0.890-1.124] p=0.99
+  [rec_recent vs ref] OR=1.204 [1.123-1.290] p=1.7e-07
 === stage2 death|obesity ===
-  adjusted dx OR=0.876 [0.801-0.958] p=0.0037
-  matched pairs=33777 exp=0.0186 ctl=0.0233 OR=0.796 [0.716-0.885] mcnemar p=2.7e-05
-    anchor_age: -0.074 -> -0.005
-    n_prior: 0.675 -> 0.036
-    prior_los_total: 0.592 -> 0.029
-    prior_year_n: 0.912 -> 0.027
-    prior_charlson: 0.395 -> -0.013
-  [dose_coded_only vs ref] OR=0.876 [0.801-0.958] p=0.0037
-  [rec_remote vs ref] OR=0.802 [0.698-0.921] p=0.0018
-  [rec_recent vs ref] OR=0.922 [0.827-1.029] p=0.15
-=== stage2 death|headache ===
-  adjusted dx OR=0.816 [0.702-0.949] p=0.0081
-  adjusted rx OR=0.743 [0.479-1.151] p=0.18
-  matched pairs=17349 exp=0.0116 ctl=0.0139 OR=0.833 [0.691-1.005] mcnemar p=0.063
-    anchor_age: -0.417 -> 0.040
-    n_prior: 0.678 -> 0.034
-    prior_los_total: 0.540 -> 0.031
-    prior_year_n: 0.888 -> 0.044
-    prior_charlson: -0.158 -> 0.018
-  [dose_1 vs ref] OR=0.845 [0.481-1.486] p=0.56
-  [dose_2+ vs ref] OR=0.490 [0.227-1.058] p=0.069
-  [dose_coded_only vs ref] OR=0.841 [0.720-0.981] p=0.028
-  [rec_remote vs ref] OR=0.822 [0.654-1.033] p=0.093
-  [rec_recent vs ref] OR=0.837 [0.695-1.008] p=0.06
-=== stage2 unexpected_icu|allergy ===
-  adjusted dx OR=1.102 [0.551-2.204] p=0.78
-  adjusted rx OR=0.793 [0.661-0.952] p=0.013
-  matched pairs=1874 exp=0.0907 ctl=0.1099 OR=0.798 [0.640-0.995] mcnemar p=0.05
-    anchor_age: -0.316 -> 0.044
-    n_prior: 0.683 -> 0.034
-    prior_los_total: 0.708 -> 0.055
-    prior_year_n: 1.160 -> 0.068
-    prior_charlson: 0.234 -> 0.029
-  [dose_1 vs ref] OR=1.069 [0.846-1.352] p=0.57
-  [dose_2+ vs ref] OR=0.608 [0.479-0.772] p=4.5e-05
-  [rec_remote vs ref] OR=0.928 [0.676-1.275] p=0.65
-  [rec_recent vs ref] OR=0.764 [0.626-0.932] p=0.0081
+  adjusted dx OR=0.887 [0.812-0.970] p=0.0083
+  matched pairs=33759 exp=0.0186 ctl=0.0241 OR=0.769 [0.692-0.854] mcnemar p=1.1e-06
+    anchor_age: -0.074 -> -0.009
+    n_prior: 0.604 -> 0.005
+    prior_los_total: 0.645 -> 0.012
+    prior_year_n: 0.790 -> -0.009
+    prior_charlson: 0.395 -> -0.011
+  [dose_coded_only vs ref] OR=0.887 [0.812-0.970] p=0.0083
+  [rec_remote vs ref] OR=0.847 [0.705-1.017] p=0.076
+  [rec_recent vs ref] OR=0.902 [0.817-0.994] p=0.038
 wrote ail_screen.csv, ail_forest.csv, ail_balance.csv

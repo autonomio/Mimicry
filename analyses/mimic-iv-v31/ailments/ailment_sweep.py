@@ -1,8 +1,9 @@
 """Prior-year common ailments vs serious illness (MIMIC-IV v3.1, s0 only).
 
 Screen: 16 ailments x 3 outcomes (hospital death, any ICU stay,
-elective admission -> ICU transfer). Stage 1: crude + adjusted logistic +
-E-value + BH-FDR. Stage 2 (FDR hits with |OR-1|>0.1 only): adjusted dx/rx
+elective admission -> late (>=24h) ICU transfer). Stage 1: crude +
+adjusted logistic + E-value + BH-FDR. Stage 2 (FDR hits with |OR-1|>0.1
+only): adjusted dx/rx
 decomposition, 1:1 PS matching + balance, dose-response, recency.
 Structured fields only. Aggregates only leave s0.
 
@@ -79,8 +80,17 @@ AIL = {
 }
 
 
+# stems that would otherwise contaminate a class (nystatin is not a statin,
+# aripiprazole is not a PPI, spironolactone is not iron)
+RX_EXCL = {"statin": ["%NYSTATIN%"], "ppi": ["%ARIPIPRAZOLE%"],
+           "ironb12": ["%SPIRONOLACTONE%"]}
+
+
 def rx_cond(cls):
-    return "(" + " OR ".join(f"UPPER(r.drug) LIKE '{s}'" for s in RX[cls]) + ")"
+    base = "(" + " OR ".join(f"UPPER(r.drug) LIKE '{s}'" for s in RX[cls]) + ")"
+    for x in RX_EXCL.get(cls, []):
+        base += f" AND UPPER(r.drug) NOT LIKE '{x}'"
+    return f"({base})"
 
 
 def dx_cond(ail):
@@ -93,7 +103,7 @@ def dx_cond(ail):
 
 RX_SQL = ("SELECT a.hadm_id,\n" + ",\n".join(
     f"  SUM(CASE WHEN {rx_cond(c)} THEN 1 ELSE 0 END) AS rx_{c}_n,\n"
-    f"  MIN(CASE WHEN {rx_cond(c)} THEN r.starttime END) AS rx_{c}_first"
+    f"  MAX(CASE WHEN {rx_cond(c)} THEN r.starttime END) AS rx_{c}_last"
     for c in RX)
     + "\nFROM mimiciv_hosp.admissions a\n"
     "JOIN mimiciv_hosp.prescriptions r ON r.subject_id = a.subject_id\n"
@@ -102,7 +112,7 @@ RX_SQL = ("SELECT a.hadm_id,\n" + ",\n".join(
 
 DX_SQL = ("SELECT a.hadm_id,\n" + ",\n".join(
     f"  MAX(CASE WHEN {dx_cond(a_)} THEN 1 ELSE 0 END) AS dx_{a_},\n"
-    f"  MIN(CASE WHEN {dx_cond(a_)} THEN p.admittime END) AS dx_{a_}_first"
+    f"  MAX(CASE WHEN {dx_cond(a_)} THEN p.admittime END) AS dx_{a_}_last"
     for a_ in AIL)
     + "\nFROM mimiciv_hosp.admissions a\n"
     "JOIN mimiciv_hosp.admissions p ON p.subject_id = a.subject_id\n"
@@ -116,23 +126,39 @@ SELECT a.subject_id, a.hadm_id, a.admittime, a.hospital_expire_flag AS death,
   p.anchor_age, p.gender, a.race, a.insurance, a.admission_type,
   a.admission_location, p.anchor_year_group,
   CASE WHEN s.hadm_id IS NOT NULL THEN 1 ELSE 0 END AS icu,
-  COALESCE(h.n_prior, 0) AS n_prior,
-  COALESCE(h.los_total, 0) AS prior_los_total,
-  h.charlson_max AS prior_charlson,
-  COALESCE(h.year_n, 0) AS prior_year_n,
-  COALESCE(h.px_cardiac,0) AS px_cardiac, COALESCE(h.px_hf,0) AS px_hf,
-  COALESCE(h.px_stroke,0) AS px_stroke, COALESCE(h.px_renal,0) AS px_renal,
-  COALESCE(h.px_copd,0) AS px_copd, COALESCE(h.px_diab,0) AS px_diab,
-  COALESCE(h.px_onc,0) AS px_onc, COALESCE(h.px_sepsis,0) AS px_sepsis,
-  COALESCE(h.px_liver,0) AS px_liver
+  s.icu_first AS icu_first,
+  COALESCE(u.n_prior, 0) AS n_prior,
+  COALESCE(u.los_total, 0) AS prior_los_total,
+  ch.charlson_max AS prior_charlson,
+  COALESCE(u.year_n, 0) AS prior_year_n,
+  COALESCE(x.px_cardiac,0) AS px_cardiac, COALESCE(x.px_hf,0) AS px_hf,
+  COALESCE(x.px_stroke,0) AS px_stroke, COALESCE(x.px_renal,0) AS px_renal,
+  COALESCE(x.px_copd,0) AS px_copd, COALESCE(x.px_diab,0) AS px_diab,
+  COALESCE(x.px_onc,0) AS px_onc, COALESCE(x.px_sepsis,0) AS px_sepsis,
+  COALESCE(x.px_liver,0) AS px_liver
 FROM mimiciv_hosp.admissions a
 JOIN mimiciv_hosp.patients p USING (subject_id)
-LEFT JOIN (SELECT DISTINCT hadm_id FROM mimiciv_icu.icustays) s USING (hadm_id)
+LEFT JOIN (SELECT hadm_id, MIN(intime) AS icu_first
+           FROM mimiciv_icu.icustays GROUP BY 1) s USING (hadm_id)
 LEFT JOIN (
   SELECT b.hadm_id, COUNT(*) AS n_prior,
     COALESCE(SUM(date_diff('day', p.admittime, p.dischtime)), 0) AS los_total,
-    MAX(c.charlson_comorbidity_index) AS charlson_max,
-    SUM(CASE WHEN p.admittime >= b.admittime - INTERVAL 1 YEAR THEN 1 ELSE 0 END) AS year_n,
+    SUM(CASE WHEN p.admittime >= b.admittime - INTERVAL 1 YEAR THEN 1 ELSE 0 END) AS year_n
+  FROM mimiciv_hosp.admissions b
+  JOIN mimiciv_hosp.admissions p
+    ON p.subject_id = b.subject_id AND p.admittime < b.admittime
+  GROUP BY 1
+) u USING (hadm_id)
+LEFT JOIN (
+  SELECT b.hadm_id, MAX(c.charlson_comorbidity_index) AS charlson_max
+  FROM mimiciv_hosp.admissions b
+  JOIN mimiciv_hosp.admissions p
+    ON p.subject_id = b.subject_id AND p.admittime < b.admittime
+  LEFT JOIN mimiciv_derived.charlson c ON c.hadm_id = p.hadm_id
+  GROUP BY 1
+) ch USING (hadm_id)
+LEFT JOIN (
+  SELECT b.hadm_id,
     MAX(CASE WHEN (d.icd_version = 9 AND LEFT(d.icd_code,3) BETWEEN '410' AND '414'
                     OR d.icd_version = 10 AND LEFT(d.icd_code,3) BETWEEN 'I20' AND 'I25')
              THEN 1 ELSE 0 END) AS px_cardiac,
@@ -163,10 +189,9 @@ LEFT JOIN (
   FROM mimiciv_hosp.admissions b
   JOIN mimiciv_hosp.admissions p
     ON p.subject_id = b.subject_id AND p.admittime < b.admittime
-  LEFT JOIN mimiciv_derived.charlson c ON c.hadm_id = p.hadm_id
   LEFT JOIN mimiciv_hosp.diagnoses_icd d ON d.hadm_id = p.hadm_id
   GROUP BY 1
-) h USING (hadm_id)
+) x USING (hadm_id)
 ORDER BY hadm_id
 """
 
@@ -245,13 +270,14 @@ def ps_match(d, Xc, ycol, ecol):
     rng = np.random.default_rng(42)
     pairs = []
     for i in rng.permutation(exp_idx):
-        j = np.searchsorted(ps_sorted, ps[i])
+        lo = np.searchsorted(ps_sorted, ps[i] - cal)
+        hi = np.searchsorted(ps_sorted, ps[i] + cal, side="right")
         best, best_d = -1, cal
-        for k in range(max(0, j - 200), min(len(ctl_sorted), j + 200)):
+        for k in range(lo, hi):
             if used[k]:
                 continue
             dd = abs(ps_sorted[k] - ps[i])
-            if dd <= cal and dd < best_d:
+            if dd < best_d:
                 best, best_d = k, dd
         if best >= 0:
             used[best] = True
@@ -294,25 +320,32 @@ def main():
     df = df.merge(rx, on="hadm_id", how="left").merge(dx, on="hadm_id",
                                                       how="left")
     df["admittime"] = pd.to_datetime(df["admittime"])
+    df["icu_first"] = pd.to_datetime(df["icu_first"])
+    # Unexpected ICU transfer: elective admission whose FIRST ICU stay starts
+    # >=24h after admission (excludes planned post-op and direct ICU).
+    df["late_icu"] = ((df["icu"] == 1) &
+                      (df["icu_first"] >= df["admittime"] +
+                       pd.Timedelta(hours=24))).astype(int)
 
     # per-ailment flags: dx / rx fills / either / days_since
     for ail, (_, _, classes) in AIL.items():
         df[f"dx_{ail}"] = df[f"dx_{ail}"].fillna(0).astype(int)
         nfill = np.zeros(len(df))
-        flist = [pd.to_datetime(df[f"dx_{ail}_first"])]
+        flist = [pd.to_datetime(df[f"dx_{ail}_last"])]
         for c in classes:
             nfill = nfill + df[f"rx_{c}_n"].fillna(0).to_numpy()
-            flist.append(pd.to_datetime(df[f"rx_{c}_first"]))
+            flist.append(pd.to_datetime(df[f"rx_{c}_last"]))
         df[f"rxn_{ail}"] = nfill
         df[f"rx_{ail}"] = (nfill > 0).astype(int)
-        anyf = pd.concat(flist, axis=1).min(axis=1)
+        anyf = pd.concat(flist, axis=1).max(axis=1)
         df[f"either_{ail}"] = ((df[f"dx_{ail}"] == 1) |
                                (df[f"rx_{ail}"] == 1)).astype(int)
         ds = (df["admittime"] - pd.to_datetime(anyf)).dt.days
         df[f"ds_{ail}"] = ds.where(df[f"either_{ail}"] == 1, 9999)
     print(f"admissions: {len(df)}, deaths: {int(df.death.sum())}, "
           f"icu: {int(df.icu.sum())}, elective: "
-          f"{int((df.admission_type == 'ELECTIVE').sum())}", flush=True)
+          f"{int((df.admission_type == 'ELECTIVE').sum())}, late_icu: "
+          f"{int(df.late_icu.sum())}", flush=True)
     for ail in AIL:
         e = df[f"either_{ail}"]
         print(f"  {ail}: prev={e.mean():.4f} "
@@ -322,7 +355,7 @@ def main():
     pops = {
         "death": (df, "death"),
         "icu": (df, "icu"),
-        "unexpected_icu": (df[df["admission_type"] == "ELECTIVE"], "icu"),
+        "unexpected_icu": (df[df["admission_type"] == "ELECTIVE"], "late_icu"),
     }
     popdat = {}
     for oname, (pdf, ycol) in pops.items():
