@@ -1,0 +1,12 @@
+unit,n_test,ovr_auc
+Cardiac Vascular Intensive Care Unit (CVICU),2640,0.9245
+Coronary Care Unit (CCU),1962,0.8392
+Medical Intensive Care Unit (MICU),3732,0.8096
+Medical/Surgical Intensive Care Unit (MICU/SICU),2818,0.799
+Neuro Intermediate,1080,0.9626
+Neuro Stepdown,267,0.9609
+Neuro Surgical Intensive Care Unit (Neuro SICU),328,0.8816
+OTHER_UNIT,24,0.8898
+Surgery/Vascular/Intermediate,24,0.9794
+Surgical Intensive Care Unit (SICU),2313,0.7861
+Trauma SICU (TSICU),1861,0.792
