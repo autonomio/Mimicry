@@ -27,9 +27,10 @@ complaint) would be needed for the ED leg itself and requires its own DUA.
 ## The triage moment as a whole (feature blocks)
 
 - **Presentation**: age/gender/race/insurance/language/marital, admission
-  type/location, admitting provider experience. Anchor year group is used
-  for era cross-tabs only, never as a model feature (era leaks secular
-  drift and is not prospectively usable).
+  type/location, admitting provider all-time volume (no cross-patient
+  dates: per-patient shifts make "prior" unknowable). Anchor year group
+  is used for era cross-tabs only, never as a model feature (era leaks
+  secular drift and is not prospectively usable).
 - **Structured history**: prior admission/ICU counts, prior LOS, days since
   discharge, prior-year utilization, prior Charlson max, 9 prior-dx bucket
   flags (cardiac/heart-failure/stroke/renal/COPD/diabetes/onc/sepsis/liver),
@@ -61,8 +62,10 @@ weekdays are exactly uniform). Time-of-day survives (lab draws show the real
 - **Operational rhythms**: direct-ICU rate collapses at midnight (~0.35),
   runs ~0.8 overnight, dips mid-morning/mid-afternoon; CVICU share halves
   at night (scheduled surgery is daytime) while MICU rises.
-- **Practice drift**: direct-ICU rate fell 0.70 → 0.61 from 2008–2010 to
-  2017–2019 — admissions increasingly via floor/boarding over the years.
+- **Practice drift** (first observed admission per patient, n=65,366 —
+  anchor era is patient-fixed so readmissions would mis-slot): direct-ICU
+  rate fell 0.69 → 0.61 from 2008–2010 to 2017–2019, rebounding to 0.62
+  in 2020–2022 — admissions increasingly via floor/boarding over the years.
 
 ## Run
 

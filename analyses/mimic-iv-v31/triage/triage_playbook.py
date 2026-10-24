@@ -7,7 +7,7 @@ diagnoses via ICD prefixes, DRG via code, nothing else).
 
 Feature blocks (all structured):
   PRESENT: age/gender/race/insurance/language/marital, admission type/location,
-    provider experience, current-admission dx buckets + Charlson
+    provider all-time volume (no cross-patient dates), current dx + Charlson
     + HCFA-DRG(top30) + APR severity/mortality (retrospective descriptors).
   HISTORY: prior admissions/ICU counts, prior LOS, days since discharge,
     prior-year utilization, prior Charlson max, 9 prior-dx bucket flags,
@@ -156,15 +156,18 @@ plabs AS (
    AND l.itemid IN (50813, 50912)
   GROUP BY 1
 ),
+-- Provider volume WITHOUT any cross-patient timestamp comparison: per-patient
+-- date shifts destroy cross-patient chronology, so "prior" admissions by this
+-- provider are unknowable. All-time volume is shift-proof.
 prov AS (
   SELECT b.stay_id,
     CASE WHEN ANY_VALUE(b.admit_provider_id) IS NULL THEN NULL
-         ELSE COUNT(p2.hadm_id) END AS prov_n_prior,
+         ELSE COUNT(p2.hadm_id) END AS prov_n_all,
     MAX(CASE WHEN b.admit_provider_id IS NULL THEN 1 ELSE 0 END) AS prov_null
   FROM base b
   LEFT JOIN mimiciv_hosp.admissions p2
     ON b.admit_provider_id IS NOT NULL
-   AND p2.admit_provider_id = b.admit_provider_id AND p2.admittime < b.admittime
+   AND p2.admit_provider_id = b.admit_provider_id
   GROUP BY 1
 )
 SELECT b.stay_id, COALESCE(u.n_prior_adm, 0) AS n_prior_adm,
@@ -178,7 +181,7 @@ SELECT b.stay_id, COALESCE(u.n_prior_adm, 0) AS n_prior_adm,
   COALESCE(d.px_onc, 0) AS px_onc, COALESCE(d.px_sepsis, 0) AS px_sepsis,
   COALESCE(d.px_liver, 0) AS px_liver,
   COALESCE(r.n_prior_proc, 0) AS n_prior_proc,
-  l.prior_lact_max, l.prior_creat_max, v.prov_n_prior, v.prov_null
+  l.prior_lact_max, l.prior_creat_max, v.prov_n_all, v.prov_null
 FROM base b
 LEFT JOIN util u USING (stay_id)
 LEFT JOIN since s USING (stay_id)
@@ -249,7 +252,7 @@ ORDER BY 1
 
 CATS = ["gender", "admission_type", "admission_location", "insurance",
         "language", "marital_status", "race", "drg_top30"]
-NUM = ["anchor_age", "prov_n_prior", "prov_null",
+NUM = ["anchor_age", "prov_n_all", "prov_null",
        "n_prior_adm", "n_prior_icu", "prior_los_total", "prior_los_max",
        "days_since_last", "prior_year_n", "prior_charlson_max",
        "px_cardiac", "px_hf", "px_stroke", "px_renal", "px_copd", "px_diab",
@@ -259,10 +262,10 @@ NUM = ["anchor_age", "prov_n_prior", "prov_null",
        "dx_onc", "dx_sepsis", "dx_liver", "charlson_now", "apr_sev", "apr_mort",
        "hour", "night"]
 MISS = ["days_since_last", "prior_charlson_max", "prior_lact_max",
-        "prior_creat_max", "prov_n_prior", "apr_sev", "apr_mort"]
+        "prior_creat_max", "prov_n_all", "apr_sev", "apr_mort"]
 PRESENT = ["anchor_age", "prov_null", "gender", "admission_type",
            "admission_location", "insurance", "language", "marital_status",
-           "race", "prov_n_prior", "dx_cardiac", "dx_hf", "dx_stroke",
+           "race", "prov_n_all", "dx_cardiac", "dx_hf", "dx_stroke",
            "dx_renal", "dx_copd", "dx_diab", "dx_onc", "dx_sepsis", "dx_liver",
            "charlson_now", "drg_top30", "apr_sev", "apr_mort"]
 
@@ -288,7 +291,7 @@ def main():
           f"({len(rare)} rare grouped)", flush=True)
     top30 = set(df["drg_hcfa"].value_counts().head(30).index)
     df["drg_top30"] = df["drg_hcfa"].where(df["drg_hcfa"].isin(top30), "OTHER")
-    df.loc[df["prov_null"] == 1, "prov_n_prior"] = np.nan
+    df.loc[df["prov_null"] == 1, "prov_n_all"] = np.nan
     for c in MISS:
         df[f"miss_{c}"] = df[c].isna().astype(int)
     num_cols = list(NUM) + [f"miss_{c}" for c in MISS]
@@ -361,7 +364,13 @@ def main():
     by_night = df.groupby("night")["direct6h"].agg(["mean", "count"]).reset_index()
     by_night.columns = ["night", "direct_rate", "n"]
     by_night.to_csv(OUT + "triage_direct_by_night.csv", index=False)
-    by_year = df.groupby("anchor_year_group")["direct6h"].agg(["mean", "count"]).reset_index()
+    # Era drift on first-observed-admission per patient only: anchor_year_group
+    # is patient-fixed, so later readmissions would land in the wrong era.
+    first_only = df.sort_values("admittime").groupby("subject_id").head(1)
+    print(f"era tab: {len(first_only)} first admissions "
+          f"of {len(df)} stays", flush=True)
+    by_year = first_only.groupby("anchor_year_group")["direct6h"].agg(
+        ["mean", "count"]).reset_index()
     by_year.columns = ["anchor_year_group", "direct_rate", "n"]
     by_year.to_csv(OUT + "triage_direct_by_year.csv", index=False)
     mix = df.groupby(["night", "unit"], observed=True).size().unstack(fill_value=0)

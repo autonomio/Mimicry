@@ -3,7 +3,7 @@
 -- Aggregates only. Drug strings used only as dictionary labels.
 CREATE TEMP TABLE priorx AS
 SELECT a.hadm_id, a.hospital_expire_flag AS died,
-       CASE WHEN s.hadm_id IS NOT NULL THEN 1 ELSE 0 END AS icu, r.gsn
+       CASE WHEN s.hadm_id IS NOT NULL THEN 1 ELSE 0 END AS icu, TRIM(r.gsn) AS gsn
 FROM mimiciv_hosp.admissions a
 LEFT JOIN (SELECT DISTINCT hadm_id FROM mimiciv_icu.icustays) s USING (hadm_id)
 JOIN mimiciv_hosp.admissions p
@@ -18,9 +18,9 @@ FROM (SELECT hadm_id, COUNT(DISTINCT gsn) AS cnt FROM priorx GROUP BY 1);
 SELECT 'Q3_gsn' AS q, gsn, COUNT(DISTINCT hadm_id) AS nadm
 FROM priorx GROUP BY 1, 2 ORDER BY nadm DESC, gsn;
 WITH label_ct AS (
-  SELECT gsn, TRIM(LOWER(drug)) AS d, COUNT(*) AS c
+  SELECT TRIM(gsn) AS gsn, TRIM(LOWER(drug)) AS d, COUNT(*) AS c
   FROM mimiciv_hosp.prescriptions
-  WHERE gsn IN (SELECT DISTINCT gsn FROM priorx)
+  WHERE TRIM(gsn) IN (SELECT DISTINCT gsn FROM priorx)
   GROUP BY 1, 2
 )
 SELECT 'Q3b_labels' AS q, gsn, d AS label FROM (
