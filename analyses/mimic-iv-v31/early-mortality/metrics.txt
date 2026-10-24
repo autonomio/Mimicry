@@ -1,0 +1,33 @@
+cohort: 84703 stays, events: 9270 (0.109)
+train: 67762 (events 7416), test: 16941 (events 1854)
+AUC: 0.8377
+AP:  0.4725 (base rate 0.1094)
+decile,n,events,rate
+0,1694,6,0.0035
+1,1694,19,0.0112
+2,1694,41,0.0242
+3,1694,45,0.0266
+4,1694,81,0.0478
+5,1694,104,0.0614
+6,1694,155,0.0915
+7,1694,241,0.1423
+8,1694,347,0.2048
+9,1694,815,0.4811
+most negative coef:
+  first_careunit_Cardiac Vascular Intensive Care Unit (CVICU): -1.735
+  admission_type_SURGICAL SAME DAY ADMISSION: -1.482
+  first_careunit_Neuro Stepdown: -1.198
+  first_careunit_Neuro Intermediate: -1.051
+  admission_type_ELECTIVE: -0.927
+  gcs_med: -0.791
+  gender_F: -0.778
+  gender_M: -0.751
+most positive coef:
+  first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU): +1.309
+  anchor_age: +0.483
+  first_careunit_Intensive Care Unit (ICU): +0.417
+  first_careunit_Surgery/Vascular/Intermediate: +0.375
+  lactate_med: +0.329
+  first_careunit_Medical/Surgical Intensive Care Unit (MICU/SICU): +0.230
+  admission_type_URGENT: +0.226
+  rr_med: +0.224
