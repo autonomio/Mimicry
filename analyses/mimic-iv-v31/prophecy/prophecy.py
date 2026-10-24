@@ -219,8 +219,8 @@ WHERE stay_id IN ({mstays})
         print(f"[discont {sig}] dnr n={len(d)} slope {d['pre'].median():.3f}"
               f"->{d['post'].median():.3f} p={w:.2g} levelΔ={dl:.2f} | "
               f"ctl n={len(c)} slopeΔ={cc:.3f} levelΔ={cl:.2f}", flush=True)
-        d.to_csv(f"{OUT}pr_slope_dnr_{sig}.csv", index=False)
-        c.to_csv(f"{OUT}pr_slope_ctl_{sig}.csv", index=False)
+        d.drop(columns=["stay_id"]).to_csv(f"{OUT}pr_slope_dnr_{sig}.csv", index=False)
+        c.drop(columns=["stay_id"]).to_csv(f"{OUT}pr_slope_ctl_{sig}.csv", index=False)
 
     # ---- C+D. full-code prediction + chart baseline ----
     con = duckdb.connect(DB, read_only=True)
