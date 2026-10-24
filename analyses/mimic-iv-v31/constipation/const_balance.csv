@@ -1,0 +1,11 @@
+exposure,covariate,smd_before,smd_after
+either,anchor_age,0.227,-0.102
+either,n_prior,0.728,0.06
+either,prior_los_total,0.668,0.065
+either,prior_year_n,1.149,0.054
+either,prior_charlson,0.585,-0.04
+coded,anchor_age,0.169,-0.088
+coded,n_prior,0.787,0.066
+coded,prior_los_total,0.73,0.047
+coded,prior_year_n,1.139,0.072
+coded,prior_charlson,0.638,-0.117
