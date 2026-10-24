@@ -94,7 +94,21 @@ Every headline above, attacked:
 - **Unit-rate IV** (first-stage F=1614, correct 2SLS SEs):
   direction confirmed, magnitude not credible (risk-diff 0.78
   [0.73-0.84] vs OLS 0.21) — LATE on marginal patients plus
-  residual unit case-mix. Reported as direction-only.
+  residual unit case-mix. Superseded by the physician IV below.
+- **Physician-leniency IV** (`iv_physician.py`): admitting
+  provider's leave-one-out DNR rate instruments DNR<48h, within
+  unit fixed effects + rich controls (186 providers with 50+
+  stays, n=35,860). First stage F=243 (DNR rate 3% -> 21%
+  across IV quintiles); within-unit balance <= 0.06 SD on
+  age/SOFA/sepsis/labs. **Causal risk-diff 0.36 [0.23-0.49]**
+  vs OLS 0.19 — the decision itself kills, beyond indication.
+  By SOFA tertile the causal gradient INVERTS the associational
+  one: low 0.26 [0.10-0.41], mid 0.31 [0.11-0.51], high 0.73
+  [0.39-1.07]. Where physiology screams, the decision is often
+  pivotal (withdrawal from a salvageable patient); where SOFA
+  says "fine," the DNR mostly marks devastating non-SOFA
+  pathology already doing the work. Night admission has no
+  first stage (F=5) and is discarded as an instrument.
 - **Discontinuity** (matched DNR stays, decedent-only controls —
   both arms conditioned on death; adjusted for pre-slope,
   pre-level, SOFA, age, sepsis): HR coef -1.52 (p=2e-09),
@@ -119,11 +133,13 @@ Every headline above, attacked:
 ![cv auc](adv_auc.png)
 
 Net: the central numbers survive matching, placebos,
-cross-validation, and case-mix scrutiny. The IV magnitude fails
-credibility (reported honestly). The survivor falsification is
-weaker than first reported (survivors break a little too), and
-the honest bootstrap shows the FC gap at every horizon — the
-prophecy contribution is real but bounded at ~0.05 AUC.
+cross-validation, and case-mix scrutiny. The unit IV magnitude
+fails credibility (kept as a cautionary exhibit); the physician
+IV replaces it with a credible +36pp causal estimate. The
+survivor falsification is weaker than first reported (survivors
+break a little too), and the honest bootstrap shows the FC gap
+at every horizon — the prophecy contribution is real but bounded
+at ~0.05 AUC.
 
 ## Reproduce
 

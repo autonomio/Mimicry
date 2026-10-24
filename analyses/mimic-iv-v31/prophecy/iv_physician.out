@@ -1,0 +1,40 @@
+loading B sample + provider + night...
+stays: 94458
+===== providers with 50+ stays: 186 providers, n=35860 =====
+  IV spread: p10=0.008 med=0.127 p90=0.220
+  balance within-unit (IV resid above/below median):
+    age: Δ=0.806 (+0.050 SD) p=1.7e-06
+    sofa24: Δ=0.097 (+0.029 SD) p=0.004
+    sofa48: Δ=0.143 (+0.043 SD) p=2.3e-05
+    sepsis: Δ=0.028 (+0.057 SD) p=1.5e-08
+    lac: Δ=-0.002 (-0.001 SD) p=0.9
+    crea: Δ=0.075 (+0.051 SD) p=8.3e-07
+  OLS risk-diff: 0.189 [0.174-0.203]
+  reduced form (death ~ IV): 0.168 p=1.2e-07
+  [provider-IV50] first-stage F=243.0 IV=0.357 [0.228-0.487]
+  first-stage gradient (IV quintile -> DNR rate): [0.026, 0.081, 0.123, 0.182, 0.208]
+  night first-stage F=5.0 (DNR|night=0.126 vs day=0.118) — too weak, provider IV only
+    tert lo: n=13476 DNR rate=0.086 death=0.054
+  [tert-lo] first-stage F=98.3 IV=0.255 [0.097-0.414]
+    tert mid: n=12300 DNR rate=0.132 death=0.115
+/tmp/iv_physician.py:63: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+  fs = sm.OLS(d.values, X1).fit()
+/tmp/iv_physician.py:69: SingularMatrixWarning: The design matrix is rank-deficient. The model parameters are not uniquely determined.
+  s2 = sm.OLS(y.values, Xh).fit()
+  [tert-mid] first-stage F=94.2 IV=0.309 [0.113-0.506]
+    tert hi: n=10084 DNR rate=0.158 death=0.294
+  [tert-hi] first-stage F=56.7 IV=0.732 [0.392-1.071]
+===== providers with 20+ stays: 341 providers, n=40782 =====
+  IV spread: p10=0.014 med=0.125 p90=0.220
+  balance within-unit (IV resid above/below median):
+    age: Δ=0.694 (+0.043 SD) p=1.1e-05
+    sofa24: Δ=0.073 (+0.022 SD) p=0.021
+    sofa48: Δ=0.093 (+0.028 SD) p=0.0034
+    sepsis: Δ=0.026 (+0.053 SD) p=2.8e-08
+    lac: Δ=0.005 (+0.004 SD) p=0.68
+    crea: Δ=0.076 (+0.050 SD) p=1.9e-07
+  OLS risk-diff: 0.188 [0.175-0.202]
+  reduced form (death ~ IV): 0.197 p=3.9e-12
+  [provider-IV20] first-stage F=262.9 IV=0.459 [0.331-0.588]
+  first-stage gradient (IV quintile -> DNR rate): [0.03, 0.085, 0.133, 0.172, 0.197]
+done
