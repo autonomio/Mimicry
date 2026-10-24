@@ -31,6 +31,14 @@ Only aggregate metrics are printed; no row-level data leaves s0.
 - Largest risk coefficients: Neuro SICU, age, lactate, medical ICU;
   most protective: CVICU, surgical same-day/elective admission, high GCS.
 
+## Model choice (2026-10-24): logreg is the reference
+
+HGB wins on raw metrics (+0.023 AUC), but logreg stays the reference model:
+directly interpretable coefficients, trivially deployable and auditable, and
+already well calibrated — more bang for buck. HGB is retained in v1 as the
+nonlinear benchmark to beat. Tuning (regularization path, feature engineering,
+more labs, additional landmarks) happens on logreg.
+
 ## v1 (`early_mortality_v1.py`, `metrics_v1.txt`)
 
 - **logreg**: AUC 0.8358, AP 0.4528, Brier 0.0769.
