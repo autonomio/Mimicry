@@ -17,9 +17,9 @@ PRETTY = {"respiration": "Respiratory", "coagulation": "Coagulation",
           "renal": "Renal"}
 
 
-def load(name):
+def load(name, min_n=500):
     t = pd.read_csv(f"of_traj_{name}.csv").sort_values("bin")
-    t = t[t["n"] >= 500]
+    t = t[t["n"] >= min_n]
     t["hbd"] = -t["bin"]
     return t
 
@@ -34,7 +34,7 @@ for o in ORGANS:
 ax.axvline(0, color="k", lw=1)
 ax.set_xlabel("Hours before death")
 ax.set_ylabel("Mean SOFA subscore")
-ax.set_title("Organ dysfunction trajectories before death (n=9,438 ICU "
+ax.set_title("Organ dysfunction trajectories before death (n=8,534 ICU "
              "decedents)")
 ax.legend(fontsize=8, ncol=2)
 fig.tight_layout()
@@ -74,8 +74,8 @@ print("wrote of_first.png")
 p = pd.read_csv("of_precedence_thr3.csv")
 m = pd.DataFrame(0.5, index=ORGANS, columns=ORGANS, dtype=float)
 for _, r in p.iterrows():
-    m.loc[r["a"], r["b"]] = r["p_a_first"]
-    m.loc[r["b"], r["a"]] = r["p_b_first"]
+    m.loc[r["a"], r["b"]] = r["p_a_first_notie"]
+    m.loc[r["b"], r["a"]] = r["p_b_first_notie"]
 fig, ax = plt.subplots(figsize=(6.5, 5.5))
 im = ax.imshow(m.values, cmap="RdBu_r", vmin=0, vmax=1)
 ax.set_xticks(range(6))
@@ -103,7 +103,7 @@ for ax, files, title in [
         (axes[1], ["age65p", "ageu65"], "Age 65+ vs <65"),
         (axes[2], ["fullcode", "dec"], "Full-code vs all decedents")]:
     for f in files:
-        t = load(f)
+        t = load(f, min_n=100 if f == "fullcode" else 500)
         ax.plot(t["hbd"], t["sofa"], label=f)
     ax.set_title(title)
     ax.set_xlabel("Hours before death")

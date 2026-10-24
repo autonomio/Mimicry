@@ -45,8 +45,12 @@ WHERE i.stay_id IN (
                       pd.to_datetime(stays["intime"])).dt.total_seconds() / 3600
     stays["death_h"] = (pd.to_datetime(stays["deathtime"]) -
                         pd.to_datetime(stays["intime"])).dt.total_seconds() / 3600
+    stays["disch_death_h"] = (
+        pd.to_datetime(stays["deathtime"]) -
+        pd.to_datetime(stays["outtime"])).dt.total_seconds() / 3600
     dec = stays[(stays["died"] == 1) & stays["death_h"].notna() &
-                (stays["death_h"] >= 0)].copy()
+                (stays["death_h"] >= 0) &
+                (stays["disch_death_h"] <= 72)].copy()
     print(f"terminal stays: {len(stays)}, decedents: {len(dec)}, "
           f"los>=48h: {int((dec['los_h'] >= 48).sum())}", flush=True)
 
@@ -77,7 +81,8 @@ SELECT stay_id, MIN(charttime) AS rrt_t
 FROM mimiciv_derived.rrt
 WHERE stay_id IN ({ids}) AND dialysis_active = 1 GROUP BY 1""").fetchdf()
     code = con.execute(f"""
-SELECT stay_id, MIN(CASE WHEN dnr = 1 OR cmo = 1 THEN charttime END) AS dnr_t
+SELECT stay_id, MIN(CASE WHEN dnr = 1 OR cmo = 1 THEN charttime END) AS dnr_t,
+  COUNT(*) AS code_n
 FROM mimiciv_derived.code_status WHERE stay_id IN ({ids}) GROUP BY 1""").fetchdf()
     # survivor sample for trajectory control
     surv_ids = con.execute("""
@@ -110,8 +115,15 @@ WHERE s.stay_id IN ({sids})""").fetchdf()
     # early-DNR flag: dnr/cmo >24h before death
     d["early_dnr"] = ((d["dnr_t_h"].notna()) &
                       (d["dnr_t_h"] < d["death_h"] - 24)).astype(int)
+    # strict full-code: code-status charted AND never DNR/CMO (missing
+    # code-status stays are unknown, not full-code)
+    d["fullcode"] = (d["dnr_t_h"].isna() &
+                     d["code_n"].fillna(0).gt(0)).astype(int)
     print(f"early-DNR stays: {int(d['early_dnr'].sum())} "
-          f"({d['early_dnr'].mean():.3f})", flush=True)
+          f"({d['early_dnr'].mean():.3f}), strict full-code: "
+          f"{int(d['fullcode'].sum())} ({d['fullcode'].mean():.3f}), "
+          f"missing code-status: "
+          f"{int(d['code_n'].isna().sum())}", flush=True)
     prim = d[d["los_h"] >= 48].copy()
     print(f"PRIMARY cohort (los>=48h): {len(prim)}, sepsis="
           f"{int(prim['sepsis'].sum())}, age65+="
@@ -120,8 +132,10 @@ WHERE s.stay_id IN ({sids})""").fetchdf()
     for thr in [3, 2]:
         tag = f"thr{thr}"
         print(f"===== threshold >={thr} =====", flush=True)
-        # onset hour per organ per stay
-        so = sofa.merge(d[["stay_id", "death_h"]], on="stay_id")
+        # onset hour per organ per stay (PRIMARY los>=48h cohort, so
+        # prevalence, first-organ, precedence and sequences share one
+        # population)
+        so = sofa.merge(prim[["stay_id", "death_h"]], on="stay_id")
         so = so[so["hr"] <= so["death_h"]]
         onsets = {}
         for o in ORGANS:
@@ -177,10 +191,15 @@ WHERE s.stay_id IN ({sids})""").fetchdf()
                       f"P({SHORT[a]} first)={pab:.3f} "
                       f"P({SHORT[b]} first)={pba:.3f} tie24={tie:.3f} "
                       f"median_lead_h={med:.1f}", flush=True)
+                denom = pab + pba
+                na = round(pab / denom, 4) if denom else None
+                nb = round(pba / denom, 4) if denom else None
                 prec.append([a, b, n, round(pab, 4), round(pba, 4),
-                             round(tie, 4), round(med, 1) if med == med else None])
+                             round(tie, 4), na, nb,
+                             round(med, 1) if med == med else None])
         pd.DataFrame(prec, columns=["a", "b", "n_both", "p_a_first",
                                     "p_b_first", "tie24",
+                                    "p_a_first_notie", "p_b_first_notie",
                                     "median_lead_h"]).to_csv(
             f"{OUT}of_precedence_{tag}.csv", index=False)
 
@@ -225,7 +244,7 @@ WHERE s.stay_id IN ({sids})""").fetchdf()
 
     # ---- death-aligned trajectories (6h bins, -168..0) ----
     so = sofa.merge(d[["stay_id", "death_h", "sepsis", "anchor_age",
-                       "early_dnr"]], on="stay_id")
+                       "early_dnr", "fullcode"]], on="stay_id")
     so = so[so["hr"] <= so["death_h"]]
     so["hbd"] = so["death_h"] - so["hr"]
     so = so[so["hbd"] <= 168]
@@ -237,7 +256,7 @@ WHERE s.stay_id IN ({sids})""").fetchdf()
                       ("nonsepsis", so["sepsis"] == 0),
                       ("age65p", so["anchor_age"] >= 65),
                       ("ageu65", so["anchor_age"] < 65),
-                      ("fullcode", so["early_dnr"] == 0)]:
+                      ("fullcode", so["fullcode"] == 1)]:
         g = so[mask].groupby("bin")[ORGANS + ["sofa"]].mean().round(3)
         g["n"] = so[mask].groupby("bin")["stay_id"].nunique()
         g.to_csv(f"{OUT}of_traj_{grp}.csv")
@@ -281,6 +300,10 @@ WHERE s.stay_id IN ({sids})""").fetchdf()
         if len(g96) == 0 or len(g24) == 0:
             continue
         r96, r24 = g96.iloc[-1], g24.iloc[-1]
+        # require fresh rows near both cutoffs (no stale discharge score
+        # reused at -96h and -24h)
+        if r24["hr"] < dh - 48 or r96["hr"] < dh - 120:
+            continue
         any_inc = int(any(r24[o] > r96[o] for o in ORGANS))
         vv.append((sid, r96["sofa"], r24["sofa"], any_inc))
     vv = pd.DataFrame(vv, columns=["stay_id", "s96", "s24", "any_inc"])

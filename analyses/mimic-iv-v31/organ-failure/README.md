@@ -1,47 +1,51 @@
 # In what order do organs fail before death
 
-Terminal ICU stays of 9,438 hospital decedents (deathtime known);
-primary cohort ICU LOS >= 48h (n=5,709, 83% septic). Organ failure =
-SOFA subscore (trailing-24h, hourly) first reaching >= 3, sensitivity
->= 2. Onsets within 24h count as simultaneous (window blur).
-Structured fields only, aggregates only.
+Terminal ICU stays of 8,534 hospital decedents (deathtime known,
+death within 72h of ICU discharge); primary cohort ICU LOS >= 48h
+(n=5,172, 83% septic). Prevalence, first-organ, precedence and
+sequences all use the primary cohort. Organ failure = SOFA subscore
+(trailing-24h, hourly) first reaching >= 3, sensitivity >= 2. Onsets
+within 24h count as simultaneous (window blur). Structured fields
+only, aggregates only.
 
 ## What fails, and first
 
-Failure prevalence in the last 24h before death (>= 3): cardiovascular
-49%, renal 37%, CNS 32%, respiratory 31%, coagulation 15%, liver 12%.
-Median 2 organs failed; 16% die with none >= 3.
+Failure prevalence in the last 24h before death (>= 3, n=4,728 stays
+with final-day SOFA data): cardiovascular 47%, renal 45%, CNS 37%,
+respiratory 33%, coagulation 17%, liver 15%. Median 2 organs failed;
+15% die with none >= 3.
 
 First-failing organ (tie-split):
 
 ![first organ](of_first.png)
 
-- Frank failure (>= 3): cardiovascular 29%, renal 20%, CNS 20%,
-  respiratory 18%, coagulation 7%, liver 5%.
-- Dysfunction (>= 2): respiratory leads at 23%, then renal 21%, CV 19%.
+- Frank failure (>= 3): cardiovascular 27%, renal 23%, respiratory
+  21%, CNS 18%, coagulation 6%, liver 5%.
+- Dysfunction (>= 2): respiratory leads at 27%, then renal 22%, CV 17%.
 
 ## Pairwise order
 
 ![precedence](of_precedence.png)
 
 Full table: `of_precedence_thr3.csv` (n, P-each-first, tie rate,
-median lead). Salient pairs: respiratory-CV fail together 68% of the
-time (intubation + pressors at the same crisis); CV precedes CNS 57%
-and renal 33% (54% tied); respiratory precedes CNS 54%; renal
-precedes CNS 45%; liver-renal is a coin flip (29/29%).
+tie-excluded P-each-first, median lead). The heatmap shows
+tie-excluded probabilities: respiratory-CV fail together 68% of the
+time (intubation + pressors at the same crisis); among untied pairs
+CV precedes CNS 82% and renal 72%; respiratory precedes CNS 79%;
+renal precedes CNS 69%; liver-renal is a coin flip (50/50%).
 
-Sequences are highly dispersed: 913 distinct orders among 4,192 stays
+Sequences are highly dispersed: 901 distinct orders among 3,938 stays
 with >= 2 failures. No single cascade dominates; the top 20 are all
 CV/renal/respiratory combinations with CNS last
-(`of_sequences_thr3.csv`). Median first failure -> death: 142h;
-second 125h; third 110h.
+(`of_sequences_thr3.csv`). Median first failure -> death: 127h;
+second 117h; third 102h.
 
 ## Trajectories
 
 ![trajectories](of_trajectories.png)
 
 CV runs highest throughout and rises into death; renal second; CNS
-rises late; coagulation/liver flat. Total SOFA drifts 6.6 -> 8.0 over
+rises late; coagulation/liver flat. Total SOFA drifts 5.1 -> 8.0 over
 the last week — gradual, no terminal cliff.
 
 ![total](of_total_sofa.png)
@@ -52,8 +56,10 @@ discharge): survivors fall toward discharge, decedents grind upward.
 ![subgroups](of_subgroups.png)
 
 Subgroups (sepsis/non, 65+/-, full-code/all) share the same shape;
-early-DNR stays are 46% of decedents and look no different in total
-SOFA, against a pure withdrawal-driven terminal spike.
+early-DNR stays are 45% of decedents and look no different in total
+SOFA, against a pure withdrawal-driven terminal spike. Strict
+full-code (code status charted, never DNR/CMO) is only 573 decedents
+(7%); 601 have no code-status rows at all.
 
 ## Validation
 
@@ -68,21 +74,25 @@ SOFA, against a pure withdrawal-driven terminal spike.
 
 1. **"Lungs first" (Border/Baue; MODS reviews: pulmonary precedes
    cardiac/renal/hepatic) — partly upheld, refined.** Holds for
-   dysfunction onset (>= 2: respiratory first). Fails for frank
-   failure (>= 3: cardiovascular first at 29%, and respiratory-CV
+   dysfunction onset (>= 2: respiratory first at 27%). Fails for frank
+   failure (>= 3: cardiovascular first at 27%, and respiratory-CV
    are simultaneous 68% of the time). Teaching update: respiratory
    dysfunction is the earliest warning; cardiovascular collapse is
    the most common first frank failure and usually arrives with
    respiratory failure, not after it.
 2. **Vincent et al. 2011 ("Is worsening MOF the cause of death in
-   severe sepsis?") — replicated.** Mean dSOFA(-96h -> -24h) = +0.26
-   (n=4,486): increased 36.5%, stable 31.7%, decreased 31.8%.
-   Persistent, not worsening, failure dominates — quantitatively
-   matching "only small increases."
+   severe sepsis?") — weaker than first reported.** With stale
+   discharge rows excluded (fresh SOFA required near both cutoffs),
+   mean dSOFA(-96h -> -24h) = +0.35 (n=3,384): increased 45.3%,
+   stable 15.6%, decreased 39.0%. The earlier 32% "stable" was
+   inflated by reusing one stale discharge score at both cutoffs;
+   the honest split is increased-vs-decreased with little exact
+   stability. Mean change is still a small increase, but "persistent,
+   not worsening" no longer describes the distribution.
 3. **INDEPTH (80% with >= 1 organ increase in last 4 days) —
-   direction yes, magnitude lower: 56%.** Gap plausibly from our
-   -24h cutoff, which excludes the agonal day where most change
-   concentrates; INDEPTH's window reaches death itself.
+   closer after the freshness fix: 70%.** Remaining gap plausibly
+   from our -24h cutoff, which excludes the agonal day where most
+   change concentrates; INDEPTH's window reaches death itself.
 4. **Gupta et al. (sepsis SOFA-component mortality ranking: coag >
    hepatic > resp > neuro > renal > CV) — top agrees, rest
    diverges.** Our lethality P(death | ever >= 3): liver 40% > coag
