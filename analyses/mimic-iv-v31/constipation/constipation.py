@@ -3,7 +3,8 @@
 Exposure (structured only, window [admittime-365d, admittime)):
   coded: ICD 564.0x/K59.0x in prior admissions
   lax_any: laxative prescription start in window (formulary match)
-  either/both; dose (distinct laxative classes 0/1/2+); recency (none/remote/recent)
+  either/both; dose (distinct laxative classes 0/1/2+); recency 30d
+  (none/remote/recent) + 180d sensitivity; full-caliper 1:1 PS matching
 Outcome: hospital_expire_flag (same admission).
 Methods: crude 2x2; adjusted logistic (OR+95% CI); 1:1 propensity matching with
 caliper + balance + McNemar; dose-response; recency; subgroups; E-value.
@@ -50,23 +51,37 @@ SELECT a.subject_id, a.hadm_id, a.admittime, a.hospital_expire_flag AS y,
   p.anchor_age, p.gender, a.race, a.insurance, a.admission_type,
   a.admission_location, p.anchor_year_group,
   CASE WHEN s.hadm_id IS NOT NULL THEN 1 ELSE 0 END AS icu,
-  COALESCE(h.n_prior, 0) AS n_prior,
-  COALESCE(h.los_total, 0) AS prior_los_total,
-  h.charlson_max AS prior_charlson,
-  COALESCE(h.year_n, 0) AS prior_year_n,
-  COALESCE(h.px_cardiac,0) AS px_cardiac, COALESCE(h.px_hf,0) AS px_hf,
-  COALESCE(h.px_stroke,0) AS px_stroke, COALESCE(h.px_renal,0) AS px_renal,
-  COALESCE(h.px_copd,0) AS px_copd, COALESCE(h.px_diab,0) AS px_diab,
-  COALESCE(h.px_onc,0) AS px_onc, COALESCE(h.px_sepsis,0) AS px_sepsis,
-  COALESCE(h.px_liver,0) AS px_liver
+  COALESCE(u.n_prior, 0) AS n_prior,
+  COALESCE(u.los_total, 0) AS prior_los_total,
+  ch.charlson_max AS prior_charlson,
+  COALESCE(u.year_n, 0) AS prior_year_n,
+  COALESCE(x.px_cardiac,0) AS px_cardiac, COALESCE(x.px_hf,0) AS px_hf,
+  COALESCE(x.px_stroke,0) AS px_stroke, COALESCE(x.px_renal,0) AS px_renal,
+  COALESCE(x.px_copd,0) AS px_copd, COALESCE(x.px_diab,0) AS px_diab,
+  COALESCE(x.px_onc,0) AS px_onc, COALESCE(x.px_sepsis,0) AS px_sepsis,
+  COALESCE(x.px_liver,0) AS px_liver
 FROM mimiciv_hosp.admissions a
 JOIN mimiciv_hosp.patients p USING (subject_id)
 LEFT JOIN (SELECT DISTINCT hadm_id FROM mimiciv_icu.icustays) s USING (hadm_id)
 LEFT JOIN (
   SELECT b.hadm_id, COUNT(*) AS n_prior,
     COALESCE(SUM(date_diff('day', p.admittime, p.dischtime)), 0) AS los_total,
-    MAX(c.charlson_comorbidity_index) AS charlson_max,
-    SUM(CASE WHEN p.admittime >= b.admittime - INTERVAL 1 YEAR THEN 1 ELSE 0 END) AS year_n,
+    SUM(CASE WHEN p.admittime >= b.admittime - INTERVAL 1 YEAR THEN 1 ELSE 0 END) AS year_n
+  FROM mimiciv_hosp.admissions b
+  JOIN mimiciv_hosp.admissions p
+    ON p.subject_id = b.subject_id AND p.admittime < b.admittime
+  GROUP BY 1
+) u USING (hadm_id)
+LEFT JOIN (
+  SELECT b.hadm_id, MAX(c.charlson_comorbidity_index) AS charlson_max
+  FROM mimiciv_hosp.admissions b
+  JOIN mimiciv_hosp.admissions p
+    ON p.subject_id = b.subject_id AND p.admittime < b.admittime
+  LEFT JOIN mimiciv_derived.charlson c ON c.hadm_id = p.hadm_id
+  GROUP BY 1
+) ch USING (hadm_id)
+LEFT JOIN (
+  SELECT b.hadm_id,
     MAX(CASE WHEN (d.icd_version = 9 AND LEFT(d.icd_code,3) BETWEEN '410' AND '414'
                     OR d.icd_version = 10 AND LEFT(d.icd_code,3) BETWEEN 'I20' AND 'I25')
              THEN 1 ELSE 0 END) AS px_cardiac,
@@ -97,16 +112,15 @@ LEFT JOIN (
   FROM mimiciv_hosp.admissions b
   JOIN mimiciv_hosp.admissions p
     ON p.subject_id = b.subject_id AND p.admittime < b.admittime
-  LEFT JOIN mimiciv_derived.charlson c ON c.hadm_id = p.hadm_id
   LEFT JOIN mimiciv_hosp.diagnoses_icd d ON d.hadm_id = p.hadm_id
   GROUP BY 1
-) h USING (hadm_id)
+) x USING (hadm_id)
 ORDER BY hadm_id
 """
 
 EXP_SQL = f"""
 WITH lax AS (
-  SELECT a.hadm_id, {LAXCLASS} AS cls, MIN(r.starttime) AS first_rx
+  SELECT a.hadm_id, {LAXCLASS} AS cls, MAX(r.starttime) AS last_rx
   FROM mimiciv_hosp.admissions a
   JOIN mimiciv_hosp.prescriptions r
     ON r.subject_id = a.subject_id
@@ -116,7 +130,7 @@ WITH lax AS (
   GROUP BY 1, 2
 ),
 coded AS (
-  SELECT DISTINCT a.hadm_id, MIN(p.admittime) AS first_dx
+  SELECT DISTINCT a.hadm_id, MAX(p.admittime) AS last_dx
   FROM mimiciv_hosp.admissions a
   JOIN mimiciv_hosp.admissions p
     ON p.subject_id = a.subject_id
@@ -130,12 +144,12 @@ SELECT a.hadm_id,
   CASE WHEN c.hadm_id IS NOT NULL THEN 1 ELSE 0 END AS coded,
   CASE WHEN l.hadm_id IS NOT NULL THEN 1 ELSE 0 END AS lax_any,
   COALESCE(l.ncls, 0) AS lax_ncls,
-  LEAST(COALESCE(date_diff('day', l.first_rx, a.admittime), 9999),
-        COALESCE(date_diff('day', c.first_dx, a.admittime), 9999)) AS days_since
+  LEAST(COALESCE(date_diff('day', l.last_rx, a.admittime), 9999),
+        COALESCE(date_diff('day', c.last_dx, a.admittime), 9999)) AS days_since
 FROM mimiciv_hosp.admissions a
 LEFT JOIN coded c USING (hadm_id)
 LEFT JOIN (SELECT hadm_id, COUNT(DISTINCT cls) AS ncls,
-                  MIN(first_rx) AS first_rx FROM lax GROUP BY 1) l USING (hadm_id)
+                  MAX(last_rx) AS last_rx FROM lax GROUP BY 1) l USING (hadm_id)
 ORDER BY 1
 """
 
@@ -163,9 +177,12 @@ def main():
     df["recency"] = np.select(
         [df["either"] == 0, df["days_since"] <= 30],
         ["none", "recent"], default="remote")
+    df["recency180"] = np.select(
+        [df["either"] == 0, df["days_since"] <= 180],
+        ["none", "recent"], default="remote")
     df["dose"] = np.select(
         [df["either"] == 0, df["lax_ncls"] == 1, df["lax_ncls"] >= 2],
-        ["0", "1", "2+"], default="coded_only")
+        ["0", "1class", "2+class"], default="coded_only")
     print(f"admissions: {len(df)}, deaths: {int(df.y.sum())} ({df.y.mean():.4f})",
           flush=True)
     print("exposure prevalence:",
@@ -249,13 +266,14 @@ def main():
         rng = np.random.default_rng(42)
         pairs = []
         for i in rng.permutation(exp_idx):
-            j = np.searchsorted(ps_sorted, ps[i])
+            lo = np.searchsorted(ps_sorted, ps[i] - cal)
+            hi = np.searchsorted(ps_sorted, ps[i] + cal, side="right")
             best, best_d = -1, cal
-            for k in range(max(0, j - 200), min(len(ctl_sorted), j + 200)):
+            for k in range(lo, hi):
                 if used[k]:
                     continue
                 dd = abs(ps_sorted[k] - ps[i])
-                if dd <= cal and dd < best_d:
+                if dd < best_d:
                     best, best_d = k, dd
             if best >= 0:
                 used[best] = True
@@ -289,10 +307,11 @@ def main():
         OUT + "const_balance.csv", index=False)
 
     # dose-response + recency (adjusted, same covariates)
-    for col, vals in (("dose", ["1", "2+", "coded_only"]),
-                        ("recency", ["remote", "recent"])):
+    for col, vals in (("dose", ["1class", "2+class", "coded_only"]),
+                        ("recency", ["remote", "recent"]),
+                        ("recency180", ["remote", "recent"])):
         dum = pd.get_dummies(df[col], prefix=col, dtype=float).drop(
-            columns=[f"{col}_0" if col == "dose" else "recency_none"])
+            columns=[f"{col}_0" if col == "dose" else f"{col}_none"])
         Xe = pd.concat([Xc, dum], axis=1)
         fit = sm.Logit(df["y"], Xe).fit(disp=0, method="lbfgs", maxiter=1000)
         for v in vals:

@@ -1,38 +1,41 @@
 admissions: 546028, deaths: 11801 (0.0216)
 exposure prevalence: {'coded': 0.0555, 'lax_any': 0.3349, 'either': 0.3359, 'both': 0.0544}
 [coded] exposed n=30280 death rate exp=0.0329 unexp=0.0210 crude OR=1.589
-  adjusted OR=1.142 [1.058-1.232] p=0.00065
+  adjusted OR=1.172 [1.087-1.265] p=3.9e-05
 [lax_any] exposed n=182851 death rate exp=0.0260 unexp=0.0194 crude OR=1.346
-  adjusted OR=0.978 [0.921-1.038] p=0.46
+  adjusted OR=1.011 [0.951-1.074] p=0.73
 [either] exposed n=183406 death rate exp=0.0259 unexp=0.0194 crude OR=1.342
-  adjusted OR=0.975 [0.919-1.036] p=0.42
+  adjusted OR=1.005 [0.946-1.068] p=0.86
 [both] exposed n=29725 death rate exp=0.0333 unexp=0.0209 crude OR=1.611
-  adjusted OR=1.151 [1.066-1.242] p=0.00031
-[either+icu] adjusted OR=1.009 [0.948-1.075] p=0.77
-[matched:either] pairs=54846 exp death=0.0149 ctl death=0.0171 OR=0.866 [0.788-0.952] mcnemar p=0.0032
+  adjusted OR=1.186 [1.099-1.280] p=1.1e-05
+[either+icu] adjusted OR=1.024 [0.961-1.091] p=0.46
+[matched:either] pairs=65707 exp death=0.0154 ctl death=0.0195 OR=0.781 [0.719-0.849] mcnemar p=7.5e-09
 balance either (SMD before -> after):
-  anchor_age: 0.227 -> -0.102
-  n_prior: 0.728 -> 0.060
-  prior_los_total: 0.668 -> 0.065
-  prior_year_n: 1.149 -> 0.054
-  prior_charlson: 0.585 -> -0.040
-[matched:coded] pairs=30151 exp death=0.0329 ctl death=0.0341 OR=0.963 [0.881-1.052] mcnemar p=0.42
+  anchor_age: 0.227 -> -0.144
+  n_prior: 0.630 -> 0.038
+  prior_los_total: 0.785 -> 0.045
+  prior_year_n: 1.046 -> 0.067
+  prior_charlson: 0.585 -> -0.154
+[matched:coded] pairs=30272 exp death=0.0329 ctl death=0.0338 OR=0.973 [0.890-1.064] mcnemar p=0.57
 balance coded (SMD before -> after):
-  anchor_age: 0.169 -> -0.088
-  n_prior: 0.787 -> 0.066
-  prior_los_total: 0.730 -> 0.047
-  prior_year_n: 1.139 -> 0.072
-  prior_charlson: 0.638 -> -0.117
-[dose_1 vs ref] OR=0.937 [0.853-1.030] p=0.18
-[dose_2+ vs ref] OR=0.991 [0.930-1.056] p=0.77
-[dose_coded_only vs ref] OR=0.495 [0.208-1.179] p=0.11
-[recency_remote vs ref] OR=0.925 [0.866-0.988] p=0.02
-[recency_recent vs ref] OR=1.070 [0.992-1.154] p=0.082
-[subgroup age<65 n=340572] OR=1.030 [0.930-1.141] p=0.57
-[subgroup age65+ n=205456] OR=0.941 [0.873-1.014] p=0.11
-[subgroup noICU n=460786] OR=1.223 [1.073-1.393] p=0.0026
-[subgroup ICU n=85242] OR=0.961 [0.895-1.032] p=0.28
-E-value for adjusted:coded OR=1.142: 1.543
-E-value for adjusted:both OR=1.151: 1.567
-E-value for subgroup:noICU OR=1.223: 1.744
+  anchor_age: 0.169 -> -0.086
+  n_prior: 0.733 -> 0.045
+  prior_los_total: 0.825 -> 0.063
+  prior_year_n: 1.050 -> 0.049
+  prior_charlson: 0.638 -> -0.104
+[dose_1class vs ref] OR=0.942 [0.856-1.036] p=0.22
+[dose_2+class vs ref] OR=1.024 [0.960-1.092] p=0.48
+[dose_coded_only vs ref] OR=0.377 [0.140-1.018] p=0.054
+[recency_remote vs ref] OR=0.893 [0.835-0.956] p=0.0011
+[recency_recent vs ref] OR=1.138 [1.064-1.218] p=0.00018
+[recency180_remote vs ref] OR=0.795 [0.718-0.880] p=9.1e-06
+[recency180_recent vs ref] OR=1.056 [0.992-1.124] p=0.087
+[subgroup age<65 n=340572] OR=1.055 [0.952-1.171] p=0.31
+[subgroup age65+ n=205456] OR=0.976 [0.905-1.053] p=0.54
+[subgroup noICU n=460786] OR=1.238 [1.084-1.414] p=0.0016
+[subgroup ICU n=85242] OR=0.971 [0.903-1.044] p=0.43
+E-value for adjusted:coded OR=1.172: 1.622
+E-value for adjusted:both OR=1.186: 1.655
+E-value for recency_recent OR=1.138: 1.535
+E-value for subgroup:noICU OR=1.238: 1.781
 wrote const_forest.csv, const_balance.csv

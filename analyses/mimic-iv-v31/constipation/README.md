@@ -14,33 +14,39 @@ only (`diagnoses_icd`, `prescriptions`, prior-admission summaries), all
 | either | coded OR lax_any | 33.59% | 2.59% vs 1.94%, OR 1.34 |
 | both | coded AND lax_any | 5.44% | 3.33% vs 2.09%, OR 1.61 |
 
-Covariates: age, sex, race, admission type/location, prior-admission count,
-prior total LOS, prior-year admission count, prior Charlson (from ICD),
-prior-year procedure burden, prior-year prescription count, current dx/procedure
-counts, admission dx group; second spec adds ICU-stay flag.
+Covariates (identical set in adjusted logistic and propensity models):
+age, sex, race, insurance, admission type/location, anchor year group,
+prior-admission count, prior total LOS, prior-year admission count, prior
+Charlson max (+ missingness flag), 9 prior-dx flags (cardiac/HF/stroke/
+renal/COPD/diabetes/onc/sepsis/liver); second spec adds ICU-stay flag.
 
 ## Result: no robust association (negative study)
 
-- Adjusted logistic: **coded OR 1.14 [1.06-1.23], both OR 1.15
-  [1.07-1.24]**; laxative-only definitions null (~0.98).
-- Propensity 1:1 matching (caliper 0.2 SD, same covariates):
-  **matched-coded OR 0.96 [0.88-1.05], p=0.42, 30,151 pairs (99.6%
-  matched), all |SMD| <= 0.12** — the adjusted signal fully attenuates.
-- Matched-either is protective (OR 0.87 [0.79-0.95]) but that estimate
-  lives on a 30%-matched overlap population and disagrees with both the
+- Adjusted logistic: **coded OR 1.17 [1.09-1.27], both OR 1.19
+  [1.10-1.28]**; laxative-only definitions null (~1.01).
+- Propensity 1:1 matching (full-caliper search, caliper 0.2 SD, same
+  covariates): **matched-coded OR 0.97 [0.89-1.06], p=0.57, 30,272
+  pairs (100% matched), all |SMD| <= 0.11** — the adjusted signal
+  fully attenuates.
+- Matched-either is protective (OR 0.78 [0.72-0.85]) but that estimate
+  lives on a 36%-matched overlap population and disagrees with both the
   adjusted model and the coded match — not a robust claim either.
-- Dose-response: flat (1 fill 0.94, 2+ fills 0.99, both null).
-- Recency: no gradient (remote 0.92, recent 1.07, borderline/null).
-- Subgroups: age split null; never-ICU OR 1.22 [1.07-1.39] but this is
+- Dose-response: flat (1 class 0.94, 2+ classes 1.02, both null).
+- Recency (days since LATEST exposure): 30-day recent 1.14
+  (p=0.0002), remote 0.89; 6-month sensitivity null (recent 1.06,
+  p=0.087). A ≤30-day blip with no dose gradient and no matched
+  support — not a robust gradient.
+- Subgroups: age split null; never-ICU OR 1.24 [1.08-1.41] but this is
   adjusted-only and subject to the same residual confounding the matching
   exposes.
-- E-values 1.54-1.74: weak unmeasured confounding (frailty, severity not
+- E-values 1.54-1.78: weak unmeasured confounding (frailty, severity not
   captured by prior-admission summaries) explains away the adjusted ORs.
 
-Read: coded constipation marks sicker patients (crude +59%), and a +14%
+Read: coded constipation marks sicker patients (crude +59%), and a +17%
 adjusted residue survives a rich covariate set — but it does not survive
-propensity matching, has no dose or recency gradient, and needs only a
-1.5x unmeasured confounder to vanish. **Not a survival predictor.**
+propensity matching, has no dose gradient, an inconsistent recency
+pattern, and needs only a ~1.6x unmeasured confounder to vanish.
+**Not a survival predictor.**
 
 ![forest plot](const_forest.png)
 
