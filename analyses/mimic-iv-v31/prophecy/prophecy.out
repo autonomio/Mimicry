@@ -1,19 +1,20 @@
 loading stays + sofa landmarks + dnr + dx...
 stays: 94458
 [A] n=64303 dnr72_rate=0.037 AUC=0.759 OR_per_SOFApt=1.236
-[B48] n=44652 exp_rate=0.124 death|dnr=0.374 death|full=0.116 adjOR_dnr=3.89 AUC=0.795
-[B24] n=72001 exp_rate=0.107 death|dnr=0.326 death|full=0.095 adjOR_dnr=3.77 AUC=0.793
+[B48] n=44652 exp_rate=0.124 death|dnr=0.374 death|full=0.116 adjOR_dnr=3.88 AUC=0.795
+[B24] n=72001 exp_rate=0.107 death|dnr=0.326 death|full=0.095 adjOR_dnr=3.79 AUC=0.793
 pulling peri-DNR vitals...
   peri rows: 686653
-  matched pairs: 7617
-[discont hr] dnr n=8845 slope -0.022->-0.145 p=0.00052 levelΔ=-0.50 | ctl n=7577 slopeΔ=0.000 levelΔ=0.00
-[discont map] dnr n=7816 slope -0.062->-0.158 p=0.00028 levelΔ=-1.00 | ctl n=7306 slopeΔ=0.092 levelΔ=0.50
+  matched pairs: 7619
+  peri rows matched-only: 367004
+[discont hr] dnr n=6340 slope 0.099->-0.188 p=1.4e-39 levelΔ=0.00 | ctl n=7564 slopeΔ=0.030 levelΔ=-0.50
+[discont map] dnr n=5711 slope 0.030->-0.204 p=7.7e-30 levelΔ=-1.00 | ctl n=7309 slopeΔ=0.104 levelΔ=0.50
 all decedents: 11341, full-code: 3111
-  vit rows fc/surv: 1706859/4303141
-[FC H=6h] n=1054 pos=670 AUCphys=0.761 AUCchart=0.445 AUCboth=0.796
-[FC H=12h] n=940 pos=602 AUCphys=0.725 AUCchart=0.454 AUCboth=0.762
-[FC H=24h] n=799 pos=514 AUCphys=0.697 AUCchart=0.444 AUCboth=0.740
-[ALL H=6h] n=9034 pos=5687 AUCphys=0.811 AUCchart=0.791 AUCboth=0.896
-[ALL H=12h] n=8727 pos=5515 AUCphys=0.785 AUCchart=0.763 AUCboth=0.873
-[ALL H=24h] n=8046 pos=5193 AUCphys=0.771 AUCchart=0.737 AUCboth=0.856
+  vit rows fc/surv: 1706859/4300399
+[FC H=6h] n=1340 pos=670 test=335 AUCphys=0.751 AUCchart=n/a(const) AUCboth=0.751
+[FC H=12h] n=1204 pos=602 test=301 AUCphys=0.738 AUCchart=n/a(const) AUCboth=0.738
+[FC H=24h] n=1028 pos=514 test=257 AUCphys=0.715 AUCchart=n/a(const) AUCboth=0.715
+[ALL H=6h] n=11374 pos=5687 test=2844 AUCphys=0.798 AUCchart=0.791 AUCboth=0.888
+[ALL H=12h] n=11030 pos=5515 test=2758 AUCphys=0.777 AUCchart=0.757 AUCboth=0.862
+[ALL H=24h] n=10386 pos=5193 test=2597 AUCphys=0.752 AUCchart=0.728 AUCboth=0.836
 done

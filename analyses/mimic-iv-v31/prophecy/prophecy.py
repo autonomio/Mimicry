@@ -19,6 +19,7 @@ import pandas as pd
 from scipy import stats
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 DB = "/srv/mimic-iv/db/mimic4-v31.db"
@@ -208,6 +209,12 @@ WHERE stay_id IN ({mstays})
                                                    "lvl_post"])
         return out
 
+    # matched DNR stays only: the peri query fetches every DNR stay, but
+    # the comparison keeps its age/sepsis/elapsed-time matching only on
+    # the matched subset
+    dset = {p[0] for p in pairs}
+    peri = peri[peri["stay_id"].isin(dset)]
+    print(f"  peri rows matched-only: {len(peri)}", flush=True)
     s_dnr, s_ctl = slopes(peri), slopes(mperi)
     for sig in ["hr", "map"]:
         d, c = s_dnr[sig], s_ctl[sig]
@@ -310,7 +317,7 @@ GROUP BY 1, 2, 3""").fetchdf()
             return None
         return out
 
-    def run_pred(tag, case_ids):
+    def run_pred(tag, case_ids, fc_controls):
         for H in [6, 12, 24]:
             Xy, Ch = [], []
             for sid in case_ids:
@@ -328,12 +335,25 @@ GROUP BY 1, 2, 3""").fetchdf()
                     Ch.append(1 if dn is not None and not np.isnan(dn)
                               and dn < dh - H else 0)
             ncase = len(Xy)
-            for _ in range(ncase):
-                sid = sv_ids[rng.integers(len(sv_ids))]
+            # controls WITHOUT replacement (one row per stay, so the
+            # train/test split below is leak-free), landmarks inside the
+            # fetched final-72h window, DNR-free at landmark for FC
+            nctl = 0
+            for idx in rng.permutation(len(sv_ids)):
+                if nctl >= ncase:
+                    break
+                sid = sv_ids[idx]
                 if sid not in vs_by:
                     continue
                 sv = svmap[sid]
-                s0 = rng.uniform(6, max(7, sv["los_h"] - H - 6))
+                lo = max(6.0, sv["los_h"] - 72.0)
+                hi = max(lo + 1.0, sv["los_h"] - H - 6.0)
+                s0 = rng.uniform(lo, hi)
+                dn = dnrmap.get(sid)
+                dnr_at_lm = (dn is not None and not np.isnan(dn) and
+                             dn < s0 + 6)
+                if fc_controls and dnr_at_lm:
+                    continue
                 w = vs_by[sid]
                 w = w[(w["hbd"] >= sv["los_h"] - s0 - 6) &
                       (w["hbd"] < sv["los_h"] - s0)]
@@ -342,25 +362,32 @@ GROUP BY 1, 2, 3""").fetchdf()
                 f = feat_row(w, sv["age"], sv["sepsis"])
                 if f is not None:
                     Xy.append((f, 0))
-                    dn = dnrmap.get(sid)
-                    Ch.append(1 if dn is not None and not np.isnan(dn)
-                              and dn < s0 + 6 else 0)
+                    Ch.append(1 if dnr_at_lm else 0)
+                    nctl += 1
             X = pd.DataFrame([f for f, _ in Xy])
             y = np.array([v for _, v in Xy])
             Ch = np.array(Ch)
-            Xs = StandardScaler().fit_transform(X.fillna(X.median()))
-            auc = roc_auc_score(y, LogisticRegression(
-                C=1.0, max_iter=5000).fit(Xs, y).predict_proba(Xs)[:, 1])
-            aucc = roc_auc_score(y, Ch)
+            med = X.median()
+            Xs = StandardScaler().fit_transform(X.fillna(med))
             Xc = np.column_stack([Xs, Ch])
-            aucb = roc_auc_score(y, LogisticRegression(
-                C=1.0, max_iter=5000).fit(Xc, y).predict_proba(Xc)[:, 1])
+            tr, te = train_test_split(np.arange(len(y)), test_size=0.25,
+                                      random_state=9, stratify=y)
+            auc = roc_auc_score(y[te], LogisticRegression(
+                C=1.0, max_iter=5000).fit(Xs[tr], y[tr]).predict_proba(
+                Xs[te])[:, 1])
+            aucb = roc_auc_score(y[te], LogisticRegression(
+                C=1.0, max_iter=5000).fit(Xc[tr], y[tr]).predict_proba(
+                Xc[te])[:, 1])
+            if len(np.unique(Ch[te])) < 2:
+                aucc_s = "n/a(const)"
+            else:
+                aucc_s = f"{roc_auc_score(y[te], Ch[te]):.3f}"
             print(f"[{tag} H={H}h] n={len(y)} pos={int(y.sum())} "
-                  f"AUCphys={auc:.3f} AUCchart={aucc:.3f} "
+                  f"test={len(te)} AUCphys={auc:.3f} AUCchart={aucc_s} "
                   f"AUCboth={aucb:.3f}", flush=True)
 
-    run_pred("FC", [s for s in dhmap if s in fc_ids])
-    run_pred("ALL", list(dhmap))
+    run_pred("FC", [s for s in dhmap if s in fc_ids], fc_controls=True)
+    run_pred("ALL", list(dhmap), fc_controls=False)
     print("done", flush=True)
 
 

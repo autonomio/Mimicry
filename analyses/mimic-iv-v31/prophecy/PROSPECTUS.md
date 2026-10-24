@@ -44,18 +44,20 @@ survives the dissection, but the catch-22 is now quantified.
 
 1. **The loop is large:** day-1 SOFA predicts DNR within 24–72h
    (AUC 0.76, OR 1.24/point); DNR before 48h carries adjusted OR
-   **3.9–4.1** for hospital death (crude 37% vs 12%), E-value 7.7.
-2. **Matching confirms:** 1:1 PS matching (balance 0.76 → 0.04)
-   gives OR **2.91 [2.64–3.20]**. No SOFA tertile near 1.0;
+   **3.9–4.1** for hospital death (crude 37% vs 12%), E-value 5.5
+   (risk-ratio based).
+2. **Matching confirms:** 1:1 PS matching (balance 0.76 → 0.03)
+   gives OR **2.92 [2.66–3.22]**. No SOFA tertile near 1.0;
    largest effect (5.7) where physiology says "fine."
-3. **Physiology breaks at the timestamp:** HR/MAP decline slopes
-   roughly triple after DNR vs matched controls (p≈1e–12/1e–34);
-   placebo cuts null; survivors with DNR slope *upward*.
+3. **Physiology breaks at the timestamp:** HR/MAP slopes flip from
+   rising to falling after DNR vs matched controls (p≈1e–39/1e–30);
+   pre-DNR placebo null; DNR survivors break ~60% as hard.
 4. **Prediction owes ~0.05 AUC to prophecy:** 6/12/24h AUCs
-   0.81/0.79/0.77 overall vs 0.76/0.73/0.70 under full code
-   (CV-confirmed, gaps significant at 6/12h, gone at 24h).
+   0.80/0.78/0.75 overall vs 0.75/0.74/0.72 under full code
+   (test-split; paired out-of-sample bootstrap gaps significant
+   at all horizons).
 5. **The chart ≈ the model:** "DNR already written" alone reaches
-   AUC 0.79 vs 0.81 physiology; combined 0.90. The model adds
+   AUC 0.79 vs 0.80 physiology; combined 0.89. The model adds
    most where the chart is silent — where false positives cost
    the most.
 

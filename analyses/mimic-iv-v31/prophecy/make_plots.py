@@ -11,12 +11,12 @@ import pandas as pd
 
 # 1. prediction AUCs: FC vs ALL, phys vs chart vs both
 auc = {
-    ("FC", 6): (0.761, None, None),
-    ("FC", 12): (0.725, None, None),
-    ("FC", 24): (0.697, None, None),
-    ("ALL", 6): (0.811, 0.791, 0.896),
-    ("ALL", 12): (0.785, 0.763, 0.873),
-    ("ALL", 24): (0.771, 0.737, 0.856),
+    ("FC", 6): (0.751, None, None),
+    ("FC", 12): (0.738, None, None),
+    ("FC", 24): (0.715, None, None),
+    ("ALL", 6): (0.798, 0.791, 0.888),
+    ("ALL", 12): (0.777, 0.757, 0.862),
+    ("ALL", 24): (0.752, 0.728, 0.836),
 }
 fig, axes = plt.subplots(1, 2, figsize=(10, 4.5), sharey=True)
 for ax, pop in zip(axes, ["FC", "ALL"]):

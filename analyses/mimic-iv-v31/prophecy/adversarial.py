@@ -97,7 +97,7 @@ SELECT i.stay_id,
             AND (x.endtime IS NULL OR x.endtime > i.intime + INTERVAL 48 HOUR)
            THEN 1 ELSE 0 END) AS vaso48,
   MAX(CASE WHEN r.charttime BETWEEN i.intime + INTERVAL 36 HOUR
-                              AND i.intime + INTERVAL 60 HOUR
+                              AND i.intime + INTERVAL 48 HOUR
             AND r.dialysis_active = 1 THEN 1 ELSE 0 END) AS rrt48
 FROM mimiciv_icu.icustays i
 LEFT JOIN mimiciv_derived.ventilation v USING (stay_id)
@@ -138,9 +138,13 @@ GROUP BY 1""").fetchdf()
     lr = LogisticRegression(C=1.0, max_iter=5000).fit(Xr.values, b["y"])
     k = list(Xr.columns).index("exp")
     or_rich = math.exp(lr.coef_[0][k])
-    ev = or_rich + math.sqrt(or_rich * (or_rich - 1))
-    print(f"[B-rich] n={len(b)} adjOR_dnr={or_rich:.2f} E-value={ev:.2f}",
-          flush=True)
+    # E-value on the risk-ratio scale: convert OR->RR with the unexposed
+    # risk first (outcome is common: 37% exposed mortality)
+    r0 = float(b.loc[b["exp"] == 0, "y"].mean())
+    rr = or_rich / (1 - r0 + r0 * or_rich)
+    ev = rr + math.sqrt(rr * (rr - 1))
+    print(f"[B-rich] n={len(b)} adjOR_dnr={or_rich:.2f} RR={rr:.2f} "
+          f"E-value={ev:.2f}", flush=True)
 
     # ---- B timing-before-landmark stratification ----
     # (DNR->death lag would condition on the outcome; instead split by
@@ -189,13 +193,14 @@ GROUP BY 1""").fetchdf()
     rng = np.random.default_rng(5)
     pairs = []
     for i in rng.permutation(exp_idx):
-        j = int(np.searchsorted(pss, ps[i]))
+        lo = int(np.searchsorted(pss, ps[i] - cal))
+        hi = int(np.searchsorted(pss, ps[i] + cal, side="right"))
         best, bd = -1, cal
-        for kk in range(max(0, j - 200), min(len(cs), j + 200)):
+        for kk in range(lo, hi):
             if used[kk]:
                 continue
             dd = abs(pss[kk] - ps[i])
-            if dd <= cal and dd < bd:
+            if dd < bd:
                 best, bd = kk, dd
         if best >= 0:
             used[best] = True
@@ -241,12 +246,21 @@ GROUP BY 1""").fetchdf()
     b["exp_hat"] = fs.fittedvalues
     Xr2 = design(b, base)
     Xr2["exp_hat"] = b["exp_hat"].values
-    iv2 = sm.OLS(b["y"].values, sm.add_constant(Xr2.values)).fit()
+    Xhat = sm.add_constant(Xr2.values)
+    iv2 = sm.OLS(b["y"].values, Xhat).fit()
     jh = list(Xr2.columns).index("exp_hat")
-    ci = np.asarray(iv2.conf_int())
+    # correct 2SLS SEs: structural residuals (actual exposure, not the
+    # first-stage fit) with the Xhat'Xhat bread
+    Xstruct = sm.add_constant(
+        design(b, base).assign(exp=b["exp"].values).values)
+    resid = b["y"].values - Xstruct @ np.asarray(iv2.params)
+    s2 = float(resid @ resid) / (len(b) - Xhat.shape[1])
+    V = s2 * np.linalg.inv(Xhat.T @ Xhat)
+    se = math.sqrt(V[jh + 1, jh + 1])
+    est = float(iv2.params[jh + 1])
     print(f"[B-IV] first-stage F={F:.1f} units={b['unit'].nunique()} "
-          f"IV risk-diff={iv2.params[jh + 1]:.3f} "
-          f"[{ci[jh + 1, 0]:.3f}-{ci[jh + 1, 1]:.3f}]", flush=True)
+          f"IV risk-diff={est:.3f} "
+          f"[{est - 1.96 * se:.3f}-{est + 1.96 * se:.3f}]", flush=True)
     ols = sm.OLS(b["y"].values, sm.add_constant(
         design(b, base).assign(exp=b["exp"].values).values)).fit()
     print(f"  OLS risk-diff for scale: {ols.params[-1]:.3f}", flush=True)
@@ -328,9 +342,15 @@ WHERE stay_id IN ({mstays})
                                                    "post", "lvl"])
         return out
 
-    s_dnr = slope_rows(peri[peri["y"] == 1], -12, -2, 2, 12)
-    s_ctl = slope_rows(mperi, -12, -2, 2, 12)
-    s_surv = slope_rows(peri[peri["y"] == 0], -12, -2, 2, 12)
+    # matched DNR stays only (as in prophecy.py), and BOTH arms
+    # conditioned on hospital death (conditioning only the exposed arm
+    # would conflate dying with the DNR-associated slope change)
+    dset = {p[0] for p in pairs}
+    deced = set(stays[stays["y"] == 1]["stay_id"])
+    peri_m = peri[peri["stay_id"].isin(dset)]
+    s_dnr = slope_rows(peri_m[peri_m["y"] == 1], -12, -2, 2, 12)
+    s_ctl = slope_rows(mperi[mperi["stay_id"].isin(deced)], -12, -2, 2, 12)
+    s_surv = slope_rows(peri_m[peri_m["y"] == 0], -12, -2, 2, 12)
     smap = stays.set_index("stay_id")
     for sig in ["hr", "map"]:
         d = s_dnr[sig].assign(dnr=1)
@@ -347,7 +367,7 @@ WHERE stay_id IN ({mstays})
               f"p={fit.pvalues[1]:.2g} n={len(p)}", flush=True)
         # off-center placebo cuts (narrow, avoid h=0)
         for cut, a1, b1, a2, b2 in [(-6, -12, -7, -5, 0), (6, 0, 5, 7, 12)]:
-            pdn = slope_rows(peri[peri["y"] == 1], a1, b1, a2,
+            pdn = slope_rows(peri_m[peri_m["y"] == 1], a1, b1, a2,
                              b2)[sig]
             if len(pdn) > 50:
                 w = stats.wilcoxon(pdn["post"] - pdn["pre"]).pvalue
@@ -464,12 +484,19 @@ GROUP BY 1, 2, 3""").fetchdf()
             f = feat_row(w, agemap[sid], sepmap[sid])
             if f is not None:
                 cases.append((sid, f))
-        for _ in range(len(cases)):
-            sid = sv_ids[rng.integers(len(sv_ids))]
+        # controls WITHOUT replacement (one row per stay: the row-wise
+        # CV split below is then leak-free), landmarks inside the
+        # fetched final-72h window
+        for idx in rng.permutation(len(sv_ids)):
+            if len(ctrls) >= len(cases):
+                break
+            sid = sv_ids[idx]
             if sid not in vs_by:
                 continue
             sv = svmap[sid]
-            s0 = rng.uniform(6, max(7, sv["los_h"] - H - 6))
+            lo = max(6.0, sv["los_h"] - 72.0)
+            hi = max(lo + 1.0, sv["los_h"] - H - 6.0)
+            s0 = rng.uniform(lo, hi)
             w = vs_by[sid]
             w = w[(w["hbd"] >= sv["los_h"] - s0 - 6) &
                   (w["hbd"] < sv["los_h"] - s0)]
@@ -477,12 +504,13 @@ GROUP BY 1, 2, 3""").fetchdf()
                 continue
             f = feat_row(w, sv["age"], sv["sepsis"])
             if f is not None:
-                ctrls.append(f)
-        Xa = pd.DataFrame([f for _, f in cases] + ctrls)
+                ctrls.append((sid, f))
+        Xa = pd.DataFrame([f for _, f in cases] +
+                          [f for _, f in ctrls])
         ya = np.array([1] * len(cases) + [0] * len(ctrls))
         fc_idx = [i for i, (sid, _) in enumerate(cases) if sid in fc_ids]
         Xf = pd.DataFrame([cases[i][1] for i in fc_idx] +
-                          ctrls[:len(fc_idx)])
+                          [ctrls[i][1] for i in range(len(fc_idx))])
         yf = np.array([1] * len(fc_idx) + [0] * len(fc_idx))
         for tag, XX, yy in [("ALL", Xa, ya), ("FC", Xf, yf)]:
             Xs = StandardScaler().fit_transform(XX.fillna(XX.median()))
@@ -497,28 +525,61 @@ GROUP BY 1, 2, 3""").fetchdf()
             print(f"[CV {tag} H={H}h] n={len(yy)} "
                   f"AUC={np.mean(aucs):.3f} sd={np.std(aucs):.3f}",
                   flush=True)
-        # paired bootstrap gap (same controls)
-        Xas = StandardScaler().fit_transform(Xa.fillna(Xa.median()))
-        Xfs = StandardScaler().fit_transform(Xf.fillna(Xf.median()))
+        # paired bootstrap gap on a FIXED test split: one shared
+        # resample of the fit pool per rep (ALL and FC derive from the
+        # same resampled cases/controls, so their covariance is kept),
+        # scored out-of-sample (never on fit rows)
+        cidx = np.arange(len(cases))
+        oidx = np.arange(len(ctrls))
+        srng = np.random.default_rng(9)
+        srng.shuffle(cidx)
+        srng.shuffle(oidx)
+        c_fit, c_test = cidx[:int(0.75 * len(cases))], cidx[int(0.75 * len(cases)):]
+        o_fit, o_test = oidx[:int(0.75 * len(ctrls))], oidx[int(0.75 * len(ctrls)):]
+        fc_test = [i for i in c_test if cases[i][0] in fc_ids]
+        te_all_X = pd.DataFrame([cases[i][1] for i in c_test] +
+                                [ctrls[i][1] for i in o_test])
+        te_all_y = np.array([1] * len(c_test) + [0] * len(o_test))
+        te_fc_X = pd.DataFrame(
+            [cases[i][1] for i in fc_test] +
+            [ctrls[i][1] for i in o_test[:len(fc_test)]])
+        te_fc_y = np.array([1] * len(fc_test) + [0] * len(fc_test))
         gaps = []
         brng = np.random.default_rng(13)
-        na, nf = len(ya), len(yf)
         for _ in range(200):
-            ia = brng.integers(0, na, na)
-            iff = brng.integers(0, nf, nf)
+            ic = brng.integers(0, len(c_fit), len(c_fit))
+            io = brng.integers(0, len(o_fit), len(o_fit))
+            tr_cases = [cases[c_fit[i]] for i in ic]
+            tr_ctrls = [ctrls[o_fit[i]] for i in io]
+            trA = pd.DataFrame([f for _, f in tr_cases] +
+                               [f for _, f in tr_ctrls])
+            ytrA = np.array([1] * len(tr_cases) + [0] * len(tr_ctrls))
+            fcc = [t for t in tr_cases if t[0] in fc_ids]
+            if len(fcc) < 10:
+                continue
+            trF = pd.DataFrame([f for _, f in fcc] +
+                               [f for _, f in tr_ctrls[:len(fcc)]])
+            ytrF = np.array([1] * len(fcc) + [0] * len(fcc))
             try:
-                aa = roc_auc_score(
-                    ya[ia], LogisticRegression(C=1.0, max_iter=2000).fit(
-                        Xas[ia], ya[ia]).predict_proba(Xas[ia])[:, 1])
-                af = roc_auc_score(
-                    yf[iff], LogisticRegression(C=1.0, max_iter=2000).fit(
-                        Xfs[iff], yf[iff]).predict_proba(Xfs[iff])[:, 1])
+                med = trA.median()
+                sc = StandardScaler().fit(trA.fillna(med))
+                aa = roc_auc_score(te_all_y, LogisticRegression(
+                    C=1.0, max_iter=2000).fit(
+                    sc.transform(trA.fillna(med)), ytrA).predict_proba(
+                    sc.transform(te_all_X.fillna(med)))[:, 1])
+                medf = trF.median()
+                scf = StandardScaler().fit(trF.fillna(medf))
+                af = roc_auc_score(te_fc_y, LogisticRegression(
+                    C=1.0, max_iter=2000).fit(
+                    scf.transform(trF.fillna(medf)), ytrF).predict_proba(
+                    scf.transform(te_fc_X.fillna(medf)))[:, 1])
                 gaps.append(aa - af)
             except ValueError:
                 pass
         print(f"  ALL-FC gap: {np.mean(gaps):.3f} "
               f"95%CI [{np.percentile(gaps, 2.5):.3f}-"
-              f"{np.percentile(gaps, 97.5):.3f}]", flush=True)
+              f"{np.percentile(gaps, 97.5):.3f}] reps={len(gaps)}",
+              flush=True)
     print("done", flush=True)
 
 
