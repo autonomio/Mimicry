@@ -1,10 +1,10 @@
 -- Step 3c: hourly median GCS total (eye 220739 + verbal 223900 + motor 223901)
 -- over the last 24h. Complete triplets only. Aggregates only.
 WITH cases AS (
-  SELECT s.stay_id, s.outtime AS anchor, s.first_careunit
+  SELECT s.stay_id, a.deathtime AS anchor, s.first_careunit
   FROM mimiciv_icu.icustays s
-  JOIN mimiciv_hosp.patients p USING (subject_id)
-  WHERE p.dod BETWEEN s.intime AND s.outtime
+  JOIN mimiciv_hosp.admissions a USING (hadm_id)
+  WHERE a.deathtime BETWEEN s.intime AND s.outtime
 ),
 case_n AS (
   SELECT first_careunit, COUNT(*) AS n FROM cases GROUP BY 1
@@ -26,7 +26,7 @@ cohort AS (
 ),
 gcs_events AS (
   SELECT c.cohort, c.stay_id,
-         CAST(date_diff('hour', e.charttime, c.anchor) AS INTEGER) AS h,
+         CAST(FLOOR(date_diff('second', e.charttime, c.anchor) / 3600) AS INTEGER) AS h,
          MAX(CASE WHEN e.itemid = 220739 AND e.valuenum BETWEEN 1 AND 4 THEN e.valuenum END) AS eye,
          MAX(CASE WHEN e.itemid = 223900 AND e.valuenum BETWEEN 1 AND 5 THEN e.valuenum END) AS verbal,
          MAX(CASE WHEN e.itemid = 223901 AND e.valuenum BETWEEN 1 AND 6 THEN e.valuenum END) AS motor

@@ -13,12 +13,17 @@ terms apply — keep the database on s0, do not redistribute.
 
 ## Cohorts
 
-- **died**: 6,747 ICU stays with date of death inside the stay
-  (`patients.dod BETWEEN icustays.intime AND icustays.outtime`).
+- **died**: 7,329 ICU stays with death inside the stay
+  (`admissions.deathtime BETWEEN icustays.intime AND
+  icustays.outtime`; deathtime is a true timestamp — the earlier
+  `patients.dod` date-only version misclassified same-day cases).
 - **survived**: ICU stays with `hospital_expire_flag = 0`, sampled 1:1 per
   first care unit with deterministic `hash(stay_id)` ordering, so every output
   shares one control sample and re-runs are exact.
-- Anchor for both: ICU `outtime` (≈ hour of death for decedents).
+- Anchor: `deathtime` for decedents, ICU `outtime` for survivors.
+  Charting after the anchor never counts toward monitoring gaps;
+  bins use elapsed (not boundary-counted) hours; pressor hours are
+  restricted to observed ICU time with strict infusion overlap.
 
 ## Queries (`sql/`, run in order)
 
@@ -42,19 +47,21 @@ Regenerate figures: `cd plots && uv run --with matplotlib python make_plots.py`.
 
 ## Findings (2026-10-24)
 
-- **MAP** is the strongest vital signal: decedents 71 → 52 mmHg over the final
+- **MAP** is the strongest vital signal: decedents 72 → 49 mmHg over the final
   ~6h; survivors flat at ~80.
-- **SpO2** 97 → 90%, **RR** 22 → 15 in the last hours; **HR** runs ~9 bpm hot
-  all day then dips; **temperature** flat (no signal).
-- **Lactate** climbs 3.5 → 8.5 mmol/L across the last 24h (survivors ~1.6);
-  **creatinine** 1.7 → 2.0 vs 1.0 flat.
-- **Pressors**: ~42% of decedents on vasopressors 24–7h out, withdrawn to 10%
-  in the final hour (comfort-care transition); survivors 4% → 0%.
-- **GCS**: decedents 6 → 3 (floor) by 6h out; survivors flat at 15.
-- **Monitoring withdrawal is signal, not just missingness**: median chart-stop
-  gap 2.67h (died) vs 0.82h (survived); gap > 2h has LR+ ≈ 8.6 for death.
-  Final-hour medians rest on small n — treat "monitoring stopped" as a
-  feature. Sensitivity run on continuously-monitored decedents (gap ≤ 2h)
-  reproduces all trajectory shapes.
-- At 5-minute resolution the terminal crashes (HR → ~45, SpO2 → ~70,
-  MAP → ~30) concentrate in the last ~30 minutes.
+- **SpO2** 97 → 87%, **RR** 22 → 18 in the last hours; **HR** runs hot
+  all day then dips to 84; **temperature** flat (no signal).
+- **Lactate** climbs 3.2 → 7.6 mmol/L across the last 24h (survivors ~1.6);
+  **creatinine** 1.7 → 1.9 vs ~1.0 flat.
+- **Pressors**: ~44% of decedents on vasopressors through the last day,
+  easing to 36% in the final hour; survivors 5.5% → 0.5%. (An earlier
+  "withdrawn to 10%" reading was an artifact of counting post-death
+  hours as unexposed final hours.)
+- **GCS**: decedents 7 → 3 (floor); survivors flat at 15.
+- **Monitoring withdrawal is NOT signal** (corrected): median chart-stop
+  gap 0.33h (died) vs 0.92h (survived); gap > 2h in 5.5% vs 9.4%.
+  Decedents are monitored at least as closely — the earlier LR+ ≈ 8.6
+  was an artifact of date-only death matching plus post-death anchor
+  hours. Sensitivity run on gap ≤ 2h decedents reproduces all shapes.
+- At 5-minute resolution the terminal crashes (HR → ~52, MAP → ~28)
+  concentrate in the last ~30 minutes.

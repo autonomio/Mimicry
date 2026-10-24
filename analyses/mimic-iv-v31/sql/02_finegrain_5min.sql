@@ -1,10 +1,10 @@
 -- Step 2: 5-minute vital medians over the last 6h, still-monitored subset
 -- (monitoring gap <= 1h). MAP/SpO2/HR. Aggregates only.
 WITH cases AS (
-  SELECT s.stay_id, s.outtime AS anchor, s.first_careunit
+  SELECT s.stay_id, a.deathtime AS anchor, s.first_careunit
   FROM mimiciv_icu.icustays s
-  JOIN mimiciv_hosp.patients p USING (subject_id)
-  WHERE p.dod BETWEEN s.intime AND s.outtime
+  JOIN mimiciv_hosp.admissions a USING (hadm_id)
+  WHERE a.deathtime BETWEEN s.intime AND s.outtime
 ),
 survivors AS (
   SELECT s.stay_id, s.outtime AS anchor, s.first_careunit
@@ -19,7 +19,7 @@ allstays AS (
 ),
 gap AS (
   SELECT c.cohort, c.stay_id, c.anchor, c.first_careunit,
-    date_diff('second', MAX(e.charttime), ANY_VALUE(c.anchor)) / 3600.0 AS gap_h
+    date_diff('second', MAX(CASE WHEN e.charttime <= c.anchor THEN e.charttime END), ANY_VALUE(c.anchor)) / 3600.0 AS gap_h
   FROM allstays c JOIN mimiciv_icu.chartevents e USING (stay_id)
   GROUP BY 1, 2, 3, 4
 ),
@@ -45,7 +45,7 @@ cohort AS (
 ),
 events AS (
   SELECT c.cohort, c.stay_id,
-         CAST(date_diff('minute', e.charttime, c.anchor) AS INTEGER) // 5 AS b,
+         CAST(FLOOR(date_diff('second', e.charttime, c.anchor) / 300) AS INTEGER) AS b,
          e.itemid, e.valuenum
   FROM cohort c
   JOIN mimiciv_icu.chartevents e USING (stay_id)

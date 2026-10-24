@@ -2,10 +2,10 @@
 -- within 2h of death, (c) hash-matched survivors. Deterministic controls via
 -- hash(stay_id) so every committed output shares one control sample.
 WITH cases AS (
-  SELECT s.stay_id, s.outtime AS anchor, s.first_careunit
+  SELECT s.stay_id, a.deathtime AS anchor, s.first_careunit
   FROM mimiciv_icu.icustays s
-  JOIN mimiciv_hosp.patients p USING (subject_id)
-  WHERE p.dod BETWEEN s.intime AND s.outtime
+  JOIN mimiciv_hosp.admissions a USING (hadm_id)
+  WHERE a.deathtime BETWEEN s.intime AND s.outtime
 ),
 case_n AS (
   SELECT first_careunit, COUNT(*) AS n FROM cases GROUP BY 1
@@ -22,7 +22,7 @@ controls AS (
 ),
 gap AS (
   SELECT c.stay_id,
-    date_diff('second', MAX(e.charttime), ANY_VALUE(c.anchor)) / 3600.0 AS gap_h
+    date_diff('second', MAX(CASE WHEN e.charttime <= c.anchor THEN e.charttime END), ANY_VALUE(c.anchor)) / 3600.0 AS gap_h
   FROM cases c JOIN mimiciv_icu.chartevents e USING (stay_id)
   GROUP BY 1
 ),
@@ -35,7 +35,7 @@ cohort AS (
 ),
 events AS (
   SELECT c.cohort, c.stay_id,
-         CAST(date_diff('hour', e.charttime, c.anchor) AS INTEGER) AS h,
+         CAST(FLOOR(date_diff('second', e.charttime, c.anchor) / 3600) AS INTEGER) AS h,
          e.itemid, e.valuenum
   FROM cohort c
   JOIN mimiciv_icu.chartevents e USING (stay_id)

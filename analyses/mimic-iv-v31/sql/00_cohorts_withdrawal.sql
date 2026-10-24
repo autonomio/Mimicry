@@ -1,16 +1,29 @@
 -- Step 0/1: cohort definitions + monitoring-withdrawal gap analysis.
--- gap_h = hours between a stay's last chart event and its anchor (death/discharge).
+-- gap_h = hours between a stay's last pre-anchor chart event and its anchor
+-- (deathtime for decedents, ICU discharge for survivors).
 -- Produces 00_withdrawal_gaps.csv (run part 1) and 00_withdrawal_2x2.csv (part 2).
+-- Cases: died inside the ICU stay (deathtime, a true timestamp, between
+-- intime and outtime). Controls: 1:1 per-unit hash-matched survivors, the
+-- same deterministic sample construction as 01-05 (shared control sample).
 -- Aggregates only.
 WITH cases AS (
-  SELECT s.stay_id, s.outtime AS anchor FROM mimiciv_icu.icustays s
-  JOIN mimiciv_hosp.patients p USING (subject_id)
-  WHERE p.dod BETWEEN s.intime AND s.outtime
+  SELECT s.stay_id, a.deathtime AS anchor, s.first_careunit
+  FROM mimiciv_icu.icustays s
+  JOIN mimiciv_hosp.admissions a USING (hadm_id)
+  WHERE a.deathtime BETWEEN s.intime AND s.outtime
+),
+case_n AS (
+  SELECT first_careunit, COUNT(*) AS n FROM cases GROUP BY 1
 ),
 controls AS (
-  SELECT s.stay_id, s.outtime AS anchor FROM mimiciv_icu.icustays s
-  JOIN mimiciv_hosp.admissions a USING (hadm_id)
-  WHERE a.hospital_expire_flag = 0
+  SELECT stay_id, outtime AS anchor FROM (
+    SELECT s.stay_id, s.outtime, s.first_careunit,
+           row_number() OVER (PARTITION BY s.first_careunit ORDER BY hash(s.stay_id)) AS rn
+    FROM mimiciv_icu.icustays s
+    JOIN mimiciv_hosp.admissions a USING (hadm_id)
+    WHERE a.hospital_expire_flag = 0
+  ) t JOIN case_n USING (first_careunit)
+  WHERE rn <= case_n.n
 ),
 cohort AS (
   SELECT stay_id, anchor, 'died' AS cohort FROM cases
@@ -19,7 +32,7 @@ cohort AS (
 ),
 lastchart AS (
   SELECT c.cohort, c.stay_id,
-    date_diff('second', MAX(e.charttime), ANY_VALUE(c.anchor)) / 3600.0 AS gap_h
+    date_diff('second', MAX(CASE WHEN e.charttime <= c.anchor THEN e.charttime END), ANY_VALUE(c.anchor)) / 3600.0 AS gap_h
   FROM cohort c JOIN mimiciv_icu.chartevents e USING (stay_id)
   GROUP BY 1, 2
 )

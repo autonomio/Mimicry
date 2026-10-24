@@ -26,7 +26,7 @@ VITALS = [("hr", "Heart rate (bpm)"), ("rr", "Resp. rate (/min)"),
           ("spo2", "SpO2 (%)"), ("map", "MAP (mmHg)"), ("tempc", "Temp (C)")]
 sens = load("../outputs/mimic_sensitivity.csv")
 fig, axes = plt.subplots(5, 1, figsize=(9, 13), sharex=True)
-cols = {"died_all": ("#c0392b", "died, all (n=6747)"),
+cols = {"died_all": ("#c0392b", "died, all (n=7329)"),
         "died_gap2h": ("#e67e22", "died, monitored<=2h"),
         "survived": ("#2471a3", "survived")}
 for ax, (v, label) in zip(axes, VITALS):

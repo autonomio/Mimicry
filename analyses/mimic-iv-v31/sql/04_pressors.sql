@@ -4,17 +4,17 @@
 -- phenyl 221749/229630/229631/229632, dopamine 221662, dobutamine 221653.
 -- Aggregates only.
 WITH cases AS (
-  SELECT s.stay_id, s.outtime AS anchor, s.first_careunit
+  SELECT s.stay_id, s.intime, a.deathtime AS anchor, s.first_careunit
   FROM mimiciv_icu.icustays s
-  JOIN mimiciv_hosp.patients p USING (subject_id)
-  WHERE p.dod BETWEEN s.intime AND s.outtime
+  JOIN mimiciv_hosp.admissions a USING (hadm_id)
+  WHERE a.deathtime BETWEEN s.intime AND s.outtime
 ),
 case_n AS (
   SELECT first_careunit, COUNT(*) AS n FROM cases GROUP BY 1
 ),
 controls AS (
-  SELECT stay_id, outtime AS anchor FROM (
-    SELECT s.stay_id, s.outtime, s.first_careunit,
+  SELECT stay_id, intime, outtime AS anchor FROM (
+    SELECT s.stay_id, s.intime, s.outtime, s.first_careunit,
            row_number() OVER (PARTITION BY s.first_careunit ORDER BY hash(s.stay_id)) AS rn
     FROM mimiciv_icu.icustays s
     JOIN mimiciv_hosp.admissions a USING (hadm_id)
@@ -23,9 +23,9 @@ controls AS (
   WHERE rn <= case_n.n
 ),
 cohort AS (
-  SELECT stay_id, anchor, 'died' AS cohort FROM cases
+  SELECT stay_id, intime, anchor, 'died' AS cohort FROM cases
   UNION ALL
-  SELECT stay_id, anchor, 'survived' AS cohort FROM controls
+  SELECT stay_id, intime, anchor, 'survived' AS cohort FROM controls
 ),
 inf AS (
   SELECT DISTINCT c.cohort, c.stay_id, c.anchor, i.starttime,
@@ -43,11 +43,12 @@ covered AS (
   SELECT c.cohort, c.stay_id, h AS hour_before,
     MAX(CASE WHEN i.stay_id IS NOT NULL
               AND i.starttime < c.anchor - (h * INTERVAL 1 HOUR)
-              AND i.endtime >= c.anchor - ((h + 1) * INTERVAL 1 HOUR)
+              AND i.endtime > c.anchor - ((h + 1) * INTERVAL 1 HOUR)
              THEN 1 ELSE 0 END) AS on_pressor
   FROM cohort c
   CROSS JOIN (SELECT UNNEST(range(0, 24)) AS h) hh
   LEFT JOIN inf i ON i.stay_id = c.stay_id AND i.cohort = c.cohort
+  WHERE c.intime < c.anchor - (h * INTERVAL 1 HOUR)
   GROUP BY 1, 2, 3
 )
 SELECT cohort, hour_before,
