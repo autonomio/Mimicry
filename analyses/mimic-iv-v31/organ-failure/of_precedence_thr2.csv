@@ -1,0 +1,16 @@
+a,b,n_both,p_a_first,p_b_first,tie24,median_lead_h
+respiration,coagulation,1765,0.3031,0.1949,0.502,-35.0
+respiration,liver,1403,0.3022,0.2117,0.4861,-35.0
+respiration,cardiovascular,2564,0.1689,0.1287,0.7024,-31.0
+respiration,cns,2714,0.5158,0.1286,0.3556,-65.0
+respiration,renal,2813,0.2709,0.1724,0.5567,-35.0
+coagulation,liver,1385,0.1957,0.1812,0.6231,-26.5
+coagulation,cardiovascular,1601,0.1799,0.3098,0.5103,37.0
+coagulation,cns,1574,0.4898,0.1779,0.3323,-56.0
+coagulation,renal,1872,0.2345,0.2623,0.5032,29.0
+liver,cardiovascular,1318,0.198,0.264,0.5379,34.0
+liver,cns,1240,0.4952,0.1831,0.3218,-52.0
+liver,renal,1581,0.2182,0.2207,0.561,25.0
+cardiovascular,cns,2235,0.5136,0.1427,0.3436,-65.0
+cardiovascular,renal,2528,0.2188,0.1566,0.6246,-32.0
+cns,renal,2714,0.1853,0.4602,0.3545,50.0

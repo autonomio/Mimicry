@@ -1,0 +1,134 @@
+loading terminal stays...
+terminal stays: 85242, decedents: 9438, los>=48h: 5709
+loading sofa rows...
+sofa rows: 1212421
+loading supports + code status...
+survivor rows: 2075205
+early-DNR stays: 4356 (0.462)
+PRIMARY cohort (los>=48h): 5709, sepsis=4714, age65+=3509
+===== threshold >=3 =====
+prevalence failed in last 24h before death:
+  respiration: 0.3076 (n=2411)
+  coagulation: 0.1512 (n=1185)
+  liver: 0.1232 (n=966)
+  cardiovascular: 0.4857 (n=3807)
+  cns: 0.3176 (n=2489)
+  renal: 0.3741 (n=2932)
+n organs failed distribution: {0: 1405, 1: 2340, 2: 1935, 3: 1317, 4: 608, 5: 201, 6: 32}
+first-failing organ (tie-split):
+  cardiovascular: 0.2928 (2352)
+  renal: 0.2034 (1634)
+  cns: 0.1990 (1598)
+  respiration: 0.1806 (1450)
+  coagulation: 0.0730 (586)
+  liver: 0.0512 (411)
+  RESP vs COAG: n=809 P(RESP first)=0.412 P(COAG first)=0.214 tie24=0.375 median_lead_h=-46.0
+  RESP vs LIVER: n=631 P(RESP first)=0.380 P(LIVER first)=0.271 tie24=0.349 median_lead_h=-41.0
+  RESP vs CV: n=1981 P(RESP first)=0.116 P(CV first)=0.204 tie24=0.679 median_lead_h=36.0
+  RESP vs CNS: n=1709 P(RESP first)=0.538 P(CNS first)=0.140 tie24=0.322 median_lead_h=-72.0
+  RESP vs RENAL: n=1845 P(RESP first)=0.314 P(RENAL first)=0.205 tie24=0.481 median_lead_h=-33.0
+  COAG vs LIVER: n=586 P(COAG first)=0.242 P(LIVER first)=0.302 tie24=0.456 median_lead_h=30.0
+  COAG vs CV: n=904 P(COAG first)=0.171 P(CV first)=0.448 tie24=0.381 median_lead_h=53.0
+  COAG vs CNS: n=748 P(COAG first)=0.485 P(CNS first)=0.249 tie24=0.266 median_lead_h=-50.0
+  COAG vs RENAL: n=943 P(COAG first)=0.264 P(RENAL first)=0.378 tie24=0.358 median_lead_h=34.0
+  LIVER vs CV: n=708 P(LIVER first)=0.205 P(CV first)=0.353 tie24=0.442 median_lead_h=47.0
+  LIVER vs CNS: n=557 P(LIVER first)=0.506 P(CNS first)=0.228 tie24=0.266 median_lead_h=-60.0
+  LIVER vs RENAL: n=777 P(LIVER first)=0.287 P(RENAL first)=0.287 tie24=0.426 median_lead_h=0.0
+  CV vs CNS: n=1864 P(CV first)=0.570 P(CNS first)=0.122 tie24=0.308 median_lead_h=-75.0
+  CV vs RENAL: n=2213 P(CV first)=0.333 P(RENAL first)=0.127 tie24=0.540 median_lead_h=-41.0
+  CNS vs RENAL: n=1930 P(CNS first)=0.212 P(RENAL first)=0.452 tie24=0.336 median_lead_h=51.0
+sequences (n=4192 stays, 913 distinct), top 20:
+  149: CV=RENAL
+  132: CNS=RENAL
+  121: CV=RESP
+  112: CV=RENAL=RESP
+  101: CV=RESP<CNS
+  97: RESP<CNS
+  91: CV=RENAL<CNS
+  90: CV<CNS
+  90: CV=RENAL=RESP<CNS
+  82: RENAL<CNS
+  78: CNS<RENAL
+  74: CV<RENAL
+  69: CV=RESP<RENAL
+  64: CNS=RESP
+  62: CNS=CV
+  61: CNS=CV=RESP
+  56: RENAL=RESP
+  53: CNS=CV=RENAL
+  50: CNS=CV=RENAL=RESP
+  43: CNS=CV=RESP<RENAL
+  failure #1 -> death: median 141.6h IQR [73-267] n=5278
+  failure #2 -> death: median 125.2h IQR [57-253] n=4192
+  failure #3 -> death: median 109.9h IQR [43-238] n=2845
+===== threshold >=2 =====
+prevalence failed in last 24h before death:
+  respiration: 0.4833 (n=3788)
+  coagulation: 0.3073 (n=2409)
+  liver: 0.2438 (n=1911)
+  cardiovascular: 0.4923 (n=3859)
+  cns: 0.3944 (n=3091)
+  renal: 0.5244 (n=4110)
+n organs failed distribution: {0: 779, 1: 1637, 2: 1764, 3: 1666, 4: 1132, 5: 683, 6: 177}
+first-failing organ (tie-split):
+  respiration: 0.2323 (2027)
+  renal: 0.2104 (1836)
+  cardiovascular: 0.1884 (1644)
+  cns: 0.1832 (1599)
+  coagulation: 0.1093 (954)
+  liver: 0.0764 (666)
+  RESP vs COAG: n=1765 P(RESP first)=0.303 P(COAG first)=0.195 tie24=0.502 median_lead_h=-35.0
+  RESP vs LIVER: n=1403 P(RESP first)=0.302 P(LIVER first)=0.212 tie24=0.486 median_lead_h=-35.0
+  RESP vs CV: n=2564 P(RESP first)=0.169 P(CV first)=0.129 tie24=0.702 median_lead_h=-31.0
+  RESP vs CNS: n=2714 P(RESP first)=0.516 P(CNS first)=0.129 tie24=0.356 median_lead_h=-65.0
+  RESP vs RENAL: n=2813 P(RESP first)=0.271 P(RENAL first)=0.172 tie24=0.557 median_lead_h=-35.0
+  COAG vs LIVER: n=1385 P(COAG first)=0.196 P(LIVER first)=0.181 tie24=0.623 median_lead_h=-26.5
+  COAG vs CV: n=1601 P(COAG first)=0.180 P(CV first)=0.310 tie24=0.510 median_lead_h=37.0
+  COAG vs CNS: n=1574 P(COAG first)=0.490 P(CNS first)=0.178 tie24=0.332 median_lead_h=-56.0
+  COAG vs RENAL: n=1872 P(COAG first)=0.235 P(RENAL first)=0.262 tie24=0.503 median_lead_h=29.0
+  LIVER vs CV: n=1318 P(LIVER first)=0.198 P(CV first)=0.264 tie24=0.538 median_lead_h=34.0
+  LIVER vs CNS: n=1240 P(LIVER first)=0.495 P(CNS first)=0.183 tie24=0.322 median_lead_h=-52.0
+  LIVER vs RENAL: n=1581 P(LIVER first)=0.218 P(RENAL first)=0.221 tie24=0.561 median_lead_h=25.0
+  CV vs CNS: n=2235 P(CV first)=0.514 P(CNS first)=0.143 tie24=0.344 median_lead_h=-65.0
+  CV vs RENAL: n=2528 P(CV first)=0.219 P(RENAL first)=0.157 tie24=0.625 median_lead_h=-32.0
+  CNS vs RENAL: n=2714 P(CNS first)=0.185 P(RENAL first)=0.460 tie24=0.354 median_lead_h=50.0
+sequences (n=4943 stays, 1088 distinct), top 20:
+  126: CV=RENAL=RESP<CNS
+  116: RESP<CNS
+  113: CNS=RENAL
+  108: CNS=RESP
+  88: CV=RESP<CNS
+  81: CV=RENAL=RESP
+  77: CNS=CV=RENAL=RESP
+  73: CV=RESP
+  72: RENAL=RESP<CNS
+  70: RENAL=RESP
+  70: RENAL<CNS
+  70: CNS=CV=RESP
+  63: COAG=CV=LIVER=RENAL=RESP<CNS
+  61: COAG=CV=LIVER=RENAL=RESP
+  59: CV=RENAL<CNS
+  55: CNS=RENAL=RESP
+  52: CNS<RENAL
+  48: CNS<RESP
+  48: CV=RENAL
+  48: CNS=COAG=CV=LIVER=RENAL=RESP
+  failure #1 -> death: median 149.6h IQR [82-276] n=5549
+  failure #2 -> death: median 140.4h IQR [69-267] n=4943
+  failure #3 -> death: median 127.7h IQR [57-257] n=3897
+trajectories written; decedent total SOFA at -168h vs -6h:
+  4.75 -> 7.97
+  cardiovascular: support-after-onset median 0.1h IQR [-1-0] n=4866
+  renal: support-after-onset median 16.8h IQR [4-43] n=1492
+  respiration: support-after-onset median -3.2h IQR [-15--1] n=3677
+Vincent replication (n=4486, los>=4d decedents): mean dSOFA(-96h->-24h)=0.26, increased=0.365, stable=0.317, decreased=0.318
+  mean SOFA -96h=6.26, -24h=6.53, any-organ-increase=0.563 (INDEPTH: 0.80)
+lethality P(death | organ ever SOFA>=3):
+  respiration: 0.2682 (n=14658)
+  coagulation: 0.3673 (n=5647)
+  liver: 0.4033 (n=3866)
+  cardiovascular: 0.3036 (n=17550)
+  cns: 0.3107 (n=14444)
+  renal: 0.2850 (n=17186)
+  baseline ICU-stay death rate: 0.1202
+done
