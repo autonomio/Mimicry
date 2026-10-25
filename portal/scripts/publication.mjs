@@ -109,6 +109,24 @@ export function validatePublication(catalog, releases) {
       assert(sh.earlier_n>=100 && sh.later_n>=100,"Historical comparison undersized");
       for(const k of ["baseline_domain_auc","raw_exit_change","standardized_exit_change"])number(sh[k],"historical shift");
       assert(sh.ci95_fixed_weights[0]<=sh.standardized_exit_change && sh.standardized_exit_change<=sh.ci95_fixed_weights[1],"Historical interval inconsistent");
+      if (z.icu_return_sensitivity) {
+        const a=z.icu_return_sensitivity;
+        for (const era of ["earlier","later"]){
+          const x=a[era];
+          assert(x.n>=100 && x.exit_then_return24_n>=0 && Number.isInteger(x.exit_then_return24_n),"Invalid ICU return cohort");
+          for (const k of ["original_exit","exit_without_return24","exit_without_return7d"]){
+            number(x[k],"return sensitivity");
+            assert(x[k]>=0 && x[k]<=1,"Impossible ICU exit fraction");
+          }
+          assert(x.original_exit>=x.exit_without_return24 && x.exit_without_return24>=x.exit_without_return7d,"Return sensitivity violates monotonicity");
+          assert(Math.abs(x.original_exit-x.exit_without_return24-x.exit_then_return24_n/x.n)<0.00002,"ICU return count/rate discrepancy");
+        }
+        const old=z.earlier_rolling_origin.horizons.at(-1);
+        const now=z.horizons.at(-1);
+        assert(Math.abs(a.earlier.original_exit-old.observed_exit)<0.00002,"Earlier exit conflicts with source");
+        assert(Math.abs(a.later.original_exit-now.exit.observed)<0.00002,"Later exit conflicts with source");
+        assert(typeof a.caveat==="string" && a.caveat.length>30,"ICU return caveat required");
+      }
       assert(Array.isArray(z.scientific_limitations) && z.scientific_limitations.length>=3,"Scientific caveats required");
     }
     assert(r.methods.warnings.length>=4,"Methods limitations required");

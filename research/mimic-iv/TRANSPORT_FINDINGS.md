@@ -116,3 +116,20 @@ originates in a terminal hazard that does not transport to later
 recorded practice, not merely in recursive physiological simulation.
 The residual era difference is an observed-data transport problem,
 not an identified intervention or treatment-policy effect.
+
+## Additional administrative endpoint audit
+
+A first ICU stay may be followed by a second ICU stay in the **same hospital admission**. Script 93_icu_return_audit.sql checks whether this changes the historical discharge comparison among the same hour-24 patients.
+
+| Historical period | Eligible patients | ICU exits by day six | First ICU exit without another ICU admission within 24h | First ICU exit without another ICU admission within 7d |
+|---|---:|---:|---:|---:|
+| 2017–2019 | 9,838 | 77.14% | 74.93% | 71.84% |
+| 2020–2022 | 7,147 | 72.59% | 69.71% | 66.87% |
+
+Among those with a first ICU exit by five days, 217 in the earlier cohort and 206 in the later cohort returned to the ICU within the subsequent 24 hours of exit. The later-minus-earlier gap is −4.55 percentage points for the original competing endpoint and −5.23 points after excluding exits followed by a short-interval ICU return. Hence the broad historical discharge difference is not an artefact that disappears when rapid readmissions are excluded.
+
+This is **retrospective endpoint sensitivity**. Future ICU return is unknown at initial discharge; the filtered endpoint must not be used as an as-of clinical predictor. The analysis remains observational and cannot attribute the period difference to hospital discharge policy or treatment choice.
+
+## Real-time feature availability limitation
+
+Derived vasopressor and invasive-ventilation intervals may incorporate later charted information in their end times. Strict prediction availability must be reconstructed using order entry and storetime, not only the final retrospectively derived interval table. Consequently the historical predictive benchmark is not yet a certified deployable as-of forecasting system.

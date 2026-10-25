@@ -55,3 +55,9 @@ test("round numbers are unique within a track",()=>{
  x.id="2026-10-25-conflicting-round";
  assert.throws(()=>validatePublication(tracks,[...releases,x]),/Duplicate round number/);
 });
+
+test("ICU-return endpoint sensitivity preserves source event counts",()=>{
+ const x=JSON.parse(JSON.stringify(releases.find(x=>x.transport)));
+ x.transport.icu_return_sensitivity.later.exit_then_return24_n += 30;
+ assert.throws(()=>validatePublication(tracks,[x]),/ICU return count\/rate discrepancy/);
+});

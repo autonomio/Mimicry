@@ -256,6 +256,16 @@ function transportChart(z,event){
  ).join("");
  return '<svg class="outcome-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(labels[event])+': observed, model prediction on real histories, and fully simulated risk across 24, 48, 72 and 120 hours.">'+grid+ticks+shapes+'</svg>';
 }
+function administrativeExitFigure(z){
+ const a=z.icu_return_sensitivity;
+ if(!a)return "";
+ const difference=100*(a.later.exit_without_return24-a.earlier.exit_without_return24);
+ return '<div class="figure transport-administrative">'+
+  '<div class="figure-head"><div><span class="figure-kicker">ENDPOINT SENSITIVITY · ICU RE-ENTRY</span><h3>Leaving a stay is not always leaving intensive care.</h3><p>Some patients return to another ICU stay during the same hospital admission. Restricting first-stay exits to those without a return in the next 24 hours does not remove the historical shift.</p></div></div>'+
+  '<div class="table-scroll"><table><caption>Five-day first ICU exit, with a 24-hour re-entry sensitivity</caption><thead><tr><th>Historical period</th><th>At-risk patients</th><th>All first ICU exits</th><th>Without return within 24h</th><th>With return in 24h, count</th></tr></thead><tbody>'+
+  [a.earlier,a.later].map(x=>'<tr><th>'+esc(x.period)+'</th><td>'+fmt(x.n)+'</td><td>'+pct(x.original_exit,2)+'</td><td>'+pct(x.exit_without_return24,2)+'</td><td>'+fmt(x.exit_then_return24_n)+'</td></tr>').join("")+
+  '</tbody></table></div><p class="figure-caution">'+ico("alert",17)+' The later-minus-earlier difference is '+fmt(difference,2)+' percentage points after excluding short-interval ICU returns. '+esc(a.caveat)+'</p></div>';
+}
 function transportExplorer(r){
  const z=r.transport;
  return '<section class="transport-section" aria-labelledby="transport-head">'+
@@ -273,7 +283,7 @@ function transportExplorer(r){
  '<div class="figure"><div class="figure-head"><div><span class="figure-kicker">EXPLORATORY · ICU ENVIRONMENTS</span><h3>Where is the change most visible?</h3><p>Standardized five-day discharge differences by ICU group. Negative values mean fewer later-era discharges. These subgroup intervals are exploratory and not adjusted for multiple testing.</p></div></div>'+
  '<div class="table-scroll"><table><caption>ICU group differences between historical eras</caption><thead><tr><th>ICU group</th><th>Earlier / later n</th><th>Later minus earlier</th><th>95% interval</th></tr></thead><tbody>'+
  z.icu_unit_subgroups.map(x=>'<tr><th>'+esc(x.unit)+'</th><td>'+fmt(x.n_earlier)+' / '+fmt(x.n_later)+'</td><td>'+fmt(x.difference*100,2)+'pp</td><td>'+fmt(x.ci95[0]*100,2)+' to '+fmt(x.ci95[1]*100,2)+'pp</td></tr>').join("")+
- '</tbody></table></div></div></section>';
+ '</tbody></table></div></div>'+administrativeExitFigure(z)+'</section>';
 }
 function installTransportExplorer(r){
  if(!r.transport)return;

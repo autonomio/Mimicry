@@ -253,7 +253,8 @@
       "The 2020–2022 cohort was examined during model development; these findings are exploratory, not a fresh prospective holdout.",
       "Patient-bootstrap uncertainty for prequential and standardized contrasts conditions on fitted model and overlap weights; simulator replicates quantify Monte Carlo uncertainty, not model uncertainty.",
       "The residual change after measured case-mix standardization does not identify a policy effect; hidden patient severity, coding practice and discharge circumstances may differ.",
-      "The model still fails discharge and occupancy trajectory validation. It must not be used for clinical decision support."
+      "The model still fails discharge and occupancy trajectory validation. It must not be used for clinical decision support.",
+      "Derived ventilation and vasopressor interval endpoints can incorporate charting recorded after the landmark. The retrospective forecasting study has not established real-time, as-of-feature availability."
     ]
   },
   "track": "prophecy",
@@ -508,14 +509,36 @@
     "source_scripts": [
       "89_hazard_error_decomposition.py",
       "90_transport_horizon_strata.py",
-      "91_rolling_origin_hazard.py"
+      "91_rolling_origin_hazard.py",
+      "93_icu_return_audit.sql"
     ],
     "scientific_limitations": [
       "The 2020–2022 cohort was examined during model development; these findings are exploratory, not a fresh prospective holdout.",
       "Patient-bootstrap uncertainty for prequential and standardized contrasts conditions on fitted model and overlap weights; simulator replicates quantify Monte Carlo uncertainty, not model uncertainty.",
       "The residual change after measured case-mix standardization does not identify a policy effect; hidden patient severity, coding practice and discharge circumstances may differ.",
-      "The model still fails discharge and occupancy trajectory validation. It must not be used for clinical decision support."
-    ]
+      "The model still fails discharge and occupancy trajectory validation. It must not be used for clinical decision support.",
+      "ICU stay end does not necessarily mean permanent ICU discharge; about 2–3% of baseline patients had a first-ICU exit followed by another ICU admission within 24 hours."
+    ],
+    "icu_return_sensitivity": {
+      "method": "Retrospective same-hospital-admission ICU return within 24 hours following the first ICU exit; does not reclassify the original competing endpoint for predictive modeling.",
+      "earlier": {
+        "period": "2017–2019",
+        "n": 9838,
+        "original_exit": 0.771397,
+        "exit_without_return24": 0.749339,
+        "exit_without_return7d": 0.718439,
+        "exit_then_return24_n": 217
+      },
+      "later": {
+        "period": "2020–2022",
+        "n": 7147,
+        "original_exit": 0.725899,
+        "exit_without_return24": 0.697076,
+        "exit_without_return7d": 0.668672,
+        "exit_then_return24_n": 206
+      },
+      "caveat": "Whether a first-ICU-stay exit is followed by an ICU return is only known after the event; this is an administrative endpoint sensitivity, not a prospective transition definition."
+    }
   },
   "round_number": 2
 }
