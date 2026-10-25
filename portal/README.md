@@ -41,3 +41,7 @@ Only aggregate results are public. No `subject_id`, `stay_id`, `hadm_id`, per-pa
 Future aggregate releases update on approved merges; this does **not** expose an endpoint or grant permission for the server to directly upload patient-level analyses.
 
 **Repository protection:** `master` requires one independent approving GitHub review. Production publishing runs only after the reviewed PR is merged; preview deployments are available before approval.
+
+## Research round 02
+
+The second Prophecy research round is the historical transport analysis: `data/rounds/2026-10-25-discharge-transport.json`. It includes an interactive observed-versus-real-history-predicted-versus-simulated trajectory explorer, a previous rolling-origin check and measured-case-mix-standardized ICU-discharge comparisons. The original inaugural release is preserved unchanged apart from explicit chronological round numbering. Both use the same canonical published evidence schema, with additional fail-fast conservation checks for transport metrics.

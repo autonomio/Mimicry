@@ -5,7 +5,7 @@
   "subtitle": "First verified MIMIC-IV observational release",
   "date": "2026-10-25",
   "dataset": "MIMIC-IV v3.1",
-  "status": "Exploratory research \u00b7 not for clinical use",
+  "status": "Exploratory research · not for clinical use",
   "review_status": "internal computational QA",
   "study_site": "Single centre",
   "scope": "ICU care after the first 24 hours",
@@ -130,7 +130,7 @@
   },
   "simulation": {
     "name": "Longitudinal stochastic ICU trajectory model",
-    "cohort": "7,147 2020\u20132022 ICU patients alive at hour 24",
+    "cohort": "7,147 2020–2022 ICU patients alive at hour 24",
     "n": 7147,
     "replicates": 18,
     "model": "History-aware nonlinear terminal hazard",
@@ -217,8 +217,8 @@
   "documentation": {
     "unknown_share_early": 0.267,
     "unknown_share_late": 0.375,
-    "earliest": "2008\u20132010",
-    "latest": "2020\u20132022",
+    "earliest": "2008–2010",
+    "latest": "2020–2022",
     "label": "Undocumented structured code status at the six-hour landmark",
     "caution": "An unknown charted code status is not evidence of full-code intent. Temporal drift may reflect documentation practices."
   },
@@ -241,7 +241,7 @@
   ],
   "methods": {
     "cohort": "One ICU stay per patient. Six-hour landmarks from ICU hour 24 through day seven.",
-    "historical_split": "2008\u20132016 development, 2017\u20132019 calibration, 2020\u20132022 held-out testing.",
+    "historical_split": "2008–2016 development, 2017–2019 calibration, 2020–2022 held-out testing.",
     "metrics": "Multiclass log loss, Brier score, paired patient-clustered uncertainty, multi-horizon cumulative incidence and explicit calibration gates.",
     "warnings": [
       "Observational single-centre data; not a randomized study.",
@@ -252,5 +252,6 @@
       "No patient-level data, identifiable records or clinical recommendations are published."
     ]
   },
-  "track": "prophecy"
+  "track": "prophecy",
+  "round_number": 1
 }

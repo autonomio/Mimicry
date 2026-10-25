@@ -32,3 +32,26 @@ test("unsupported new release track cannot publish",()=>{
  const x=JSON.parse(JSON.stringify(releases[0]));x.track="unknown-track";
  assert.throws(()=>validatePublication(tracks,[x]),/Unknown/);
 });
+
+test("historical discharge transport release is newest within same date",()=>{
+ const recent=releases.find(x=>x.id==="2026-10-25-discharge-transport");
+ assert.ok(recent&&recent.round_number===2);
+ assert.equal(releases[0].id,recent.id);
+ assert.equal(recent.transport.horizons.length,4);
+ assert.ok(recent.transport.horizons.every(h=>!recent.simulation.horizons.find(s=>s.hours===h.hours).passed));
+});
+test("transport decomposition cannot silently contradict the underlying history",()=>{
+ const x=JSON.parse(JSON.stringify(releases.find(x=>x.transport)));
+ x.transport.horizons.at(-1).exit.prequential+=0.02;
+ assert.throws(()=>validatePublication(tracks,[x]),/historical model error|Historical model error/i);
+});
+test("changing simulation figures without new validation cannot publish",()=>{
+ const x=JSON.parse(JSON.stringify(releases.find(x=>x.transport)));
+ x.transport.horizons.at(-1).exit.simulated+=0.04;
+ assert.throws(()=>validatePublication(tracks,[x]),/Recursive feedback error|Transport contradicts/i);
+});
+test("round numbers are unique within a track",()=>{
+ const x=JSON.parse(JSON.stringify(releases[0]));
+ x.id="2026-10-25-conflicting-round";
+ assert.throws(()=>validatePublication(tracks,[...releases,x]),/Duplicate round number/);
+});

@@ -156,6 +156,13 @@ function resultSummary(r){
  return '<div class="summary-insight"><p class="summary-question">What is the result?</p><p>'+esc(r.message)+'</p><span>Observed practice, not counterfactual treatment effects.</span></div>';
 }
 function narrativeModes(r){
+ if(r.transport){
+  const z=r.transport;
+  const five=z.horizons.at(-1).exit, early=z.earlier_rolling_origin.horizons.at(-1);
+  return '<div class="lens-panel" id="lens-panel"><div class="lens-header"><div>'+label("TWO WAYS TO READ THIS")+'<h3>What does it mean when a model stops traveling?</h3></div><div class="lens-switch" role="group" aria-label="Reading level"><button type="button" data-lens="public" aria-pressed="true">In plain language</button><button type="button" data-lens="technical" aria-pressed="false">Scientific detail</button></div></div>'+
+  '<div class="lens-copy" data-lens-view="public"><p>Five days into the follow-up, the simulator predicts that nearly 8 in 10 people have left intensive care. But just over 7 in 10 actually had. Most of the mistake happens before the model tries to invent a patient’s future. <strong>Hospital histories changed in ways this older model did not fully capture.</strong></p></div>'+
+  '<div class="lens-copy hidden" data-lens-view="technical"><p>The terminal hazard on actual patient histories predicts '+pct(five.prequential,2)+' 120-hour cumulative ICU exit versus '+pct(five.observed,2)+' observed; the full rollout predicts '+pct(five.simulated,2)+'. Its '+fmt(five.total_error*100,2)+'pp full error decomposes into '+fmt(five.local_error*100,2)+'pp prequential transport residual and '+fmt(five.recursive_error*100,2)+'pp additional trajectory feedback. The earlier 2017–2019 rolling-origin evaluation also overpredicts discharge by '+fmt(early.exit_error*100,2)+'pp. This is descriptive model criticism, not a causal policy-effect decomposition.</p></div></div>';
+ }
  return '<div class="lens-panel" id="lens-panel"><div class="lens-header"><div>'+label("CHOOSE YOUR LENS")+'<h3>One result. Two ways to read it.</h3></div><div class="lens-switch" role="group" aria-label="Reading level"><button type="button" data-lens="public" aria-pressed="true">In plain language</button><button type="button" data-lens="technical" aria-pressed="false">Scientific detail</button></div></div>'+
  '<div class="lens-copy" data-lens-view="public"><p>When a model knows what care a person is receiving—and what clinicians measure—it predicts recorded ICU outcomes better than a model that looks at physiology alone. <strong>That does not mean the care decisions caused the deaths.</strong></p></div>'+
  '<div class="lens-copy hidden" data-lens-view="technical"><p>Across patient-disjoint historical cohorts, care-history features reduced held-out multiclass log loss by '+fmt(r.prediction.improvement.value,5)+' ('+fmt(r.prediction.improvement.relative*100,1)+'% relative); 95% patient-cluster bootstrap CI '+fmt(r.prediction.improvement.ci[0],5)+'–'+fmt(r.prediction.improvement.ci[1],5)+'. These are predictions under observed clinical practice, without identifying a counterfactual dynamic treatment regime.</p></div></div>';
@@ -171,8 +178,9 @@ function installModelExplorer(r){
   $("#model-bars").innerHTML=r.prediction.models.map(m=>{
    const delta=base.loss-m.loss;
    const isBest=m.key==="care_history";
-   return '<div class="model-row '+(isBest?'model-row-best':'')+'"><div class="model-name">'+esc(m.label)+(isBest?'<span>FULL HISTORY</span>':'')+'</div><div class="model-track"><div class="model-fill" style="width:'+clamp(m.loss/0.39*100,0,100)+'%"></div></div><div class="model-number">'+fmt(m.loss,5)+'</div><div class="model-delta '+(delta<0?'negative':'')+'">'+(Math.abs(delta)<0.00001?'Baseline':(delta>0?'−':'+')+fmt(Math.abs(delta),5))+'</div></div>'
+   return '<div class="model-row '+(isBest?'model-row-best':'')+'"><div class="model-name">'+esc(m.label)+(isBest?'<span>FULL HISTORY</span>':'')+'</div><div class="model-track"><div class="model-fill" data-width="'+clamp(m.loss/0.39*100,0,100)+'"></div></div><div class="model-number">'+fmt(m.loss,5)+'</div><div class="model-delta '+(delta<0?'negative':'')+'">'+(Math.abs(delta)<0.00001?'Baseline':(delta>0?'−':'+')+fmt(Math.abs(delta),5))+'</div></div>'
   }).join("");
+  $$(".model-fill",$("#model-bars")).forEach(el=>{el.style.width=Number(el.dataset.width)+"%";});
  };
  $("#model-baseline").addEventListener("change",render);render();
 }
@@ -181,10 +189,22 @@ function renderCalibration(r) {
  return '<div class="figure"><div class="figure-head"><div><span class="figure-kicker">FIGURE 02 · CALIBRATION</span><h3>A good score is not enough.</h3><p>How often the event occurred, versus its average predicted probability in the test cohort.</p></div></div>'+
  '<div class="calibration-list">'+r.prediction.calibration.map(x=>{
   const w1=x.observed/mx*100,w2=x.predicted/mx*100;
-  return '<div class="cal-row"><div class="cal-row-title">'+esc(x.event)+'</div><div class="cal-axis"><span class="cal-stem" style="left:'+Math.min(w1,w2)+'%;width:'+Math.abs(w1-w2)+'%"></span><span class="cal-point actual-point" style="left:'+w1+'%"></span><span class="cal-point predicted-point" style="left:'+w2+'%"></span></div><div class="cal-values"><span>'+pct(x.observed,2)+'</span><span>'+pct(x.predicted,2)+'</span></div></div>'
+  return '<div class="cal-row"><div class="cal-row-title">'+esc(x.event)+'</div><div class="cal-axis"><span class="cal-stem"></span><span class="cal-point actual-point"></span><span class="cal-point predicted-point"></span></div><div class="cal-values"><span>'+pct(x.observed,2)+'</span><span>'+pct(x.predicted,2)+'</span></div></div>'
  }).join("")+'</div>'+
  '<div class="chart-legend"><span><i class="actual-legend"></i>Observed</span><span><i class="predicted-legend"></i>Predicted</span></div>'+
  '<p class="figure-caution">'+ico("alert",17)+' ICU death is underpredicted in the later historical test set. Absolute risk estimates are not adequate for clinical use.</p></div>';
+}
+function installCalibration(r){
+ const max=Math.max(...r.prediction.calibration.flatMap(x=>[x.observed,x.predicted]))*1.22;
+ $$(".cal-row").forEach((el,i)=>{
+  const d=r.prediction.calibration[i];
+  const p1=d.observed/max*100,p2=d.predicted/max*100;
+  const stem=$(".cal-stem",el),actual=$(".actual-point",el),pred=$(".predicted-point",el);
+  stem.style.left=Math.min(p1,p2)+"%";
+  stem.style.width=Math.abs(p1-p2)+"%";
+  actual.style.left=p1+"%";
+  pred.style.left=p2+"%";
+ });
 }
 function lineChart(horizons,which){
  const keys={death:"Death",exit:"Discharged from ICU",icu:"Remaining in ICU"};
@@ -218,6 +238,63 @@ function installOutcomeExplorer(r){
  $$("[data-outcome]").forEach(el=>el.addEventListener("click",()=>chart(el.dataset.outcome)));
  chart("death");
 }
+function transportChart(z,event){
+ const labels={exit:"Cumulative ICU exit",death:"Cumulative ICU death"};
+ const data=z.horizons.map(h=>({h:h.hours,o:100*h[event].observed,p:100*h[event].prequential,s:100*h[event].simulated}));
+ const W=750,H=350,L=65,R=18,T=22,B=54;
+ const val=Math.max(...data.flatMap(v=>[v.o,v.p,v.s]));
+ const ceil=Math.max(1,Math.ceil(val*1.12/(val>20?10:val>5?2:1))*(val>20?10:val>5?2:1));
+ const x=h=>L+(W-R-L)*h/120;
+ const y=v=>T+(H-T-B)*(1-v/ceil);
+ const line=k=>data.map((q,i)=>(i?"L":"M")+x(q.h).toFixed(2)+" "+y(q[k]).toFixed(2)).join(" ");
+ const props=[["o","#17846b","Observed"],["p","#ae805b","Model on actual histories"],["s","#2b5f7d","Full simulation"]];
+ const grid=[0,.25,.5,.75,1].map(v=>'<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(ceil*v)+'" y2="'+y(ceil*v)+'" stroke="#dce5de"/><text x="'+(L-12)+'" y="'+(y(ceil*v)+4)+'" text-anchor="end" class="axis-label">'+fmt(ceil*v,val<8?1:0)+'%</text>').join("");
+ const ticks=data.map(v=>'<text x="'+x(v.h)+'" y="'+(H-18)+'" text-anchor="middle" class="axis-label">'+v.h+'h</text>').join("");
+ const shapes=props.map(([k,color,desc])=>
+  '<path d="'+line(k)+'" stroke="'+color+'" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'+
+  data.map(v=>'<circle cx="'+x(v.h)+'" cy="'+y(v[k])+'" r="5" fill="'+color+'" stroke="#fffef9" stroke-width="2"><title>'+desc+', '+v.h+' hours: '+fmt(v[k],2)+'%</title></circle>').join("")
+ ).join("");
+ return '<svg class="outcome-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(labels[event])+': observed, model prediction on real histories, and fully simulated risk across 24, 48, 72 and 120 hours.">'+grid+ticks+shapes+'</svg>';
+}
+function transportExplorer(r){
+ const z=r.transport;
+ return '<section class="transport-section" aria-labelledby="transport-head">'+
+ '<div class="section-heading heading-after"><div>'+label("THE NEW FINDING / TRANSPORT STRESS TEST")+'<h2 id="transport-head">The error lives in the hospital clock.</h2></div><p>Three trajectories reveal where a model stops describing its later clinical environment.</p></div>'+
+ '<div class="figure"><div class="figure-head"><div><span class="figure-kicker">FIGURE · HISTORICAL TRANSPORT</span><h3>Actual care. Predicted care. Simulated care.</h3><p>Four future horizons from ICU hour 24, among '+fmt(z.cohort_n)+' patients. These are frequencies, not personalized risks.</p></div></div>'+
+ '<div class="outcome-controls" role="group" aria-label="Transport outcome"><button type="button" data-transport-event="exit" aria-pressed="true" class="active">ICU discharge</button><button type="button" data-transport-event="death" aria-pressed="false">ICU death</button></div>'+
+ '<div id="transport-graph"></div><div class="transport-legend"><span><i class="t-observed"></i>What happened</span><span><i class="t-history"></i>Prediction on actual histories</span><span><i class="t-simulated"></i>Fully simulated</span></div>'+
+ '<div id="transport-interpretation" class="transport-reading" aria-live="polite"></div>'+
+ '<details class="scientist-detail"><summary>Inspect all horizons, errors and uncertainty '+ico("arrow",16)+'</summary><div id="transport-exact-values"></div></details>'+
+ '<p class="figure-caution">'+ico("alert",17)+' Prequential scores are based on actually observed histories; full simulation generates trajectories recursively. The components explain forecast failure, not the causal consequences of changing treatment.</p></div>'+
+ '<div class="transport-findings">'+
+ '<article><span class="figure-kicker">HISTORICAL REPLICATION</span><h3>An earlier failure, too.</h3><p>An earlier rolling-origin model (trained 2008–2013, calibrated 2014–2016, evaluated 2017–2019) also overpredicted five-day discharge.</p><div class="transport-large">'+fmt(z.earlier_rolling_origin.horizons.at(-1).exit_error*100,2)+'<span>percentage points</span></div><p class="tiny-note">Fixed-model patient bootstrap interval: '+fmt(z.earlier_rolling_origin.horizons.at(-1).exit_error_ci95[0]*100,2)+' to '+fmt(z.earlier_rolling_origin.horizons.at(-1).exit_error_ci95[1]*100,2)+'pp. Exploratory repeated historical testing, not prospective confirmation.</p></article>'+
+ '<article><span class="figure-kicker">COMMON-SUPPORT STANDARDIZATION</span><h3>Not explained by recorded case mix alone.</h3><p>Standardizing recorded baseline severity and care history still leaves a lower discharge incidence in 2020–2022 versus 2017–2019.</p><div class="transport-large">'+fmt(z.historical_shift.standardized_exit_change*100,2)+'<span>percentage points</span></div><p class="tiny-note">Fixed-weight patient bootstrap interval '+fmt(z.historical_shift.ci95_fixed_weights[0]*100,2)+' to '+fmt(z.historical_shift.ci95_fixed_weights[1]*100,2)+'pp. Hidden illness severity and practice differences remain possible.</p></article>'+
+ '</div>'+
+ '<div class="figure"><div class="figure-head"><div><span class="figure-kicker">EXPLORATORY · ICU ENVIRONMENTS</span><h3>Where is the change most visible?</h3><p>Standardized five-day discharge differences by ICU group. Negative values mean fewer later-era discharges. These subgroup intervals are exploratory and not adjusted for multiple testing.</p></div></div>'+
+ '<div class="table-scroll"><table><caption>ICU group differences between historical eras</caption><thead><tr><th>ICU group</th><th>Earlier / later n</th><th>Later minus earlier</th><th>95% interval</th></tr></thead><tbody>'+
+ z.icu_unit_subgroups.map(x=>'<tr><th>'+esc(x.unit)+'</th><td>'+fmt(x.n_earlier)+' / '+fmt(x.n_later)+'</td><td>'+fmt(x.difference*100,2)+'pp</td><td>'+fmt(x.ci95[0]*100,2)+' to '+fmt(x.ci95[1]*100,2)+'pp</td></tr>').join("")+
+ '</tbody></table></div></div></section>';
+}
+function installTransportExplorer(r){
+ if(!r.transport)return;
+ const z=r.transport;
+ function view(ev){
+  $("#transport-graph").innerHTML=transportChart(z,ev);
+  $$("[data-transport-event]").forEach(b=>{const on=b.dataset.transportEvent===ev;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});
+  const q=z.horizons.at(-1)[ev];
+  const name=ev==="exit"?"ICU discharge":"ICU death";
+  $("#transport-interpretation").innerHTML='<div class="transport-reading-heading">'+esc(name)+' at day five</div><div class="transport-reading-grid">'+
+   '<div><span>Observed</span><strong>'+pct(q.observed,2)+'</strong></div>'+
+   '<div><span>Predicted on real histories</span><strong>'+pct(q.prequential,2)+'</strong></div>'+
+   '<div><span>Fully simulated</span><strong>'+pct(q.simulated,2)+'</strong></div></div>'+
+   '<p>'+fmt(q.local_error*100,2)+'pp error already on the observed history; another '+fmt(q.recursive_error*100,2)+'pp when future states are generated. Their sum is '+fmt(q.total_error*100,2)+'pp. Signs indicate overprediction (+) or underprediction (−).</p>';
+  $("#transport-exact-values").innerHTML='<div class="table-scroll"><table><caption>'+esc(name)+' by horizon; percentage points</caption><thead><tr><th>Hours</th><th>Observed</th><th>Actual-history forecast</th><th>Simulated</th><th>Historical error</th><th>Extra simulation error</th></tr></thead><tbody>'+
+   z.horizons.map(h=>{const v=h[ev];return '<tr><th>'+h.hours+'h</th><td>'+pct(v.observed,2)+'</td><td>'+pct(v.prequential,2)+'</td><td>'+pct(v.simulated,2)+'</td><td>'+fmt(v.local_error*100,2)+'pp</td><td>'+fmt(v.recursive_error*100,2)+'pp</td></tr>'}).join("")+
+   '</tbody></table></div><p class="tiny-note">The 95% patient-bootstrap interval for five-day historical '+esc(name.toLowerCase())+' error is '+fmt(q.local_ci95[0]*100,2)+' to '+fmt(q.local_ci95[1]*100,2)+' percentage points. It conditions on the fitted model. Simulation Monte Carlo variation is separate.</p>';
+ }
+ $$("[data-transport-event]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.transportEvent)));
+ view("exit");
+}
 function associationExplorer(r){
  return ['<div class="figure"><div class="figure-head"><div><span class="figure-kicker">FIGURE 04 · OBSERVATIONAL ASSOCIATIONS</span><h3>What changes around DNR orders?</h3><p>Differences in before–after care and monitoring, compared with eligible full-code risk sets.</p></div></div>',
  '<div class="effect-grid">'+r.decisions.effects.map(x=>{
@@ -230,15 +307,16 @@ function release(catalog,t,r){
  const latest=catalog.releases.find(x=>x.track===t.id)?.id===r.id;
  renderTo([
  '<section class="release-hero"><div class="container">'+breadcrumbs(t,r),
- '<div class="release-hero-label">'+label("PROPHECY / RESEARCH RELEASE","mint")+'<span>'+esc(dateFmt(r.date))+'</span></div>',
+ '<div class="release-hero-label">'+label(t.name.toUpperCase()+" / RESEARCH RELEASE","mint")+'<span>'+esc(dateFmt(r.date))+'</span></div>',
  '<h1>'+esc(r.title)+'<span class="mint-dot">.</span></h1>',
  '<p class="release-lead">'+esc(r.subtitle)+'</p><div class="release-tags">'+statusPill(r.status)+statusPill(r.simulation.validation,'pill-warn')+'</div>',
- '<div class="release-intro-meta"><span>Dataset: '+esc(r.dataset)+'</span><span>Historical test: 2020–2022</span><span>Version '+esc(r.id)+'</span></div>',
+ '<div class="release-intro-meta"><span>Dataset: '+esc(r.dataset)+'</span><span>Round '+String(r.round_number).padStart(2,'0')+'</span><span>Version '+esc(r.id)+'</span></div>',
  '</div></section>',
  '<section class="section section-overview"><div class="container">',
  resultSummary(r),
  '<div class="stat-grid">'+stat("PATIENTS",fmt(r.summary.patients),"Distinct first ICU stays")+stat("SIX-HOUR LANDMARKS",fmt(r.summary.landmarks),"Observed histories")+stat("OUT-OF-SAMPLE TEST",fmt(r.summary.test),"Latest historical cohort")+stat("PREDICTIVE IMPROVEMENT",fmt(r.prediction.improvement.relative*100,1)+"%","Relative reduction in log loss")+'</div>',
  narrativeModes(r),
+ r.transport?transportExplorer(r):"",
  '<div class="section-heading heading-after"><div>'+label("01 / PREDICTION")+'<h2>What does the model learn?</h2></div><p>The difference between a physiological forecast and a forecast that also sees what treatment and monitoring have occurred.</p></div>',
  modelExplorer(r),renderCalibration(r),
  '<div class="section-heading heading-after"><div>'+label("02 / MODEL VALIDATION")+'<h2>The full trajectory test</h2></div><p>Longitudinal simulation must recreate ICU discharge and occupancy, not merely fit the risk of death.</p></div>',
@@ -254,7 +332,7 @@ function release(catalog,t,r){
   $$("[data-lens]",$("#lens-panel")).forEach(x=>x.setAttribute("aria-pressed",String(x===btn)));
   $$("[data-lens-view]",$("#lens-panel")).forEach(x=>x.classList.toggle("hidden",x.dataset.lensView!==mode));
  }));
- installModelExplorer(r);installOutcomeExplorer(r);
+ installModelExplorer(r);installCalibration(r);installOutcomeExplorer(r);installTransportExplorer(r);
 }
 function notFound(){
  renderTo(frame("404 / Not found","This page isn't in the record.","The research may have moved, or this route was never published.")+'<section class="section section-compact"><div class="container"><a href="/" class="button button-dark">Return to Mimicry '+ico("arrow")+'</a></div></section>');

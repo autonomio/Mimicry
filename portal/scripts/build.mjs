@@ -59,7 +59,7 @@ put("data/catalog.json",JSON.stringify({
   tracks:tracks.tracks.map(t=>({...t,
     latest:releases.find(r=>r.track===t.id)?.id || null,
     count:releases.filter(r=>r.track===t.id).length})),
-  releases:releases.map(r=>({id:r.id,track:r.track,title:r.title,subtitle:r.subtitle,date:r.date,status:r.status,review_status:r.review_status,
+  releases:releases.map(r=>({id:r.id,track:r.track,title:r.title,subtitle:r.subtitle,date:r.date,round_number:r.round_number,status:r.status,review_status:r.review_status,
     dataset:r.dataset,message:r.message,prediction_gain_relative:r.prediction.improvement.relative,simulation_validation:r.simulation.validation,simulation_all_pass:r.simulation.horizons.every(h=>h.passed)})),
   latest:releases[0]?.id||null
 },null,2)+"\n");
@@ -87,4 +87,4 @@ put("_headers",[
 "  Cache-Control: public, max-age=120, must-revalidate",
 ""
 ].join("\n"));
-console.log("Built Mimicry portal: "+tracks.tracks.length+" track(s), "+releases.length+" reviewed release(s), "+routes.length+" routes.");
+console.log("Built Mimicry portal: "+tracks.tracks.length+" track(s), "+releases.length+" aggregate release(s), "+routes.length+" routes.");

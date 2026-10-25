@@ -17,3 +17,10 @@ Source references paths under `/srv/mimic-iv` and requires a local installation.
 Public-facing, curated **aggregate** metrics are independently versioned under `../../portal/data/rounds/`; never publish patient identifiers, extracted stay-level or encounter-level rows, model artifacts, or credentials. Observational prediction and recorded-care associations must not be described as identified causal intervention effects.
 
 Note: code and publication are placed on GitHub to permit review, not to certify that all endpoints, simulation variants, and sensitivity analyses are independently verified. Exact claims are bounded by each published release's methodology and acceptance status.
+
+## New round: Historical transport failure
+
+- [Transport findings](TRANSPORT_FINDINGS.md) documents prequential-versus-full-rollout error decomposition, earlier rolling-origin evaluation, and overlap-standardized case-mix comparisons.
+- Scripts 89–92 reproduce these aggregate diagnostics on the secure server using the already fitted model artifacts and the existing authorized data.
+- Publication QA explicitly checks the arithmetic against the longitudinal rollout while preserving **failed** discharge and occupancy gates.
+- This is exploratory transport analysis, not a newly untouched external test or an identified change in discharge policy.

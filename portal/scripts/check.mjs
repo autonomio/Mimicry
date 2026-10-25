@@ -25,6 +25,8 @@ for(const release of releases){
 const catalog=JSON.parse(fs.readFileSync(path.join(outputDir,"data","catalog.json"),"utf8"));
 assert(catalog.tracks.length===tracks.tracks.length,"Catalog track count mismatch");
 assert(catalog.releases.length===releases.length,"Catalog release count mismatch");
+assert(catalog.releases[0].id===releases[0].id, "Latest release not correctly ordered");
+assert(catalog.releases.every(r=>Number.isInteger(r.round_number)), "Round sequence missing");
 for(const tr of catalog.tracks){
   assert(tr.count===catalog.releases.filter(r=>r.track===tr.id).length, "Track release counter mismatch");
   assert(!tr.latest||catalog.releases.some(r=>r.id===tr.latest),"Broken latest release pointer");
@@ -32,6 +34,7 @@ for(const tr of catalog.tracks){
 const js=fs.readFileSync(path.join(outputDir,"assets","site.js"),"utf8");
 assert(js.includes("installOutcomeExplorer") && js.includes("data-lens"),"Interactive reading controls missing");
 assert(js.includes("Long-horizon validation did not pass"),"Validation failure must be visible");
+assert(js.includes("installTransportExplorer"), "Transport error explorer missing");
 const csp=fs.readFileSync(path.join(outputDir,"_headers"),"utf8");
 assert(csp.includes("Content-Security-Policy") && csp.includes("X-Content-Type-Options"),"Security headers missing");
 const all=fs.readdirSync(outputDir);
