@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "site": "Mimicry",
+  "domain": "mimicry.mikkokotila.com",
+  "mission": "Where clinical data meet the decisions that shape their outcomes.",
+  "tracks": [
+    {
+      "id": "prophecy",
+      "slug": "prophecy",
+      "name": "Prophecy",
+      "eyebrow": "Research track 01 · Critical care",
+      "tagline": "What exactly does an ICU mortality prediction predict?",
+      "description": "An open research program examining the feedback between illness, clinical decisions, monitoring, and recorded outcomes.",
+      "discipline": "Intensive care · Causal inference · Operations research",
+      "status": "Active · exploratory",
+      "icon": "signal",
+      "color": "#64d6bb",
+      "order": 1
+    }
+  ],
+  "editorial": {
+    "release_policy": "Aggregate results only; versioned, source-linked, methods-first.",
+    "update_model": "Every reviewed and merged research release appears automatically on the site."
+  }
+}

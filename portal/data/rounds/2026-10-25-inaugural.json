@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "id": "2026-10-25-inaugural",
+  "title": "The decision imprint",
+  "subtitle": "First verified MIMIC-IV observational release",
+  "date": "2026-10-25",
+  "dataset": "MIMIC-IV v3.1",
+  "status": "Exploratory research \u00b7 not for clinical use",
+  "review_status": "internal computational QA",
+  "study_site": "Single centre",
+  "scope": "ICU care after the first 24 hours",
+  "source_url": "https://github.com/autonomio/Mimicry/tree/master/research/mimic-iv",
+  "summary": {
+    "patients": 51661,
+    "landmarks": 477201,
+    "training": 305409,
+    "validation": 95171,
+    "test": 76621,
+    "era_start": 2008,
+    "era_end": 2022,
+    "death_events_test": 303
+  },
+  "message": "A mortality forecast built from ICU records also reflects decisions about treatment and what clinicians choose to measure. That dependence is demonstrable in prediction, but its causal contribution to mortality is not identified.",
+  "prediction": {
+    "score": "Multiclass log loss",
+    "direction": "lower is better",
+    "models": [
+      {
+        "key": "demographics",
+        "label": "Patient and unit",
+        "loss": 0.33502,
+        "brier": 0.15748
+      },
+      {
+        "key": "physiology",
+        "label": "Physiology",
+        "loss": 0.32189,
+        "brier": 0.15546
+      },
+      {
+        "key": "code_status",
+        "label": "Physiology + code status",
+        "loss": 0.31783,
+        "brier": 0.15508
+      },
+      {
+        "key": "observation",
+        "label": "Physiology + monitoring",
+        "loss": 0.31742,
+        "brier": 0.1547
+      },
+      {
+        "key": "treatment_history",
+        "label": "Physiology + treatment",
+        "loss": 0.30871,
+        "brier": 0.15336
+      },
+      {
+        "key": "care_history",
+        "label": "Full documented care history",
+        "loss": 0.30077,
+        "brier": 0.15202
+      }
+    ],
+    "improvement": {
+      "value": 0.0211243749,
+      "ci": [
+        0.0195352165,
+        0.0228895477
+      ],
+      "relative": 0.0656,
+      "method": "500 patient-clustered bootstrap samples"
+    },
+    "calibration": [
+      {
+        "event": "ICU death",
+        "observed": 0.0039545294,
+        "predicted": 0.0027203922
+      },
+      {
+        "event": "ICU exit",
+        "observed": 0.0703462497,
+        "predicted": 0.0807547866
+      },
+      {
+        "event": "Code-status documentation change",
+        "observed": 0.0112632307,
+        "predicted": 0.0115057543
+      }
+    ]
+  },
+  "decisions": {
+    "description": "Weighted differences in pre/post support and monitoring around newly documented DNR orders. Associations, not effects of a DNR intervention.",
+    "n_dnr": 2014,
+    "n_control_anchors": 44244,
+    "comparison": "First observed DNR order versus eligible documented-full-code risk sets at the same ICU elapsed time",
+    "effects": [
+      {
+        "label": "Invasive ventilation",
+        "unit": "percentage points",
+        "estimate": -6.6574,
+        "ci": [
+          -8.263,
+          -5.0519
+        ],
+        "source": "risk_severityhistory_robustness_report.json"
+      },
+      {
+        "label": "Vasopressor exposure",
+        "unit": "percentage points",
+        "estimate": -5.2583,
+        "ci": [
+          -6.4803,
+          -4.0363
+        ],
+        "source": "risk_severityhistory_robustness_report.json"
+      },
+      {
+        "label": "MAP recording rate",
+        "unit": "records per ICU hour",
+        "estimate": -0.079114,
+        "ci": [
+          -0.098941,
+          -0.059287
+        ],
+        "source": "risk_severityhistory_robustness_report.json"
+      }
+    ],
+    "caution": "The matched groups retain very different 12-hour mortality: 16.9% versus 1.7%. Important unmeasured prognosis or clinical intentions remain."
+  },
+  "simulation": {
+    "name": "Longitudinal stochastic ICU trajectory model",
+    "cohort": "7,147 2020\u20132022 ICU patients alive at hour 24",
+    "n": 7147,
+    "replicates": 18,
+    "model": "History-aware nonlinear terminal hazard",
+    "validation": "Failed primary long-horizon acceptance gates",
+    "horizons": [
+      {
+        "hours": 24,
+        "death": {
+          "observed": 0.01693,
+          "simulated": 0.01543
+        },
+        "exit": {
+          "observed": 0.320554,
+          "simulated": 0.380121
+        },
+        "icu": {
+          "observed": 0.662516,
+          "simulated": 0.604449
+        },
+        "passed": false
+      },
+      {
+        "hours": 48,
+        "death": {
+          "observed": 0.026305,
+          "simulated": 0.025994
+        },
+        "exit": {
+          "observed": 0.50021,
+          "simulated": 0.571024
+        },
+        "icu": {
+          "observed": 0.473485,
+          "simulated": 0.402982
+        },
+        "passed": false
+      },
+      {
+        "hours": 72,
+        "death": {
+          "observed": 0.033021,
+          "simulated": 0.033876
+        },
+        "exit": {
+          "observed": 0.607807,
+          "simulated": 0.681063
+        },
+        "icu": {
+          "observed": 0.359172,
+          "simulated": 0.285061
+        },
+        "passed": false
+      },
+      {
+        "hours": 120,
+        "death": {
+          "observed": 0.044214,
+          "simulated": 0.043764
+        },
+        "exit": {
+          "observed": 0.725899,
+          "simulated": 0.792842
+        },
+        "icu": {
+          "observed": 0.229887,
+          "simulated": 0.163394
+        },
+        "passed": false
+      }
+    ],
+    "gates": {
+      "death_ratio": [
+        0.8,
+        1.25
+      ],
+      "exit_ratio": [
+        0.9,
+        1.1
+      ],
+      "icu_occupancy_error_max": 0.05
+    },
+    "caution": "The model tracks observed mortality incidence relatively closely, but overestimates ICU discharge and underestimates ICU occupancy. It is not validated for decision support or counterfactual policy."
+  },
+  "documentation": {
+    "unknown_share_early": 0.267,
+    "unknown_share_late": 0.375,
+    "earliest": "2008\u20132010",
+    "latest": "2020\u20132022",
+    "label": "Undocumented structured code status at the six-hour landmark",
+    "caution": "An unknown charted code status is not evidence of full-code intent. Temporal drift may reflect documentation practices."
+  },
+  "takeaways": [
+    {
+      "label": "What we can show",
+      "text": "Care and monitoring histories improve prediction of observed outcomes across a historical holdout.",
+      "tone": "supported"
+    },
+    {
+      "label": "What remains unresolved",
+      "text": "Unrecorded prognosis, preferences, treatment intent and selection through death or discharge confound causal interpretation.",
+      "tone": "caution"
+    },
+    {
+      "label": "What did not pass",
+      "text": "Longitudinal simulated discharge and ICU-occupancy trajectories missed acceptance thresholds.",
+      "tone": "failed"
+    }
+  ],
+  "methods": {
+    "cohort": "One ICU stay per patient. Six-hour landmarks from ICU hour 24 through day seven.",
+    "historical_split": "2008\u20132016 development, 2017\u20132019 calibration, 2020\u20132022 held-out testing.",
+    "metrics": "Multiclass log loss, Brier score, paired patient-clustered uncertainty, multi-horizon cumulative incidence and explicit calibration gates.",
+    "warnings": [
+      "Observational single-centre data; not a randomized study.",
+      "DNR is a code-status designation, not an instruction to stop otherwise indicated treatment.",
+      "Predictive information cannot be causally attributed to treatment choices without further identifying assumptions.",
+      "The test period was revisited during iterative model development; results are exploratory, not untouched final confirmation.",
+      "Selection through ICU exit and death changes the observation process.",
+      "No patient-level data, identifiable records or clinical recommendations are published."
+    ]
+  },
+  "track": "prophecy"
+}

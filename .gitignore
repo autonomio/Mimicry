@@ -1,0 +1,16 @@
+# Never commit patient-level or model artifacts.
+**/__pycache__/
+**/*.pyc
+**/*.parquet
+**/*.duckdb
+**/*.db
+**/*.joblib
+**/*.pkl
+**/*.csv
+**/*.gz
+**/*.log
+**/.env
+**/.env.*
+portal/dist/
+portal/node_modules/
+.DS_Store
