@@ -33,7 +33,7 @@ function header(catalog){
    '<button class="mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>',
    '<nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">',
    '<a href="/research/" '+(currentPath.startsWith("/research")?'aria-current="page"':"")+'>Research tracks</a>',
-   '<a href="/tracks/prophecy/" '+(activeTrack==="prophecy"?'aria-current="page"':"")+'>Prophecy</a>',
+   ...catalog.tracks.map(t=>'<a href="'+pathFor(t)+'" '+(activeTrack===t.slug?'aria-current="page"':"")+'>'+esc(t.name)+'</a>'),
    '<a href="/about/" '+(currentPath.startsWith("/about")?'aria-current="page"':"")+'>About</a>',
    '</nav></div></header>'
   ].join("");
@@ -94,7 +94,28 @@ function releaseCard(r,t){
  '<div><span class="release-label">RESEARCH RELEASE  /  '+esc(dateFmt(r.date))+'</span><h3>'+esc(r.title)+'</h3><p>'+esc(r.message)+'</p></div>',
  '<div class="release-side"><span class="released-track">'+esc(t.name)+'</span>'+ico("arrow",24)+'</div></a>'].join("");
 }
+function dnrTrack(catalog,t){
+ const rs=catalog.releases.filter(x=>x.track===t.id),latest=rs[0];
+ renderTo([
+ '<section class="track-hero"><div class="container track-hero-content"><div class="breadcrumb"><a href="/">Mimicry</a><span>/</span><a href="/research/">Tracks</a><span>/</span>'+esc(t.name)+'</div>',
+ '<div class="track-hero-top">'+label("RESEARCH TRACK 02 / THE DNR QUESTION","mint")+'<span class="track-hero-index">M—02</span></div>',
+ '<h1>'+esc(t.name)+'<span class="mint-dot">.</span></h1><p class="track-hero-sub">'+esc(t.tagline)+'</p>',
+ '<p class="track-hero-body">This is a deliberate fork back to a question that can get lost inside prediction scores: does a do-not-resuscitate order itself change what clinicians do, or is it a marker of illness and decisions already underway?</p>',
+ '<div class="track-hero-actions"><a href="'+pathFor(t)+'releases/'+latest.id+'/" class="button button-primary">Examine the DNR evidence '+ico("arrow")+'</a><a class="text-link light-link" href="'+pathFor(t)+'methods/">Identification and methods '+ico("arrow",16)+'</a></div>',
+ '<div class="track-hero-end">'+esc(t.discipline)+'<span>'+esc(t.status)+'</span></div></div></section>',
+ '<section class="section"><div class="container"><div class="section-heading"><div>'+label("ONE QUESTION / THREE TESTS")+'<h2>What does the order change?</h2></div><p>Separate the legal meaning of a DNR directive, what happens at its timestamp, and the much harder question of whether it causes death.</p></div>',
+ '<div class="principle-grid"><article>'+ico("book",25)+'<h3>Define the decision</h3><p>DNR limits CPR at arrest. DNR-only, DNI, and comfort measures must not be treated as interchangeable clinical actions.</p></article>',
+ '<article>'+ico("activity",25)+'<h3>Watch what changes</h3><p>Measure treatment and monitoring before and after the actual order, with eligible full-code controls, early timing checks and explicit competing exits.</p></article>',
+ '<article>'+ico("alert",25)+'<h3>Audit causality</h3><p>Expose residual prognostic imbalance, failed overlap, and unverified physician instruments before estimating what the order itself caused.</p></article></div>',
+ latest?'<div class="dnr-feature"><div><span class="release-label">FORKED RESEARCH · '+esc(dateFmt(latest.date))+'</span><h3>'+esc(latest.title)+'</h3><p>'+esc(latest.message)+'</p><a href="'+pathFor(t)+'releases/'+latest.id+'/" class="button button-dark">Inspect the first result '+ico("arrow")+'</a></div><div class="dnr-feature-stat"><span>DOCUMENTED DNR-ONLY EVENTS ON COMMON SUPPORT</span><strong>'+fmt(latest.dnr_only_n)+'</strong><small>Not an identified treatment-effect cohort</small></div></div>':"",
+ '</div></section>',
+ '<section class="section pale-section"><div class="container"><div class="section-heading"><div>'+label("THE DNR RECORD")+'<h2>Prophecy 2 releases</h2></div></div>'+rs.map(r=>releaseCard(r,t)).join("")+'</div></section>',
+ '<section class="section"><div class="container"><div class="read-next"><div>'+label("RELATED, BUT DIFFERENT")+'<h3>Prophecy remains its own track.</h3><p>The original program examines broader ICU prognosis, care-state forecasting and the limits of longitudinal simulation. It does not set Prophecy 2’s research agenda.</p></div><a href="/tracks/prophecy/" class="button button-dark">Visit Prophecy '+ico("arrow")+'</a></div></div></section>'
+ ].join(""));
+}
+
 function track(catalog,t){
+ if(t.id==="prophecy-2")return dnrTrack(catalog,t);
  const rs=catalog.releases.filter(r=>r.track===t.id), latest=rs[0];
  renderTo([
  '<section class="track-hero"><div class="container track-hero-content"><div class="breadcrumb"><a href="/">Mimicry</a><span>/</span><a href="/research/">Tracks</a><span>/</span>'+esc(t.name)+'</div>',
@@ -132,7 +153,42 @@ function about(){
  '<article><span class="about-number">04</span><h2>Living, versioned science</h2><p>A new research round is published as an immutable, reviewed release with a dated URL. The live track page then points to the newest public result.</p></article>',
  '</div><div class="callout-dark"><div>'+label("OPEN RESEARCH","mint")+'<h2>Follow the code,<br><em>not just the conclusion.</em></h2></div><a href="https://github.com/autonomio/Mimicry" rel="noopener noreferrer" target="_blank" class="button button-primary">View GitHub repository '+ico("arrow")+'</a></div></div></section>');
 }
+function dnrMethods(catalog,t){
+ const m=catalog.releases.find(r=>r.track===t.id);
+ renderTo([frame("PROPHECY 2 / CAUSAL INFERENCE","What would actually identify a DNR effect?",
+ "Research methods built around the clinical meaning, timing and selection of DNR orders—not general mortality-model accuracy."),
+ '<section class="section section-compact"><div class="container method-content">',
+ '<div class="method-lead"><div>'+label("THE INTERVENTION")+'<h2>A DNR order is not a withdrawal order.</h2></div><p>Do not resuscitate limits attempted cardiopulmonary resuscitation at cardiac arrest. DNR-only, DNR/DNI and comfort-only orders are clinically different. An observational association involving all of them is not the effect of an isolated CPR directive.</p></div>',
+ '<div class="dnr-method-steps">'+
+ '<article><span>01 / ELIGIBILITY</span><h3>Who could receive the order?</h3><p>First ICU stay within an admission. Previously documented full-code state, with at least 24 hours elapsed in the ICU. Unrecorded status stays unknown, never silently recoded as full code.</p></article>'+
+ '<article><span>02 / TIME ZERO</span><h3>The first hospital DNR order</h3><p>Anchor the analysis at the first recorded full-code to DNR-only or DNR/DNI order in the ICU, after checking hospital POE timestamps against charted status and reconciling contradictory records.</p></article>'+
+ '<article><span>03 / RISK SET</span><h3>Patients eligible at the same time</h3><p>Give every full-code comparator a corresponding ICU-elapsed-time landmark. Do not require survival, discharge, later absence of DNR or dying in the eventual outcome cohort.</p></article>'+
+ '<article><span>04 / ANALYSIS</span><h3>Measure support and observation separately</h3><p>Use recorded ventilation hours, pressor exposure, monitoring counts and explicit extubation events. Show pre-order trends, weighted comparator changes, competing ICU exits and sensitivity to limited common support.</p></article>'+
+ '</div>',
+ '<div class="dnr-estimand"><span class="figure-kicker">WHAT THE CURRENT ESTIMATE MEANS</span><h3>An observed event-time contrast</h3><p class="dnr-formula">Δ = (after − before)<sub>DNR order</sub> − (after − before)<sub>full-code risk set</sub></p><p>This measures weighted changes in observed treatment-hours per available ICU patient-hour, not a causal effect on survival or a patient who would otherwise have received CPR. Available ICU person-hours themselves depend on death and discharge.</p></div>',
+ '<div class="method-two"><div><h3>The question we have <em>not</em> identified</h3><p>What would have happened to the same patient had an isolated CPR-only DNR order not been placed, holding preferences and other clinical decisions appropriately defined? That requires a meaningful and supported intervention and a credible comparison mechanism. Prognosis and care intentions omitted from the record prevent exchangeability here.</p></div>'+
+ '<div><h3>Why the impressive IV is not enough</h3><p>An order-provider ID is documented at the time of ordering and does not establish random assignment. Hospital admitting providers are not necessarily ICU decision-makers. Strong preference variation or a first-stage F-statistic does not prove exclusion, independence, monotonicity or a mortality treatment effect.</p></div></div>',
+ '<div class="limitations">'+label("HARD STOP RULES")+'<h2>What would invalidate a causal claim?</h2><ol>'+
+ ['The DNR-only order cannot be isolated from coincident DNI, comfort-only or undocumented goals-of-care decisions.',
+  'The comparison lacks overlap; very few effective controls remain for some DNR decisions.',
+  'Important pre-order prognostic differences persist, including neurological disease, lactate and clinician expectations.',
+  'Decedents are selected after exposure, or equal follow-up is required by conditioning on remaining alive or in the ICU.',
+  'Deaths are attributed to a no-CPR directive without observing cardiac arrest, eligibility for CPR and other co-interventions.',
+  'An instrumental variable is assumed valid from association strength alone.',
+  'Recorded chart times are treated as prospective observation availability times without checking storage and order timestamps.',
+  'The analysis claims causality because a confidence interval excludes zero.'].map((x,i)=>'<li><span>'+String(i+1).padStart(2,"0")+'</span><p>'+esc(x)+'</p></li>').join("")+
+ '</ol></div>',
+ '<div class="dnr-method-steps lower">'+
+ '<article><span>NEXT / PHENOTYPE</span><h3>Reconstruct isolated DNR</h3><p>Audit simultaneous order bundles and temporal ambiguity; where intent is unavailable, state that it is unknown.</p></article>'+
+ '<article><span>NEXT / IDENTIFICATION</span><h3>Audit arrest and CPR</h3><p>Test whether the observed record supports the CPR mechanism at all. Report partial-identification bounds when it cannot support point estimation.</p></article>'+
+ '<article><span>NEXT / FALSIFICATION</span><h3>Reject weak instruments</h3><p>Require real pre-decision assignment, balance, negative-control practice effects and a defensible exclusion argument before any IV mortality estimate.</p></article>'+
+ '<article><span>DO NOT / DRIFT</span><h3>No generic mortality simulator</h3><p>Prophecy 2 does not expand into policy transport dashboards unless they answer a predefined DNR-specific causal question.</p></article></div>',
+ '<div class="reproduce-block"><div><h3>A separate research lineage</h3><p>This track forks at the ICU DNR event history and matched risk-set stage. It does not rewrite or invalidate the earlier Prophecy track. The current results are exploratory and conditional on retrospective fixed-weight uncertainty.</p></div><div class="reproduce-links"><a class="button button-dark" href="https://github.com/autonomio/Mimicry/tree/feat/prophecy-2-dnr-20261025/research/prophecy-2/" target="_blank" rel="noopener noreferrer">Inspect Prophecy 2 source '+ico("arrow")+'</a><a class="text-link" href="'+pathFor(t)+'releases/'+m.id+'/">Open the first DNR audit '+ico("arrow",16)+'</a></div></div>',
+ '</div></section>'].join(""));
+}
+
 function methods(catalog,t){
+ if(t.id==="prophecy-2")return dnrMethods(catalog,t);
  const r=catalog.releases.find(x=>x.track===t.id);
  if(!r) return renderTo(frame(t.name,"Methods forthcoming","This research track has not published a method record."));
  const m=r.methods;
@@ -313,7 +369,133 @@ function associationExplorer(r){
   return '<div class="effect-card"><span>'+esc(x.label)+'</span><strong>'+num+'</strong><small>'+esc(x.unit)+'</small><p>Approximate 95% CI: '+esc(ci)+'</p></div>';
  }).join("")+'</div><div class="figure-caution">'+ico("alert",19)+' <p>'+esc(r.decisions.caution)+'</p></div></div>'].join('');
 }
+function dnrPlot(state,key){
+ const names={
+   invasive_ventilation:"Invasive-ventilation exposure",
+   vasopressor_exposure:"Vasopressor exposure",
+   map_recording:"Mean arterial-pressure recording intensity"};
+ const x=state.outcomes[key],isShare=key!=="map_recording",units=isShare?"percentage points":"records / ICU hour";
+ const arr=[
+  {label:"Earlier placebo",key:"early_pre_event",note:"−24 to −12h, BEFORE the order"},
+  {label:"Around the order",key:"near_order",note:"−4 to +4h"},
+  {label:"Primary comparison",key:"primary",note:"−12 to +12h"}];
+ const scale=isShare?100:1;
+ const largest=Math.max(.04,...arr.flatMap(v=>x[v.key].ci95.map(n=>Math.abs(n*scale))))*1.26;
+ const W=810,H=320,L=218,R=82,T=29;
+ const center=(L+W-R)/2;
+ const half=(W-R-L)/2;
+ const project=q=>center+q*scale/largest*half;
+ const ticks=[-1,-.5,0,.5,1].map(fr=>{
+  const n=fr*largest;
+  return '<line x1="'+project(n/scale)+'" x2="'+project(n/scale)+'" y1="34" y2="256" class="'+(fr===0?"dnr-zero":"dnr-chart-grid")+'"/>'+
+   '<text x="'+project(n/scale)+'" y="275" text-anchor="middle" class="axis-label">'+(isShare?fmt(n,1):fmt(n,2))+'</text>';
+ }).join("");
+ const rows=arr.map((r,i)=>{
+  const v=x[r.key],y=69+i*80;
+  const x1=project(v.ci95[0]),x2=project(v.ci95[1]),xc=project(v.estimate);
+  const color=i===2?"#167d68":"#b27751";
+  return '<text x="18" y="'+(y-3)+'" class="dnr-row-title">'+esc(r.label)+'</text>'+
+  '<text x="18" y="'+(y+15)+'" class="dnr-row-note">'+esc(r.note)+'</text>'+
+  '<line x1="'+x1+'" x2="'+x2+'" y1="'+y+'" y2="'+y+'" stroke="'+color+'" stroke-width="4" stroke-linecap="round"/>'+
+  '<line x1="'+x1+'" x2="'+x1+'" y1="'+(y-7)+'" y2="'+(y+7)+'" stroke="'+color+'" stroke-width="2"/>'+
+  '<line x1="'+x2+'" x2="'+x2+'" y1="'+(y-7)+'" y2="'+(y+7)+'" stroke="'+color+'" stroke-width="2"/>'+
+  '<circle cx="'+xc+'" cy="'+y+'" r="'+(i===2?7:5)+'" fill="'+color+'" stroke="#fffef9" stroke-width="2"><title>'+esc(names[key])+', '+r.label+': '+fmt(v.estimate*scale,isShare?2:4)+' '+units+'; interval '+fmt(v.ci95[0]*scale,2)+' to '+fmt(v.ci95[1]*scale,2)+'</title></circle>'+
+  '<text x="'+(W-4)+'" y="'+(y+5)+'" class="dnr-chart-number" text-anchor="end">'+fmt(v.estimate*scale,isShare?2:3)+'</text>';
+ }).join("");
+ return '<svg class="dnr-forest" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(names[key])+'. Three descriptive differences, before the order, around the order and over 12-hour intervals, with fixed-weight confidence intervals. Zero means no difference in changes.">'+ticks+rows+
+ '<text x="'+center+'" y="308" text-anchor="middle" class="axis-label">DIFFERENCE IN BEFORE–AFTER CHANGES · '+esc(units.toUpperCase())+'</text></svg>';
+}
+function dnrRelease(catalog,t,r){
+ const s=r.states.find(x=>x.id==="DNR_ONLY");
+ const statCards=[
+ ['FIRST DOCUMENTED DNR EVENTS',fmt(r.cohort.eligible_first_dnr),'Observed after full-code documentation'],
+ ['MATCHABLE DNR EVENTS',fmt(r.cohort.represented_dnr),'DNR-only and DNR/DNI combined'],
+ ['DNR-ONLY EVENTS',fmt(s.n_dnr),'Primary clinical question'],
+ ['NO COMMON SUPPORT',fmt(r.cohort.outside_common_support),'Excluded from current risk-set analysis']
+ ].map(x=>stat(x[0],x[1],x[2])).join("");
+ renderTo([
+ '<section class="release-hero dnr-release-hero"><div class="container">'+breadcrumbs(t,r),
+ '<div class="release-hero-label">'+label("PROPHECY 2 / DNR FIRST","mint")+'<span>'+esc(dateFmt(r.date))+'</span></div>',
+ '<h1>'+esc(r.title)+'<span class="mint-dot">.</span></h1>',
+ '<p class="release-lead">'+esc(r.subtitle)+'</p>',
+ '<div class="release-tags">'+statusPill(r.status)+statusPill("Causality not identified","pill-warn")+'</div>',
+ '<div class="release-intro-meta"><span>MIMIC-IV v3.1 only</span><span>Forked before the general mortality simulator</span><span>Round '+r.round_number+'</span></div>',
+ '</div></section>',
+ '<section class="section section-overview"><div class="container">',
+ '<div class="summary-insight"><p class="summary-question">THE QUESTION — NOT THE MODEL</p><p>'+esc(r.question.plain)+'</p><span>'+esc(r.question.identification_status)+'</span></div>',
+ '<div class="stat-grid">'+statCards+'</div>',
+ '<div class="dnr-meaning"><div>'+label("WHAT DNR ACTUALLY MEANS")+'<h2>CPR at arrest.<br><em>Not every other treatment.</em></h2></div><div><p>'+esc(r.question.intervention_definition)+'</p><p>That clinical distinction is why this fork separately studies DNR-only and DNR/DNI, rather than treating “DNR” as a single causal treatment.</p></div></div>',
+ '<div class="lens-panel" id="dnr-lens"><div class="lens-header"><div>'+label("READ THE RESEARCH")+'<h3>One DNR question, two explanations.</h3></div><div class="lens-switch" role="group" aria-label="Reading level"><button type="button" data-dnr-lens="public" aria-pressed="true">Plain language</button><button type="button" data-dnr-lens="scientific" aria-pressed="false">Scientific detail</button></div></div>',
+ '<div class="lens-copy" data-dnr-lens-view="public"><p>Patients often receive DNR orders when they are already very ill. When treatment subsequently changes, that does not tell us whether the order caused the change or whether clinicians and patients were already making broader decisions. Our study puts those explanations against the actual treatment record—and shows where the comparison fails.</p></div>',
+ '<div class="lens-copy hidden" data-dnr-lens-view="scientific"><p>'+esc(r.methods.estimand)+' The DNR-only target is not an identified potential-outcome contrast. Subtype-specific entropy calibration, early negative controls, competing exit accounting and effective-control concentration form the falsification strategy.</p></div></div>',
+ '<div class="section-heading heading-after"><div>'+label("01 / OBSERVED CARE")+'<h2>What changes at the order?</h2></div><p>Switch between DNR-only and DNR/DNI. Compare ventilation, vasopressors or pressure monitoring. The reference is an eligible full-code risk set—not a selected group of patients who later die.</p></div>',
+ '<div class="figure dnr-main-figure"><div class="dnr-control-top"><div><span class="figure-kicker">A DECISION IS NOT A TREATMENT BUNDLE</span><h3>Two orders. Different clinical meanings.</h3></div><div class="dnr-status-tabs" role="group" aria-label="Type of DNR order">'+
+ r.states.map(x=>'<button type="button" data-dnr-status="'+esc(x.id)+'" aria-pressed="'+String(x.id==="DNR_ONLY")+'" class="'+(x.id==="DNR_ONLY"?"active":"")+'">'+esc(x.label)+'</button>').join("")+
+ '</div></div>',
+ '<p id="dnr-state-meaning" class="dnr-state-meaning"></p>',
+ '<div class="dnr-metric-controls" role="group" aria-label="Outcome to inspect"><button type="button" class="active" data-dnr-metric="invasive_ventilation" aria-pressed="true">Ventilation</button><button type="button" data-dnr-metric="vasopressor_exposure" aria-pressed="false">Vasopressors</button><button type="button" data-dnr-metric="map_recording" aria-pressed="false">Pressure monitoring</button></div>',
+ '<div id="dnr-effect-chart" aria-live="polite"></div>',
+ '<p class="dnr-forest-caption">Shown: weighted difference between the DNR group’s before–after change and the contemporaneously eligible full-code risk set, with approximate fixed-weight patient-clustered intervals. Earlier-placebo trend is measured before the order. These are <strong>associations, not effects caused by DNR</strong>.</p>',
+ '<div id="dnr-effect-interpretation" class="dnr-effect-interpretation"></div>',
+ '</div>',
+ '<div class="section-heading heading-after"><div>'+label("02 / REAL TREATMENT EVENTS")+'<h2>What did clinicians record?</h2></div><p>Time-aligned extubation, later documentation and short-term mortality are different outcomes. None reveals a person’s wishes or the reason for a clinical decision by itself.</p></div>',
+ '<div id="dnr-event-cards" class="dnr-event-cards"></div>',
+ '<div class="dnr-pathway"><span class="figure-kicker">THE CORE CAUSAL PROBLEM</span><h3>Severe short-term mortality imbalance remains.</h3><div id="dnr-mortality-compare"></div><p>The unmatched prognosis and clinical intentions are not known merely because the measured variables were balanced. Do not convert this contrast into “deaths caused by DNR.”</p></div>',
+ '<div class="section-heading heading-after"><div>'+label("03 / FALSIFICATION")+'<h2>Does the comparison survive scrutiny?</h2></div></div>',
+ '<div class="dnr-falsification"><article><span>BASELINE MEASURED BALANCE</span><h3 id="dnr-balance-value"></h3><p>The maximum standardized difference on recorded covariates after within-subtype balancing. Zero is not proof of unmeasured exchangeability.</p></article>',
+ '<article><span>WHEN EFFECTIVE CONTROLS DISAPPEAR</span><h3 id="dnr-overlap-value"></h3><p>Risk sets with fewer than two effective controls after weighting. A good average match can still conceal extremely concentrated weights.</p></article>',
+ '<article><span>STRICTER OVERLAP RESTRICTION</span><h3 id="dnr-strict-value"></h3><p id="dnr-strict-text"></p></article></div>',
+ '<div class="figure"><div class="figure-head"><div><span class="figure-kicker">DATA-PROVENANCE GO / NO-GO</span><h3>Can physician preference identify a causal DNR effect?</h3><p>Not from the currently documented assignment mechanism.</p></div></div>',
+ '<div class="dnr-provider-audit"><strong>'+fmt(r.provenance.ordering_provider_matches_hospital_admitting)+' <span>/ '+fmt(r.provenance.icu_code_orders)+'</span></strong><p>ICU-time code-status orders entered by the patient’s hospital admitting provider.</p></div>',
+ '<p class="figure-caution">'+ico("alert",17)+' The ordering clinician appears at the decision; the hospital admitting clinician is not automatically the ICU attending. A strong instrument first stage cannot establish assignment independence or exclusion.</p></div>',
+ '<div class="dnr-fork-footer"><div>'+label("WHERE THE FORK HAPPENED")+'<h2>Back to the order, not another black-box prognosis model.</h2><p>'+esc(r.lineage.from_stage)+'. This track stops at the limits of identification rather than treating better prediction as an answer to the DNR question.</p></div>',
+ '<div class="dnr-fork-actions"><a class="button button-dark" href="'+pathFor(t)+'methods/">Read the identification design '+ico("arrow")+'</a><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://github.com/autonomio/Mimicry/tree/feat/prophecy-2-dnr-20261025/research/prophecy-2/">Review research code '+ico("arrow",16)+'</a></div></div>',
+ '</div></section>'
+ ].join(""));
+ $("#dnr-lens").querySelectorAll("[data-dnr-lens]").forEach(btn=>btn.addEventListener("click",()=>{
+  const key=btn.dataset.dnrLens;
+  $$("[data-dnr-lens]",$("#dnr-lens")).forEach(x=>x.setAttribute("aria-pressed",String(x===btn)));
+  $$("[data-dnr-lens-view]",$("#dnr-lens")).forEach(x=>x.classList.toggle("hidden",x.dataset.dnrLensView!==key));
+ }));
+ installDnrExplorer(r);
+}
+function installDnrExplorer(r){
+ let status="DNR_ONLY",metric="invasive_ventilation";
+ const names={invasive_ventilation:"Invasive ventilation",vasopressor_exposure:"Vasopressor exposure",map_recording:"MAP recording"};
+ const mapStatus=()=>r.states.find(x=>x.id===status);
+ const pctpp=(a,d=1)=>fmt(a*100,d)+" percentage points";
+ const evCard=(title,x,note)=>'<article><span>'+esc(title)+'</span><div class="dnr-event-pair"><strong>'+pct(x.dnr,2)+'</strong><span>vs '+pct(x.full_code_control,2)+'</span></div><p>'+esc(note)+'</p></article>';
+ function render(){
+  const s=mapStatus(),eff=s.outcomes[metric].primary;
+  const isRate=metric==="map_recording";
+  const scale=isRate?1:100;
+  const units=isRate?"recordings per ICU hour":"percentage points";
+  $$("[data-dnr-status]").forEach(b=>{const on=b.dataset.dnrStatus===status;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});
+  $$("[data-dnr-metric]").forEach(b=>{const on=b.dataset.dnrMetric===metric;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));});
+  $("#dnr-state-meaning").textContent=fmt(s.n_dnr)+" cases · "+s.meaning+". Not a random assignment.";
+  $("#dnr-effect-chart").innerHTML=dnrPlot(s,metric);
+  $("#dnr-effect-interpretation").innerHTML='<strong>'+esc(names[metric])+': '+fmt(eff.estimate*scale,isRate?4:2)+' '+esc(units)+'</strong>'+
+  '<p>Approximate interval '+fmt(eff.ci95[0]*scale,isRate?4:2)+' to '+fmt(eff.ci95[1]*scale,isRate?4:2)+' '+esc(units)+'. This is the change in <em>recorded ICU treatment or monitoring rates</em>, not a DNR treatment effect.</p>';
+  $("#dnr-event-cards").innerHTML=evCard("Extubation recorded within four hours",s.events.extubation_within_4h,"Procedure documentation; not proof of withdrawal as opposed to recovery or another care decision.")+
+    evCard("New comfort-only status within 12 hours",s.events.documented_cmo_within_12h,"Structured documentation can miss conversations and other contemporaneous care limitations.")+
+    evCard("ICU exit within 12 hours",s.events.icu_exit_within_12h,"Death and discharge change how long support and measurements can be observed.");
+  const m=s.events.death_within_12h;
+  $("#dnr-mortality-compare").innerHTML='<div><span>New '+esc(s.label)+' order</span><strong>'+pct(m.dnr,2)+'</strong></div><span class="dnr-versus">VERSUS</span><div><span>Eligible full-code comparator</span><strong>'+pct(m.full_code_control,2)+'</strong></div>';
+  $("#dnr-balance-value").textContent=fmt(s.measured_balance.max_absolute_smd,3)+" max |SMD|";
+  $("#dnr-overlap-value").textContent=fmt(s.positivity.risk_sets_under_two_effective_controls)+" / "+fmt(s.n_dnr);
+  $("#dnr-strict-value").textContent=fmt(s.positivity.strict_n)+" cases";
+  const strict=s.outcomes[metric].strict_overlap;
+  const balance=s.positivity.strict_max_smd;
+  const bad=balance>=.10;
+  $("#dnr-strict-text").textContent="Restricting to risk sets with at least two effective controls gives an estimate of "+fmt(strict.estimate*scale,isRate?4:2)+" "+units+". But the strict group's maximum measured |SMD| is "+fmt(balance,3)+(bad?"—above the 0.10 diagnostic threshold. This does not validate that estimate.":"; unmeasured prognosis remains unresolved.");
+ }
+ $$("[data-dnr-status]").forEach(b=>b.addEventListener("click",()=>{status=b.dataset.dnrStatus;render();}));
+ $$("[data-dnr-metric]").forEach(b=>b.addEventListener("click",()=>{metric=b.dataset.dnrMetric;render();}));
+ render();
+}
+
 function release(catalog,t,r){
+ if(r.kind==="dnr-audit")return dnrRelease(catalog,t,r);
  const latest=catalog.releases.find(x=>x.track===t.id)?.id===r.id;
  renderTo([
  '<section class="release-hero"><div class="container">'+breadcrumbs(t,r),

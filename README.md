@@ -6,6 +6,7 @@ Mimicry is a multi-track, openly auditable research platform. The public observa
 
 - [Live research portal source](portal/) — independently versioned, interactive aggregate research releases, plain-language and scientific views, explicit success/failure gates.
 - [Prophecy research code](research/mimic-iv/) — executed SQL and Python analysis source for the secure server installation. No patient-level data are committed.
+- [Prophecy 2 — the DNR question](research/prophecy-2/) — a deliberately separate fork at the first-DNR-order risk-set stage, explicitly asking whether DNR causes care or mortality changes. No DNR causal effect is claimed.
 - [Research round 02: Historical transport](research/mimic-iv/TRANSPORT_FINDINGS.md) — why long-horizon ICU discharge predictions drift, including failures and uncertainty.
 - [Scientific limitations](portal/README.md#privacy-and-editorial-gates) — retrospective observational analyses do not identify counterfactual care-policy outcomes, and no model here is for clinical use.
 
