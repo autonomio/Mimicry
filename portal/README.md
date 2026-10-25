@@ -23,6 +23,8 @@ npm run build
 npm run check
 ```
 
+Use Node.js 20 or newer and run these commands from `portal/` in the order shown. `npm test` validates the publication logic; `npm run build` generates `dist/`; `npm run check` then reads those generated pages, the catalog and the security headers. Rebuild after changing publication data or site sources so the final check examines the current output.
+
 There are no runtime application dependencies; output is a static multi-page site, including dynamic client-side charts sourced from **versioned, publish-safe JSON files**. Cloudflare publishes only `portal/dist`.
 
 ## Privacy and editorial gates
