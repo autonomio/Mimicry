@@ -39,3 +39,5 @@ Only aggregate results are public. No `subject_id`, `stay_id`, `hadm_id`, per-pa
 - Custom domain: `mimicry.mikkokotila.com`
 
 Future aggregate releases update on approved merges; this does **not** expose an endpoint or grant permission for the server to directly upload patient-level analyses.
+
+**Repository protection:** `master` requires one independent approving GitHub review. Production publishing runs only after the reviewed PR is merged; preview deployments are available before approval.
