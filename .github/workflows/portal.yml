@@ -1,0 +1,33 @@
+name: Research publication checks
+on:
+  push:
+    branches: [master]
+    paths: ['portal/**','research/mimic-iv/**','.github/workflows/portal.yml']
+  pull_request:
+    paths: ['portal/**','research/mimic-iv/**','.github/workflows/portal.yml']
+jobs:
+  publish-qa:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portal
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test
+      - run: npm run build
+      - run: npm run check
+      - name: Reject patient-level or credential files anywhere in repository
+        working-directory: .
+        run: |
+          if git ls-files | grep -Ei '(^|/)(.env($|\.)|.*\.(parquet|duckdb|db|joblib|pkl|csv|gz|log)$)'; then
+            echo 'Prohibited file in repository' >&2
+            exit 1
+          fi
+      - name: Upload verified static site
+        uses: actions/upload-artifact@v4
+        with:
+          name: mimicry-portal
+          path: portal/dist

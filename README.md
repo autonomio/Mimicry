@@ -1,4 +1,20 @@
 # Mimicry
+
+**A living research observatory for health outcomes and the decisions that shape them.**
+
+Mimicry is a multi-track, openly auditable research platform. The public observatory is hosted at [mimicry.mikkokotila.com](https://mimicry.mikkokotila.com) after protected-branch approval. The initial [Prophecy](portal/README.md) track investigates ICU prognosis, code-status decisions, treatments and the observation process using only **MIMIC-IV v3.1**.
+
+- [Live research portal source](portal/) — independently versioned, interactive aggregate research releases, plain-language and scientific views, explicit success/failure gates.
+- [Prophecy research code](research/mimic-iv/) — executed SQL and Python analysis source for the secure server installation. No patient-level data are committed.
+- [Research round 02: Historical transport](research/mimic-iv/TRANSPORT_FINDINGS.md) — why long-horizon ICU discharge predictions drift, including failures and uncertainty.
+- [Scientific limitations](portal/README.md#privacy-and-editorial-gates) — retrospective observational analyses do not identify counterfactual care-policy outcomes, and no model here is for clinical use.
+
+**Publication governance:** Aggregate research is reviewed through a protected GitHub pull request. Passing publication tests is necessary but insufficient for independent scientific or clinical validation. The portal refreshes automatically on the Git-backed production branch after approval and merge.
+
+---
+
+## Historical project origins
+
 A project that focuses on extracting valuable insights from ERM data, and more specifically the MIMIC-III dataset. Currently the reasearch interest is particularly in death, and the moments leading to death, and the associated signals available within the dataset. A secondary focus is on establishing visualization best practices for similar data. 
 
 <img width=260px src=https://raw.githubusercontent.com/mikkokotila/signals-of-death/master/death.png>
