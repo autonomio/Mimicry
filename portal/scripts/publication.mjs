@@ -9,6 +9,61 @@ export function readJson(file) { return JSON.parse(fs.readFileSync(file, "utf8")
 export function assert(ok, msg) { if (!ok) throw new Error(msg); }
 const number = (v, msg) => assert(typeof v === "number" && Number.isFinite(v), msg + ": expected finite number");
 
+function validateDnrAudit(r){
+ assert(r.track==="prophecy-2", "DNR audit needs an independent Prophecy 2 track");
+ assert(r.kind==="dnr-audit", "Unsupported DNR release type");
+ assert(r.question?.identification_status?.includes("Not identified"), "DNR causal identification must remain explicitly unresolved");
+ assert(r.question?.intervention_definition?.includes("CPR"), "DNR intervention not clinically defined");
+ assert(r.lineage?.from_stage?.includes("DNR"), "Explicit DNR fork origin is required");
+ const c=r.cohort;
+ for(const key of ["eligible_first_dnr","represented_dnr","outside_common_support"]){
+  number(c[key],key);
+  assert(Number.isInteger(c[key])&&c[key]>=0,"Bad cohort count");
+ }
+ assert(c.eligible_first_dnr-c.represented_dnr===c.outside_common_support,"DNR overlap attrition inconsistent");
+ assert(c.represented_dnr>=100, "Too few DNR cases");
+ assert(Array.isArray(r.states)&&r.states.length===2, "DNR-only and DNR/DNI must remain separate");
+ assert(new Set(r.states.map(s=>s.id)).size===2, "Repeated DNR status state");
+ assert(r.states.some(s=>s.id==="DNR_ONLY")&&r.states.some(s=>s.id==="DNR_DNI"), "Missing isolated or combined DNR category");
+ let n=0;
+ for(const state of r.states){
+  assert(state.n_dnr>=11&&state.n_control_anchor_records>=11,"Small DNR subtype");
+  n+=state.n_dnr;
+  const b=state.measured_balance,p=state.positivity;
+  number(b.max_absolute_smd,"SMD");number(b.before_subtype_reweighting_smd,"original SMD");
+  assert(b.max_absolute_smd>=0&&b.max_absolute_smd<=2,"Implausible covariate balance");
+  for(const key of ["risk_sets_under_two_effective_controls","risk_sets_control_weight_over_90pct","strict_n"]){
+   number(p[key],key);assert(p[key]>=0&&p[key]<=state.n_dnr,"Bad overlap support statistics");
+  }
+  number(p.strict_max_smd,"strict balance SMD");
+  assert(p.strict_max_smd>=0 && p.strict_max_smd<=2,"Bad strict support balance");
+  for(const k of ["invasive_ventilation","vasopressor_exposure","map_recording"]){
+   const x=state.outcomes[k];
+   assert(x, "DNR causal question missing outcome "+k);
+   for(const group of ["primary","early_pre_event","near_order","strict_overlap","unretuned_original"]){
+    const v=x[group];
+    number(v?.estimate,group+" effect");
+    assert(v.ci95.length===2&&v.ci95[0]<=v.estimate&&v.estimate<=v.ci95[1],"Bad DNR sensitivity CI");
+   }
+  }
+  for(const x of Object.values(state.events)){
+   if(typeof x==="number"){assert(x>=0&&x<=1,"Bad crossover frequency");continue;}
+   number(x.dnr,"DNR rate");number(x.full_code_control,"control rate");
+   assert(x.dnr>=0&&x.dnr<=1&&x.full_code_control>=0&&x.full_code_control<=1,"Bad event rates");
+   assert(Math.abs(x.dnr-x.full_code_control-x.difference)<1e-7,"DNR event difference arithmetic inconsistent");
+   assert(x.ci95[0]<=x.difference&&x.difference<=x.ci95[1],"DNR event interval inconsistent");
+  }
+ }
+ assert(n===c.represented_dnr,"DNR/DNI cohort total inconsistent");
+ assert(r.provenance?.unknown_at_icu_entry>100,"Unknown documentation must be stated");
+ assert(r.provenance?.icu_code_orders>=r.provenance?.ordering_provider_matches_hospital_admitting,"Invalid provider provenance");
+ assert(r.provenance?.new_dnr_only_cases_with_extubation12<=r.states.find(s=>s.id==="DNR_ONLY").n_dnr,"Extubation count infeasible");
+ assert(Array.isArray(r.methods?.limitations)&&r.methods.limitations.length>=6,"Mandatory causal warnings missing");
+ assert(r.methods?.no_iv_rule?.includes("not"),"Physician assignment validation must remain explicit");
+ assert(r.methods?.confidence?.includes("fitted weights"),"Uncertainty qualification missing");
+ assert(Array.isArray(r.evidence)&&r.evidence.some(x=>x.status==="Unidentified"),"Unidentified causal question must be clearly visible");
+}
+
 export function validatePublication(catalog, releases) {
   assert(catalog.schema_version === 1, "Unsupported tracks schema");
   assert(catalog.domain === "mimicry.mikkokotila.com", "Wrong domain");
@@ -34,6 +89,14 @@ export function validatePublication(catalog, releases) {
     assert(Number.isInteger(r.round_number) && r.round_number>=1, "Missing positive research round number");
     assert(/^\d{4}-\d{2}-\d{2}$/.test(r.date), "Invalid date " + r.id);
     for (const k of ["title","subtitle","status","message","dataset"]) assert(typeof r[k] === "string" && r[k].length > 3, "Missing " + k);
+    if (r.kind==="dnr-audit"){
+      validateDnrAudit(r);
+      const raw=JSON.stringify(r);
+      for(const forbidden of [/"subject_id"\s*:/,/"stay_id"\s*:/,/"hadm_id"\s*:/,/"patient_id"\s*:/,/"raw_rows"\s*:/,/"date_of_birth"\s*:/,/"email"\s*:/,/"access_token"\s*:/,/"api_key"\s*:/,/"password"\s*:/]){
+       assert(!forbidden.test(raw),"Forbidden raw/sensitive field in DNR release");
+      }
+      continue;
+    }
     for (const [k,v] of Object.entries(r.summary)) {
       number(v, k);
       assert(v >= 0, "Negative " + k);

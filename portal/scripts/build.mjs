@@ -60,7 +60,13 @@ put("data/catalog.json",JSON.stringify({
     latest:releases.find(r=>r.track===t.id)?.id || null,
     count:releases.filter(r=>r.track===t.id).length})),
   releases:releases.map(r=>({id:r.id,track:r.track,title:r.title,subtitle:r.subtitle,date:r.date,round_number:r.round_number,status:r.status,review_status:r.review_status,
-    dataset:r.dataset,message:r.message,prediction_gain_relative:r.prediction.improvement.relative,simulation_validation:r.simulation.validation,simulation_all_pass:r.simulation.horizons.every(h=>h.passed)})),
+    dataset:r.dataset,message:r.message,kind:r.kind||"multistate",
+    prediction_gain_relative:r.prediction?.improvement?.relative ?? null,
+    simulator_validation:r.simulation?.validation ?? null,
+    simulation_validation:r.simulation?.validation ?? null,
+    simulation_all_pass:r.simulation?.horizons?.every(h=>h.passed) ?? null,
+    dnr_only_n:r.states?.find(s=>s.id==="DNR_ONLY")?.n_dnr ?? null})),
+
   latest:releases[0]?.id||null
 },null,2)+"\n");
 for(const r of releases){
