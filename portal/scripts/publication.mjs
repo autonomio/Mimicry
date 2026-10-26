@@ -46,6 +46,13 @@ function validateDnrAudit(r){
     assert(v.ci95.length===2&&v.ci95[0]<=v.estimate&&v.estimate<=v.ci95[1],"Bad DNR sensitivity CI");
    }
   }
+  // Required fields are dereferenced by the public release UI.
+  // Validating only fields that happen to be present is unsafe.
+  for(const key of ["extubation_within_4h","documented_cmo_within_12h",
+                    "icu_exit_within_12h","death_within_12h"]){
+    assert(state.events?.[key]&&typeof state.events[key]==="object",
+      "Required DNR event missing: "+key);
+  }
   for(const x of Object.values(state.events)){
    if(typeof x==="number"){assert(x>=0&&x<=1,"Bad crossover frequency");continue;}
    number(x.dnr,"DNR rate");number(x.full_code_control,"control rate");

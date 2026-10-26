@@ -89,7 +89,11 @@ def smd(frame, feat):
         means.append(mu)
         vars_.append(np.average((x[mask] - mu)**2, weights=w[mask]))
     scale = np.sqrt(np.mean(vars_))
-    return float((means[0] - means[1]) / scale) if scale > 1e-12 else 0.
+    # If both arms are constant at different values, the standardized
+    # difference is undefined/unbounded, NOT perfect balance.
+    if scale <= 1e-12:
+        return 0.0 if abs(means[0]-means[1])<=1e-12 else float("inf")
+    return float((means[0] - means[1]) / scale)
 
 def balance_subtype(frame):
     d = []
@@ -329,7 +333,7 @@ for v in report["subtypes"].values():
         lo,hi=q["ci95_fixed_weight_patient_cluster"]
         assert lo<=q["difference"]<=hi
 out=DEST/"dnr_fork_aggregate_report.json"
-out.write_text(json.dumps(report,indent=2)+"\n")
+out.write_text(json.dumps(report,indent=2,allow_nan=False)+"\n")
 out.chmod(0o600)
 print("DNR-first study aggregate report:",out,flush=True)
 for key,x in report["subtypes"].items():

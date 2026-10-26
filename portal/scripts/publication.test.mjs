@@ -106,3 +106,10 @@ test("Prophecy 2's stringent overlap failure is retained in the record",()=>{
  assert.ok(dnr.positivity.strict_n<dnr.n_dnr);
  assert.ok(dnr.positivity.risk_sets_under_two_effective_controls>dnr.n_dnr/2);
 });
+
+
+test("Prophecy 2 missing mandatory event fields fails before browser rendering",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ delete fork.states[0].events.death_within_12h;
+ assert.throws(()=>validatePublication(tracks,[fork]),/Required DNR event missing/);
+});
