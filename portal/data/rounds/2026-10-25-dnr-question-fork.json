@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "kind": "dnr-audit",
+  "id": "2026-10-25-dnr-question-fork",
+  "track": "prophecy-2",
+  "round_number": 1,
+  "title": "What does a DNR order actually change?",
+  "subtitle": "The research fork back to the code-status decision",
+  "date": "2026-10-25",
+  "dataset": "MIMIC-IV v3.1",
+  "status": "Exploratory · DNR effect not identified",
+  "review_status": "Internal computational QA; not peer reviewed",
+  "message": "A new DNR-only order is followed by changes in ventilation and monitoring, but these associations are weaker under stricter overlap restrictions, while a profound short-term mortality gap remains. We cannot attribute deaths or treatment withdrawal to the DNR order itself.",
+  "source_url": "https://github.com/autonomio/Mimicry/tree/master/research/prophecy-2",
+  "lineage": {
+    "from_track": "prophecy",
+    "from_stage": "DNR code-status provenance and risk-set reconstruction; before general six-hour stochastic simulation",
+    "why": "To preserve the specific causal DNR question rather than subsume it into policy-dependent generic mortality prediction."
+  },
+  "question": {
+    "plain": "When a clinician writes 'do not resuscitate,' does anything else change in the person's treatment? And does writing the order cause the worse outcomes associated with it?",
+    "scientific": "Among ICU patients eligible for an isolated first DNR-only order, can changes in non-CPR treatment and subsequent mortality be attributed to the order rather than unrecorded prognostic information and simultaneous clinical decisions?",
+    "intervention_definition": "An isolated DNR directive concerns CPR at cardiac arrest. It is not synonymous with DNI, CMO, or stopping other life support.",
+    "identification_status": "Not identified as a causal effect from these observational risk-set contrasts."
+  },
+  "cohort": {
+    "eligible_first_dnr": 3021,
+    "represented_dnr": 2014,
+    "outside_common_support": 1007,
+    "sample_time": "First ICU stay per admission, 24 hours to 14 days into ICU, after previously documented full-code status.",
+    "control_time": "Equivalent elapsed ICU time; explicitly documented full-code patient eligible at that time.",
+    "one_record_per": "Index order for each treated ICU stay, with weighted eligible control anchor observations.",
+    "not_conditioned_on": "Surviving or remaining in the ICU after the order."
+  },
+  "states": [
+    {
+      "id": "DNR_ONLY",
+      "label": "DNR only",
+      "meaning": "CPR limitation documented without simultaneous DNI",
+      "n_dnr": 792,
+      "n_control_anchor_records": 15716,
+      "effective_control_patients": 692.2694887049408,
+      "measured_balance": {
+        "max_absolute_smd": 0.02858354046186428,
+        "before_subtype_reweighting_smd": 0.1664889773765348
+      },
+      "positivity": {
+        "risk_sets_under_two_effective_controls": 414,
+        "risk_sets_control_weight_over_90pct": 259,
+        "strict_n": 378,
+        "strict_max_smd": 0.31804105268083327,
+        "strict_description": "effective_controls_per_riskset >=2 AND largest control weight <=0.80; determined using pre-index covariates only"
+      },
+      "outcomes": {
+        "invasive_ventilation": {
+          "primary": {
+            "estimate": -0.07779499392688327,
+            "ci95": [
+              -0.10435458225075096,
+              -0.05123540560301558
+            ]
+          },
+          "near_order": {
+            "estimate": -0.061753120763572644,
+            "ci95": [
+              -0.08106747640607834,
+              -0.042438765121066944
+            ]
+          },
+          "early_pre_event": {
+            "estimate": 0.00048447223442527054,
+            "ci95": [
+              -0.013606825878911046,
+              0.014575770347761587
+            ]
+          },
+          "strict_overlap": {
+            "estimate": -0.03863407173023278,
+            "ci95": [
+              -0.06727799248682922,
+              -0.009990150973636334
+            ]
+          },
+          "unretuned_original": {
+            "estimate": -0.05680486203606605,
+            "ci95": [
+              -0.08209141932607683,
+              -0.03151830474605527
+            ]
+          }
+        },
+        "vasopressor_exposure": {
+          "primary": {
+            "estimate": -0.056280144765575135,
+            "ci95": [
+              -0.07673842133950512,
+              -0.03582186819164516
+            ]
+          },
+          "near_order": {
+            "estimate": -0.03264125660749492,
+            "ci95": [
+              -0.0475379041998039,
+              -0.017744609015185944
+            ]
+          },
+          "early_pre_event": {
+            "estimate": 0.0060019761002947924,
+            "ci95": [
+              -0.007493773474538152,
+              0.01949772567512774
+            ]
+          },
+          "strict_overlap": {
+            "estimate": -0.0045116742106111885,
+            "ci95": [
+              -0.023133694036315978,
+              0.014110345615093601
+            ]
+          },
+          "unretuned_original": {
+            "estimate": -0.05172498442323292,
+            "ci95": [
+              -0.07107786894388884,
+              -0.032372099902577
+            ]
+          }
+        },
+        "map_recording": {
+          "primary": {
+            "estimate": -0.10050596925647859,
+            "ci95": [
+              -0.1365408493300867,
+              -0.06447108918287048
+            ]
+          },
+          "near_order": {
+            "estimate": -0.07070788512267012,
+            "ci95": [
+              -0.11325422739726226,
+              -0.02816154284807798
+            ]
+          },
+          "early_pre_event": {
+            "estimate": 0.010735230159679476,
+            "ci95": [
+              -0.029873617576359326,
+              0.05134407789571828
+            ]
+          },
+          "strict_overlap": {
+            "estimate": -0.06304384401425456,
+            "ci95": [
+              -0.10621277852269524,
+              -0.019874909505813873
+            ]
+          },
+          "unretuned_original": {
+            "estimate": -0.10393491828093049,
+            "ci95": [
+              -0.13763365461481453,
+              -0.07023618194704645
+            ]
+          }
+        },
+        "hr_recording": {
+          "primary": {
+            "estimate": -0.03125776498738331,
+            "ci95": [
+              -0.06266512909009442,
+              0.00014959911532781006
+            ]
+          }
+        }
+      },
+      "events": {
+        "extubation_before_4h": {
+          "dnr": 0.007575757575757576,
+          "full_code_control": 0.009022485928017895,
+          "difference": -0.0014467283522603194,
+          "ci95": [
+            -0.009111169282096251,
+            0.006217712577575612
+          ]
+        },
+        "extubation_within_4h": {
+          "dnr": 0.05555555555555555,
+          "full_code_control": 0.007869391378772744,
+          "difference": 0.04768616417678281,
+          "ci95": [
+            0.030984194520072065,
+            0.06438813383349355
+          ]
+        },
+        "extubation_within_12h": {
+          "dnr": 0.06944444444444445,
+          "full_code_control": 0.018013607524157118,
+          "difference": 0.051430836920287326,
+          "ci95": [
+            0.031961484258055846,
+            0.07090018958251881
+          ]
+        },
+        "documented_cmo_within_12h": {
+          "dnr": 0.020202020202020204,
+          "full_code_control": 0.0025538086074202567,
+          "difference": 0.017648211594599946,
+          "ci95": [
+            0.007827338764754057,
+            0.027469084424445837
+          ]
+        },
+        "death_within_12h": {
+          "dnr": 0.19318181818181818,
+          "full_code_control": 0.017004899457783548,
+          "difference": 0.17617691872403463,
+          "ci95": [
+            0.14831052364115016,
+            0.2040433138069191
+          ]
+        },
+        "icu_exit_within_12h": {
+          "dnr": 0.25252525252525254,
+          "full_code_control": 0.09458016513188078,
+          "difference": 0.15794508739337176,
+          "ci95": [
+            0.12519781693702992,
+            0.1906923578497136
+          ]
+        },
+        "control_later_limited_status_within_12h": 0.0456934643244796
+      }
+    },
+    {
+      "id": "DNR_DNI",
+      "label": "DNR + DNI",
+      "meaning": "CPR and intubation limitations documented together",
+      "n_dnr": 1222,
+      "n_control_anchor_records": 28528,
+      "effective_control_patients": 1898.5211265002115,
+      "measured_balance": {
+        "max_absolute_smd": 0.002828484209713549,
+        "before_subtype_reweighting_smd": 0.13161759703660264
+      },
+      "positivity": {
+        "risk_sets_under_two_effective_controls": 177,
+        "risk_sets_control_weight_over_90pct": 78,
+        "strict_n": 1045,
+        "strict_max_smd": 0.11712161330430056,
+        "strict_description": "effective_controls_per_riskset >=2 AND largest control weight <=0.80; determined using pre-index covariates only"
+      },
+      "outcomes": {
+        "invasive_ventilation": {
+          "primary": {
+            "estimate": -0.06334613643791748,
+            "ci95": [
+              -0.08385480709508145,
+              -0.04283746578075351
+            ]
+          },
+          "near_order": {
+            "estimate": -0.050058762225903386,
+            "ci95": [
+              -0.06476062025706864,
+              -0.03535690419473814
+            ]
+          },
+          "early_pre_event": {
+            "estimate": -0.008467068722199267,
+            "ci95": [
+              -0.018931835643541634,
+              0.0019976981991431005
+            ]
+          },
+          "strict_overlap": {
+            "estimate": -0.04835426820172822,
+            "ci95": [
+              -0.06940758118347577,
+              -0.027300955219980678
+            ]
+          },
+          "unretuned_original": {
+            "estimate": -0.07451941114866895,
+            "ci95": [
+              -0.09520730643560474,
+              -0.053831515861733154
+            ]
+          }
+        },
+        "vasopressor_exposure": {
+          "primary": {
+            "estimate": -0.05326143646719261,
+            "ci95": [
+              -0.06872304725896612,
+              -0.037799825675419105
+            ]
+          },
+          "near_order": {
+            "estimate": -0.03518736251644389,
+            "ci95": [
+              -0.04731262284473964,
+              -0.023062102188148137
+            ]
+          },
+          "early_pre_event": {
+            "estimate": 0.0067396050007794694,
+            "ci95": [
+              -0.004893828681681993,
+              0.01837303868324093
+            ]
+          },
+          "strict_overlap": {
+            "estimate": -0.03394225566374595,
+            "ci95": [
+              -0.048714067059122096,
+              -0.019170444268369807
+            ]
+          },
+          "unretuned_original": {
+            "estimate": -0.053441133450673584,
+            "ci95": [
+              -0.06894914681998342,
+              -0.03793312008136375
+            ]
+          }
+        },
+        "map_recording": {
+          "primary": {
+            "estimate": -0.06497157765895767,
+            "ci95": [
+              -0.08825659628559987,
+              -0.04168655903231547
+            ]
+          },
+          "near_order": {
+            "estimate": -0.043661531174923995,
+            "ci95": [
+              -0.07906796573161459,
+              -0.008255096618233398
+            ]
+          },
+          "early_pre_event": {
+            "estimate": 0.0006571833478654643,
+            "ci95": [
+              -0.028584815630708332,
+              0.02989918232643926
+            ]
+          },
+          "strict_overlap": {
+            "estimate": -0.06385629027358097,
+            "ci95": [
+              -0.08500535917278332,
+              -0.042707221374378636
+            ]
+          },
+          "unretuned_original": {
+            "estimate": -0.06333721893330124,
+            "ci95": [
+              -0.08764444394793658,
+              -0.0390299939186659
+            ]
+          }
+        },
+        "hr_recording": {
+          "primary": {
+            "estimate": -0.021419763877980946,
+            "ci95": [
+              -0.04291624115017549,
+              7.671339421360182e-05
+            ]
+          }
+        }
+      },
+      "events": {
+        "extubation_before_4h": {
+          "dnr": 0.02536824877250409,
+          "full_code_control": 0.024836128343972957,
+          "difference": 0.0005321204285311347,
+          "ci95": [
+            -0.00930030904848966,
+            0.01036454990555193
+          ]
+        },
+        "extubation_within_4h": {
+          "dnr": 0.062193126022913256,
+          "full_code_control": 0.009250115185977955,
+          "difference": 0.0529430108369353,
+          "ci95": [
+            0.03940885083563919,
+            0.0664771708382314
+          ]
+        },
+        "extubation_within_12h": {
+          "dnr": 0.08592471358428805,
+          "full_code_control": 0.019108905508398548,
+          "difference": 0.0668158080758895,
+          "ci95": [
+            0.05137492901174935,
+            0.08225668714002964
+          ]
+        },
+        "documented_cmo_within_12h": {
+          "dnr": 0.03764320785597381,
+          "full_code_control": 0.001526830050774844,
+          "difference": 0.03611637780519897,
+          "ci95": [
+            0.02571846822199806,
+            0.046514287388399876
+          ]
+        },
+        "death_within_12h": {
+          "dnr": 0.15384615384615385,
+          "full_code_control": 0.01413461715796713,
+          "difference": 0.13971153668818673,
+          "ci95": [
+            0.11937447559863644,
+            0.16004859777773703
+          ]
+        },
+        "icu_exit_within_12h": {
+          "dnr": 0.1988543371522095,
+          "full_code_control": 0.11671189093402883,
+          "difference": 0.08214244621818066,
+          "ci95": [
+            0.058727538617143846,
+            0.10555735381921748
+          ]
+        },
+        "control_later_limited_status_within_12h": 0.05046828524203771
+      }
+    }
+  ],
+  "provenance": {
+    "icu_stays": 94458,
+    "code_status_records": 354306,
+    "hospital_code_records_without_icu_stay": 210188,
+    "unknown_at_icu_entry": 76964,
+    "conflicting_status_timestamps": 11,
+    "icu_code_orders": 62078,
+    "ordering_provider_matches_hospital_admitting": 48,
+    "new_dnr_only_cases_with_extubation12": 55,
+    "new_dnr_only_extub_without_followup_recorded_dni_or_cmo": 48,
+    "new_dnr_only_extub_then_death_within2h": 19,
+    "new_dnr_only_later_documented_dni": 18,
+    "new_dnr_only_later_documented_cmo": 16,
+    "caution": "No subsequent structured DNI/CMO entry does not establish absence of broader care limitations. Ordering and admitting providers are different identifiers and no as-if-random physician assignment has been demonstrated."
+  },
+  "methods": {
+    "estimand": "Weighted difference-in-before/after recording or organ-support intensity, DNR order minus currently full-code risk-set controls. Exposure rate denominators are observed ICU patient-hours and are subject to competing death/discharge. This is not E[Y(DNR)-Y(no DNR)].",
+    "design": "Retrospective first documented FULL→DNR-only or FULL→DNR/DNI order, separated subtypes; prior ICU unit, historical cohort, elapsed time, severity and recorded pre-order physiology, support intensity and measurements. Within-subtype additional entropy calibration is exploratory. Patient-clustered approximate fixed-weight intervals.",
+    "negative_control": "An earlier measurement/treatment trend from 24–16 to 16–12 hours before the order. Matching on pre-decision histories means absence of a pretrend is NOT independent causal validation.",
+    "overlap_rule": "Stricter exploratory analysis restricts risk sets to at least two effective controls and largest individual control weight <=0.80. This changes the population; measured balance is re-checked. A poorly balanced strict subset does not identify treatment effects.",
+    "confidence": "All intervals condition on the fitted weights; they exclude design, model choice and weight-estimation uncertainty and should not be used as final causal inferential intervals.",
+    "no_iv_rule": "The POE order provider is observed at the decision, and hospital admitting provider is not proven to be the assigned ICU decision-maker. F-statistic or physician practice variation alone does not identify a DNR effect.",
+    "no_patient_level_data": true,
+    "code": [
+      "research/prophecy-2/01_dnr_fork.py",
+      "research/prophecy-2/02_phenotype_provider_audit.sql",
+      "research/prophecy-2/03_later_limitation_audit.sql"
+    ],
+    "next": [
+      "Improve isolated DNR versus contemporaneous DNI/comfort-care phenotype and event timestamp validation.",
+      "Assess whether a pure CPR-only DNR intervention is identifiable given arrest and CPR ascertainment.",
+      "Study mortality causation only with validated assignment/negative controls or explicit partial-identification bounds."
+    ],
+    "limitations": [
+      "A DNR directive prohibits CPR at cardiac arrest; it does not order withdrawal of ongoing ventilation or vasopressors.",
+      "DNR choice and timestamp depend on illness prognosis and unrecorded conversations; risk-set adjustment cannot guarantee exchangeability.",
+      "Severe post-order mortality imbalance remains after pre-order matching and makes a causal interpretation of mortality especially untenable.",
+      "Stricter overlap greatly reduces effective DNR-only sample size and can worsen measured balance; some apparent support differences weaken substantially.",
+      "Actual support and monitoring intensity are truncated by death and ICU discharge, which change the observed person-time denominators.",
+      "Source infusion and ventilation intervals are retrospectively derived and may reflect charting after a landmark; estimates are not certified as-of real-time predictions.",
+      "Multiple subtypes, endpoints and sensitivity analyses were examined after seeing initial results; exploratory, not preregistered confirmatory inference.",
+      "Physician preference instruments have not passed pre-assignment, independence and exclusion audits; no identified DNR LATE.",
+      "Patient preferences, arrest eligibility, CPR delivery, neurologic prognosis and some contemporaneous limitations cannot be verified in structured MIMIC-IV.",
+      "This single-centre study does not establish a generalized or ethically optimal treatment policy; not clinical decision guidance."
+    ]
+  },
+  "evidence": [
+    {
+      "status": "Observed",
+      "claim": "DNR-only orders are accompanied by changing non-CPR treatment, monitoring and extubation documentation."
+    },
+    {
+      "status": "Fragile",
+      "claim": "The apparent vasopressor change in DNR-only is not stable under a stronger but poorly balanced overlap restriction."
+    },
+    {
+      "status": "Unidentified",
+      "claim": "No causal effect of the DNR order on treatment withdrawal or mortality is identified."
+    }
+  ]
+}

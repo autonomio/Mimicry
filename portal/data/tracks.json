@@ -16,6 +16,19 @@
       "icon": "signal",
       "color": "#64d6bb",
       "order": 1
+    },
+    {
+      "id": "prophecy-2",
+      "slug": "prophecy-2",
+      "name": "Prophecy 2",
+      "eyebrow": "Research track 02 · DNR decision and causal identification",
+      "tagline": "Does a DNR order change care—or record a decision already underway?",
+      "description": "A deliberate fork back to the DNR question. We distinguish DNR-only from DNR/DNI, reconstruct the order timeline, measure changes in non-CPR care, and test where causal interpretation fails.",
+      "discipline": "Intensive care · End-of-life decisions · Causal inference",
+      "status": "Active · DNR-first · exploratory",
+      "icon": "decision",
+      "color": "#dfab75",
+      "order": 2
     }
   ],
   "editorial": {

@@ -35,6 +35,11 @@ const js=fs.readFileSync(path.join(outputDir,"assets","site.js"),"utf8");
 assert(js.includes("installOutcomeExplorer") && js.includes("data-lens"),"Interactive reading controls missing");
 assert(js.includes("Long-horizon validation did not pass"),"Validation failure must be visible");
 assert(js.includes("installTransportExplorer"), "Transport error explorer missing");
+if(tracks.tracks.some(t=>t.id==="prophecy-2")){
+ assert(js.includes("installDnrExplorer")&&js.includes("dnrMethods"),"Prophecy 2 interactive and identification pages missing");
+ assert(js.includes("Severe short-term mortality imbalance remains."),"DNR causal confounding warning must be visible");
+ assert(js.includes("max measured |SMD|")||js.includes("maximum measured |SMD|")||js.includes("maximum standardized difference"),"Overlap diagnosis must be explicit");
+}
 const csp=fs.readFileSync(path.join(outputDir,"_headers"),"utf8");
 assert(csp.includes("Content-Security-Policy") && csp.includes("X-Content-Type-Options"),"Security headers missing");
 const all=fs.readdirSync(outputDir);

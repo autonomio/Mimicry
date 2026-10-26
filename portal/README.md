@@ -2,6 +2,8 @@
 
 Public website: https://mimicry.mikkokotila.com
 
+The site now has two distinct research tracks: **Prophecy** (policy-dependent ICU prognosis and simulation) and **Prophecy 2** (the specific DNR causal question, forked before the general simulator). They have independent releases, clinical questions and methods.
+
 The site is intentionally separate from any private clinical data warehouse. Mimicry is the umbrella publication platform; **Prophecy** is the first research track at `/tracks/prophecy/`. The same schema supports additional tracks without sharing their evidence or method claims.
 
 ## Publication workflow
@@ -47,3 +49,7 @@ Future aggregate releases update on approved merges; this does **not** expose an
 ## Research round 02
 
 The second Prophecy research round is the historical transport analysis: `data/rounds/2026-10-25-discharge-transport.json`. It includes an interactive observed-versus-real-history-predicted-versus-simulated trajectory explorer, a previous rolling-origin check and measured-case-mix-standardized ICU-discharge comparisons. The original inaugural release is preserved unchanged apart from explicit chronological round numbering. Both use the same canonical published evidence schema, with additional fail-fast conservation checks for transport metrics.
+
+## Separate DNR track: Prophecy 2
+
+Prophecy 2 is accessible at /tracks/prophecy-2/ with a separate methods and release history. Its releases carry kind=dnr-audit and are validated independently of Prophecy's mortality-model schema. The first DNR-only clinical question is anchored to the actual hospital code-status order, not to a generic prediction output. The page makes false IV assumptions, limited comparison overlap, high early mortality selection and failed strict balance visibly explicit. It is not a causal DNR effect publication.

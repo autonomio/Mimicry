@@ -61,3 +61,55 @@ test("ICU-return endpoint sensitivity preserves source event counts",()=>{
  x.transport.icu_return_sensitivity.later.exit_then_return24_n += 30;
  assert.throws(()=>validatePublication(tracks,[x]),/ICU return count\/rate discrepancy/);
 });
+
+test("Prophecy 2 remains independent from Prophecy",()=>{
+ const newTrack=tracks.tracks.find(t=>t.id==="prophecy-2");
+ assert.ok(newTrack);
+ assert.match(newTrack.tagline,/DNR/i);
+ const fork=releases.find(r=>r.track==="prophecy-2");
+ assert.ok(fork);
+ assert.equal(fork.kind,"dnr-audit");
+ assert.equal(fork.states.find(x=>x.id==="DNR_ONLY").n_dnr,792);
+ assert.equal(fork.states.find(x=>x.id==="DNR_DNI").n_dnr,1222);
+ assert.equal(fork.cohort.outside_common_support,1007);
+ assert.equal(validatePublication(tracks,releases),true);
+});
+test("Prophecy 2 cannot pool DNR-only with DNR/DNI",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ fork.states=[fork.states[0]];
+ assert.throws(()=>validatePublication(tracks,[fork]),/DNR-only and DNR/);
+});
+test("Prophecy 2 cannot advertise identified mortality causation",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ fork.question.identification_status="Identified randomized DNR effect";
+ assert.throws(()=>validatePublication(tracks,[fork]),/identification/i);
+});
+test("Prophecy 2 cohort and selected support cannot be misreported",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ fork.cohort.outside_common_support=1;
+ assert.throws(()=>validatePublication(tracks,[fork]),/overlap attrition/);
+});
+test("Prophecy 2 fixed-weight interval must contain the reported contrast",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ fork.states[0].outcomes.invasive_ventilation.primary.estimate=5;
+ assert.throws(()=>validatePublication(tracks,[fork]),/DNR sensitivity CI/);
+});
+test("Prophecy 2 publication rejects patient identifiers",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ fork.subject_id=123456789;
+ assert.throws(()=>validatePublication(tracks,[fork]),/Forbidden/);
+});
+test("Prophecy 2's stringent overlap failure is retained in the record",()=>{
+ const fork=releases.find(r=>r.kind==="dnr-audit");
+ const dnr=fork.states.find(s=>s.id==="DNR_ONLY");
+ assert.ok(dnr.positivity.strict_max_smd>.1);
+ assert.ok(dnr.positivity.strict_n<dnr.n_dnr);
+ assert.ok(dnr.positivity.risk_sets_under_two_effective_controls>dnr.n_dnr/2);
+});
+
+
+test("Prophecy 2 missing mandatory event fields fails before browser rendering",()=>{
+ const fork=JSON.parse(JSON.stringify(releases.find(r=>r.kind==="dnr-audit")));
+ delete fork.states[0].events.death_within_12h;
+ assert.throws(()=>validatePublication(tracks,[fork]),/Required DNR event missing/);
+});
