@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "stories": [
+    {
+      "id": "prophecy-2-the-dnr-order",
+      "track": "prophecy-2",
+      "slug": "the-dnr-order",
+      "kind": "dnr-v1",
+      "release_id": "2026-10-25-dnr-question-fork",
+      "viz_source": "prophecy2-observations-v1.json",
+      "title": "A small order. A very big inference.",
+      "description": "Explore aggregate DNR cohort selection, event-time measurements and causal identification limits.",
+      "status": "MVP \u00b7 observational research only"
+    }
+  ]
+}

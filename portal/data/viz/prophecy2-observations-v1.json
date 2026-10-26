@@ -1,0 +1,1161 @@
+{
+  "schema_version": 1,
+  "kind": "scientific-viz-aggregate",
+  "track": "prophecy-2",
+  "release_id": "2026-10-25-dnr-question-fork",
+  "source": "MIMIC-IV v3.1, audited Prophecy 2 risk sets",
+  "cohort_bubbles": {
+    "axes": {
+      "x": "Mean first-day SOFA",
+      "y": "Pre-order invasive ventilation fraction"
+    },
+    "units": "ICU unit \u00d7 documented DNR subtype, aggregate only",
+    "stages": [
+      {
+        "id": "eligible",
+        "label": "Eligible DNR orders",
+        "explanation": "All first documented DNR orders after explicit full code; no suitable comparison yet."
+      },
+      {
+        "id": "supported",
+        "label": "Measured common support",
+        "explanation": "Only DNR events with clinically eligible weighted full-code controls."
+      },
+      {
+        "id": "strict",
+        "label": "Stricter control support",
+        "explanation": "Controls must have effective number \u22652 and no single weight above 80%. Causal validity is NOT established."
+      }
+    ],
+    "counts": {
+      "eligible": {
+        "n": 3021,
+        "subtypes": {
+          "DNR_DNI": 1697,
+          "DNR_ONLY": 1324
+        }
+      },
+      "supported": {
+        "n": 2014,
+        "subtypes": {
+          "DNR_DNI": 1222,
+          "DNR_ONLY": 792
+        }
+      },
+      "strict": {
+        "n": 1423,
+        "subtypes": {
+          "DNR_DNI": 1045,
+          "DNR_ONLY": 378
+        }
+      }
+    },
+    "points": [
+      {
+        "stage": "eligible",
+        "id": "DNR_DNI_CCU",
+        "subtype": "DNR_DNI",
+        "unit": "CCU",
+        "n": 271,
+        "sofa": 6.94,
+        "invasive_before": 0.481
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_DNI_MICU",
+        "subtype": "DNR_DNI",
+        "unit": "MICU",
+        "n": 1017,
+        "sofa": 7.42,
+        "invasive_before": 0.57
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_DNI_SICU",
+        "subtype": "DNR_DNI",
+        "unit": "SICU",
+        "n": 176,
+        "sofa": 5.38,
+        "invasive_before": 0.605
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_DNI_TSICU",
+        "subtype": "DNR_DNI",
+        "unit": "TSICU",
+        "n": 171,
+        "sofa": 6.24,
+        "invasive_before": 0.645
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_CCU",
+        "subtype": "DNR_ONLY",
+        "unit": "CCU",
+        "n": 223,
+        "sofa": 6.93,
+        "invasive_before": 0.398
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_CVICU",
+        "subtype": "DNR_ONLY",
+        "unit": "CVICU",
+        "n": 53,
+        "sofa": 7.32,
+        "invasive_before": 0.432
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_MICU",
+        "subtype": "DNR_ONLY",
+        "unit": "MICU",
+        "n": 737,
+        "sofa": 7.74,
+        "invasive_before": 0.482
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_NEURO",
+        "subtype": "DNR_ONLY",
+        "unit": "NEURO",
+        "n": 116,
+        "sofa": 3.63,
+        "invasive_before": 0.189
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_SICU",
+        "subtype": "DNR_ONLY",
+        "unit": "SICU",
+        "n": 94,
+        "sofa": 7.5,
+        "invasive_before": 0.373
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_TSICU",
+        "subtype": "DNR_ONLY",
+        "unit": "TSICU",
+        "n": 101,
+        "sofa": 7.62,
+        "invasive_before": 0.537
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_DNI_CCU",
+        "subtype": "DNR_DNI",
+        "unit": "CCU",
+        "n": 144,
+        "sofa": 6.15,
+        "invasive_before": 0.36
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_DNI_MICU",
+        "subtype": "DNR_DNI",
+        "unit": "MICU",
+        "n": 830,
+        "sofa": 7.13,
+        "invasive_before": 0.549
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_DNI_SICU",
+        "subtype": "DNR_DNI",
+        "unit": "SICU",
+        "n": 111,
+        "sofa": 4.48,
+        "invasive_before": 0.481
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_ONLY_CCU",
+        "subtype": "DNR_ONLY",
+        "unit": "CCU",
+        "n": 107,
+        "sofa": 6.48,
+        "invasive_before": 0.275
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_ONLY_MICU",
+        "subtype": "DNR_ONLY",
+        "unit": "MICU",
+        "n": 517,
+        "sofa": 7.17,
+        "invasive_before": 0.432
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_ONLY_NEURO",
+        "subtype": "DNR_ONLY",
+        "unit": "NEURO",
+        "n": 82,
+        "sofa": 3.28,
+        "invasive_before": 0.062
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_ONLY_SICU",
+        "subtype": "DNR_ONLY",
+        "unit": "SICU",
+        "n": 34,
+        "sofa": 5.56,
+        "invasive_before": 0.154
+      },
+      {
+        "stage": "strict",
+        "id": "DNR_DNI_CCU",
+        "subtype": "DNR_DNI",
+        "unit": "CCU",
+        "n": 126,
+        "sofa": 5.78,
+        "invasive_before": 0.298
+      },
+      {
+        "stage": "strict",
+        "id": "DNR_DNI_MICU",
+        "subtype": "DNR_DNI",
+        "unit": "MICU",
+        "n": 698,
+        "sofa": 6.59,
+        "invasive_before": 0.503
+      },
+      {
+        "stage": "strict",
+        "id": "DNR_DNI_SICU",
+        "subtype": "DNR_DNI",
+        "unit": "SICU",
+        "n": 106,
+        "sofa": 4.39,
+        "invasive_before": 0.466
+      },
+      {
+        "stage": "strict",
+        "id": "DNR_ONLY_MICU",
+        "subtype": "DNR_ONLY",
+        "unit": "MICU",
+        "n": 205,
+        "sofa": 5.84,
+        "invasive_before": 0.329
+      },
+      {
+        "stage": "strict",
+        "id": "DNR_ONLY_NEURO",
+        "subtype": "DNR_ONLY",
+        "unit": "NEURO",
+        "n": 71,
+        "sofa": 3.24,
+        "invasive_before": 0.047
+      }
+    ],
+    "min_cell_n": 30,
+    "complementary_suppression": true
+  },
+  "event_time": {
+    "description": "Measured 4-hour aggregate bins anchored on a documented DNR order or eligible full-code pseudo-time. The display follows record counts and treatment exposure per observed ICU person-hour; differential exit/death changes risk sets.",
+    "from_hours": [
+      -24,
+      -20,
+      -16,
+      -12,
+      -8,
+      -4,
+      0,
+      4,
+      8
+    ],
+    "metrics": [
+      {
+        "id": "invasive_ventilation",
+        "label": "Invasive ventilation",
+        "unit": "fraction of ICU patient-hours"
+      },
+      {
+        "id": "vasopressor_exposure",
+        "label": "Vasopressor exposure",
+        "unit": "fraction of ICU patient-hours"
+      },
+      {
+        "id": "map_recording",
+        "label": "MAP recordings",
+        "unit": "records per ICU patient-hour"
+      }
+    ],
+    "series": [
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.36265
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.37036
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.36969
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.36204
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.36379
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.34526
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.2924
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.29228
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.28902
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.36668
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.37015
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.37112
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.36743
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.35963
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.3451
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.35398
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.37625
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.37921
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.23344
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.2294
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.24184
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.24731
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.25029
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.24863
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.22232
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.20663
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.20047
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.24661
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.25431
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.25488
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.25084
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.24576
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.24956
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.2559
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.26879
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.27672
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 1.11301
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 1.10638
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 1.07828
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 1.04482
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 1.04514
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 1.04861
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.99348
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.97032
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.96776
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 1.12493
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 1.10237
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 1.07151
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 1.04003
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 1.04841
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 1.04781
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 1.06338
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 1.08964
+      },
+      {
+        "subtype": "DNR_ONLY",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 1.08137
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.56296
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.56589
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.569
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.56901
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.56327
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.50791
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.44841
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.4451
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "DNR",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.45951
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.5541
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.56283
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.5715
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.57554
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.55618
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.50801
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.49856
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.51539
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "invasive_ventilation",
+        "arm": "RISKSET",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.52918
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.25876
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.27021
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.27241
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.27901
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.28318
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.28516
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.25626
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.23395
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "DNR",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.23236
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 0.27503
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 0.28324
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 0.28032
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 0.28177
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 0.28057
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 0.28512
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 0.2914
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.29527
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "vasopressor_exposure",
+        "arm": "RISKSET",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.29828
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 1.11354
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 1.10761
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 1.07038
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 1.04767
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 1.05217
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 1.06424
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 1.03168
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 0.99298
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "DNR",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 0.99546
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -24,
+        "to_hour": -20,
+        "value": 1.12883
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -20,
+        "to_hour": -16,
+        "value": 1.09285
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -16,
+        "to_hour": -12,
+        "value": 1.06998
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -12,
+        "to_hour": -8,
+        "value": 1.04626
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -8,
+        "to_hour": -4,
+        "value": 1.05383
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": -4,
+        "to_hour": 0,
+        "value": 1.06474
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": 0,
+        "to_hour": 4,
+        "value": 1.07584
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": 4,
+        "to_hour": 8,
+        "value": 1.07409
+      },
+      {
+        "subtype": "DNR_DNI",
+        "metric": "map_recording",
+        "arm": "RISKSET",
+        "from_hour": 8,
+        "to_hour": 12,
+        "value": 1.06889
+      }
+    ],
+    "pointwise_ci_available": false,
+    "event_time_is_endogenous": true
+  },
+  "provenance": {
+    "script": "research/prophecy-2/05_viz_aggregate_export.py",
+    "source_subtype_estimates": "research/prophecy-2/01_dnr_fork.py",
+    "patient_rows_exported": false,
+    "interpretation": "Filtered analytical cohorts are NOT individual trajectories; displayed changes are associations, not treatment effects."
+  }
+}
