@@ -1,0 +1,44 @@
+loading stays + landmarks + supports + labs...
+stays: 94458
+[B-rich] n=44652 adjOR_dnr=4.09 RR=3.01 E-value=5.48
+  tim none: n=39112 death=0.116 (ref)
+  tim dnr<24h: n=4475 death=0.327 adjOR=3.48
+  tim dnr24-48h: n=1065 death=0.571 adjOR=7.40
+  tert lo (sofa 0-2): n=16530 adjOR=5.74
+  tert mid (sofa 3-5): n=15402 adjOR=3.66
+  tert hi (sofa 6-23): n=12720 adjOR=3.57
+[B-match] pairs=5495 death exp=0.372 ctl=0.172 OR=2.92 [2.66-3.22]
+  balance |SMD| max before/after:
+    max|SMD| 0.763 -> 0.025
+  IV sample (units with 2+ stays): n=44650
+[B-IV] first-stage F=1614.3 units=14 IV risk-diff=0.784 [0.726-0.841]
+  OLS risk-diff for scale: 0.210
+pulling peri-DNR vitals...
+[reg hr] dnr coef=-1.5207 p=1.7e-09 n=4339
+  placebo cut -6h: n=4887 medianΔ=+0.000 p=0.29
+  placebo cut +6h: n=3314 medianΔ=-0.061 p=0.01
+  survivor-DNR: n=2422 medianΔ=-0.170 p=2.9e-06
+[reg map] dnr coef=-1.1319 p=9.6e-19 n=3822
+  placebo cut -6h: n=4464 medianΔ=+0.100 p=0.83
+  placebo cut +6h: n=2857 medianΔ=-0.189 p=0.0077
+  survivor-DNR: n=2288 medianΔ=-0.143 p=0.002
+cause mix (rows) x code status:
+ stay_id       dnr  full
+cause                  
+cardiac       365   289
+missing         4     1
+neuro         580   161
+other        1354   887
+respiratory   172    75
+sepsis       5757  1696
+median death_h full vs dnr: 219.0 96.6
+[CV ALL H=6h] n=11374 AUC=0.809 sd=0.007
+[CV FC H=6h] n=1340 AUC=0.753 sd=0.015
+  ALL-FC gap: 0.053 95%CI [0.044-0.064] reps=200
+[CV ALL H=12h] n=11030 AUC=0.774 sd=0.008
+[CV FC H=12h] n=1204 AUC=0.702 sd=0.028
+  ALL-FC gap: 0.061 95%CI [0.047-0.080] reps=200
+[CV ALL H=24h] n=10386 AUC=0.756 sd=0.006
+[CV FC H=24h] n=1028 AUC=0.688 sd=0.047
+  ALL-FC gap: 0.044 95%CI [0.028-0.065] reps=200
+done
