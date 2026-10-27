@@ -55,6 +55,10 @@ Across 62,078 ICU-time code-status orders, only 48 were entered by the hospital 
 
 ## Bounded next experiments
 
+### Validation update — 27 October 2026
+
+The [locked validation audit](validation/RESULTS.md) reproduced the original numerical results and independently reconstructed their source measurements. **The stricter DNR-only comparison could not be established:** the full candidate graph and both patient-disjoint partitions were infeasible under simultaneous balance and control-person weight caps. No new DNR-only effect was estimated for the failed designs. DNR+DNI passed in the full graph and one partition, but two-partition internal consistency was not established for either subtype. External replication, verified clinical intent and causal identification remain unestablished. See the [protocol](validation/PROTOCOL.md) and [reviewed aggregate output](validation/validation_aggregate.json).
+
 **A. Phenotype:** Audit simultaneous status and withdrawal/comfort orders at the DNR timestamp.
 
 **B. Mechanism:** Test immediate non-CPR treatment changes under defensible overlap, anticipation controls and competing exits. Accept null or nonidentification outcomes.
