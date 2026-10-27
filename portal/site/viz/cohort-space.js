@@ -83,9 +83,7 @@ export function mountCohortSpace(root,dataset,{getSubtype,onSubtypeChange}){
    '<div class="mv-stage-subcounts"><span><i class="mv-dot mv-dnr"></i>DNR only '+nfmt(info.subtypes.DNR_ONLY)+'</span>'+
    '<span><i class="mv-dot mv-dni"></i>DNR + DNI '+nfmt(info.subtypes.DNR_DNI)+'</span></div>';
   const msg=document.querySelector("#mv-space-censor");
-  msg.textContent=unseen>0?
-    "Some ICU groups are omitted with complementary suppression to protect small cells; cohort totals include them.":
-   "All eligible aggregate groups in this stage are displayed.";
+  msg.textContent="To protect small groups and small between-stage changes, MICU is shown separately and all other ICU units are pooled into one aggregate. Every stage uses the same grouping.";
   table.innerHTML='<thead><tr><th>ICU group</th><th>Documented order</th><th>Count</th><th>SOFA mean</th><th>Ventilation before order</th></tr></thead><tbody>'+
    visible.sort((a,b)=>b.n-a.n).map(p=>'<tr><th>'+p.unit+'</th><td>'+STATUS_LABELS[p.subtype]+'</td><td>'+nfmt(p.n)+'</td><td>'+nfmt(p.sofa,2)+'</td><td>'+asPercent(p.invasive_before,1)+'</td></tr>').join("")+
    '</tbody>';
@@ -105,7 +103,7 @@ export function mountCohortSpace(root,dataset,{getSubtype,onSubtypeChange}){
    z.halo.setAttribute("r",(q.r+5).toFixed(2));
    z.label.setAttribute("x",q.cx);
    z.label.setAttribute("y",q.cy+3);
-   z.label.textContent=active&&q.r>25?z.key.unit:"";
+   z.label.textContent=active&&q.r>25?(z.key.unit==="Other ICU units"?"Other":z.key.unit):"";
   }
  }
  function setStage(next){

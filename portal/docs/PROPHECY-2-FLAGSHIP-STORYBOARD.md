@@ -65,11 +65,11 @@ Three clearly separated cards:
 | Documented full-code comparator on measured common support | 792 | 1,222 | 2,014 |
 | Stricter effective-control support | 378 | 1,045 | 1,423 |
 
-**Choreography:** On button press or play, the circles move to the new *cohort-level means*, shrink as counts decline, and disappear if the cell is suppressed or excluded. The stage-level total changes from 3,021 to 2,014 to 1,423. The subtitle constantly states **“analytic stage — not patient time.”**
+**Choreography:** On button press or play, the circles move to the new *cohort-level means*, shrink as counts decline, and change with eligibility. The same two pooled public ICU groups remain present across all stages. The stage-level total changes from 3,021 to 2,014 to 1,423. The subtitle constantly states **“analytic stage — not patient time.”**
 
 **Critical annotation:** 1,007 potentially informative DNR orders lie outside the standard matchable sample. The stringent restriction removes another 591. This is not “cleaning away noise”; it changes the population about which the research speaks.
 
-**Privacy:** Source patient rows never enter the site. Displayed cells require \`n >= 30\`; complementary suppression protects small cells from being inferred through subtype totals. Suppressed cells stay in total counts and are not represented by invented bubbles.
+**Privacy:** The chart pools all non-MICU units into one aggregate group, consistently across every analytical stage and subtype. Every public cell and nonzero difference between nested stages contains at least 30 orders; those groups exhaust the published subtype totals. This prevents reconstruction of small excluded groups or their approximate means from overlapping public selections. Small unit-specific distinctions are intentionally not released.
 
 **Avoid:** Do not animate patients crossing from DNR-only to DNR/DNI or imply individual trajectories from these cross-sectional stage means.
 

@@ -51,15 +51,59 @@ test("small-count cell cannot be displayed",()=>{
  const x=copy();x.cohort_bubbles.points[0].n=12;
  assert.throws(()=>validateVizData(x,release),/small cohort cell/);
 });
-test("published subtotal cannot unmask lone small cell via subtraction",()=>{
+test("public groups exhaust every subtype total at every stage",()=>{
+ for(const stage of ["eligible","supported","strict"]){
+  for(const sub of ["DNR_ONLY","DNR_DNI"]){
+   const n=data.cohort_bubbles.points
+    .filter(p=>p.stage===stage&&p.subtype===sub)
+    .reduce((total,p)=>total+p.n,0);
+   assert.equal(n,data.cohort_bubbles.counts[stage].subtypes[sub]);
+  }
+ }
+});
+test("cross-stage differencing never reveals an excluded cohort smaller than 30",()=>{
+ for(const sub of ["DNR_ONLY","DNR_DNI"]){
+  const ids=new Set(data.cohort_bubbles.points
+   .filter(p=>p.stage==="eligible"&&p.subtype===sub).map(p=>p.id));
+  for(const id of ids){
+   const counts=["eligible","supported","strict"].map(stage=>
+    data.cohort_bubbles.points.find(p=>p.stage===stage&&p.id===id).n);
+   assert.ok(counts.every(n=>n>=30));
+   for(let i=0;i<2;i++){
+    const excluded=counts[i]-counts[i+1];
+    assert.ok(excluded===0||excluded>=30);
+   }
+  }
+ }
+});
+test("reviewer P1: a small between-stage excluded cohort is rejected",()=>{
  const x=copy();
- const counts=x.cohort_bubbles.counts.supported.subtypes.DNR_ONLY;
- const visible=x.cohort_bubbles.points.filter(p=>p.stage==="supported"&&p.subtype==="DNR_ONLY");
- const shown=visible.reduce((sum,p)=>sum+p.n,0);
- const remainder=counts-shown;
- assert.ok(remainder>=30);
- visible[0].n+=remainder-1; // now exactly one observation remains hidden
- assert.throws(()=>validateVizData(x,release),/unprotected residual small cell/);
+ const set=(stage,unit,n)=>{
+  const p=x.cohort_bubbles.points.find(p=>
+   p.stage===stage&&p.subtype==="DNR_DNI"&&p.unit===unit);
+  p.n=n;
+ };
+ // Totals remain unchanged; all published cells have >=30 cases;
+ // all group series are nested. Only 8 MICU cases are excluded.
+ set("supported","MICU",1009);
+ set("supported","Other ICU units",213);
+ set("strict","MICU",900);
+ set("strict","Other ICU units",145);
+ assert.throws(()=>validateVizData(x,release),/cross-stage difference exposes a small excluded cohort/);
+});
+test("changing group composition between published stages is rejected",()=>{
+ const x=copy();
+ const p=x.cohort_bubbles.points.find(p=>
+  p.stage==="strict"&&p.subtype==="DNR_ONLY"&&p.unit==="Other ICU units");
+ p.id+="__new_public_group";
+ assert.throws(()=>validateVizData(x,release),/cross-stage group partition changed/);
+});
+test("public subgroup counts cannot be reconstructed by subtraction",()=>{
+ const x=copy();
+ const p=x.cohort_bubbles.points.find(p=>
+  p.stage==="supported"&&p.subtype==="DNR_ONLY"&&p.unit==="Other ICU units");
+ p.n-=5;
+ assert.throws(()=>validateVizData(x,release),/public unit partition does not exhaust/);
 });
 test("missing or duplicate measured time-bin records are rejected",()=>{
  const x=copy();x.event_time.series[1]=structuredClone(x.event_time.series[0]);

@@ -50,14 +50,40 @@ export function validateVizData(v,release){
   assert(c.counts.supported.subtypes[k]===s.n_dnr,"wrong subtype counts");
   assert(c.counts.strict.subtypes[k]===s.positivity.strict_n,"strict sample does not match study");
  }
- assert(c.complementary_suppression===true,"complementary small-cell protection disabled");
- for(const [stage,counts] of Object.entries(c.counts)){
-  for(const [subtype,total] of Object.entries(counts.subtypes)){
-   const shown=c.points.filter(p=>p.stage===stage&&p.subtype===subtype)
-    .reduce((a,b)=>a+b.n,0);
-   const hidden=total-shown;
-   assert(hidden>=0,"bubble counts exceed published subtype total");
-   assert(hidden===0||hidden>=c.min_cell_n,"unprotected residual small cell");
+ // A minimum cell count does NOT protect successive nested stages:
+ // counts and means may reveal a five-person excluded subgroup through
+ // differencing. Demand one stable, disjoint, exhaustive PUBLIC partition
+ // across all stages, with at least 30 individuals for any nonzero attrition.
+ assert(c.points.every(p=>p.n>=c.min_cell_n),"small cohort cell disclosed");
+ assert(c.stable_partition===true && c.complementary_suppression===true,
+        "cross-stage privacy protection disabled");
+ assert(c.min_cross_stage_attrition>=c.min_cell_n,
+        "cross-stage privacy threshold is too low");
+ const analyticStages=["eligible","supported","strict"];
+ for(const sub of Object.keys(subtype)){
+  const initial=c.points.filter(p=>p.stage===analyticStages[0]&&p.subtype===sub);
+  const groupNames=new Set(initial.map(p=>p.id));
+  assert(groupNames.size===initial.length && groupNames.size>=2,
+         "public cohorts must be distinct and partitioned");
+  for(const stage of analyticStages){
+   const rows=c.points.filter(p=>p.stage===stage&&p.subtype===sub);
+   const total=rows.reduce((acc,p)=>acc+p.n,0);
+   assert(total===c.counts[stage].subtypes[sub],
+          "public unit partition does not exhaust published cohort");
+   const current=new Set(rows.map(p=>p.id));
+   assert(current.size===groupNames.size
+          && [...groupNames].every(id=>current.has(id)),
+          "cross-stage group partition changed");
+  }
+  for(const id of groupNames){
+   const values=analyticStages.map(stage=>
+     c.points.find(p=>p.stage===stage&&p.subtype===sub&&p.id===id).n);
+   for(let i=0;i<values.length-1;i++){
+    const excluded=values[i]-values[i+1];
+    assert(excluded>=0,"cross-stage cohorts are not nested");
+    assert(excluded===0||excluded>=c.min_cross_stage_attrition,
+           "cross-stage difference exposes a small excluded cohort");
+   }
   }
  }
  const keys=new Set();

@@ -9,7 +9,7 @@
       "x": "Mean first-day SOFA",
       "y": "Pre-order invasive ventilation fraction"
     },
-    "units": "ICU unit \u00d7 documented DNR subtype, aggregate only",
+    "units": "MICU versus pooled other ICU units \u00d7 documented DNR subtype, aggregate only",
     "stages": [
       {
         "id": "eligible",
@@ -53,129 +53,12 @@
     "points": [
       {
         "stage": "eligible",
-        "id": "DNR_DNI_CCU",
-        "subtype": "DNR_DNI",
-        "unit": "CCU",
-        "n": 271,
-        "sofa": 6.94,
-        "invasive_before": 0.481
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_DNI_MICU",
-        "subtype": "DNR_DNI",
-        "unit": "MICU",
-        "n": 1017,
-        "sofa": 7.42,
-        "invasive_before": 0.57
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_DNI_SICU",
-        "subtype": "DNR_DNI",
-        "unit": "SICU",
-        "n": 176,
-        "sofa": 5.38,
-        "invasive_before": 0.605
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_DNI_TSICU",
-        "subtype": "DNR_DNI",
-        "unit": "TSICU",
-        "n": 171,
-        "sofa": 6.24,
-        "invasive_before": 0.645
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_ONLY_CCU",
-        "subtype": "DNR_ONLY",
-        "unit": "CCU",
-        "n": 223,
-        "sofa": 6.93,
-        "invasive_before": 0.398
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_ONLY_CVICU",
-        "subtype": "DNR_ONLY",
-        "unit": "CVICU",
-        "n": 53,
-        "sofa": 7.32,
-        "invasive_before": 0.432
-      },
-      {
-        "stage": "eligible",
         "id": "DNR_ONLY_MICU",
         "subtype": "DNR_ONLY",
         "unit": "MICU",
         "n": 737,
         "sofa": 7.74,
         "invasive_before": 0.482
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_ONLY_NEURO",
-        "subtype": "DNR_ONLY",
-        "unit": "NEURO",
-        "n": 116,
-        "sofa": 3.63,
-        "invasive_before": 0.189
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_ONLY_SICU",
-        "subtype": "DNR_ONLY",
-        "unit": "SICU",
-        "n": 94,
-        "sofa": 7.5,
-        "invasive_before": 0.373
-      },
-      {
-        "stage": "eligible",
-        "id": "DNR_ONLY_TSICU",
-        "subtype": "DNR_ONLY",
-        "unit": "TSICU",
-        "n": 101,
-        "sofa": 7.62,
-        "invasive_before": 0.537
-      },
-      {
-        "stage": "supported",
-        "id": "DNR_DNI_CCU",
-        "subtype": "DNR_DNI",
-        "unit": "CCU",
-        "n": 144,
-        "sofa": 6.15,
-        "invasive_before": 0.36
-      },
-      {
-        "stage": "supported",
-        "id": "DNR_DNI_MICU",
-        "subtype": "DNR_DNI",
-        "unit": "MICU",
-        "n": 830,
-        "sofa": 7.13,
-        "invasive_before": 0.549
-      },
-      {
-        "stage": "supported",
-        "id": "DNR_DNI_SICU",
-        "subtype": "DNR_DNI",
-        "unit": "SICU",
-        "n": 111,
-        "sofa": 4.48,
-        "invasive_before": 0.481
-      },
-      {
-        "stage": "supported",
-        "id": "DNR_ONLY_CCU",
-        "subtype": "DNR_ONLY",
-        "unit": "CCU",
-        "n": 107,
-        "sofa": 6.48,
-        "invasive_before": 0.275
       },
       {
         "stage": "supported",
@@ -187,31 +70,58 @@
         "invasive_before": 0.432
       },
       {
-        "stage": "supported",
-        "id": "DNR_ONLY_NEURO",
+        "stage": "strict",
+        "id": "DNR_ONLY_MICU",
         "subtype": "DNR_ONLY",
-        "unit": "NEURO",
-        "n": 82,
-        "sofa": 3.28,
-        "invasive_before": 0.062
+        "unit": "MICU",
+        "n": 205,
+        "sofa": 5.84,
+        "invasive_before": 0.329
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_ONLY_Other ICU units",
+        "subtype": "DNR_ONLY",
+        "unit": "Other ICU units",
+        "n": 587,
+        "sofa": 6.52,
+        "invasive_before": 0.38
       },
       {
         "stage": "supported",
-        "id": "DNR_ONLY_SICU",
+        "id": "DNR_ONLY_Other ICU units",
         "subtype": "DNR_ONLY",
-        "unit": "SICU",
-        "n": 34,
-        "sofa": 5.56,
-        "invasive_before": 0.154
+        "unit": "Other ICU units",
+        "n": 275,
+        "sofa": 5.17,
+        "invasive_before": 0.202
       },
       {
         "stage": "strict",
-        "id": "DNR_DNI_CCU",
+        "id": "DNR_ONLY_Other ICU units",
+        "subtype": "DNR_ONLY",
+        "unit": "Other ICU units",
+        "n": 173,
+        "sofa": 4.64,
+        "invasive_before": 0.086
+      },
+      {
+        "stage": "eligible",
+        "id": "DNR_DNI_MICU",
         "subtype": "DNR_DNI",
-        "unit": "CCU",
-        "n": 126,
-        "sofa": 5.78,
-        "invasive_before": 0.298
+        "unit": "MICU",
+        "n": 1017,
+        "sofa": 7.42,
+        "invasive_before": 0.57
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_DNI_MICU",
+        "subtype": "DNR_DNI",
+        "unit": "MICU",
+        "n": 830,
+        "sofa": 7.13,
+        "invasive_before": 0.549
       },
       {
         "stage": "strict",
@@ -223,35 +133,38 @@
         "invasive_before": 0.503
       },
       {
-        "stage": "strict",
-        "id": "DNR_DNI_SICU",
+        "stage": "eligible",
+        "id": "DNR_DNI_Other ICU units",
         "subtype": "DNR_DNI",
-        "unit": "SICU",
-        "n": 106,
-        "sofa": 4.39,
-        "invasive_before": 0.466
+        "unit": "Other ICU units",
+        "n": 680,
+        "sofa": 6.36,
+        "invasive_before": 0.566
+      },
+      {
+        "stage": "supported",
+        "id": "DNR_DNI_Other ICU units",
+        "subtype": "DNR_DNI",
+        "unit": "Other ICU units",
+        "n": 392,
+        "sofa": 5.46,
+        "invasive_before": 0.473
       },
       {
         "stage": "strict",
-        "id": "DNR_ONLY_MICU",
-        "subtype": "DNR_ONLY",
-        "unit": "MICU",
-        "n": 205,
-        "sofa": 5.84,
-        "invasive_before": 0.329
-      },
-      {
-        "stage": "strict",
-        "id": "DNR_ONLY_NEURO",
-        "subtype": "DNR_ONLY",
-        "unit": "NEURO",
-        "n": 71,
-        "sofa": 3.24,
-        "invasive_before": 0.047
+        "id": "DNR_DNI_Other ICU units",
+        "subtype": "DNR_DNI",
+        "unit": "Other ICU units",
+        "n": 347,
+        "sofa": 5.12,
+        "invasive_before": 0.435
       }
     ],
     "min_cell_n": 30,
-    "complementary_suppression": true
+    "complementary_suppression": true,
+    "stable_partition": true,
+    "min_cross_stage_attrition": 30,
+    "privacy_note": "MICU versus all other ICUs, pooled consistently at every analytical stage; all counts and nonzero differences are at least 30."
   },
   "event_time": {
     "description": "Measured 4-hour aggregate bins anchored on a documented DNR order or eligible full-code pseudo-time. The display follows record counts and treatment exposure per observed ICU person-hour; differential exit/death changes risk sets.",

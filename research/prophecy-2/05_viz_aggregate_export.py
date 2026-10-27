@@ -104,28 +104,57 @@ assert [len(stage_frames[x]) for x in ("eligible","supported","strict")][:2]==[3
 
 cells=[]
 stage_counts={}
-# Disclose only cohorts >=30 within a unit/subtype/stage; no rare outcomes
-# nor selected individual coordinates.
-for stage, frame in stage_frames.items():
-    stage_counts[stage]={"n":len(frame),"subtypes":frame.subtype.value_counts().to_dict()}
-    for sub, subgroup in frame.groupby("subtype"):
-        groups=list(subgroup.groupby("unit_group"))
-        small={unit for unit,q in groups if len(q)<30}
-        excluded=set(small)
-        # Complementary suppression: one hidden cell can be deduced
-        # by subtracting visible cells from a public subtype total.
-        if small:
-            eligible=sorted((len(q),unit) for unit,q in groups if len(q)>=30)
-            assert eligible,"No second cell to suppress"
-            excluded.add(eligible[0][1])
-        for unit,q in groups:
+MIN_PUBLIC_N=30
+STAGES=("eligible","supported","strict")
+SUBTYPES=("DNR_ONLY","DNR_DNI")
+PUBLIC_GROUPS=("MICU","Other ICU units")
+
+# Cross-stage privacy: MINIMUM cell size alone is insufficient. Publishing
+# the SAME unit/subtype at two nested analytic stages can expose a tiny
+# excluded cohort and recover its mean by difference. Use a stable,
+# disjoint, exhaustive coarse partition across EVERY stage instead:
+# MICU versus pooled non-MICU units. Require every published cell and
+# every nonzero cross-stage attrition to include >=30 orders.
+for frame in stage_frames.values():
+    frame["public_group"]=np.where(frame.unit_group=="MICU",
+                                   "MICU","Other ICU units")
+
+for stage in STAGES:
+    frame=stage_frames[stage]
+    stage_counts[stage]={"n":len(frame),
+                         "subtypes":frame.subtype.value_counts().to_dict()}
+    assert sum(stage_counts[stage]["subtypes"].values())==len(frame)
+
+for sub in SUBTYPES:
+    for group in PUBLIC_GROUPS:
+        counts=[]
+        for stage in STAGES:
+            frame=stage_frames[stage]
+            q=frame[(frame.subtype==sub)&(frame.public_group==group)]
             n=len(q)
-            if unit in excluded:continue
-            assert n>=30
-            cells.append({"stage":stage,"id":sub+"_"+unit,
-                "subtype":sub,"unit":unit,"n":n,
-                "sofa":round(float(q.sofa.mean()),2),
-                "invasive_before":round(float(q.invasive_pre_fraction.mean()),3)})
+            assert n>=MIN_PUBLIC_N,(stage,sub,group,"small public cell",n)
+            counts.append(n)
+            cells.append({"stage":stage,"id":sub+"_"+group,
+                          "subtype":sub,"unit":group,"n":n,
+                          "sofa":round(float(q.sofa.mean()),2),
+                          "invasive_before":round(float(q.invasive_pre_fraction.mean()),3)})
+        assert counts[0]>=counts[1]>=counts[2],(sub,group,"not nested",counts)
+        for earlier,later in zip(counts,counts[1:]):
+            removed=earlier-later
+            assert removed==0 or removed>=MIN_PUBLIC_N,(
+                sub,group,"cross-stage privacy violation",counts)
+        print("SAFE PUB CELL",sub,group,"n by stage",counts,flush=True)
+
+# No hidden single-unit residual can be recovered from publicly known
+# subtype totals: the two published groups partition each subtype
+# exhaustively at every analytic stage.
+for stage in STAGES:
+    for sub in SUBTYPES:
+        frame=stage_frames[stage]
+        shown=sum(q["n"] for q in cells
+                  if q["stage"]==stage and q["subtype"]==sub)
+        expected=int((frame.subtype==sub).sum())
+        assert shown==expected,(stage,sub,shown,expected)
 assert sum(stage_counts["strict"]["subtypes"].values())==len(strict_all)
 
 # Matched event-time rates, using each subtype's actual calibrated weights.
@@ -178,7 +207,7 @@ result={"schema_version":1,"kind":"scientific-viz-aggregate",
         "track":"prophecy-2","release_id":"2026-10-25-dnr-question-fork",
         "source":"MIMIC-IV v3.1, audited Prophecy 2 risk sets",
         "cohort_bubbles":{"axes":{"x":"Mean first-day SOFA","y":"Pre-order invasive ventilation fraction"},
-                          "units":"ICU unit × documented DNR subtype, aggregate only",
+                          "units":"MICU versus pooled other ICU units × documented DNR subtype, aggregate only",
                           "stages":[{"id":"eligible","label":"Eligible DNR orders",
                                      "explanation":"All first documented DNR orders after explicit full code; no suitable comparison yet."},
                                     {"id":"supported","label":"Measured common support",
@@ -186,7 +215,9 @@ result={"schema_version":1,"kind":"scientific-viz-aggregate",
                                     {"id":"strict","label":"Stricter control support",
                                      "explanation":"Controls must have effective number ≥2 and no single weight above 80%. Causal validity is NOT established."}],
                           "counts":stage_counts,"points":cells,
-                          "min_cell_n":30,"complementary_suppression":True},
+                          "min_cell_n":30,"complementary_suppression":True,
+                          "stable_partition":True,"min_cross_stage_attrition":30,
+                          "privacy_note":"MICU versus all other ICUs, pooled consistently at every analytical stage; all counts and nonzero differences are at least 30."},
         "event_time":{"description":"Measured 4-hour aggregate bins anchored on a documented DNR order or eligible full-code pseudo-time. The display follows record counts and treatment exposure per observed ICU person-hour; differential exit/death changes risk sets.",
                       "from_hours":[-24,-20,-16,-12,-8,-4,0,4,8],
                       "metrics":[{"id":"invasive_ventilation","label":"Invasive ventilation","unit":"fraction of ICU patient-hours"},

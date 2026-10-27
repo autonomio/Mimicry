@@ -52,6 +52,8 @@ scientific-viz-aggregate@1
  │   ├─ counts[stage].subtypes
  │   ├─ min_cell_n = 30
  │   ├─ complementary_suppression = true
+ │   ├─ stable_partition = true
+ │   ├─ min_cross_stage_attrition = 30
  │   └─ points[] {stage, id, subtype, unit, n, sofa, invasive_before}
  └─ event_time
      ├─ from_hours = [-24,-20,-16,-12,-8,-4,0,4,8]
@@ -61,11 +63,11 @@ scientific-viz-aggregate@1
      └─ event_time_is_endogenous = true
 \`\`\`
 
-The cohort circles are **aggregated unit × order-subtype cells**, not stay-level records. Bubble area is proportional to the **number of orders**; x is **mean first-day SOFA**, y is **mean invasive-ventilation exposure in the six hours before the index**. The stage change modifies eligibility and therefore may change both the mean and count; it does not depict an individual transition.
+The cohort circles are **stable, nonoverlapping MICU versus pooled non-MICU × order-subtype cells**, not stay-level records. Bubble area is proportional to the **number of orders**; x is **mean first-day SOFA**, y is **mean invasive-ventilation exposure in the six hours before the index**. The stage change modifies eligibility and therefore may change both the mean and count; it does not depict an individual transition.
 
 The event-time plot is a **recording/exposure rate per observed ICU patient-hour** in four-hour bins. It does not display a patient-level mean latent physiological value, and differences between groups cannot be read as treatment effects. Exact values are given in the accessible source table.
 
-Only aggregate cells of size at least 30 are shown. **Complementary suppression** hides additional cells when a suppressed small cell might be recovered from public subtype totals. The full cohort count remains visible so viewers do not mistake plotting suppression for exclusions.
+The privacy model considers **differences between nested analytical stages**, not merely the size of each displayed cell. If one subgroup shows 111 orders in the supported cohort and 106 under stricter overlap, publishing both would expose a five-person excluded cohort and allow reconstruction of its approximate mean physiology by subtraction. The MVP therefore uses a **stable, disjoint, exhaustive partition of MICU versus all remaining ICU units pooled together** in every stage and DNR subtype. Every public cell and every nonzero difference between successive stages contains at least 30 orders. This deliberately sacrifices unit-specific detail to prevent tiny excluded cohorts from being revealed.
 
 The export script resides in \`research/prophecy-2/05_viz_aggregate_export.py\`. It runs only in the restricted server environment and validates every displayed 12-hour difference-in-changes estimate against the previously audited Prophecy 2 scientific report before emitting the aggregate file. No new PhysioNet download is required.
 
@@ -131,7 +133,7 @@ The story adapter owns **shared selection** and narrative order; charts remain d
 
 1. Public chart data contain no patient IDs, stay IDs, admission IDs, individual charttimes, raw rows, model checkpoints or credentials.
 2. Every released aggregate matches the canonical research report: eligibility, subtype counts, strict-overlap population and the actual published 12-hour contrasts.
-3. Privacy suppression is complementary, not merely dropping tiny cells while publishing reconstructible subtotals.
+3. Privacy is checked jointly across the nested selection stages: public groups must be stable and disjoint; all cells and all nonzero stage differences must contain at least 30 orders. Tests explicitly reject the originally reviewed small-cohort subtraction failure.
 4. No mark implies that comparison-group patients were randomly assigned, and no animation depicts unobserved patient movement.
 5. Event-time visual values do not display pointwise confidence ribbons because those were never calculated.
 6. Sensitivity matrices and the mortality ClaimAudit preserve stringent-overlap measured-balance **failures**, nonrandom group prognosis, invalid provider-assignment shortcuts, and mortality-effect **non-identification**.
