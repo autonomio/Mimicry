@@ -1,8 +1,22 @@
 import fs from "node:fs";
 import path from "node:path";
 import { root, dataDir, outputDir, loadPublications } from "./publication.mjs";
+import {validateVizData} from "../site/viz/core.js";
 
 const { tracks, releases } = loadPublications();
+const stories=JSON.parse(fs.readFileSync(path.join(dataDir,"stories.json"),"utf8"));
+if(stories.schema_version!==1 || !Array.isArray(stories.stories))
+ throw new Error("Story manifest invalid");
+for(const st of stories.stories){
+ if(!tracks.tracks.some(t=>t.id===st.track))throw new Error("Unknown track in story");
+ if(!releases.some(r=>r.id===st.release_id&&r.track===st.track))throw new Error("Unknown story evidence release");
+ if(st.kind!=="dnr-v1")throw new Error("Unsupported story adapter");
+ validateVizData(JSON.parse(fs.readFileSync(path.join(dataDir,"viz",st.viz_source),"utf8")),
+  releases.find(r=>r.id===st.release_id&&r.track===st.track));
+ if(!/^[a-z0-9-]+$/.test(st.slug))throw new Error("Unsafe story slug");
+ if(!fs.existsSync(path.join(dataDir,"viz",st.viz_source)))throw new Error("Missing aggregate visual data");
+}
+
 fs.rmSync(outputDir, {recursive:true,force:true});
 fs.mkdirSync(outputDir,{recursive:true});
 const put=(rel,value)=>{const p=path.join(outputDir,rel);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,value);};
@@ -27,6 +41,7 @@ function page(route,pageType,title,description) {
   '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">',
   '<link rel="preconnect" href="https://fonts.googleapis.com">',
   '<link rel="stylesheet" href="/assets/site.css">',
+  ...(pageType==="story"?['<link rel="stylesheet" href="/assets/viz/viz.css">']:[]),
   '<title>'+esc(title)+'</title></head>',
   '<body data-page="'+esc(pageType)+'" data-route="'+esc(url)+'">',
   '<a class="skip" href="#main">Skip to research</a>',
@@ -50,10 +65,15 @@ for(const track of tracks.tracks){
     page("/tracks/"+track.slug+"/releases/"+r.id+"/","release",r.title+" | "+track.name+" | Mimicry",r.message);
   }
 }
+for(const story of stories.stories){
+ page("/tracks/"+story.track+"/stories/"+story.slug+"/","story",
+  story.title+" | "+story.track+" | Mimicry",story.description);
+}
 page("/404/","notfound","Page not found | Mimicry","Return to the Mimicry research observatory.");
 copy(path.join(root,"site","site.js"),"assets/site.js");
 copy(path.join(root,"site","site.css"),"assets/site.css");
 copy(path.join(root,"site","favicon.svg"),"assets/favicon.svg");
+fs.cpSync(path.join(root,"site","viz"),path.join(outputDir,"assets","viz"),{recursive:true});
 put("data/catalog.json",JSON.stringify({
   schema_version:1,site:tracks.site,domain:tracks.domain,mission:tracks.mission,
   tracks:tracks.tracks.map(t=>({...t,
@@ -67,8 +87,12 @@ put("data/catalog.json",JSON.stringify({
     simulation_all_pass:r.simulation?.horizons?.every(h=>h.passed) ?? null,
     dnr_only_n:r.states?.find(s=>s.id==="DNR_ONLY")?.n_dnr ?? null})),
 
+  stories:stories.stories,
   latest:releases[0]?.id||null
 },null,2)+"\n");
+for(const story of stories.stories){
+ put("data/viz/"+story.viz_source,fs.readFileSync(path.join(dataDir,"viz",story.viz_source)));
+}
 for(const r of releases){
   put("data/rounds/"+r.id+".json",JSON.stringify(r,null,2)+"\n");
 }

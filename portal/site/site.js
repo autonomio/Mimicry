@@ -101,7 +101,7 @@ function dnrTrack(catalog,t){
  '<div class="track-hero-top">'+label("RESEARCH TRACK 02 / THE DNR QUESTION","mint")+'<span class="track-hero-index">M—02</span></div>',
  '<h1>'+esc(t.name)+'<span class="mint-dot">.</span></h1><p class="track-hero-sub">'+esc(t.tagline)+'</p>',
  '<p class="track-hero-body">This is a deliberate fork back to a question that can get lost inside prediction scores: does a do-not-resuscitate order itself change what clinicians do, or is it a marker of illness and decisions already underway?</p>',
- '<div class="track-hero-actions"><a href="'+pathFor(t)+'releases/'+latest.id+'/" class="button button-primary">Examine the DNR evidence '+ico("arrow")+'</a><a class="text-link light-link" href="'+pathFor(t)+'methods/">Identification and methods '+ico("arrow",16)+'</a></div>',
+ '<div class="track-hero-actions"><a href="'+pathFor(t)+'stories/the-dnr-order/" class="button button-primary">Explore the visual investigation '+ico("arrow")+'</a><a class="text-link light-link" href="'+pathFor(t)+'methods/">Identification and methods '+ico("arrow",16)+'</a></div>',
  '<div class="track-hero-end">'+esc(t.discipline)+'<span>'+esc(t.status)+'</span></div></div></section>',
  '<section class="section"><div class="container"><div class="section-heading"><div>'+label("ONE QUESTION / THREE TESTS")+'<h2>What does the order change?</h2></div><p>Separate the legal meaning of a DNR directive, what happens at its timestamp, and the much harder question of whether it causes death.</p></div>',
  '<div class="principle-grid"><article>'+ico("book",25)+'<h3>Define the decision</h3><p>DNR limits CPR at arrest. DNR-only, DNI, and comfort measures must not be treated as interchangeable clinical actions.</p></article>',
@@ -423,6 +423,7 @@ function dnrRelease(catalog,t,r){
  '<div class="release-intro-meta"><span>MIMIC-IV v3.1 only</span><span>Forked before the general mortality simulator</span><span>Round '+r.round_number+'</span></div>',
  '</div></section>',
  '<section class="section section-overview"><div class="container">',
+ '<div class="mv-story-invitation"><span>NEW / MIMICRY VISUAL ENGINE MVP</span><p>Explore the DNR study as an animated cohort-space investigation, measured event-time playback, and interactive challenge to its inference.</p><a class="button button-dark" href="'+pathFor(t)+'stories/the-dnr-order/">Open the visual investigation ↓</a></div>',
  '<div class="summary-insight"><p class="summary-question">THE QUESTION — NOT THE MODEL</p><p>'+esc(r.question.plain)+'</p><span>'+esc(r.question.identification_status)+'</span></div>',
  '<div class="stat-grid">'+statCards+'</div>',
  '<div class="dnr-meaning"><div>'+label("WHAT DNR ACTUALLY MEANS")+'<h2>CPR at arrest.<br><em>Not every other treatment.</em></h2></div><div><p>'+esc(r.question.intervention_definition)+'</p><p>That clinical distinction is why this fork separately studies DNR-only and DNR/DNI, rather than treating “DNR” as a single causal treatment.</p></div></div>',
@@ -552,6 +553,16 @@ async function load(){
   else if(parts[0]==="about"&&parts.length===1)about();
   else if(t&&parts.length===2)track(catalog,t);
   else if(t&&parts[2]==="methods"&&parts.length===3)methods(catalog,t);
+  else if(t&&parts[2]==="stories"&&parts[3]&&parts.length===4){
+    const st=catalog.stories?.find(s=>s.track===t.id&&s.slug===parts[3]);
+    if(!st)return notFound();
+    const rr=await fetch("/data/rounds/"+encodeURIComponent(st.release_id)+".json",{cache:"no-cache"});
+    if(!rr.ok)throw new Error("The original scientific release is unavailable");
+    const artifact=await rr.json();
+    if(st.kind!=="dnr-v1")throw new Error("Story adapter is not available");
+    const {mountDnrStory}=await import("./viz/story.js");
+    await mountDnrStory($("#main"),artifact);
+  }
   else if(t&&parts[2]==="releases"&&parts.length===3)releases(catalog,t);
   else if(t&&parts[2]==="releases"&&pageData)release(catalog,t,pageData);
   else notFound();

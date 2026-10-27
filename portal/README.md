@@ -53,3 +53,11 @@ The second Prophecy research round is the historical transport analysis: `data/r
 ## Separate DNR track: Prophecy 2
 
 Prophecy 2 is accessible at /tracks/prophecy-2/ with a separate methods and release history. Its releases carry kind=dnr-audit and are validated independently of Prophecy's mortality-model schema. The first DNR-only clinical question is anchored to the actual hospital code-status order, not to a generic prediction output. The page makes false IV assumptions, limited comparison overlap, high early mortality selection and failed strict balance visibly explicit. It is not a causal DNR effect publication.
+
+## Mimicry Viz — reusable visual research engine
+
+The [Mimicry Viz MVP](docs/MIMICRY-VIZ-MVP.md) powers a [five-scene Prophecy 2 DNR investigation](docs/PROPHECY-2-FLAGSHIP-STORYBOARD.md) at `/tracks/prophecy-2/stories/the-dnr-order/`. Animated study-cohort aggregates, observed event-time playback, a specification/uncertainty matrix, and a mortality-claim audit are sourced entirely from reviewed summary data; no individual MIMIC-IV records are published. The engine is reusable through independently registered story adapters and publication-linked aggregate data contracts.
+
+### Privacy review: cross-stage analytical cohorts
+
+The Prophecy 2 bubble chart publishes only stable MICU and pooled non-MICU subgroups. The aggregate export and frontend validator jointly enforce a minimum count of 30 in each cell and for every nonzero between-stage difference. This closes an issue identified in code review where two individually large nested cells exposed a very small excluded group by subtraction. Unit-specific marks must not be reintroduced without equivalent cross-stage analysis.
