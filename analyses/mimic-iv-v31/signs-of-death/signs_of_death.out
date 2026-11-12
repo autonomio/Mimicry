@@ -1,0 +1,49 @@
+(b) death-hour by withdrawal status: afternoon share (12-18h)
+  wd=False: n=1294 afternoon_share=0.294
+  wd=True: n=7331 afternoon_share=0.320
+wrote sd_death_hour_wd.csv
+loading decedent stays...
+decedents: 9438
+hourly vitals decedents...
+  rows: 1685016
+survivor sample + hourly vitals...
+  rows: 4303622
+urine output...
+clock hours + code status + dx + onsets...
+tidy rows dec/surv: 1600206/4229327
+[hr] hbd0=78.53 hbd71=90.77 divergence_h=0
+[map] hbd0=52.13 hbd71=75.94 divergence_h=0
+[rr] hbd0=16.91 hbd71=21.45 divergence_h=0
+[spo2] hbd0=83.25 hbd71=96.48 divergence_h=0
+[temp] hbd0=36.72 hbd71=36.85 divergence_h=1
+[hrv dec] wsd hbd0=13.63 hbd71=0.61 | succ hbd0=23.52 hbd71=nan
+[hrv surv] wsd hbd0=0.04 hbd71=1.42 | succ hbd0=5.25 hbd71=nan
+[death hour] chi2=1179 p=6.2e-234 peak_h=0 max/min=75.82
+[admit hour] chi2=89742 p=0 peak_h=0 max/min=4.08
+[cosinor temp] {'decd2': 0.0133, 'decd1': 0.026, 'decd0': 0.0867, 'survd2': 0.0251, 'survd1': 0.0438, 'survd0': 0.0372}
+[cosinor hr] {'decd2': 0.4307, 'decd1': 0.7211, 'decd0': 2.1489, 'survd2': 0.7648, 'survd1': 0.9448, 'survd0': 1.0024}
+cause mix: {'sepsis': 6376, 'other': 1686, 'neuro': 669, 'cardiac': 503, 'respiratory': 199}
+[cause cardiac] n=503 early72=0.716 median_death_h=28
+[cause neuro] n=669 early72=0.692 median_death_h=44
+[cause other] n=1686 early72=0.676 median_death_h=37
+[cause respiratory] n=199 early72=0.643 median_death_h=45
+[cause sepsis] n=6376 early72=0.335 median_death_h=125
+         cause     n  o_resp  o_coag  o_liver    o_cv   o_cns  o_renal
+0      cardiac   503  0.1242  0.0443   0.0084  0.4448  0.1277   0.2507
+1        neuro   669  0.0984  0.0260   0.0038  0.1208  0.6066   0.1445
+2        other  1686  0.1061  0.1167   0.0756  0.2701  0.2426   0.1889
+3  respiratory   199  0.1333  0.0639   0.0069  0.2083  0.3542   0.2333
+4       sepsis  6376  0.2059  0.0690   0.0526  0.3001  0.1654   0.2069
+DNR/CMO before death: 7808 / 9438 = 0.895
+  DNR->death median h: 30.9
+[slope6 hr] [['dnr', 3375, 2.3929], ['full', 542, 0.6286]]
+[slope6 map] [['dnr', 2142, 2.919], ['full', 455, 2.0286]]
+[oliguria dec] <0.5mL/kg/h hbd0=0.492 hbd23=0.404 hbd71=0.360
+[oliguria surv] <0.5mL/kg/h hbd0=0.158 hbd23=0.169 hbd71=0.231
+[predict H=6h] n=9014 pos=5651 AUC=0.816 AUC_no_hrn=0.813
+  top coefs: [('map', -0.761), ('hr', 0.528), ('rr', 0.476), ('hr_n', 0.405), ('spo2', -0.364), ('sepsis', 0.298)]
+[predict H=12h] n=8619 pos=5471 AUC=0.783 AUC_no_hrn=0.778
+  top coefs: [('map', -0.606), ('hr_n', 0.48), ('rr', 0.469), ('hr', 0.44), ('sepsis', 0.317), ('age', 0.27)]
+[predict H=24h] n=7937 pos=5133 AUC=0.777 AUC_no_hrn=0.771
+  top coefs: [('rr', 0.5), ('map', -0.476), ('sepsis', 0.44), ('hr', 0.402), ('hr_n', 0.369), ('age', 0.253)]
+done

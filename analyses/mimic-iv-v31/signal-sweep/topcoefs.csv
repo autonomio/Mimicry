@@ -1,0 +1,41 @@
+L,feature,coef
+1,first_careunit_Neuro Stepdown,-1.702
+1,admission_type_SURGICAL SAME DAY ADMISSION,-1.565
+1,first_careunit_Neuro Intermediate,-1.541
+1,first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),1.077
+1,admission_type_ELECTIVE,-1.023
+1,first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),-1.006
+1,first_careunit_Surgery/Vascular/Intermediate,0.925
+1,gender_F,-0.751
+3,admission_type_SURGICAL SAME DAY ADMISSION,-1.583
+3,first_careunit_Neuro Intermediate,-1.279
+3,first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),-1.261
+3,first_careunit_Neuro Stepdown,-1.258
+3,first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),1.187
+3,admission_type_ELECTIVE,-0.902
+3,gender_F,-0.782
+3,gender_M,-0.727
+6,first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),-1.723
+6,admission_type_SURGICAL SAME DAY ADMISSION,-1.531
+6,first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),1.277
+6,first_careunit_Neuro Intermediate,-1.105
+6,first_careunit_Neuro Stepdown,-0.979
+6,admission_type_ELECTIVE,-0.929
+6,gcs_med,-0.828
+6,gender_F,-0.79
+12,first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),-1.772
+12,admission_type_SURGICAL SAME DAY ADMISSION,-1.434
+12,first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),1.255
+12,first_careunit_Neuro Intermediate,-1.08
+12,gender_M,-0.835
+12,gender_F,-0.821
+12,admission_type_ELECTIVE,-0.816
+12,gcs_med,-0.759
+24,first_careunit_Cardiac Vascular Intensive Care Unit (CVICU),-1.74
+24,admission_type_SURGICAL SAME DAY ADMISSION,-1.322
+24,first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU),1.236
+24,first_careunit_Neuro Intermediate,-1.129
+24,first_careunit_Neuro Stepdown,-1.12
+24,gender_M,-0.775
+24,gender_F,-0.756
+24,gcs_med,-0.709

@@ -1,0 +1,58 @@
+cohort: 84468 stays, events: 9233 (0.109)
+train: 67574 (events 7386), test: 16894 (events 1847)
+[logreg] AUC: 0.8389 | AP: 0.4698 | Brier: 0.0754
+[hgb] AUC: 0.8615 | AP: 0.5162 | Brier: 0.0716
+(base rate 0.1093)
+calibration[logreg]: decile,n,mean_pred,observed
+  0,1690,0.0052,0.0036
+  1,1689,0.0137,0.0154
+  2,1689,0.0238,0.0219
+  3,1690,0.0358,0.0337
+  4,1689,0.0503,0.0397
+  5,1689,0.0689,0.0592
+  6,1690,0.0940,0.0858
+  7,1689,0.1322,0.1380
+  8,1689,0.2037,0.2072
+  9,1690,0.4831,0.4888
+calibration[hgb]: decile,n,mean_pred,observed
+  0,1690,0.0041,0.0036
+  1,1689,0.0091,0.0059
+  2,1689,0.0153,0.0136
+  3,1690,0.0238,0.0290
+  4,1689,0.0364,0.0337
+  5,1689,0.0541,0.0521
+  6,1690,0.0815,0.0834
+  7,1689,0.1277,0.1297
+  8,1689,0.2182,0.2250
+  9,1690,0.5187,0.5172
+hgb permutation importance (AUC drop), top 12:
+  gcs_med: 0.0714 +- 0.0019
+  first_careunit: 0.0426 +- 0.0013
+  anchor_age: 0.0327 +- 0.0033
+  admission_type: 0.0173 +- 0.0009
+  lactate_med: 0.0138 +- 0.0016
+  creat_med: 0.0109 +- 0.0013
+  rr_med: 0.0080 +- 0.0008
+  temp_med: 0.0067 +- 0.0007
+  hr_min: 0.0057 +- 0.0006
+  spo2_min: 0.0041 +- 0.0005
+  miss_temp_med: 0.0022 +- 0.0003
+  hr_med: 0.0021 +- 0.0003
+most negative coef:
+  first_careunit_Cardiac Vascular Intensive Care Unit (CVICU): -1.765
+  admission_type_SURGICAL SAME DAY ADMISSION: -1.538
+  first_careunit_Neuro Stepdown: -1.038
+  first_careunit_Neuro Intermediate: -1.033
+  admission_type_ELECTIVE: -0.916
+  gcs_med: -0.839
+  gender_F: -0.774
+  gender_M: -0.749
+most positive coef:
+  first_careunit_Neuro Surgical Intensive Care Unit (Neuro SICU): +1.260
+  anchor_age: +0.474
+  first_careunit_Intensive Care Unit (ICU): +0.445
+  lactate_med: +0.333
+  admission_type_EU OBSERVATION: +0.254
+  admission_type_URGENT: +0.252
+  first_careunit_Medical/Surgical Intensive Care Unit (MICU/SICU): +0.209
+  rr_med: +0.206

@@ -1,0 +1,89 @@
+unit,feature,coef
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_236,4.706
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_234,4.354
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_235,3.721
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_220,3.65
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_219,3.574
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_217,3.336
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_216,3.209
+Cardiac Vascular Intensive Care Unit (CVICU),drg_top30_025,-2.959
+Coronary Care Unit (CCU),drg_top30_246,2.254
+Coronary Care Unit (CCU),drg_top30_027,-2.109
+Coronary Care Unit (CCU),drg_top30_025,-1.991
+Coronary Care Unit (CCU),drg_top30_026,-1.969
+Coronary Care Unit (CCU),drg_top30_004,-1.787
+Coronary Care Unit (CCU),drg_top30_023,-1.741
+Coronary Care Unit (CCU),drg_top30_217,1.729
+Coronary Care Unit (CCU),drg_top30_216,1.686
+Medical Intensive Care Unit (MICU),drg_top30_378,1.916
+Medical Intensive Care Unit (MICU),drg_top30_377,1.836
+Medical Intensive Care Unit (MICU),drg_top30_025,-1.765
+Medical Intensive Care Unit (MICU),drg_top30_026,-1.7
+Medical Intensive Care Unit (MICU),drg_top30_917,1.506
+Medical Intensive Care Unit (MICU),drg_top30_208,1.425
+Medical Intensive Care Unit (MICU),drg_top30_027,-1.366
+Medical Intensive Care Unit (MICU),admission_location_EMERGENCY ROOM,1.309
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_026,-2.288
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_027,-2.244
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_025,-2.233
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_378,2.054
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_377,1.933
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_917,1.886
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_871,1.861
+Medical/Surgical Intensive Care Unit (MICU/SICU),drg_top30_177,1.849
+Neuro Intermediate,drg_top30_025,3.141
+Neuro Intermediate,admission_location_EMERGENCY ROOM,-3.071
+Neuro Intermediate,drg_top30_026,2.704
+Neuro Intermediate,drg_top30_027,2.4
+Neuro Intermediate,drg_top30_023,2.319
+Neuro Intermediate,admission_type_EU OBSERVATION,2.068
+Neuro Intermediate,drg_top30_065,1.987
+Neuro Intermediate,drg_top30_378,-1.892
+Neuro Stepdown,drg_top30_025,2.432
+Neuro Stepdown,admission_location_WALK-IN/SELF REFERRAL,-2.419
+Neuro Stepdown,drg_top30_026,2.401
+Neuro Stepdown,drg_top30_027,2.401
+Neuro Stepdown,admission_type_EW EMER.,-2.2
+Neuro Stepdown,admission_location_EMERGENCY ROOM,1.875
+Neuro Stepdown,admission_location_INFORMATION NOT AVAILABLE,1.774
+Neuro Stepdown,race_UNABLE TO OBTAIN,-1.418
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_023,2.001
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_025,1.767
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_027,1.592
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_026,1.517
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_177,-1.29
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_065,1.066
+Neuro Surgical Intensive Care Unit (Neuro SICU),drg_top30_064,1.026
+Neuro Surgical Intensive Care Unit (Neuro SICU),admission_location_PACU,-1.007
+OTHER_UNIT,admission_location_EMERGENCY ROOM,-2.237
+OTHER_UNIT,drg_top30_207,1.171
+OTHER_UNIT,drg_top30_870,1.15
+OTHER_UNIT,admission_location_TRANSFER FROM SKILLED NURSING FACILITY,0.947
+OTHER_UNIT,race_PORTUGUESE,0.887
+OTHER_UNIT,admission_type_URGENT,-0.76
+OTHER_UNIT,drg_top30_871,-0.755
+OTHER_UNIT,admission_type_EW EMER.,0.656
+Surgery/Vascular/Intermediate,drg_top30_OTHER,-2.195
+Surgery/Vascular/Intermediate,drg_top30_207,2.067
+Surgery/Vascular/Intermediate,admission_location_EMERGENCY ROOM,-1.818
+Surgery/Vascular/Intermediate,drg_top30_870,1.77
+Surgery/Vascular/Intermediate,drg_top30_177,1.525
+Surgery/Vascular/Intermediate,apr_sev,1.425
+Surgery/Vascular/Intermediate,drg_top30_004,1.361
+Surgery/Vascular/Intermediate,race_UNABLE TO OBTAIN,-1.167
+Surgical Intensive Care Unit (SICU),drg_top30_027,1.684
+Surgical Intensive Care Unit (SICU),drg_top30_329,1.57
+Surgical Intensive Care Unit (SICU),drg_top30_026,1.499
+Surgical Intensive Care Unit (SICU),drg_top30_217,-1.467
+Surgical Intensive Care Unit (SICU),drg_top30_025,1.348
+Surgical Intensive Care Unit (SICU),drg_top30_236,-1.334
+Surgical Intensive Care Unit (SICU),drg_top30_234,-1.306
+Surgical Intensive Care Unit (SICU),drg_top30_235,-1.194
+Trauma SICU (TSICU),drg_top30_329,2.205
+Trauma SICU (TSICU),drg_top30_917,-1.591
+Trauma SICU (TSICU),drg_top30_217,-1.119
+Trauma SICU (TSICU),drg_top30_853,1.058
+Trauma SICU (TSICU),drg_top30_236,-1.053
+Trauma SICU (TSICU),drg_top30_003,0.948
+Trauma SICU (TSICU),admission_location_EMERGENCY ROOM,0.927
+Trauma SICU (TSICU),drg_top30_234,-0.885

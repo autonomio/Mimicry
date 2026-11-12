@@ -1,0 +1,5192 @@
+q,stays_emar,stays_ing,stays_inp,stays_total
+Q1_cov,42514,76237,76385,85242
+q,drug,died_icu,died_hosp,n
+Q2_emar,Desmopressin Acetate,0,0,358
+Q2_emar,Neutra-Phos,1,1,573
+Q2_emar,GuaiFENesin,0,0,1119
+Q2_emar,Fluticasone-Salmeterol Diskus (250/50) ,0,0,935
+Q2_emar,LORazepam,0,0,5633
+Q2_emar,FLUoxetine,0,0,878
+Q2_emar,Fentanyl Citrate,0,0,7626
+Q2_emar,PredniSONE,0,0,2605
+Q2_emar,Allopurinol,0,0,1578
+Q2_emar,Dakins 1/2 Strength,0,0,11
+Q2_emar,Lidocaine 1% (For PICC/Midline Insertions),0,0,2673
+Q2_emar,Escitalopram Oxalate,0,0,717
+Q2_emar,Metoclopramide,1,1,226
+Q2_emar,Rosuvastatin Calcium,0,0,1429
+Q2_emar,Ipratropium-Albuterol Neb,0,0,4273
+Q2_emar,Albumin 5% (25g / 500mL),0,0,1057
+Q2_emar,OSELTAMivir,0,0,224
+Q2_emar,Nystatin Cream,0,0,201
+Q2_emar,Pravastatin,0,0,1106
+Q2_emar,MetFORMIN (Glucophage),0,0,322
+Q2_emar,Ferric Gluconate,0,0,202
+Q2_emar,Levofloxacin,0,0,557
+Q2_emar,Ipratropium-Albuterol Neb,1,1,540
+Q2_emar,Calcium Chloride,0,0,148
+Q2_emar,Metoprolol Tartrate,1,1,684
+Q2_emar,RisperiDONE,0,0,244
+Q2_emar,CefePIME,0,1,624
+Q2_emar,Sodium Chloride 0.9%  Flush,1,1,370
+Q2_emar,Lisinopril,0,0,2798
+Q2_emar,Epoprostenol (Veletri),0,1,9
+Q2_emar,Amoxicillin-Clavulanic Acid,0,0,192
+Q2_emar,Epoprostenol (Veletri),1,1,150
+Q2_emar,LOPERamide,0,0,375
+Q2_emar,Tigecycline,0,0,14
+Q2_emar,Fish Oil (Omega 3),0,0,171
+Q2_emar,Miconazole Powder 2%,0,1,42
+Q2_emar,GuaiFENesin ER,0,0,575
+Q2_emar,OxycoDONE (Immediate Release) ,0,0,838
+Q2_emar,Isosorbide Mononitrate,0,0,86
+Q2_emar,PHENObarbital Alcohol Withdrawal Dose Taper (Days 2-7),0,0,537
+Q2_emar,Lidocaine 1%,0,0,371
+Q2_emar,Mesalamine,0,0,40
+Q2_emar,Immune Globulin Intravenous (Human),0,0,188
+Q2_emar,Gabapentin,0,1,114
+Q2_emar,QUEtiapine Fumarate,1,1,299
+Q2_emar,NiMODipine,0,0,356
+Q2_emar,Magnesium Sulfate,1,1,451
+Q2_emar,Buprenorphine-Naloxone Tablet (8mg-2mg),0,0,60
+Q2_emar,HYDROcodone-Acetaminophen (5mg-325mg),0,0,80
+Q2_emar,Sulfameth/Trimethoprim SS,0,0,595
+Q2_emar,Meperidine,0,1,5
+Q2_emar,NULL,1,0,27
+Q2_emar,Vitamin E,0,0,76
+Q2_emar,Colistin,0,0,2
+Q2_emar,Amphetamine-Dextroamphetamine,0,0,43
+Q2_emar,OLANZapine,1,1,109
+Q2_emar,Filgrastim-sndz,1,1,23
+Q2_emar,Humira Pen,0,0,1
+Q2_emar,RiTONAvir,0,0,62
+Q2_emar,Maalox/Diphenhydramine/Lidocaine,0,0,169
+Q2_emar,Guaifenesin,0,0,73
+Q2_emar,Metolazone,0,1,29
+Q2_emar,Etravirine,1,1,2
+Q2_emar,Artificial Tear Ointment,0,1,40
+Q2_emar,Elmiron,0,0,5
+Q2_emar,ENTAcapone,0,0,28
+Q2_emar,Gentamicin,1,1,69
+Q2_emar,Magnesium Oxide,1,1,33
+Q2_emar,Jakafi,0,0,9
+Q2_emar,Fluticasone Propionate NASAL,0,1,42
+Q2_emar,Apixaban,0,1,70
+Q2_emar,Calcitonin Salmon,0,0,50
+Q2_emar,CefTAZidime-Avibactam (Avycaz),0,0,21
+Q2_emar,AcetaZOLamide,1,1,46
+Q2_emar,Lactulose Enema,0,1,33
+Q2_emar,Pregabalin,0,1,18
+Q2_emar,Diltiazem Extended-Release,0,1,7
+Q2_emar,Bromocriptine Mesylate,0,0,10
+Q2_emar,Nadolol,0,0,115
+Q2_emar,Daptomycin-Heparin Lock,1,1,2
+Q2_emar,Caphosol,0,0,38
+Q2_emar,Genvoya,0,0,19
+Q2_emar,Remdesivir,1,1,21
+Q2_emar,Bengay Cream,1,1,2
+Q2_emar,Bengay Cream,0,0,37
+Q2_emar,Vancomycin Oral Liquid,0,1,87
+Q2_emar,Trulicity,0,0,1
+Q2_emar,Cinacalcet,0,1,10
+Q2_emar,Metoclopramide,0,1,63
+Q2_emar,azelastine,0,0,11
+Q2_emar,divalproex,0,0,1
+Q2_emar,PrednisoLONE Acetate 1% Ophth. Susp.,0,1,16
+Q2_emar,Psyllium Powder,0,1,3
+Q2_emar,Mannitol,0,1,28
+Q2_emar,DiCLOXacillin,0,0,5
+Q2_emar,Glucose Gel,1,1,10
+Q2_emar,AcetaZOLamide,0,1,13
+Q2_emar,Cilostazol,1,1,5
+Q2_emar,Lactic Acid 12% Lotion,0,0,16
+Q2_emar,Witch Hazel 50% Pad,0,0,7
+Q2_emar,cobicistat,0,0,1
+Q2_emar,Hydromorphone (Oral Solution) 1 mg/1 mL,0,0,15
+Q2_emar,Lidocaine Jelly 2% (Urojet),1,1,25
+Q2_emar,thiamine ,1,1,12
+Q2_emar,colestipol,0,0,2
+Q2_emar,Dronedarone,0,0,15
+Q2_emar,Dextromethorphan Polistirex,0,0,30
+Q2_emar,Suvorexant/placebo,0,0,4
+Q2_emar,Paroxetine,0,0,20
+Q2_emar,Clindamycin,0,1,24
+Q2_emar,Diazepam,1,1,47
+Q2_emar,Baclofen,0,1,15
+Q2_emar,Sodium Chloride,1,1,32
+Q2_emar,Sotalol,1,1,4
+Q2_emar,Atropine Sulfate,1,1,25
+Q2_emar,VinBLAStine (Velban),0,0,1
+Q2_emar,Esmolol,0,1,6
+Q2_emar,imipenem-cilastatin,0,1,1
+Q2_emar,DICYCLOMine,1,1,3
+Q2_emar,Leuprolide Acetate,0,0,4
+Q2_emar,DOXOrubicin,0,0,6
+Q2_emar,Aluminum Hydroxide Suspension,0,1,2
+Q2_emar,Cimetidine,0,0,6
+Q2_emar,Trametinib,0,1,1
+Q2_emar,Nicotine Polacrilex,0,1,1
+Q2_emar,Epoetin Alfa,1,1,13
+Q2_emar,Methadone,0,1,22
+Q2_emar,Fluocinolone Acetonide 0.025% Cream,1,1,1
+Q2_emar,Clotrimazole Cream,0,1,6
+Q2_emar,L carnitine study bolus,1,1,1
+Q2_emar,Glycerin Supps,0,0,22
+Q2_emar,Loratadine,0,1,12
+Q2_emar,Prazosin,1,1,1
+Q2_emar,Isosorbide Mononitrate (Extended Release),1,1,10
+Q2_emar,Lidocaine 0.5%,0,0,5
+Q2_emar,Fosphenytoin,0,1,19
+Q2_emar,Zidovudine,0,0,4
+Q2_emar,Doxepin HCl,1,1,1
+Q2_emar,Isoniazid,1,1,4
+Q2_emar,Buprenorphine-Naloxone (8mg-2mg),0,0,35
+Q2_emar,Albuterol,1,1,1
+Q2_emar,Nafcillin Graded Challenge,0,1,1
+Q2_emar,Antithrombin 3 (human),0,0,3
+Q2_emar,carbidopa,0,0,7
+Q2_emar,MetOLazone,0,1,22
+Q2_emar,Vancomycin 1mg/0.1mL,0,0,3
+Q2_emar,Levalbuterol Neb,0,1,18
+Q2_emar,hydroxychloroquine,0,0,1
+Q2_emar,Ceftaroline Graded Challenge,0,0,1
+Q2_emar,Lumigan,1,1,1
+Q2_emar,Budesonide Nasal Inhaler,0,0,3
+Q2_emar,Heparin (via Anti-Xa Monitoring),0,1,1
+Q2_emar,Phenelzine Sulfate,0,0,5
+Q2_emar,Colistin,1,1,3
+Q2_emar,Influenza Vaccine High-Dose Quadrivalent,0,1,1
+Q2_emar,Ofev,0,0,2
+Q2_emar,Terbinafine 1% Cream,1,1,2
+Q2_emar,Palonosetron,0,0,2
+Q2_emar,Ferric Gluconate Desensitization,0,0,6
+Q2_emar,Fondaparinux,1,1,9
+Q2_emar,Doxycycline Hyclate W/ Lidocaine 1%,0,0,1
+Q2_emar,fenofibric acid,1,1,1
+Q2_emar,Hemorrhoidal Suppository,0,0,4
+Q2_emar,Carbamide Peroxide 6.5%,0,1,1
+Q2_emar,Valsartan,0,1,2
+Q2_emar,Ampicillin Desensitization,0,1,1
+Q2_emar,Fidaxomicin,0,1,1
+Q2_emar,acetaminophen/ Placebo,0,0,3
+Q2_emar,Voltaren,0,0,2
+Q2_emar,"Vitamin D 3 540,000 ",0,0,1
+Q2_emar,Pyrazinamide,1,1,3
+Q2_emar,CycloSPORINE (Sandimmune),0,1,1
+Q2_emar,Cefepime Desensitization,0,0,4
+Q2_emar,liothyronine,1,1,1
+Q2_emar,"Lidocaine 1%/Epinephrine 1:100,000",1,0,2
+Q2_emar,brexpiprazole,0,0,3
+Q2_emar,Phosphorus,1,0,6
+Q2_emar,Trelegy Ellipta,0,0,4
+Q2_emar,Enbrel,0,0,1
+Q2_emar,Artesunate,0,0,1
+Q2_emar,Tretinoin 0.025% Cream,0,0,3
+Q2_emar,Multivitamins W/minerals Chewable,1,0,2
+Q2_emar,QuiNIDine Gluconate E.R.,0,0,7
+Q2_emar,tranexamic acid,1,1,2
+Q2_emar,Suvorexant/Placebo,0,0,11
+Q2_emar,Culturelle Women Health Balanc,0,0,1
+Q2_emar,Denosumab (Xgeva),0,1,2
+Q2_emar,Nortriptyline,0,1,4
+Q2_emar,Cyanocobalamin,1,0,2
+Q2_emar,Artificial Tear Ointment,1,0,5
+Q2_emar,Aminocaproic Acid 25 % Oral Rinse,0,0,6
+Q2_emar,dorzolamide-timolol,0,0,3
+Q2_emar,Aurovela Fe 1.5/30 (28),0,0,1
+Q2_emar,CarBAMazepine Suspension,0,0,3
+Q2_emar,Droxia,0,0,1
+Q2_emar,SulfaSALAzine_,1,1,2
+Q2_emar,Glucagon,0,1,3
+Q2_emar,NMB Study Control (0.9% NACL 100ml) Study med,0,0,1
+Q2_emar,Naproxen,1,1,1
+Q2_emar,NIFEdipine,1,1,1
+Q2_emar,COQ10 (300 mg) or placebo,1,1,2
+Q2_emar,Insulin (Regular) Intraperitoneal,1,1,1
+Q2_emar,CoQ10 (300mg) or placebo,0,0,5
+Q2_emar,l-carnitine study drug bolus,0,0,1
+Q2_emar,Bupivacaine 0.25% /Placebo,0,0,1
+Q2_emar,Toviaz,0,0,2
+Q2_emar,Lidocaine Jelly 2%,0,1,2
+Q2_emar,testosterone,0,0,1
+Q2_emar,Fludarabine Phosphate,0,1,1
+Q2_emar,Guaifenesin ER,1,1,3
+Q2_emar,ipratropium bromide,0,0,3
+Q2_emar,SMOFlipid 20% Emulsion,1,1,3
+Q2_emar,Benzonatate,1,0,5
+Q2_emar,Tobramycin-Dexamethasone Ophth Susp,0,1,1
+Q2_emar,Incruse Ellipta,0,1,2
+Q2_emar,Klor-Con M20,0,0,1
+Q2_emar,ClomiPRAMINE,1,1,1
+Q2_emar,Mesalamine Enema,0,1,1
+Q2_emar,tocilizumab,0,0,1
+Q2_emar,GenTeal  Mild to Moderate,0,0,1
+Q2_emar,Vitamin d3 or placebo,0,0,1
+Q2_emar,teriflunomide,1,1,1
+Q2_emar,Ketoconazole Shampoo,0,1,1
+Q2_emar,timolol maleate (PF),0,0,1
+Q2_emar,Witch Hazel 50% Pad,1,1,1
+Q2_emar,levalbuterol tartrate,1,1,1
+Q2_emar,linagliptin-metformin,0,0,1
+Q2_emar,norgestimate-ethinyl estradioL,0,0,1
+Q2_emar,Tasigna,0,0,2
+Q2_emar,PreserVision AREDS-2,0,0,1
+Q2_emar,macitentan,1,1,1
+Q2_emar,acamprosate,0,0,1
+Q2_emar,Aspirin EC,1,0,1
+Q2_emar,Fosaprepitant,0,1,1
+Q2_emar,CoQ10 (300mg) or Placebo,0,0,2
+Q2_emar,Amaryl,0,0,1
+Q2_emar,etanercept,0,1,1
+Q2_emar,SORAfenib,0,0,1
+Q2_emar,L-carnitine study drug infusion,1,1,1
+Q2_emar,APAP,0,0,1
+Q2_emar,Tobramycin 2.5 mg/mL in Sodium Citrate 4%,0,1,1
+Q2_emar,Vitamin B-12,0,0,1
+Q2_emar,Stiolto Respimat,1,1,1
+Q2_emar,etodolac,0,0,1
+Q2_emar,Raid Adminstration of Carnitine in Sepsis,1,1,1
+Q2_emar,perampanel,1,1,1
+Q2_emar,Hydrocortisone Oint 2.5%,0,1,1
+Q2_emar,sucralfate,1,1,1
+Q2_emar,carisoprodoL,0,1,1
+Q2_emar,Skelaxin,0,0,1
+Q2_emar,Xarelto,0,0,1
+Q2_emar,levETIRAcetam,0,0,1
+Q2_emar,Milk Thistle,0,0,1
+Q2_emar,Ureacin-20,0,1,1
+Q2_emar,TraMADol,0,0,2592
+Q2_emar,Sodium Bicarbonate,0,0,1169
+Q2_emar,HydrALAZINE,0,0,5351
+Q2_emar,Polyethylene Glycol,0,0,8086
+Q2_emar,Ramelteon,0,0,3048
+Q2_emar,Dorzolamide 2%/Timolol 0.5% Ophth.,1,1,27
+Q2_emar,Vancomycin,1,1,2065
+Q2_emar,Bacitracin Ointment,1,1,9
+Q2_emar,Ondansetron,0,0,9166
+Q2_emar,Azithromycin,0,0,2765
+Q2_emar,Influenza Vaccine Quadrivalent,0,0,271
+Q2_emar,Morphine SR (MS Contin),0,0,190
+Q2_emar,LamoTRIgine,0,0,541
+Q2_emar,Dextrose 50%,1,1,974
+Q2_emar,Miconazole 2% Cream,0,0,96
+Q2_emar,Rocuronium,0,0,462
+Q2_emar,Insulin (Regular) for Hyperkalemia,0,0,1071
+Q2_emar,BuPROPion (Sustained Release),0,0,377
+Q2_emar,CefazoLIN,0,0,394
+Q2_emar,Potassium Chloride (Powder),0,0,1267
+Q2_emar,Tuberculin Protein,1,1,4
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology) ,1,1,317
+Q2_emar,Ciprofloxacin 0.3% Ophth Soln,0,0,117
+Q2_emar,Calcium Gluconate sliding scale (Critical Care-Ionized calcium),1,1,693
+Q2_emar,Acyclovir,1,1,143
+Q2_emar,Fluticasone Propionate 110mcg,0,0,1029
+Q2_emar,Vitamin D,1,1,227
+Q2_emar,Lactulose,0,1,232
+Q2_emar,Insulin (Regular) for Hyperkalemia,1,1,429
+Q2_emar,CefTAZidime,1,1,366
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology),1,1,629
+Q2_emar,Phenazopyridine,0,0,79
+Q2_emar,Donepezil,0,0,313
+Q2_emar,Bisacodyl,1,1,492
+Q2_emar,Acetylcysteine 20%,0,0,804
+Q2_emar,HydrALAZINE,1,1,332
+Q2_emar,CefTAZidime,0,0,1456
+Q2_emar,Albumin 25% (12.5g / 50mL),1,1,378
+Q2_emar,Creon 12,0,0,253
+Q2_emar,Montelukast,0,0,892
+Q2_emar,Clobazam,0,0,106
+Q2_emar,Aspirin,1,1,793
+Q2_emar,Benztropine Mesylate,0,0,92
+Q2_emar,Calcitriol,0,0,520
+Q2_emar,latanoprostene bunod,1,1,1
+Q2_emar,HYDROmorphone (Dilaudid),1,0,22
+Q2_emar,Warfarin,1,1,73
+Q2_emar,OxyCODONE Liquid,1,1,60
+Q2_emar,Mesalamine DR,0,0,53
+Q2_emar,Multivitamins W/minerals Liquid,1,1,29
+Q2_emar,Multivitamins W/minerals,1,1,444
+Q2_emar,CeftriaXONE,0,0,237
+Q2_emar,Mycophenolate Mofetil Suspension,0,0,276
+Q2_emar,Sulfamethoxazole-Trimethoprim,0,0,122
+Q2_emar,Fulvestrant,0,0,1
+Q2_emar,Fidaxomicin,1,1,1
+Q2_emar,Finasteride,0,1,44
+Q2_emar,Tenofovir Disoproxil (Viread),0,0,67
+Q2_emar,Carbidopa-Levodopa CR (25-100),0,0,22
+Q2_emar,Dakins 1/4 Strength,0,0,39
+Q2_emar,Sildenafil,0,0,149
+Q2_emar,Blistex Lip Ointment,0,0,2
+Q2_emar,Midodrine,0,1,162
+Q2_emar,Sulfameth/Trimethoprim DS,1,1,61
+Q2_emar,Potassium Bicarbonate Eff,0,0,13
+Q2_emar,Lithium Carbonate,0,0,67
+Q2_emar,Triamcinolone Acetonide 0.1% Ointment,0,0,71
+Q2_emar,Terazosin,0,0,136
+Q2_emar,Enoxaparin Sodium,0,1,50
+Q2_emar,Alteplase (External Ventricular Drain),0,0,19
+Q2_emar,Posaconazole Delayed Release Tablet,0,0,48
+Q2_emar,Letairis,0,0,4
+Q2_emar,brimonidine-timoloL,0,0,1
+Q2_emar,Felodipine,0,0,23
+Q2_emar,Cyanocobalamin,0,1,58
+Q2_emar,Entecavir,0,0,84
+Q2_emar,Dextromethorphan-Guaifenesin (Sugar Free),0,0,21
+Q2_emar,MetRONIDAZOLE (FLagyl),0,1,25
+Q2_emar,Filgrastim-sndz,0,0,75
+Q2_emar,Vitamin B Complex w/C,0,0,98
+Q2_emar,Tobramycin-Dexamethasone Ophth Oint,0,0,13
+Q2_emar,Ranolazine ER,1,1,5
+Q2_emar,Fondaparinux,0,0,49
+Q2_emar,Prasugrel,0,0,53
+Q2_emar,Codeine Sulfate,0,0,80
+Q2_emar,Memantine,1,1,11
+Q2_emar,Simethicone,0,1,34
+Q2_emar,Tizanidine,0,0,106
+Q2_emar,Thyroid,0,0,26
+Q2_emar,Hepatitis A Vaccine,0,0,7
+Q2_emar,Albumin 5% (12.5g / 250mL),0,1,86
+Q2_emar,Sodium Polystyrene Sulfonate,1,1,53
+Q2_emar,ClomiPRAMINE,0,0,7
+Q2_emar,Diltiazem Extended-Release,1,1,10
+Q2_emar,Budesonide,0,1,18
+Q2_emar,cabergoline,0,0,8
+Q2_emar,rilpivirine,0,0,8
+Q2_emar,Ampicillin-Sulbact Graded Challenge,0,0,6
+Q2_emar,Cepastat (Phenol) Lozenge,0,0,15
+Q2_emar,Enoxaparin (Prophylaxis),0,1,50
+Q2_emar,Esmolol,1,1,12
+Q2_emar,Dantrolene Sodium,0,0,10
+Q2_emar,Rytary,0,0,6
+Q2_emar,Pamidronate,0,1,5
+Q2_emar,Metoprolol Succinate XL,0,1,30
+Q2_emar,Minocycline,0,0,21
+Q2_emar,ValGANCIclovir Oral Solution,1,1,7
+Q2_emar,Vitamin A,0,0,37
+Q2_emar,Tetanus-DiphTox-Acellular Pertuss (Tdap),0,0,22
+Q2_emar,OXcarbazepine,0,1,4
+Q2_emar,FLUoxetine,1,1,40
+Q2_emar,NIFEdipine CR,0,1,1
+Q2_emar,Megestrol Acetate,1,1,1
+Q2_emar,pyrimethamine,0,0,2
+Q2_emar,Acetylcysteine 20%,1,0,5
+Q2_emar,Epoetin Alfa,0,1,9
+Q2_emar,Ketamine,0,1,3
+Q2_emar,Silibinin,0,0,1
+Q2_emar,IPRATROPIUM BROMIDE NEB,0,0,9
+Q2_emar,Propranolol,1,1,5
+Q2_emar,Rituximab,1,1,1
+Q2_emar,Heparin (Impella),1,1,2
+Q2_emar,quiniDINE Gluconate E.R.,0,0,1
+Q2_emar,ARIPiprazole,0,1,8
+Q2_emar,Icatibant,0,0,7
+Q2_emar,Multivitamins W/minerals Liquid,0,1,14
+Q2_emar,guaiFENesin,0,0,1
+Q2_emar,Fat Emulsion 20% (INTRAlipid),0,0,3
+Q2_emar,Tolterodine,0,0,41
+Q2_emar,LevOCARNitine,0,0,10
+Q2_emar,Chlorhexidine Gluconate 0.12% Oral Rinse,1,0,27
+Q2_emar,Naltrexone,0,0,10
+Q2_emar,ProAir HFA,0,0,4
+Q2_emar,Lidocaine 1%/Epinephrine 1:100000,1,1,9
+Q2_emar,Febuxostat,1,1,5
+Q2_emar,Trihexyphenidyl,0,0,10
+Q2_emar,Omeprazole,1,0,3
+Q2_emar,Ethacrynic Acid,0,1,1
+Q2_emar,Chloraseptic Throat Spray,1,1,13
+Q2_emar,Moxifloxacin,0,0,4
+Q2_emar,Triamcinolone Acetonide 0.1% Cream,0,1,4
+Q2_emar,Tecfidera,0,0,5
+Q2_emar,Indomethacin XR,0,0,2
+Q2_emar,BuPROPion,0,1,10
+Q2_emar,Lidocaine 1% (For PICC/Midline Insertions),1,0,10
+Q2_emar,Etoposide,0,1,3
+Q2_emar,Aquaphor Ointment,1,1,4
+Q2_emar,Fluorometholone 0.1% Ophth Susp.,0,1,1
+Q2_emar,Ceftolozane-Tazobactam Graded Challenge,0,0,2
+Q2_emar,NovoLIN R,0,0,4
+Q2_emar,Acetic Acid 0.25% Irrig. Soln,0,0,1
+Q2_emar,Cinacalcet,1,1,12
+Q2_emar,Betamethasone Dipro 0.05% Cream,0,1,4
+Q2_emar,Clozapine,0,1,3
+Q2_emar,econazole,0,1,1
+Q2_emar,sodium chloride,0,0,2
+Q2_emar,Thiamine Study Drug ,0,0,1
+Q2_emar,L-Carnitine Study Drug bolus,0,0,1
+Q2_emar,anakinra,0,0,1
+Q2_emar,xylitol (bulk),0,0,1
+Q2_emar,prednisoLONE acetate,0,0,2
+Q2_emar,Desmopressin Nasal,1,1,1
+Q2_emar,dupilumab,0,0,1
+Q2_emar,Alvimopan,0,0,5
+Q2_emar,Carbidopa-Levodopa (25-100) ODT,1,1,4
+Q2_emar,gatifloxacin,0,0,1
+Q2_emar,Heparin INTRAPERITONEAL,0,1,1
+Q2_emar,Nabumetone,1,1,1
+Q2_emar,AZITHROMYCIN,0,0,2
+Q2_emar,Vitamin D2 (Ergocalciferol),0,1,3
+Q2_emar,Oxazepam,0,0,11
+Q2_emar,Emtricitabine,1,1,2
+Q2_emar,droxidopa,0,0,1
+Q2_emar,Opium Tincture (morphine 10 mg/mL),0,1,3
+Q2_emar,Pilocarpine 4%,1,1,2
+Q2_emar,Gentamicin - Dosing by pharmacy,0,0,1
+Q2_emar,ALEMtuzumab (Campath),1,1,1
+Q2_emar,ursodiol,0,0,1
+Q2_emar,Phentolamine Mesylate,0,0,10
+Q2_emar,Zepatier,0,0,1
+Q2_emar,Chlorthalidone,1,1,3
+Q2_emar,Pyrazinamide,0,1,3
+Q2_emar,formoterol fumarate,0,0,7
+Q2_emar,Ferrous Sulfate (Liquid),0,1,3
+Q2_emar,Junel 1/20 (21),0,0,1
+Q2_emar,Gentamicin 0.1% Cream,0,1,4
+Q2_emar,treprostinil diolamine,0,0,2
+Q2_emar,Readi-Cat 2 (Barium Sulfate 2% Suspension),1,0,1
+Q2_emar,Midodrine 20 mg or Placebo,0,0,2
+Q2_emar,tobramycin,0,0,1
+Q2_emar,Daliresp,0,0,3
+Q2_emar,Descovy,0,0,3
+Q2_emar,Simvastatin,1,0,3
+Q2_emar,BuPROPion,1,0,1
+Q2_emar,lidocaine (PF),0,0,1
+Q2_emar,NiCARdipine,1,1,1
+Q2_emar,Anoro Ellipta,1,1,1
+Q2_emar,DOXOrubicin,1,1,2
+Q2_emar,Entacapone,0,0,3
+Q2_emar,DOBUTamine,1,1,1
+Q2_emar,Tresiba FlexTouch U-100,0,0,3
+Q2_emar,Tobramycin Inhalation Soln,1,1,5
+Q2_emar,Ascorbic acid/thiamine/study med,0,0,1
+Q2_emar,osimertinib,0,0,1
+Q2_emar,Emla Cream,0,0,3
+Q2_emar,Lactase Enzyme,0,0,1
+Q2_emar,Piperacillin-Tazo Graded Challenge,1,1,1
+Q2_emar,Apidra,0,0,1
+Q2_emar,Xenazine,0,0,1
+Q2_emar,pirfenidone,1,1,1
+Q2_emar,nintedanib,0,1,1
+Q2_emar,Thiamine of study drug,0,0,1
+Q2_emar,Pepto-Bismol,0,0,1
+Q2_emar,Ketorolac 0.5% Ophth Soln,0,1,2
+Q2_emar,eszopiclone,0,0,1
+Q2_emar,MENINGOcoccal Conj Vaccine (Menactra),0,0,3
+Q2_emar,Primaquine Phosphate,1,1,3
+Q2_emar,omega-3s-dha-epa-fish oil,0,0,1
+Q2_emar,Bortezomib,1,1,1
+Q2_emar,Enalapril Maleate,0,1,1
+Q2_emar,WelChoL,0,0,1
+Q2_emar,Phenytoin (Suspension),0,1,1
+Q2_emar,Mili,0,0,1
+Q2_emar,MetroNIDAZOLE Graded Challenge,0,0,1
+Q2_emar,bedaquiline,0,0,1
+Q2_emar,belumosudil,0,0,1
+Q2_emar,emtricita-rilpivirine-tenof DF,0,0,1
+Q2_emar,NMB Study Control (0.9%NACL) Study Med,1,1,1
+Q2_emar,sertraline,0,0,1
+Q2_emar,Theophylline (Oral Solution),0,1,1
+Q2_emar,netarsudil,0,0,1
+Q2_emar,Austedo,0,0,1
+Q2_emar,LevoCARNitine,0,1,1
+Q2_emar,Trifluridine 1% Ophth Soln.,0,0,1
+Q2_emar,Avapro,0,0,2
+Q2_emar,Amantadine Syrup,1,1,1
+Q2_emar,Midodrine 20 mg TID or Placebo,0,0,1
+Q2_emar,Carbamazepine Suspension,0,1,1
+Q2_emar,Pilocarpine 1%,0,1,1
+Q2_emar,Orencia ClickJect,0,0,1
+Q2_emar,Chloroprocaine 3% MPF,0,1,1
+Q2_emar,Chantix,0,0,1
+Q2_emar,lapatinib,0,0,1
+Q2_emar,Thiamine ,0,0,1
+Q2_emar,Fetzima,0,0,1
+Q2_emar,Sodium Chloride 0.9 % INHALED (*IND*),0,1,1
+Q2_emar,Cardizem CD,0,0,1
+Q2_emar,QuiNIDine Gluconate E.R.,1,1,1
+Q2_emar,Fluocinolone Acetonide 0.025% Ointment,0,1,1
+Q2_emar,erlotinib,0,0,1
+Q2_emar,Levothyroxine Sodium,0,0,4809
+Q2_emar,Citalopram,0,0,1171
+Q2_emar,Famotidine,0,0,9179
+Q2_emar,Sacubitril-Valsartan (24mg-26mg),0,0,47
+Q2_emar,Pantoprazole (Granules for DR Suspension),1,1,36
+Q2_emar,Morphine Sulfate,0,1,319
+Q2_emar,Vitamin B Complex w/C,1,1,15
+Q2_emar,Lansoprazole Oral Disintegrating Tab,1,1,416
+Q2_emar,Albumin 5%,1,1,161
+Q2_emar,Dipyridamole,0,0,11
+Q2_emar,MethylPREDNISolone Sodium Succ,0,1,136
+Q2_emar,Docusate Sodium (Liquid),0,0,791
+Q2_emar,Ipratropium Bromide Neb,0,0,1359
+Q2_emar,Vancomycin,0,1,862
+Q2_emar,Pantoprazole,0,1,537
+Q2_emar,Mouth Care Oral Rinse,0,0,2027
+Q2_emar,Tacrolimus,0,0,732
+Q2_emar,Hydrocortisone Na Succ.,1,1,664
+Q2_emar,Methylnaltrexone,0,0,273
+Q2_emar,Ciprofloxacin HCl,0,0,467
+Q2_emar,Polyethylene Glycol,1,1,771
+Q2_emar,"Lidocaine 2%/Epi 1:100,000",0,0,8
+Q2_emar,Albuterol 0.083% Neb Soln,1,1,311
+Q2_emar,Prochlorperazine,0,0,792
+Q2_emar,Dextrose 50%,0,1,264
+Q2_emar,Alteplase 1mg/Flush Volume ( Dialysis/Pheresis Catheters ),0,0,81
+Q2_emar,Artificial Tears,1,1,245
+Q2_emar,Morphine Sulfate,1,1,725
+Q2_emar,Doxazosin,0,0,179
+Q2_emar,Aspirin Desensitization (Urticaria/Angioedema),0,0,65
+Q2_emar,Ranitidine (Liquid),0,0,66
+Q2_emar,GuaiFENesin,1,1,99
+Q2_emar,PARoxetine,0,0,397
+Q2_emar,Vitamin D3 (Cholecalciferol),0,0,424
+Q2_emar,Calcium Chloride,1,1,210
+Q2_emar,Chloraseptic Throat Spray,0,0,340
+Q2_emar,Fosphenytoin,1,1,51
+Q2_emar,Amlodipine,0,0,247
+Q2_emar,Colchicine,0,0,378
+Q2_emar,thiamine ,0,1,7
+Q2_emar,TraZODone,0,1,116
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, tunneled access line, PA )",0,1,4
+Q2_emar,Multivitamins W/minerals,0,1,195
+Q2_emar,Fluticasone-Salmeterol Diskus (100/50),0,0,271
+Q2_emar,Penicillin V Potassium,0,0,19
+Q2_emar,clindamycin phosphate,0,0,1
+Q2_emar,LevETIRAcetam,0,1,177
+Q2_emar,LaMOTrigine,0,0,27
+Q2_emar,Magnesium Oxide,0,1,37
+Q2_emar,OxyCODONE Liquid,0,1,27
+Q2_emar,Raltegravir,0,0,53
+Q2_emar,Fleet Enema,0,1,3
+Q2_emar,Nystatin Cream,1,1,35
+Q2_emar,ChlorproMAZINE,0,1,6
+Q2_emar,Aluminum-Magnesium Hydrox.-Simethicone,1,1,19
+Q2_emar,Latuda,0,0,20
+Q2_emar,Bupivacaine 0.25%?Placebo,0,0,2
+Q2_emar,Salmeterol Xinafoate Diskus (50 mcg),0,1,5
+Q2_emar,Fluticasone Propionate 110mcg,1,1,88
+Q2_emar,Hydrocortisone Val. Cream 0.2%,0,0,4
+Q2_emar,Gemfibrozil,0,0,57
+Q2_emar,Epoetin alfa-epbx (Retacrit),0,0,132
+Q2_emar,Fludrocortisone Acetate,1,1,57
+Q2_emar,Zinc Sulfate,1,1,68
+Q2_emar,CeFAZolin-Heparin Lock (For HD/Pheresis Catheter),0,0,1
+Q2_emar,Fluoxetine,0,0,54
+Q2_emar,LamoTRIgine,1,1,14
+Q2_emar,Mupirocin Ointment 2%,0,1,25
+Q2_emar,Promacta,0,0,7
+Q2_emar,LamiVUDine,0,0,35
+Q2_emar,Factor 7a recombinant ,0,1,2
+Q2_emar,sevelamer CARBONATE,0,1,77
+Q2_emar,Erythromycin 0.5% Ophth Oint,1,1,51
+Q2_emar,Dofetilide,0,0,26
+Q2_emar,Zonisamide,0,1,2
+Q2_emar,Vitamin D,0,1,162
+Q2_emar,Dabigatran Etexilate,0,0,60
+Q2_emar,Niacinamide,1,1,55
+Q2_emar,Methocarbamol,0,0,80
+Q2_emar,Hydrocortisone Acetate Suppository,0,0,5
+Q2_emar,PrimiDONE,0,0,76
+Q2_emar,Vitamin D3/ Placebo,0,0,1
+Q2_emar,Meperidine,1,1,25
+Q2_emar,LevoFLOXacin,1,1,39
+Q2_emar,LOPERamide,1,1,34
+Q2_emar,rifAXIMin,1,1,125
+Q2_emar,DAPTOmycin,0,1,4
+Q2_emar,Bupivacaine 0.25%/Placebo,0,0,40
+Q2_emar,Albumin 25%,0,1,58
+Q2_emar,Zoledronic Acid (Zometa),1,1,3
+Q2_emar,Theophylline ER,0,0,21
+Q2_emar,MetOLazone,1,0,2
+Q2_emar,Timolol Maleate 0.25%,0,0,64
+Q2_emar,Everolimus,0,0,7
+Q2_emar,PHENObarbital - ICU Alcohol Withdrawal (Initial Load / Rescue Dose),0,1,26
+Q2_emar,Ascorbic Acid/Thiamine/Placebo Study Med,0,0,12
+Q2_emar,Montelukast,1,1,36
+Q2_emar,Doxercalciferol,0,0,53
+Q2_emar,CefTAZidime Graded Challenge,0,0,7
+Q2_emar,Qvar,0,0,6
+Q2_emar,Bacitracin/Polymyxin B Sulfate Opht. Oint,1,1,1
+Q2_emar,Voriconazole,0,1,14
+Q2_emar,Cetirizine,1,1,9
+Q2_emar,Neomycin-Polymyxin-Bacitracin,0,1,19
+Q2_emar,Erlotinib,0,0,2
+Q2_emar,Nystatin-Triamcinolone Cream,0,0,8
+Q2_emar,Phenytoin Sodium (IV),1,1,23
+Q2_emar,Testosterone Gel 1%,0,0,13
+Q2_emar,cefOXitin,0,0,1
+Q2_emar,Azathioprine,0,0,10
+Q2_emar,MoviPrep,1,1,4
+Q2_emar,LaMIVudine Oral Soln.,0,0,6
+Q2_emar,Hydrocortisone,1,1,11
+Q2_emar,Testosterone Cypionate,1,1,1
+Q2_emar,senna,0,0,4
+Q2_emar,ofloxacin,0,0,8
+Q2_emar,Desmopressin Nasal,0,0,12
+Q2_emar,Ferrous GLUCONATE,1,1,11
+Q2_emar,Miconazole 2% Cream,1,1,16
+Q2_emar,bicalutamide,0,0,6
+Q2_emar,Hydroxychloroquine Sulfate,0,1,20
+Q2_emar,Haloperidol Decanoate (long acting),0,0,2
+Q2_emar,Tobramycin 0.3% Ophth Soln,0,0,6
+Q2_emar,Dantrolene,1,1,2
+Q2_emar,venetoclax,0,0,4
+Q2_emar,Miconazole Nitrate (Combo Pack),0,0,11
+Q2_emar,Ezetimibe,1,1,19
+Q2_emar,Vitamin d3/placebo,0,0,1
+Q2_emar,InFLIXimab Desensitization,0,0,4
+Q2_emar,Hydrocortisone Acetate 10%  Foam,0,0,5
+Q2_emar,Isosorbide Mononitrate (Extended Release),0,1,10
+Q2_emar,Ampicillin Graded Challenge,0,0,3
+Q2_emar,Flucytosine Suspension,0,0,1
+Q2_emar,raloxifene,0,0,3
+Q2_emar,Travatan Z,0,0,7
+Q2_emar,Rivaroxaban,1,1,9
+Q2_emar,Primaquine Phosphate,0,1,1
+Q2_emar,Clopidogrel,1,0,5
+Q2_emar,Niacin,0,0,14
+Q2_emar,Jadenu,0,0,1
+Q2_emar,Lidocaine 1%/Epinephrine 1:100000,0,1,3
+Q2_emar,0.9% NaCl - 100 mL bag (Esmolol Study control) Study Med,1,1,1
+Q2_emar,Buprenorphine-Naloxone Film (12mg-3mg),0,0,3
+Q2_emar,Celecoxib,0,0,3
+Q2_emar,Bupivacaine 0.25% or placebo,0,0,13
+Q2_emar,Nitroglycerin SL,0,1,8
+Q2_emar,Fluconazole,0,1,50
+Q2_emar,brimonidine,0,0,5
+Q2_emar,Chlorthalidone,0,1,1
+Q2_emar,Golytely,1,1,4
+Q2_emar,Copper Chloride,0,0,8
+Q2_emar,Maalox/Lidocaine,1,1,2
+Q2_emar,Sugammadex,0,0,24
+Q2_emar,Ascorbic Acid (Liquid),0,0,7
+Q2_emar,Silver Sulfadiazine 1% Cream,0,1,1
+Q2_emar,Bacitracin-Polymyxin Ointment,1,1,1
+Q2_emar,Cetirizine,0,1,12
+Q2_emar,Hydroxocobalamin,0,0,4
+Q2_emar,Heparin (CRRT Machine Priming),1,0,3
+Q2_emar,Lopinavir-Ritonavir,0,0,2
+Q2_emar,GuaiFENesin-Dextromethorphan (Sugar Free),0,1,1
+Q2_emar,Simbrinza,1,1,1
+Q2_emar,Basiliximab,1,1,3
+Q2_emar,Naphazoline-Pheniramine Ophth. Solution,0,0,2
+Q2_emar,Lactulose Enema,1,0,3
+Q2_emar,Ipratropium-Albuterol Inhalation Spray,0,1,1
+Q2_emar,mirabegron,0,0,2
+Q2_emar,clofazimine (bulk),0,0,1
+Q2_emar,somatropin,0,0,1
+Q2_emar,Spiriva with HandiHaler,0,0,3
+Q2_emar,Dacarbazine,0,0,1
+Q2_emar,Triamcinolone Acetonide 0.025% Cream,0,1,1
+Q2_emar,nimodipine 60mg/placebo,0,0,1
+Q2_emar,Strattera,0,0,1
+Q2_emar,balsalazide,0,0,5
+Q2_emar,Pristiq,0,0,3
+Q2_emar,CoEnzyme Q10 (300 mg) or Placebo,0,0,1
+Q2_emar,Betaxolol Ophth Susp  0.25%,0,1,2
+Q2_emar,Cyclopentolate 1%,0,0,11
+Q2_emar,ChlorproMAZINE,1,1,6
+Q2_emar,0.9% NaCl - 100 mL bag (Esmolol study control),0,0,2
+Q2_emar,OxycoDONE (Concentrated Oral Soln),1,1,5
+Q2_emar,LaMIVudine-Zidovudine (Combivir),0,0,3
+Q2_emar,Ramipril,0,1,1
+Q2_emar,Tiagabine,0,0,3
+Q2_emar,benazepril,0,0,5
+Q2_emar,Neomycin-Polymyxin-Bacitracin,1,0,3
+Q2_emar,Methylprednisolone,1,1,4
+Q2_emar,Morphine Sulfate (Concentrated Oral Soln),1,1,1
+Q2_emar,Proparacaine HCl 0.5% Opth.,0,0,1
+Q2_emar,NIFEdipine,0,0,9
+Q2_emar,Riboflavin (Vitamin B-2),1,1,4
+Q2_emar,CPPlacebo Lactated Ringers with MVI,0,0,2
+Q2_emar,Rabies Immune Globulin,0,0,1
+Q2_emar,Gentamicin 2.5 mg/mL in Sodium Citrate 4%,0,0,2
+Q2_emar,Ethambutol HCl,1,1,3
+Q2_emar,Dronedarone,1,1,2
+Q2_emar,bimatoprost,0,0,5
+Q2_emar,Clobetasol Propionate 0.05% Soln,0,0,3
+Q2_emar,NORepinephrine,0,1,3
+Q2_emar,arformoteroL,0,0,2
+Q2_emar,Pyrimethamine,0,0,4
+Q2_emar,emtricitab-rilpivir-tenofo ala,0,0,1
+Q2_emar,Spironolactone,1,0,1
+Q2_emar,LOPERamide Suspension,1,1,3
+Q2_emar,Ropivacaine 0.2%,0,0,1
+Q2_emar,Firazyr,0,0,1
+Q2_emar,Digoxin Immune Fab,1,1,1
+Q2_emar,ENTAcapone,1,1,4
+Q2_emar,SulfADIAzine,0,0,1
+Q2_emar,tadalafiL (pulm. hypertension),1,1,1
+Q2_emar,Gentamicin 0.3% Ophth. Ointment,0,0,2
+Q2_emar,budesonide,0,1,4
+Q2_emar,hydrOXYzine HCl,0,0,1
+Q2_emar,"Tretinoin (ATRA, All-Transretinoic Acid)",0,1,1
+Q2_emar,solifenacin,1,1,1
+Q2_emar,Medroxyprojest,0,0,1
+Q2_emar,Finasteride,1,0,2
+Q2_emar,L-carnitine drug infusion,1,1,1
+Q2_emar,QuiNIDine Gluconate,0,0,1
+Q2_emar,dolutegravir,0,0,2
+Q2_emar,Ascorbic Acid/placebo,0,0,1
+Q2_emar,Chloroprocaine 2%,0,0,2
+Q2_emar,Cephalexin,1,1,1
+Q2_emar,Isordil,0,0,2
+Q2_emar,Capsaicin 0.025%,0,1,3
+Q2_emar,diphenhydrAMINE HCL,0,0,1
+Q2_emar,PHENObarbital Alcohol Withdrawal Dose Taper (Days 2-7),1,0,1
+Q2_emar,Nabumetone,0,0,2
+Q2_emar,tissue plasminogen activator,1,1,1
+Q2_emar,tacrolimus,0,0,4
+Q2_emar,Terbutaline Sulfate,0,0,3
+Q2_emar,uridine triacetate,0,0,2
+Q2_emar,timolol,0,0,1
+Q2_emar,Carbidopa-Levodopa (25-250),1,1,2
+Q2_emar,Bupivacaine 0.25% or Placebo,0,0,1
+Q2_emar,Carbamide Peroxide 6.5%,1,1,1
+Q2_emar,Sarilumab 400mg/200mg/placebo,0,1,2
+Q2_emar,Provera,0,0,1
+Q2_emar,Tocilizumab,1,0,1
+Q2_emar,Aliskiren,0,0,2
+Q2_emar,Tromethamine,1,1,1
+Q2_emar,nebivoloL,0,0,1
+Q2_emar,Tobramycin 0.3% Ophth Ointment,1,1,1
+Q2_emar,Bismuth Subsalicylate,1,1,1
+Q2_emar,Letrozole,0,1,2
+Q2_emar,dorzolamide,0,0,1
+Q2_emar,onabotulinumtoxinA,0,0,1
+Q2_emar,Moxifloxacin 0.5% Ophth (*NF*),1,1,1
+Q2_emar,liothyronine,0,1,2
+Q2_emar,Bupivacaine 0.25%,0,0,3
+Q2_emar,ROSE- Cisatracurium,0,0,1
+Q2_emar,NMB study control (0.9% NaCl 100 ml) study med,1,1,1
+Q2_emar,Heparin CRRT,1,1,1
+Q2_emar,Insulin (Regular) Intraperitoneal,0,0,1
+Q2_emar,lenalidomide,0,1,1
+Q2_emar,Penicillin G Potassium,0,1,2
+Q2_emar,Buivacaine 0.25%/Placebo,0,0,1
+Q2_emar,Relpax,0,0,1
+Q2_emar,RABEprazole,0,1,1
+Q2_emar,Nasogel,0,0,1
+Q2_emar,PhenAZOPYRIDine,1,1,1
+Q2_emar,Insulin Human NPH,0,0,1
+Q2_emar,defibrotide,0,0,1
+Q2_emar,Sarilumab 800mg/placebo,0,0,1
+Q2_emar,Probiotic-10,0,0,1
+Q2_emar,Artificial Tears (PF),1,1,1
+Q2_emar,PrednisoLONE Acetate 0.12% Ophth. Susp.,0,1,2
+Q2_emar,Sodium CITRATE 4%,0,0,469
+Q2_emar,Furosemide,1,1,1505
+Q2_emar,Tiotropium Bromide,0,1,52
+Q2_emar,Senna,0,0,10144
+Q2_emar,Omeprazole,0,0,4781
+Q2_emar,Propranolol,0,0,189
+Q2_emar,Simvastatin,0,0,1787
+Q2_emar,CefTRIAXone,0,0,5376
+Q2_emar,Aspirin,0,1,443
+Q2_emar,Amiodarone,0,1,152
+Q2_emar,Ramelteon,1,1,170
+Q2_emar,Protamine Sulfate,1,1,41
+Q2_emar,Dapsone,0,0,54
+Q2_emar,HydrALAzine,0,0,330
+Q2_emar,Lidocaine Jelly 2% (Glydo),0,0,1359
+Q2_emar,Calcium Gluconate,0,1,169
+Q2_emar,Ampicillin-Sulbactam,0,0,727
+Q2_emar,Fentanyl Citrate,1,1,762
+Q2_emar,Potassium Chloride (Powder),1,1,151
+Q2_emar,Nystatin Oral Suspension,0,0,774
+Q2_emar,Guaifenesin-CODEINE Phosphate,0,0,115
+Q2_emar,Neutra-Phos,0,1,277
+Q2_emar,CefTRIAXone,1,1,553
+Q2_emar,MetFORMIN XR (Glucophage XR),0,0,59
+Q2_emar,Calcium Acetate,0,0,227
+Q2_emar,Ascorbic Acid,0,0,929
+Q2_emar,Phytonadione,1,1,630
+Q2_emar,Lactulose,1,1,535
+Q2_emar,Piperacillin-Tazobactam,0,1,299
+Q2_emar,Digoxin,1,1,106
+Q2_emar,Anastrozole,0,0,88
+Q2_emar,OLANZapine,0,0,917
+Q2_emar,HYDROmorphone (Dilaudid),0,1,439
+Q2_emar,LeVETiracetam,0,0,223
+Q2_emar,amLODIPine,0,1,70
+Q2_emar,Readi-Cat 2 (Barium Sulfate 2% Suspension),0,0,461
+Q2_emar,Fluconazole,1,1,129
+Q2_emar,LaMIVudine,0,0,77
+Q2_emar,Lidocaine 2%,0,0,39
+Q2_emar,Bacitracin Ophthalmic Oint,0,0,10
+Q2_emar,Ezetimibe,0,0,390
+Q2_emar,Benzocaine-Menthol (Sore Throat Lozenge),0,0,17
+Q2_emar,Ferric Citrate,0,0,9
+Q2_emar,norethindrone (contraceptive),0,0,1
+Q2_emar,Topiramate (Topamax),0,1,5
+Q2_emar,Zolpidem Tartrate,0,0,193
+Q2_emar,Midazolam,1,0,11
+Q2_emar,Potassium Citrate,0,0,204
+Q2_emar,Sulfameth/Trimethoprim DS,0,0,362
+Q2_emar,PHENObarbital,0,0,282
+Q2_emar,Venlafaxine XR,0,1,11
+Q2_emar,Thiamine or Placebo,0,0,31
+Q2_emar,Eplerenone,0,0,37
+Q2_emar,Methylnaltrexone,1,1,134
+Q2_emar,Erythromycin Ethylsuccinate Suspension,1,1,9
+Q2_emar,Bumetanide,1,0,5
+Q2_emar,Lorazepam,1,1,54
+Q2_emar,Albuterol Inhaler,0,1,117
+Q2_emar,PrednisoLONE Acetate 1% Ophth. Susp.,1,1,18
+Q2_emar,Diltiazem,1,1,144
+Q2_emar,Ipratropium Bromide MDI,1,1,240
+Q2_emar,Dextrose 10% in Water (D10W),1,1,39
+Q2_emar,Calcium Carbonate Suspension,0,1,2
+Q2_emar,Artificial Tears Preserv. Free,0,1,15
+Q2_emar,Diphenoxylate-Atropine,0,0,44
+Q2_emar,LaMICtal XR,0,0,12
+Q2_emar,Psyllium Wafer,0,0,48
+Q2_emar,Ampicillin-Sulbactam,1,1,59
+Q2_emar,Lidocaine 5% Ointment,0,0,84
+Q2_emar,Fosaprepitant,1,1,5
+Q2_emar,Vitamin D3/Placebo,0,0,8
+Q2_emar,Thiothixene,0,0,7
+Q2_emar,CarBAMazepine Chewable Tabs,0,0,5
+Q2_emar,Methylergonovine Maleate,0,0,6
+Q2_emar,Methylene Blue 0.5%,1,1,68
+Q2_emar,Calcium Carbonate,1,1,74
+Q2_emar,Sertraline,1,1,92
+Q2_emar,CloniDINE,0,0,60
+Q2_emar,MethylPHENIDATE (Ritalin),0,0,72
+Q2_emar,Multivitamins W/minerals Chewable,0,1,21
+Q2_emar,Glucose Gel,0,1,8
+Q2_emar,Hydrocortisone Oint 1%,0,0,4
+Q2_emar,Nafcillin,1,1,41
+Q2_emar,Lorazepam,0,1,30
+Q2_emar,Magnesium Sulfate (OB),0,0,9
+Q2_emar,Fenofibrate,0,1,7
+Q2_emar,Thiamine or placebo,0,0,15
+Q2_emar,LevETIRAcetam - STAT Dose,1,1,37
+Q2_emar,Propofol,0,1,21
+Q2_emar,Sacubitril-Valsartan (49mg-51mg),0,0,30
+Q2_emar,GlyBURIDE,0,0,26
+Q2_emar,Desonide 0.05% Cream,0,0,14
+Q2_emar,Entecavir,1,1,12
+Q2_emar,Ceftaroline,1,1,13
+Q2_emar,Buprenorphine-Naloxone Film (2mg-0.5mg),0,0,13
+Q2_emar,GuaiFENesin ER,1,1,30
+Q2_emar,RESTASIS,0,0,11
+Q2_emar,Oxytrol For Women,0,0,1
+Q2_emar,Ipratropium-Albuterol Inhalation Spray,1,1,1
+Q2_emar,Erythromycin,1,1,23
+Q2_emar,ALPRAZolam,1,1,13
+Q2_emar,Romiplostim,0,0,17
+Q2_emar,LACOSamide,1,1,64
+Q2_emar,Ethambutol HCl,0,0,15
+Q2_emar,Duloxetine,0,0,29
+Q2_emar,GuaiFENesin-Dextromethorphan,1,1,13
+Q2_emar,Pantoprazole,1,0,17
+Q2_emar,Sodium Zirconium Cyclosilicate,0,0,29
+Q2_emar,Dexamethasone Oral Soln (0.1mg/1mL),0,0,10
+Q2_emar,Nitrofurantoin (Macrodantin),0,1,1
+Q2_emar,Amphotericin B Nebulized,1,1,1
+Q2_emar,Ketoconazole 2% ,1,1,5
+Q2_emar,Ciprofloxacin 0.3% Ophth Soln,1,1,20
+Q2_emar,QuiNINE Sulfate,0,0,11
+Q2_emar,Aminocaproic Acid,1,1,18
+Q2_emar,Amoxicillin-Clavulanate Susp.,0,1,2
+Q2_emar,CeFAZolin Graded Challenge,0,0,9
+Q2_emar,LeVETiracetam Oral Solution,0,0,14
+Q2_emar,Aspercreme with Aloe,0,0,1
+Q2_emar,alteplase,0,0,5
+Q2_emar,Venlafaxine,0,1,9
+Q2_emar,Lithium Oral Solution,0,0,10
+Q2_emar,Buprenorphine-Naloxone Film (4mg-1mg),0,0,34
+Q2_emar,ALPRAZolam,0,1,10
+Q2_emar,Baricitinib (EUA),0,0,10
+Q2_emar,Posaconazole Delayed Release Tablet,1,1,6
+Q2_emar,Ketamine (For Intubation),0,0,16
+Q2_emar,Lidocaine 1% P.F.,0,0,7
+Q2_emar,Atropine Sulfate,0,1,2
+Q2_emar,Vancomycin (0.5 mg/mL)-Heparin (100 units/mL) Lock,0,0,1
+Q2_emar,Testosterone Cypionate,0,0,1
+Q2_emar,umeclidinium-vilanterol,0,0,6
+Q2_emar,Calcipotriene 0.005% Cream,0,0,8
+Q2_emar,Brimonidine Tartrate 0.15% Ophth.,1,1,30
+Q2_emar,Dolutegravir,0,1,8
+Q2_emar,Ethacrynic Acid,1,1,4
+Q2_emar,Liothyronine Sodium,0,0,20
+Q2_emar,Calcium Acetate,1,1,22
+Q2_emar,CYCLOSPORINE 0.05% OPHTH EMULSION,0,0,13
+Q2_emar,Levobunolol 0.5%,0,0,9
+Q2_emar,Cepacol (Sore Throat Lozenge),0,1,13
+Q2_emar,Amphetamine-Dextroamphetamine XR,1,1,1
+Q2_emar,dextrose 50 % in water (D50W),1,1,1
+Q2_emar,Bumetanide Desensitization,0,0,3
+Q2_emar,Nasacort,0,0,1
+Q2_emar,Tarceva,0,0,1
+Q2_emar,Imipenem-cilastatin-relebactam (Recarbrio) *NF*,1,1,1
+Q2_emar,Potassium Bicarbonate Eff,1,1,1
+Q2_emar,Cisatracurium Besylate,0,1,15
+Q2_emar,Levemir U-100 Insulin,0,0,1
+Q2_emar,TheraTears Gel 1%,1,1,3
+Q2_emar,Guaifenesin-Dextromethorphan,1,1,10
+Q2_emar,Atenolol,0,1,9
+Q2_emar,Belladonna & Opium (16.2/30mg),1,1,1
+Q2_emar,Povidone Iodine 10%,0,0,1
+Q2_emar,CarBAMazepine,0,1,3
+Q2_emar,Racepinephrine,0,1,11
+Q2_emar,Nitroprusside Sodium,0,0,1
+Q2_emar,Estrace,0,0,1
+Q2_emar,PALIvizumab,1,1,1
+Q2_emar,Jardiance,0,0,2
+Q2_emar,Rituximab,0,0,3
+Q2_emar,Duloxetine,1,1,2
+Q2_emar,Anti-Inhibitor Coagulant Complex (FEIBA),0,0,3
+Q2_emar,enasidenib,0,1,1
+Q2_emar,Linezolid,1,0,1
+Q2_emar,Co Q-10,0,0,1
+Q2_emar,ivabradine,0,0,1
+Q2_emar,Sofosbuvir,0,0,1
+Q2_emar,Muro 128,0,0,3
+Q2_emar,Dornase Alfa,1,1,5
+Q2_emar,Hydrocortisone (Rectal) 2.5% Cream,1,1,7
+Q2_emar,Fexofenadine,1,1,7
+Q2_emar,GuaiFENesin-Dextromethorphan,0,1,8
+Q2_emar,Methylene Blue 1%,1,1,3
+Q2_emar,azithromycin,0,0,1
+Q2_emar,riTUXimab,0,0,9
+Q2_emar,Propofol,1,0,2
+Q2_emar,riTUXimab-abbs (Truxima) Desensitization,0,0,1
+Q2_emar,Pindolol,0,0,3
+Q2_emar,Symbicort (budesonide/formoterol),0,0,1
+Q2_emar,Lotemax,0,0,3
+Q2_emar,Revlimid,0,1,1
+Q2_emar,Apraclonidine 0.5%,0,0,1
+Q2_emar,tapentadol,0,0,1
+Q2_emar,Artificial Tears GEL 1%,1,0,6
+Q2_emar,Perphenazine,1,1,1
+Q2_emar,Brentuximab Vedotin,0,1,1
+Q2_emar,Zenpep,0,1,1
+Q2_emar,Sodium Fluoride 1.1% (Dental Gel),0,0,5
+Q2_emar,Fat Emulsion 20%,0,1,3
+Q2_emar,Invokana,0,0,3
+Q2_emar,Guaifenesin,1,1,6
+Q2_emar,Hydroxychloroquine/placebo,0,0,2
+Q2_emar,Cidofovir,1,1,1
+Q2_emar,Magnesium Citrate,0,1,2
+Q2_emar,Desitin,0,0,1
+Q2_emar,Volumen (Barium Sulfate 0.1% Suspension),1,1,1
+Q2_emar,Betamethasone Dipro 0.05% Augmented Gel,1,1,2
+Q2_emar,Ceftaroline,0,1,2
+Q2_emar,Methylprednisolone,0,1,1
+Q2_emar,Carteolol 1% Ophth Soln,0,0,2
+Q2_emar,PrednisoLONE Acetate 0.12% Ophth. Susp.,1,1,1
+Q2_emar,vitamin D3/placebo,0,0,2
+Q2_emar,LORazepam Oral Solution,1,1,1
+Q2_emar,TraMADOL (Ultram),1,1,4
+Q2_emar,GlipiZIDE,0,1,1
+Q2_emar,Hepatitis B Vaccine (Engerix-B 20 mcg/mL),1,1,1
+Q2_emar,terbinafine HCL,0,0,1
+Q2_emar,Bystolic,0,0,2
+Q2_emar,Trimethoprim,0,0,6
+Q2_emar,oseltamivir,0,0,1
+Q2_emar,omeprazole,0,0,3
+Q2_emar,Amikacin,0,1,5
+Q2_emar,HumuLIN N NPH U-100 Insulin,0,0,3
+Q2_emar,norethindrone acetate,0,0,2
+Q2_emar,RISperidone (Disintegrating Tablet),0,0,3
+Q2_emar,Hepatitis B Immun Globulin (HepaGam B),1,1,2
+Q2_emar,ramelteon,1,1,1
+Q2_emar,Durezol,0,1,1
+Q2_emar,Esomeprazole,0,0,4
+Q2_emar,atazanavir,0,0,1
+Q2_emar,Divalproex (EXTended Release),1,1,1
+Q2_emar,Dantrolene Sodium,1,1,1
+Q2_emar,Nicotinamide Adenine Dinuc.,0,0,1
+Q2_emar,L-carnintin study drug bolus ,0,0,1
+Q2_emar,Fomepizole,0,1,2
+Q2_emar,Vitamin E,1,0,1
+Q2_emar,Rexulti,0,0,2
+Q2_emar,ascorbic acid/thiamine/placebo ,0,0,1
+Q2_emar,Gaviscon Extra Strength,0,0,1
+Q2_emar,Bupivacaine 0.25%/ Placebo,0,0,1
+Q2_emar,Betamethasone Dipro 0.05% Augmented Gel,0,1,1
+Q2_emar,Cefpodoxime Proxetil,1,1,2
+Q2_emar,L-Carnitine study drug bolus ,1,1,1
+Q2_emar,Methotrexate Sodium P.F.,0,0,3
+Q2_emar,tenofovir alafenamide fumarate,0,1,1
+Q2_emar,VANCOMYCIN,0,0,3
+Q2_emar,Ubiquinol CoQ10 (300mg) or placebo,1,1,1
+Q2_emar,CeftriaXONE Desensitization,0,0,1
+Q2_emar,Ampicillin-Heparin Lock,0,1,1
+Q2_emar,Maalox/Lidocaine,0,1,1
+Q2_emar,GenTeal Severe,1,1,1
+Q2_emar,Propylthiouracil,1,1,1
+Q2_emar,Neomycin-Polymyxin-Dexameth Ophth. Oint,1,1,1
+Q2_emar,amantadine HCl,0,0,1
+Q2_emar,Artificial Tears Preserv. Free,1,0,1
+Q2_emar,Horizant,0,0,1
+Q2_emar,lidocaine,0,0,1
+Q2_emar,ioversol,0,0,1
+Q2_emar,CIPRO I.V.,0,0,1
+Q2_emar,Nubeqa,0,0,1
+Q2_emar,AcetaZOLamide,0,0,297
+Q2_emar,Metoclopramide,0,0,1737
+Q2_emar,CefePIME,0,0,5531
+Q2_emar,PredniSONE,0,1,151
+Q2_emar,Latanoprost 0.005% Ophth. Soln.,1,1,66
+Q2_emar,LOPERamide,0,1,35
+Q2_emar,Apixaban,0,0,1640
+Q2_emar,Metolazone,0,0,374
+Q2_emar,Multivitamins W/minerals Chewable,1,1,54
+Q2_emar,LORazepam,0,1,424
+Q2_emar,Gabapentin,0,0,4043
+Q2_emar,Baclofen,0,0,449
+Q2_emar,NULL,1,1,1742
+Q2_emar,MetOLazone,0,0,321
+Q2_emar,Fluticasone Propionate NASAL,0,0,962
+Q2_emar,Diltiazem Extended-Release,0,0,247
+Q2_emar,Meperidine,0,0,400
+Q2_emar,bisoprolol fumarate,0,0,6
+Q2_emar,Lisinopril,0,1,43
+Q2_emar,CARVedilol,1,1,31
+Q2_emar,Clindamycin,0,0,500
+Q2_emar,Ipratropium-Albuterol Neb,0,1,329
+Q2_emar,Lidocaine 1%,0,1,26
+Q2_emar,Artificial Tear Ointment,0,0,689
+Q2_emar,Fosphenytoin,0,0,174
+Q2_emar,Levalbuterol Neb,0,0,204
+Q2_emar,Fentanyl Citrate,0,1,237
+Q2_emar,Lidocaine 1% (For PICC/Midline Insertions),0,1,187
+Q2_emar,Loratadine,0,0,422
+Q2_emar,Cinacalcet,0,0,182
+Q2_emar,GuaiFENesin,0,1,69
+Q2_emar,Artificial Tear Ointment,1,1,436
+Q2_emar,Vancomycin Oral Liquid,0,0,806
+Q2_emar,Clotrimazole Cream,0,0,78
+Q2_emar,Mannitol,0,0,189
+Q2_emar,Methadone,0,0,539
+Q2_emar,Potassium Iodide,0,0,6
+Q2_emar,Epoprostenol (Veletri),0,0,164
+Q2_emar,Fluticasone-Salmeterol Diskus (250/50) ,0,1,50
+Q2_emar,Valsartan,0,0,263
+Q2_emar,Nicotine Polacrilex,0,0,25
+Q2_emar,Lidocaine,0,0,68
+Q2_emar,Clindamycin,1,1,88
+Q2_emar,Niacinamide ,0,0,5
+Q2_emar,"Lidocaine 1%/Epinephrine 1:100,000",1,1,11
+Q2_emar,Fosaprepitant,0,0,13
+Q2_emar,Pregabalin,0,0,516
+Q2_emar,Caphosol,0,1,13
+Q2_emar,Posaconazole,1,1,10
+Q2_emar,Magnesium Sulfate,1,0,6
+Q2_emar,PrednisoLONE Acetate 1% Ophth. Susp.,0,0,186
+Q2_emar,Cyanocobalamin,1,1,93
+Q2_emar,Bromocriptine Mesylate,0,1,1
+Q2_emar,Allopurinol,0,1,132
+Q2_emar,FLUoxetine,0,1,32
+Q2_emar,Phosphorus,1,1,232
+Q2_emar,Miconazole Powder 2%,0,0,623
+Q2_emar,Lactulose Enema,0,0,175
+Q2_emar,Nortriptyline,0,0,152
+Q2_emar,Desmopressin Acetate,0,1,40
+Q2_emar,Pyridostigmine Bromide,1,1,3
+Q2_emar,Calcium Chloride,0,1,33
+Q2_emar,Methadone,1,1,27
+Q2_emar,Psyllium Wafer,1,1,1
+Q2_emar,Ascorbic acid/thiamine/placebo,1,1,6
+Q2_emar,Iron Dextran (Test Dose),0,0,7
+Q2_emar,Maalox/Diphenhydramine/Lidocaine,0,1,18
+Q2_emar,TraMADol,1,1,64
+Q2_emar,Aluminum Hydroxide Suspension,0,0,55
+Q2_emar,Fluticasone-Salmeterol Diskus (100/50),1,1,11
+Q2_emar,Glucagon,0,0,43
+Q2_emar,Rosuvastatin Calcium,0,1,39
+Q2_emar,Hydrocortisone Study Drug,1,1,8
+Q2_emar,Benzonatate,1,1,61
+Q2_emar,Aspirin EC,1,1,31
+Q2_emar,Meropenem Graded Challenge,0,0,18
+Q2_emar,Isosorbide Mononitrate,0,1,10
+Q2_emar,Levofloxacin,0,1,39
+Q2_emar,Pravastatin,0,1,38
+Q2_emar,Ambisome,1,1,26
+Q2_emar,Escitalopram Oxalate,0,1,18
+Q2_emar,Carbamide Peroxide 6.5%,0,0,33
+Q2_emar,Buprenorphine-Naloxone Film (8mg-2mg),0,0,65
+Q2_emar,Esmolol,0,0,49
+Q2_emar,Psyllium Powder,0,0,92
+Q2_emar,GuaiFENesin ER,0,1,22
+Q2_emar,eslicarbazepine,0,0,2
+Q2_emar,Fluphenazine,0,0,11
+Q2_emar,Ferric Gluconate,0,1,7
+Q2_emar,OxycoDONE (Immediate Release) ,0,1,17
+Q2_emar,Influenza Vaccine High-Dose Quadrivalent,0,0,29
+Q2_emar,Tobramycin-Dexamethasone Ophth Susp,0,0,15
+Q2_emar,Lindane Shampoo,0,0,2
+Q2_emar,Oxybutynin,1,1,5
+Q2_emar,Lidocaine 2%,1,1,8
+Q2_emar,Pregabalin,1,1,21
+Q2_emar,alteplase (tissue plasminogen activator),1,1,1
+Q2_emar,Lidocaine Jelly 2%,0,0,46
+Q2_emar,zaleplon,0,0,1
+Q2_emar,Cefepime Desensitization,0,1,2
+Q2_emar,Actemra,0,0,2
+Q2_emar,NiMODipine,0,1,9
+Q2_emar,Heparin (via Anti-Xa Monitoring),0,0,33
+Q2_emar,Fish Oil (Omega 3),0,1,7
+Q2_emar,Perforomist,0,0,9
+Q2_emar,Ipratropium-Albuterol Neb,1,0,8
+Q2_emar,ClonazePAM,1,1,28
+Q2_emar,Bleomycin - TEST DOSE,0,0,1
+Q2_emar,PHENObarbital Alcohol Withdrawal Dose Taper (Days 2-7),0,1,12
+Q2_emar,abacavir-dolutegravir-lamivud,0,0,1
+Q2_emar,calcium gluconate in 0.9% NaCl,0,0,1
+Q2_emar,Sodium Chloride 0.9%  Flush,1,0,11
+Q2_emar,imipenem-cilastatin,0,0,9
+Q2_emar,tissue plasminogen activator (Alteplase),1,1,1
+Q2_emar,Emtricitabine/Tenofovir Disoproxil (Truvada),0,0,4
+Q2_emar,Immune Globulin Intravenous (Human),0,1,17
+Q2_emar,Methadone (Concentrated Oral Solution) 10 mg/1 mL,1,1,1
+Q2_emar,OSELTAMivir,0,1,11
+Q2_emar,Incruse Ellipta,0,0,16
+Q2_emar,Calcium Carbonate Suspension,1,1,8
+Q2_emar,Calcitonin Salmon,0,1,7
+Q2_emar,RisperiDONE,0,1,7
+Q2_emar,rivaroxaban,0,0,1
+Q2_emar,sodium chloride,1,1,2
+Q2_emar,Nystatin Cream,0,1,14
+Q2_emar,Sulfameth/Trimethoprim SS,0,1,28
+Q2_emar,QUEtiapine Fumarate,1,0,6
+Q2_emar,Amoxicillin-Clavulanic Acid,0,1,8
+Q2_emar,Hydrocortisone Oint 2.5%,0,0,9
+Q2_emar,PrevACID 24Hr,0,0,1
+Q2_emar,CycloSPORINE (Sandimmune),0,0,5
+Q2_emar,Hyoscyamine SO4 (Time Release),0,0,1
+Q2_emar,desvenlafaxine,0,0,1
+Q2_emar,Gentamicin,1,0,1
+Q2_emar,Mesalamine,0,1,4
+Q2_emar,mometasone-formoterol,1,1,1
+Q2_emar,Nitroglycerin SL,1,1,14
+Q2_emar,Tacrolimus,1,1,37
+Q2_emar,rOPINIRole,1,1,9
+Q2_emar,NexIUM,0,0,6
+Q2_emar,Guaifenesin,0,1,6
+Q2_emar,Dronedarone,0,1,1
+Q2_emar,Midodrine 20 mg TID,0,0,1
+Q2_emar,Buprenorphine HCl,0,0,1
+Q2_emar,Paroxetine,0,1,1
+Q2_emar,Neomycin Sulfate,0,0,2
+Q2_emar,Albumin 5% (25g / 500mL),0,1,15
+Q2_emar,CefTAZidime-Avibactam (Avycaz),0,1,1
+Q2_emar,Sugammadex,1,1,10
+Q2_emar,Eptifibatide,0,0,3
+Q2_emar,Cefepime Graded Challenge,1,1,5
+Q2_emar,Trileptal,0,0,2
+Q2_emar,Calcitonin Salmon (Test Dose),1,1,2
+Q2_emar,atorvastatin 40 mg or placebo capsule,0,0,2
+Q2_emar,cefiderocoL,0,0,1
+Q2_emar,Pramipexole,1,1,9
+Q2_emar,Leronlimab/placebo 700/0 MG,0,0,4
+Q2_emar,PALIperidone ER,0,0,10
+Q2_emar,Nadolol,0,1,2
+Q2_emar,Metoprolol Tartrate,1,0,18
+Q2_emar,flecainide,0,0,1
+Q2_emar,Acetominophen/placebo,1,1,2
+Q2_emar,Divalproex Sod. Sprinkles,1,1,6
+Q2_emar,aMILoride,0,0,12
+Q2_emar,IV APAP/Placebo,0,0,7
+Q2_emar,metoprolol tartrate,0,0,2
+Q2_emar,Caffeine-Sodium Benzoate,0,0,3
+Q2_emar,Magnesium Oxide,1,0,1
+Q2_emar,Dextromethorphan Polistirex,0,1,2
+Q2_emar,irbesartan,0,0,26
+Q2_emar,Vitamin E,0,1,5
+Q2_emar,Neutra-Phos,1,0,10
+Q2_emar,Ampicillin Desensitization,0,0,4
+Q2_emar,Ascorbic Acid/Thiamine/Placebo Study Med,1,1,5
+Q2_emar,Ketoconazole Shampoo,0,0,6
+Q2_emar,benzoyl peroxide,0,0,1
+Q2_emar,Epoprostenol (Veletri),1,0,4
+Q2_emar,L-carnitine study bolus,1,1,1
+Q2_emar,Furosemide in 0.9% Sodium Chloride,1,1,10
+Q2_emar,Zidovudine,0,1,1
+Q2_emar,VinCRIStine (Oncovin),0,0,5
+Q2_emar,rivastigmine tartrate,0,0,5
+Q2_emar,Orabase w/ Benzocaine Paste,0,0,3
+Q2_emar,Chloroquine,0,0,1
+Q2_emar,IPRATROPIUM BROMIDE NEB,1,1,1
+Q2_emar,Hemabate,0,0,3
+Q2_emar,Creatine Monohydrate,1,1,1
+Q2_emar,SulfADIAZINE,0,0,5
+Q2_emar,Ketorolac 0.5% Ophth Soln,1,1,6
+Q2_emar,RiTONAvir,0,1,1
+Q2_emar,GenTeal Tears Moderate,1,1,1
+Q2_emar,Brinzolamide 1% Ophth (*NF* ),1,1,1
+Q2_emar,tissue plasminogen activator (alteplase),1,1,1
+Q2_emar,NMB Study Control (0.9% NaCl 100 mL) Study Med,1,1,1
+Q2_emar,mometasone,0,0,4
+Q2_emar,Metoclopramide,1,0,4
+Q2_emar,riTUXimab-abbs (Truxima),0,0,2
+Q2_emar,Furosemide-Heart Failure,0,0,4
+Q2_emar,Isavuconazonium Sulfate,1,1,5
+Q2_emar,CalcidoL,0,0,1
+Q2_emar,Nafcillin Graded Challenge,1,1,1
+Q2_emar,Combigan,0,0,5
+Q2_emar,Eptifibatide,1,1,1
+Q2_emar,pitavastatin calcium,0,0,2
+Q2_emar,Mesalamine Enema,0,0,2
+Q2_emar,Fidaxomicin,0,0,5
+Q2_emar,Amoxicillin-Clavulanate Susp.,1,1,4
+Q2_emar,Glycerin Supps,0,1,2
+Q2_emar,Advair HFA,0,0,1
+Q2_emar,Pentoxifylline,1,1,2
+Q2_emar,levETIRAcetam,0,1,1
+Q2_emar,remdesivir,0,0,4
+Q2_emar,Influenza Vaccine Quadrivalent,1,1,3
+Q2_emar,Larin 1.5/30 (21),0,0,1
+Q2_emar,HYDROcodone-Acetaminophen (5mg-325mg),0,1,3
+Q2_emar,fidaxomicin,0,0,2
+Q2_emar,DICYCLOMine,1,0,1
+Q2_emar,Ropivacaine 0.5%,0,0,2
+Q2_emar,Methocarbamol,1,1,1
+Q2_emar,Acetaminophen/Plcebo,0,0,1
+Q2_emar,Bengay Cream,0,1,2
+Q2_emar,nimodipine/placebo,0,0,1
+Q2_emar,Sirolimus,1,1,2
+Q2_emar,Besivance,0,0,1
+Q2_emar,Methyldopa,0,0,4
+Q2_emar,Trifluoperazine HCl,0,0,4
+Q2_emar,Heparin Desensitization,0,0,2
+Q2_emar,Fluocinolone Acetonide 0.025% Cream,0,0,3
+Q2_emar,Felodipine,1,1,1
+Q2_emar,Ketoconazole,0,0,1
+Q2_emar,Zosyn,0,0,1
+Q2_emar,Leronlimab/placebo ,0,0,1
+Q2_emar,Lokelma,0,0,1
+Q2_emar,CoQ10 (300mg) or placebo,0,1,1
+Q2_emar,patiromer calcium sorbitex,0,0,1
+Q2_emar,RISperidone Oral Solution,0,0,1
+Q2_emar,niacinamide or placebo,0,0,2
+Q2_emar,tocilizumab,0,1,1
+Q2_emar,Takhzyro,0,0,1
+Q2_emar,paromomycin,1,1,1
+Q2_emar,estropipate,0,0,1
+Q2_emar,Apri,0,0,1
+Q2_emar,zinc oxide,0,0,1
+Q2_emar,Lantus U-100 Insulin,0,0,3
+Q2_emar,Diazepam,1,0,1
+Q2_emar,atomoxetine,0,0,1
+Q2_emar,Indapamide,0,0,3
+Q2_emar,OLANZapine,1,0,2
+Q2_emar,tamsuLOSIN,0,0,2
+Q2_emar,Probiotic Acidophilus,0,0,1
+Q2_emar,Baricitinib,0,0,1
+Q2_emar,Latuda,1,1,1
+Q2_emar,Nuplazid,1,1,1
+Q2_emar,Amphetamine-Dextroamphetamine,0,1,1
+Q2_emar,midodrine,1,1,1
+Q2_emar,Tigecycline,0,1,1
+Q2_emar,Clorazepate Dipotassium,0,0,1
+Q2_emar,Systane Complete,1,1,1
+Q2_emar,Amikacin - Dosing by pharmacy,1,1,1
+Q2_emar,Lomedia 24 Fe,0,0,1
+Q2_emar,Epoprostenol,0,0,1
+Q2_emar,MetFORMIN (Glucophage),0,1,1
+Q2_emar,Ethanol 70% Catheter DWELL (Tunneled Access Line),1,1,1
+Q2_emar,Elidel,0,0,1
+Q2_emar,RisperiDONE (Disintegrating Tablet),1,1,1
+Q2_emar,Trelegy Ellipta,0,1,1
+Q2_emar,biotin,0,0,1
+Q2_emar,foscarnet,0,0,1
+Q2_emar,Amiodarone,0,0,2517
+Q2_emar,Tiotropium Bromide,0,0,991
+Q2_emar,Lorazepam,0,0,330
+Q2_emar,Aspirin,0,0,10780
+Q2_emar,Albuterol Inhaler,0,0,2081
+Q2_emar,HYDROmorphone (Dilaudid),0,0,8238
+Q2_emar,Racepinephrine,0,0,229
+Q2_emar,Atenolol,0,0,485
+Q2_emar,Lidocaine Jelly 2% (Glydo),0,1,117
+Q2_emar,Neutra-Phos,0,0,5152
+Q2_emar,amLODIPine,0,0,3398
+Q2_emar,Cepacol (Sore Throat Lozenge),0,0,485
+Q2_emar,GuaiFENesin-Dextromethorphan,0,0,130
+Q2_emar,Piperacillin-Tazobactam,0,0,3371
+Q2_emar,Calcium Gluconate,0,0,5848
+Q2_emar,Senna,0,1,470
+Q2_emar,Artificial Tears GEL 1%,1,1,324
+Q2_emar,CefTRIAXone,0,1,331
+Q2_emar,Atropine Sulfate,0,0,71
+Q2_emar,MethylPHENIDATE (Ritalin),0,1,9
+Q2_emar,Propofol,0,0,455
+Q2_emar,Pantoprazole,1,1,1167
+Q2_emar,HydrALAzine,0,1,14
+Q2_emar,Topiramate (Topamax),0,0,302
+Q2_emar,ALPRAZolam,0,0,397
+Q2_emar,Dolutegravir,0,0,187
+Q2_emar,Venlafaxine XR,0,0,451
+Q2_emar,Multivitamins W/minerals Chewable,0,0,277
+Q2_emar,Cisatracurium Besylate,0,0,203
+Q2_emar,Midazolam,1,1,502
+Q2_emar,Propofol,1,1,92
+Q2_emar,Linezolid,1,1,149
+Q2_emar,Bumetanide,1,1,96
+Q2_emar,Gastroview (Diatrizoate Meglumine & Sodium),1,1,53
+Q2_emar,Omeprazole,0,1,164
+Q2_emar,GlipiZIDE,0,0,102
+Q2_emar,Sulfameth/Trimethoprim DS,0,1,26
+Q2_emar,Fenofibrate,0,0,272
+Q2_emar,PredniSONE,1,1,200
+Q2_emar,Artificial Tears Preserv. Free,1,1,94
+Q2_emar,Multiple Vitamins Liq.,0,0,25
+Q2_emar,Ascorbic Acid,0,1,80
+Q2_emar,Diphenoxylate-Atropine,0,1,4
+Q2_emar,Venlafaxine,0,0,206
+Q2_emar,Nicotine Lozenge,0,0,36
+Q2_emar,Artificial Tears Preserv. Free,0,0,286
+Q2_emar,Methimazole,0,0,78
+Q2_emar,Calcium Carbonate Suspension,0,0,39
+Q2_emar,OLANZapine,0,1,61
+Q2_emar,SMOFlipid 20% Emulsion,0,0,7
+Q2_emar,gilteritinib,0,0,1
+Q2_emar,Amikacin,0,0,20
+Q2_emar,CarBAMazepine,0,0,93
+Q2_emar,Nitrofurantoin (Macrodantin),0,0,29
+Q2_emar,Sodium CITRATE 4%,0,1,46
+Q2_emar,Haemophilus B Conj. Vaccine,0,0,8
+Q2_emar,LamiVUDine Oral Soln.,0,0,5
+Q2_emar,Symbicort,0,0,41
+Q2_emar,NiCARdipine,0,0,14
+Q2_emar,Ceftaroline,0,0,26
+Q2_emar,Calcium Acetate,0,1,12
+Q2_emar,FluvoxAMINE Maleate,0,0,2
+Q2_emar,Simvastatin,0,1,41
+Q2_emar,Dapsone,0,1,4
+Q2_emar,Eplerenone,0,1,1
+Q2_emar,APAP/Placebo,0,0,58
+Q2_emar,Methylprednisolone,0,0,67
+Q2_emar,GuaiFENesin ER,1,0,2
+Q2_emar,Glucose Gel,0,0,108
+Q2_emar,Amoxicillin-Clavulanate Susp.,0,0,24
+Q2_emar,Prochlorperazine,1,1,38
+Q2_emar,Fomepizole,0,0,24
+Q2_emar,Magnesium Citrate,0,0,149
+Q2_emar,Dexamethasone Oral Soln (0.1mg/1mL),0,1,3
+Q2_emar,Potassium Citrate,0,1,8
+Q2_emar,Suvorexant,0,0,12
+Q2_emar,"Lidocaine 2%/Epi 1:100,000",1,1,5
+Q2_emar,Lactulose,1,0,13
+Q2_emar,Ampicillin-Sulbactam,0,1,40
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, tunneled access line, PA )",1,1,19
+Q2_emar,bromfenac,0,0,2
+Q2_emar,Pred Forte,0,1,1
+Q2_emar,Protamine Sulfate,1,0,1
+Q2_emar,Zolpidem Tartrate,0,1,8
+Q2_emar,Atropine Sulfate 1%,1,1,15
+Q2_emar,PHENObarbital,0,1,13
+Q2_emar,Alteplase (External Ventricular Drain),1,1,10
+Q2_emar,Nystatin Oral Suspension,0,1,62
+Q2_emar,Readi-Cat 2 (Barium Sulfate 2% Suspension),0,1,28
+Q2_emar,Ipratropium Bromide MDI,1,0,9
+Q2_emar,CeFAZolin Graded Challenge,0,1,3
+Q2_emar,CloniDINE,0,1,1
+Q2_emar,Phytonadione,1,0,13
+Q2_emar,Guaifenesin-CODEINE Phosphate,0,1,11
+Q2_emar,Alteplase 1mg/5mL ( Clearance ie. Indwelling port ),1,1,8
+Q2_emar,Maalox/Lidocaine,0,0,20
+Q2_emar,CefTRIAXone,1,0,11
+Q2_emar,Clotrimazole,1,1,4
+Q2_emar,Silver Nitrate Applicator,1,1,3
+Q2_emar,Propranolol,0,1,7
+Q2_emar,LeVETiracetam,0,1,10
+Q2_emar,thiamine,0,0,7
+Q2_emar,Calcipotriene 0.005% Cream,0,1,1
+Q2_emar,Aminocaproic Acid,1,0,1
+Q2_emar,Filgrastim,1,1,10
+Q2_emar,thiamine or placebo,1,1,7
+Q2_emar,Liothyronine Sodium,0,1,2
+Q2_emar,Baclofen,1,1,17
+Q2_emar,Fluconazole,1,0,1
+Q2_emar,Fat Emulsion 20%,0,0,7
+Q2_emar,Triamcinolone Acetonide 0.1% Cream,1,1,12
+Q2_emar,Levobunolol 0.5%,0,1,2
+Q2_emar,Sertraline,1,0,4
+Q2_emar,Pyridostigmine Bromide Syrup,0,0,8
+Q2_emar,Furosemide,1,0,33
+Q2_emar,Dexamethasone Oral Soln (0.1mg/1mL),1,1,2
+Q2_emar,melatonin,0,0,3
+Q2_emar,Domeboro,0,0,4
+Q2_emar,Ethambutol HCl,0,1,3
+Q2_emar,LaMIVudine,0,1,9
+Q2_emar,Probenecid,1,1,1
+Q2_emar,Romiplostim,1,1,5
+Q2_emar,Vitamin B Complex,1,1,10
+Q2_emar,Glycerin Supps,1,1,2
+Q2_emar,Ezetimibe,0,1,9
+Q2_emar,QuiNINE Sulfate,0,1,1
+Q2_emar,suvorexant,0,0,8
+Q2_emar,Fentanyl Citrate,1,0,12
+Q2_emar,Ramelteon,1,0,6
+Q2_emar,Bictegrav-Emtricit-Tenofov Ala,1,1,3
+Q2_emar,Amphetamine-Dextroamphetamine XR,0,0,23
+Q2_emar,Pulmicort Flexhaler,0,0,7
+Q2_emar,NovoLIN R Regular U-100 Insuln,0,0,1
+Q2_emar,l-carnitine drug infusion,0,0,1
+Q2_emar,Diazepam - CIWA protocol,1,1,2
+Q2_emar,benztropine,0,0,1
+Q2_emar,Revlimid,0,0,1
+Q2_emar,Sodium Zirconium Cyclosilicate,0,1,6
+Q2_emar,Potassium Chloride (Powder),1,0,5
+Q2_emar,umeclidinium-vilanterol,0,1,2
+Q2_emar,Desonide 0.05% Cream,0,1,1
+Q2_emar,Cefpodoxime Proxetil,1,0,2
+Q2_emar,UroxaTRAL,0,0,1
+Q2_emar,metaxalone,0,0,1
+Q2_emar,Enalapril Maleate,1,1,1
+Q2_emar,ketotifen fumarate,1,1,1
+Q2_emar,Digoxin Immune Fab,0,0,4
+Q2_emar,Procainamide,0,0,4
+Q2_emar,CP/Placebo Lactated Ringers w/ MVI,0,0,1
+Q2_emar,umeclidinium-vilanteroL,0,0,2
+Q2_emar,Tirosint,0,0,1
+Q2_emar,Apraclonidine 0.5%,0,1,1
+Q2_emar,Lidocaine 2%,0,1,6
+Q2_emar,Prasugrel,1,1,2
+Q2_emar,Psyllium Wafer,0,1,1
+Q2_emar,Emtricitabine Oral Solution,1,1,1
+Q2_emar,bisacodyl,0,0,1
+Q2_emar,Triamterene,0,0,3
+Q2_emar,LamoTRIgine Rectal Susp,0,0,2
+Q2_emar,PhenAZOPYRIDine,0,0,8
+Q2_emar,thiamine or placebo,0,0,5
+Q2_emar,Januvia,0,0,5
+Q2_emar,Ampicillin-Heparin Lock,0,0,2
+Q2_emar,Digoxin,1,0,2
+Q2_emar,Eplerenone,1,1,2
+Q2_emar,Durezol,0,0,1
+Q2_emar,nebivolol,0,0,4
+Q2_emar,INV-CoQ10 300mg or Placebo,1,1,1
+Q2_emar,Timolol Maleate 0.25%,1,1,4
+Q2_emar,Acetylcysteine (IV),0,0,2
+Q2_emar,Romiplostim,0,1,2
+Q2_emar,Factor 7a recombinant ,1,1,9
+Q2_emar,Ferumoxytol,0,0,1
+Q2_emar,Acarbose,0,0,2
+Q2_emar,Diltiazem,1,0,3
+Q2_emar,levothyroxine,1,1,1
+Q2_emar,Thiamine or placebo,0,1,3
+Q2_emar,Guaifenesin,1,0,1
+Q2_emar,Bacitracin Ophthalmic Oint,0,1,1
+Q2_emar,SulfaSALAzine DR,0,0,4
+Q2_emar,Camila,0,0,1
+Q2_emar,enzalutamide,0,0,5
+Q2_emar,LeVETiracetam Oral Solution,0,1,1
+Q2_emar,Uptravi,0,0,2
+Q2_emar,Fat Emulsion 20% (INTRAlipid),1,1,2
+Q2_emar,castor oil,0,0,1
+Q2_emar,Hyaluronidase,1,1,2
+Q2_emar,desvenlafaxine succinate,0,0,1
+Q2_emar,Zenpep,0,0,2
+Q2_emar,CYCLOSPORINE 0.05% OPHTH EMULSION,1,1,2
+Q2_emar,Artificial Tears (petro/min),1,1,1
+Q2_emar,InFLIXimab,0,0,1
+Q2_emar,Magnesium Sulfate (OB),0,1,1
+Q2_emar,NovoLOG U-100 Insulin aspart,1,1,1
+Q2_emar,Vitamin E,1,1,2
+Q2_emar,Tudorza Pressair,0,0,2
+Q2_emar,Lidocaine 5% Ointment,0,1,8
+Q2_emar,letermovir,1,1,1
+Q2_emar,Lithium Oral Solution,0,1,1
+Q2_emar,Hemorrhoidal Suppository,1,1,2
+Q2_emar,Acetic Acid 3% (For Topical Irrigation),0,0,1
+Q2_emar,CYCLOSPORINE 0.05% OPHTH EMULSION,0,1,2
+Q2_emar,Hydrocortisone ,0,0,1
+Q2_emar,Thiamine of placebo,0,1,1
+Q2_emar,Mesalamine,1,1,1
+Q2_emar,HumuLIN N,0,0,3
+Q2_emar,Aubagio,0,1,1
+Q2_emar,Humate-P,0,0,1
+Q2_emar,Lorazepam,1,0,1
+Q2_emar,Guaifenesin-Dextromethorphan,1,0,1
+Q2_emar,bosentan,1,1,1
+Q2_emar,Humulin-R Insulin (U-500),0,0,1
+Q2_emar,Hydrocortisone Cream 2.5%,1,1,2
+Q2_emar,INV-Phage PB,0,0,1
+Q2_emar,Betamethasone Dipro 0.05% Augmented Gel,0,0,3
+Q2_emar,Bupivacaine 0.1%,0,0,1
+Q2_emar,gleevec,0,0,1
+Q2_emar,Alphagan P,0,0,1
+Q2_emar,Nubeqa,0,1,1
+Q2_emar,MetroNIDAZOLE Graded Challenge,1,1,1
+Q2_emar,Jakafi (Ruxolitinib),0,0,1
+Q2_emar,Sumatriptan Succinate,1,1,1
+Q2_emar,Baricitinib (EUA),0,1,1
+Q2_emar,Rifabutin,1,1,1
+Q2_emar,Methylnaltrexone,1,0,1
+Q2_emar,Probiotic,0,0,1
+Q2_emar,axitinib,1,1,2
+Q2_emar,pentosan polysulfate sodium,0,0,1
+Q2_emar,ketamine,0,0,1
+Q2_emar,Penicillin G Potassium,1,1,1
+Q2_emar,riTUXimab,0,1,2
+Q2_emar,Bleomycin,0,0,1
+Q2_emar,cenobamate,0,0,1
+Q2_emar,Zidovudine,1,1,1
+Q2_emar,Nimodipine 30mg/placebo,0,0,1
+Q2_emar,Carbidopa-Levodopa (10-100),1,1,1
+Q2_emar,Nuedexta,0,0,1
+Q2_emar,LaMICtal XR,0,1,1
+Q2_emar,Nimodipine 60mg/placebo Study Med,0,1,1
+Q2_emar,cloNIDine HCl,0,0,1
+Q2_emar,Buprenorphine-Naloxone Film (4mg-1mg),0,1,1
+Q2_emar,Meropenem,0,1,157
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology) ,0,0,4541
+Q2_emar,Diltiazem,0,1,84
+Q2_emar,Diazepam,0,0,888
+Q2_emar,Ampicillin,0,0,440
+Q2_emar,Insulin,1,1,1407
+Q2_emar,Insulin,0,1,621
+Q2_emar,Niacin SR,0,0,12
+Q2_emar,CeFAZolin,0,0,7144
+Q2_emar,Calcium Gluconate sliding scale (Critical Care-Ionized calcium),0,0,2398
+Q2_emar,MetroNIDAZOLE,1,1,894
+Q2_emar,Docusate Sodium,1,1,616
+Q2_emar,Thiamine,0,0,4717
+Q2_emar,Acetaminophen,1,1,1149
+Q2_emar,Ranitidine,0,0,3270
+Q2_emar,Flecainide Acetate,0,0,63
+Q2_emar,Atorvastatin,0,1,354
+Q2_emar,ClonazePAM,0,0,763
+Q2_emar,Lidocaine Viscous 2%,1,1,14
+Q2_emar,Acyclovir,0,0,1228
+Q2_emar,Amiodarone,1,1,506
+Q2_emar,Mirtazapine,0,0,817
+Q2_emar,Sodium Chloride Nasal,0,0,445
+Q2_emar,Tamsulosin,0,0,2082
+Q2_emar,Magnesium Sulfate,0,1,161
+Q2_emar,Losartan Potassium,0,0,1184
+Q2_emar,Gentamicin,0,0,156
+Q2_emar,netarsudiL,0,0,3
+Q2_emar,HydrOXYzine,0,0,369
+Q2_emar,CloNIDine,0,0,902
+Q2_emar,Hydroxychloroquine/placebo,1,1,1
+Q2_emar,Protamine Sulfate,0,0,348
+Q2_emar,Micafungin,1,1,332
+Q2_emar,Carvedilol,0,0,602
+Q2_emar,Hydrocortisone Na Succ.,0,1,153
+Q2_emar,Clopidogrel,0,1,95
+Q2_emar,Potassium Chloride,1,1,629
+Q2_emar,Acetaminophen/Placebo,0,0,88
+Q2_emar,CycloSPORINE (Neoral) MODIFIED,0,0,128
+Q2_emar,rifAXIMin,0,0,417
+Q2_emar,Digoxin,0,1,58
+Q2_emar,Gastroview (Diatrizoate Meglumine & Sodium),0,0,240
+Q2_emar,Pravastatin,1,1,55
+Q2_emar,RisperiDONE Long Acting Injection,0,0,2
+Q2_emar,Pyridoxine,0,0,156
+Q2_emar,Doxycycline Hyclate,1,1,136
+Q2_emar,Cilostazol,0,0,97
+Q2_emar,Sodium Chloride,0,1,24
+Q2_emar,CloNIDine,1,1,30
+Q2_emar,Minoxidil,0,0,23
+Q2_emar,Ondansetron ODT,0,0,175
+Q2_emar,Pramipexole,0,0,149
+Q2_emar,Carbidopa-Levodopa (25-100) ODT,0,1,4
+Q2_emar,Mexiletine,0,0,60
+Q2_emar,Rasburicase,0,1,12
+Q2_emar,Ambrisentan,1,1,2
+Q2_emar,Niacinamide,0,0,100
+Q2_emar,Tranexamic Acid,0,0,134
+Q2_emar,Betamethasone Dipro 0.05% Oint,0,0,27
+Q2_emar,candesartan,0,0,3
+Q2_emar,BuPROPion (Sustained Release),1,1,9
+Q2_emar,Sumatriptan Succinate,0,0,42
+Q2_emar,Belladonna & Opium (16.2/30mg),0,1,1
+Q2_emar,Mycophenolate Mofetil,0,1,27
+Q2_emar,Rifampin,0,0,33
+Q2_emar,Captopril,1,1,40
+Q2_emar,Neomycin/Polymyxin/Dexameth Ophth Susp.,1,1,2
+Q2_emar,Cytarabine,0,0,7
+Q2_emar,Dorzolamide 2%/Timolol 0.5% Ophth.,0,1,14
+Q2_emar,Bicitra,0,0,16
+Q2_emar,Potassium Phosphate Replacement (Oncology),1,1,18
+Q2_emar,arginine (L-arginine),0,0,3
+Q2_emar,Lidocaine Jelly 2% (Urojet),0,1,36
+Q2_emar,Escitalopram Oxalate,1,1,33
+Q2_emar,LevOCARNitine,1,1,2
+Q2_emar,Nystatin,0,1,11
+Q2_emar,Labetalol,1,0,1
+Q2_emar,Alendronate Sodium,0,0,29
+Q2_emar,LOPERamide Suspension,0,0,20
+Q2_emar,leflunomide,0,0,9
+Q2_emar,Quinapril,0,0,23
+Q2_emar,Cobicistat,0,0,17
+Q2_emar,Tobramycin Inhalation Soln,0,0,14
+Q2_emar,Thiamine,1,0,16
+Q2_emar,Dipyridamole-Aspirin,0,0,27
+Q2_emar,Ursodiol,0,1,36
+Q2_emar,Pazeo,0,0,1
+Q2_emar,Pamidronate,1,1,7
+Q2_emar,Lidocaine,1,1,46
+Q2_emar,Carbidopa-Levodopa (25-100),0,1,13
+Q2_emar,Enoxaparin (Treatment),1,1,17
+Q2_emar,Ketorolac,0,1,21
+Q2_emar,Meropenem Desensitization,0,0,3
+Q2_emar,Glycopyrrolate,1,0,15
+Q2_emar,Atropine Sulfate 1%,0,0,14
+Q2_emar,Phenytoin (Suspension),1,1,8
+Q2_emar,Methylene Blue 0.5%,0,0,25
+Q2_emar,Tetanus-DiphTox-Acellular Pertuss (Adacel),0,0,29
+Q2_emar,Sodium Chloride 3% Inhalation Soln,1,0,2
+Q2_emar,Ibrutinib,0,0,2
+Q2_emar,Aspirin EC,0,1,22
+Q2_emar,Heparin Dwell (1000 Units/mL),1,0,2
+Q2_emar,PNEUMOcoccal 13-valent conjugate vaccine,0,0,13
+Q2_emar,docusate sodium,0,0,3
+Q2_emar,Neomycin-Polymyxin-HC Otic Susp,0,0,10
+Q2_emar,Meningococcal Group B Vaccine (Trumenba),0,0,6
+Q2_emar,Methotrexate,0,0,19
+Q2_emar,selexipag,0,0,6
+Q2_emar,Tropicamide 1 %,0,0,4
+Q2_emar,nimodipine 60mg/ placebo,0,1,1
+Q2_emar,Tolvaptan,1,1,6
+Q2_emar,Minocycline,1,1,4
+Q2_emar,0.9% NACL 100mL Bag,0,0,1
+Q2_emar,TRIAzolam,0,0,10
+Q2_emar,Posaconazole Suspension,0,0,11
+Q2_emar,Erythromycin Ethylsuccinate Suspension,0,0,16
+Q2_emar,Calcium Replacement (Oncology),0,1,2
+Q2_emar,Ertapenem Sodium,0,0,16
+Q2_emar,Albumin 25%,1,0,2
+Q2_emar,Lumigan 0.03% Ophth  (*NF*),0,0,2
+Q2_emar,Heparin (Hemodialysis),0,1,5
+Q2_emar,acitretin,0,0,2
+Q2_emar,Cromolyn Sodium (Nasal Inhalation),0,0,8
+Q2_emar,Nitroglycerin Ointment 0.2%,0,1,1
+Q2_emar,CoQ10 300mg or placebo,0,1,1
+Q2_emar,Cyclobenzaprine,1,1,9
+Q2_emar,Biotene Moisturizing Mouth,0,0,1
+Q2_emar,Moxifloxacin 0.5% Ophth (*NF*),0,0,3
+Q2_emar,Golytely,0,1,2
+Q2_emar,Lanthanum,1,1,11
+Q2_emar,Metoprolol Succinate XL,1,1,24
+Q2_emar,Nystatin Oral Suspension,1,0,2
+Q2_emar,Morphine Sulfate (Oral Solution) 2 mg/mL,0,1,12
+Q2_emar,Ursodiol,1,1,40
+Q2_emar,multivitamin with minerals,0,0,2
+Q2_emar,Clarithromycin,1,1,3
+Q2_emar,Sodium Polystyrene Sulfonate,0,1,12
+Q2_emar,Lantus,0,0,9
+Q2_emar,Amikacin Inhalation,0,0,1
+Q2_emar,Ceftolozane-Tazobactam,1,1,6
+Q2_emar,Levoxyl,0,0,1
+Q2_emar,Ranexa,0,0,5
+Q2_emar,AMOXicillin Oral Susp.,0,0,4
+Q2_emar,Amoxicillin,1,1,4
+Q2_emar,COVID-19 Vaccine,0,0,4
+Q2_emar,tiZANidine,1,1,3
+Q2_emar,temozolomide,0,0,2
+Q2_emar,Thiamine or placebo,1,1,11
+Q2_emar,insulin glargine,0,0,2
+Q2_emar,OLANZapine (Disintegrating Tablet),1,0,2
+Q2_emar,Dronabinol,1,1,6
+Q2_emar,Fexofenadine,0,1,3
+Q2_emar,Propafenone HCl,0,0,9
+Q2_emar,Leucovorin Calcium,0,1,3
+Q2_emar,GenTeal Severe,0,0,1
+Q2_emar,permethrin,0,0,4
+Q2_emar,Tolvaptan,0,0,8
+Q2_emar,Ivermectin,0,1,3
+Q2_emar,LamiVUDine,1,1,4
+Q2_emar,Kaletra,1,1,1
+Q2_emar,Albuterol Inhaler,1,0,9
+Q2_emar,Collagenase Ointment,0,1,10
+Q2_emar,Iohexol 240 (Omnipaque 240),1,0,1
+Q2_emar,Zinc Sulfate,0,1,28
+Q2_emar,Vemlidy,0,0,1
+Q2_emar,Zoledronic Acid (Zometa),0,0,4
+Q2_emar,Calciferol,0,0,1
+Q2_emar,Methadone (Oral Solution)  2 mg/1 mL,1,1,3
+Q2_emar,MetRONIDAZOLE (FLagyl),1,0,2
+Q2_emar,Clotrimazole Cream,1,1,5
+Q2_emar,Thrombin,1,0,1
+Q2_emar,Cannabidiol (CBD) (Epidiolex) Oral Soln,0,0,1
+Q2_emar,Microgestin 1.5/30 (21),0,0,2
+Q2_emar,Vitamin D3/ placebo,0,0,2
+Q2_emar,fingolimod,0,0,1
+Q2_emar,Nystatin-Triamcinolone Cream,1,1,2
+Q2_emar,Benicar,0,0,2
+Q2_emar,Hydrocortisone Cream 1%,0,1,2
+Q2_emar,vortioxetine,0,0,4
+Q2_emar,Penicillin G Benzathine,1,1,1
+Q2_emar,Influenza Vaccine High-Dose Quadrivalent,1,1,2
+Q2_emar,Ibuprofen,1,1,6
+Q2_emar,Sildenafil,1,0,5
+Q2_emar,BuPROPion XL (Once Daily),0,1,8
+Q2_emar,Ampicillin Graded Challenge,1,1,2
+Q2_emar,prednisoLONE,1,1,1
+Q2_emar,Lisinopril,1,0,1
+Q2_emar,Insulin Glargine  (CVICU Protocol),0,1,5
+Q2_emar,Cyclobenzaprine,0,1,2
+Q2_emar,NIFEdipine (Extended Release),1,1,4
+Q2_emar,Ascorbic acid and thiamine,0,1,1
+Q2_emar,Empagliflozin,0,1,1
+Q2_emar,Loxapine Succinate,0,0,2
+Q2_emar,CoQ10 (300 mg) or placebo,1,1,2
+Q2_emar,lansoprazole,0,0,1
+Q2_emar,tobramycin-dexamethasone,0,0,1
+Q2_emar,Daptomycin-Heparin Lock,0,0,3
+Q2_emar,Rifabutin,0,1,1
+Q2_emar,CoQ10 (300 mg) or Placebo,0,0,1
+Q2_emar,Hydrocortisone study med,0,0,1
+Q2_emar,ValGANCIclovir,0,1,4
+Q2_emar,Naloxone,0,1,3
+Q2_emar,Vigamox 0.5% Ophth (*NF* ),0,0,1
+Q2_emar,TXA127/Placebo,0,0,1
+Q2_emar,dabrafenib,0,0,1
+Q2_emar,Vesicare,0,0,2
+Q2_emar,Budesonide Nasal Inhaler  (*NF*),0,0,1
+Q2_emar,Felbatol,0,0,2
+Q2_emar,Velphoro,0,0,1
+Q2_emar,Sodium Chloride 0.9% (Sterile),0,0,1
+Q2_emar,Furosemide Desensitization,0,0,1
+Q2_emar,CELECOXIB,0,0,2
+Q2_emar,Yupelri,0,0,2
+Q2_emar,CycloSPORINE (Neoral) MODIFIED,1,1,7
+Q2_emar,CRRT,0,0,3
+Q2_emar,Lidocaine 1% P.F.,1,1,1
+Q2_emar,Enoxaparin,0,0,2
+Q2_emar,teriflunomide,0,0,1
+Q2_emar,Denosumab (Xgeva),1,1,1
+Q2_emar,Vyndamax,0,0,1
+Q2_emar,tissue plasminogen activator (Activase),1,1,1
+Q2_emar,DOPamine,1,1,1
+Q2_emar,Methotrexate,1,1,1
+Q2_emar,Gentamicin Intraventricular,1,1,1
+Q2_emar,Calcium Replacement (Oncology),1,1,1
+Q2_emar,Valproate Sodium,1,0,1
+Q2_emar,Vigamox,0,0,4
+Q2_emar,VinCRIStine (Oncovin),1,1,2
+Q2_emar,PreserVision AREDS,0,1,1
+Q2_emar,dextran 40 10 % in 0.9 % NaCl,0,0,1
+Q2_emar,CefTRIAXone Graded Challenge,0,1,1
+Q2_emar,Hydrocortisone Study Drug ,0,0,1
+Q2_emar,Xanax XR,0,0,1
+Q2_emar,Bupivacaine 0.50%-Epinephrine,0,0,1
+Q2_emar,Iodine Strong (Lugols),0,0,1
+Q2_emar,Vecuronium Bromide,0,1,1
+Q2_emar,ammonium lactate,0,1,1
+Q2_emar,loteprednol etabonate,0,0,1
+Q2_emar,Exemestane,0,1,2
+Q2_emar,Savaysa,0,1,1
+Q2_emar,roflumilast,0,0,3
+Q2_emar,Fleet Enema (Saline),1,0,1
+Q2_emar,tenofovir alafenamide,1,1,1
+Q2_emar,acetaminophen/ Placebo Study Drug,0,0,1
+Q2_emar,propranoloL,0,0,1
+Q2_emar,0.9% NACL 100mL Bag (esmolol study placebo),0,0,1
+Q2_emar,Ascorbic Acid/Placebo,0,0,1
+Q2_emar,COQ10 300mg or placebo,0,0,1
+Q2_emar,Foscarnet Sodium,1,1,1
+Q2_emar,metoprolol tartrate,1,1,1
+Q2_emar,tetrabenazine,0,0,1
+Q2_emar,Rosuvastatin Calcium,1,0,1
+Q2_emar,Oxycodone-Acetaminophen (5mg-325mg),1,1,1
+Q2_emar,Levofloxacin,1,0,1
+Q2_emar,Niacin SR,1,1,1
+Q2_emar,Heparin,0,0,20636
+Q2_emar,Warfarin,0,0,2218
+Q2_emar,Glycopyrrolate,0,0,653
+Q2_emar,Chlorhexidine Gluconate 0.12% Oral Rinse,0,0,6164
+Q2_emar,Famotidine,1,1,1039
+Q2_emar,Acetaminophen IV,1,1,1212
+Q2_emar,Neostigmine (CVICU Reversal Protocol),0,0,557
+Q2_emar,FoLIC Acid,1,1,548
+Q2_emar,Ipratropium Bromide MDI,0,0,976
+Q2_emar,Rivaroxaban,0,0,404
+Q2_emar,LevETIRAcetam,1,1,434
+Q2_emar,Aluminum-Magnesium Hydrox.-Simethicone,0,0,360
+Q2_emar,Albuterol 0.083% Neb Soln,0,0,3145
+Q2_emar,Sodium Bicarbonate,1,1,834
+Q2_emar,Atorvastatin,1,1,598
+Q2_emar,Neostigmine,0,0,334
+Q2_emar,Piperacillin-Tazobactam,1,1,730
+Q2_emar,Potassium Phosphate,1,1,312
+Q2_emar,Fluticasone-Salmeterol Diskus (250/50) ,1,1,50
+Q2_emar,LevETIRAcetam Oral Solution,0,0,160
+Q2_emar,OxyCODONE (Immediate Release),0,1,268
+Q2_emar,Calcium Gluconate Replacement (Oncology),0,0,84
+Q2_emar,Gentamicin 0.3% Ophth. Ointment,1,1,1
+Q2_emar,Erythromycin 0.5% Ophth Oint,0,0,304
+Q2_emar,Cyclophosphamide,0,0,3
+Q2_emar,Spironolactone,0,0,629
+Q2_emar,Glycopyrrolate (CVICU Reversal Protocol),0,0,549
+Q2_emar,Bumetanide,0,1,23
+Q2_emar,Aztreonam,0,0,101
+Q2_emar,Multivitamins,0,1,208
+Q2_emar,Succinylcholine,1,1,55
+Q2_emar,Isavuconazonium Sulfate,0,0,24
+Q2_emar,Tobramycin,1,1,146
+Q2_emar,Prenatal Vitamins,0,0,55
+Q2_emar,Magnesium Sulfate Replacement (Critical Care and Oncology),0,1,597
+Q2_emar,Lithium Carbonate,1,1,3
+Q2_emar,Erythromycin,0,0,68
+Q2_emar,Ferrous Sulfate,0,0,1014
+Q2_emar,Heparin (CRRT Machine Priming),0,0,317
+Q2_emar,Alteplase 1mg/1mL ( Clearance ie. Temp TLCL ),1,1,41
+Q2_emar,Esomeprazole sodium,0,0,237
+Q2_emar,Midazolam,0,1,97
+Q2_emar,Aminocaproic Acid,0,0,32
+Q2_emar,Octreotide Acetate,0,1,52
+Q2_emar,Filgrastim,0,0,41
+Q2_emar,Dexamethasone,1,1,199
+Q2_emar,TraMADOL (Ultram),0,0,138
+Q2_emar,Pilocarpine 4%,0,0,19
+Q2_emar,Mouth Care Oral Rinse,1,1,151
+Q2_emar,Promethazine,0,0,223
+Q2_emar,EPINEPHrine,1,1,26
+Q2_emar,Triamcinolone Acetonide 0.025% Ointment,0,0,11
+Q2_emar,Ciprofloxacin HCl,1,1,36
+Q2_emar,Tiotropium Bromide,1,1,51
+Q2_emar,MethylPREDNISolone Sodium Succ,1,1,328
+Q2_emar,Nafcillin,0,0,139
+Q2_emar,OLANZapine (Disintegrating Tablet),0,1,59
+Q2_emar,Cephalexin,0,0,170
+Q2_emar,Artificial Tears,0,1,61
+Q2_emar,Losartan Potassium,1,1,28
+Q2_emar,MoviPrep,0,0,206
+Q2_emar,Vitamin B Complex,0,0,139
+Q2_emar,Linezolid,0,1,58
+Q2_emar,Hydrocortisone Cream 2.5%,0,0,36
+Q2_emar,Dexamethasone,0,1,118
+Q2_emar,Ferrous Sulfate (Liquid),1,1,5
+Q2_emar,Prograf,0,0,2
+Q2_emar,Lanthanum,0,0,40
+Q2_emar,Rasagiline,0,0,30
+Q2_emar,Riboflavin (Vitamin B-2),0,0,16
+Q2_emar,Metolazone,1,1,69
+Q2_emar,Chlorpheniramine-Hydrocodone,0,0,5
+Q2_emar,Hydroxychloroquine Sulfate,1,1,23
+Q2_emar,Foscarnet Sodium,0,0,1
+Q2_emar,Alteplase 1mg/Flush Volume ( Dialysis/Pheresis Catheters ),1,1,60
+Q2_emar,Octreotide Acetate,1,1,83
+Q2_emar,BuPROPion XL (Once Daily),1,1,4
+Q2_emar,PHENObarbital,1,1,40
+Q2_emar,Tuberculin Protein,0,0,67
+Q2_emar,Alteplase 1mg/1mL ( Clearance ie. Temp TLCL ),0,1,18
+Q2_emar,Meclizine,0,1,4
+Q2_emar,Fleet Enema (Mineral Oil),0,1,10
+Q2_emar,TiCAGRELOR,1,1,41
+Q2_emar,Latanoprost 0.005% Ophth. Soln.,0,1,51
+Q2_emar,Vancomycin Enema,1,1,26
+Q2_emar,Heparin,1,0,31
+Q2_emar,Iron Dextran,0,0,5
+Q2_emar,Sodium Chloride Nasal,1,1,45
+Q2_emar,Sucralfate Enema,0,1,2
+Q2_emar,Clobetasol Propionate 0.05% Ointment,0,0,54
+Q2_emar,Cosyntropin,0,1,24
+Q2_emar,Ranitidine,1,1,70
+Q2_emar,Budesonide,1,1,17
+Q2_emar,Vancomycin Enema,0,0,50
+Q2_emar,Hydrocortisone,0,1,6
+Q2_emar,Ruxolitinib,0,0,10
+Q2_emar,Ondansetron,1,0,9
+Q2_emar,Carbidopa-Levodopa (25-250) ODT,0,1,2
+Q2_emar,Tocilizumab,0,1,6
+Q2_emar,Azathioprine,1,1,1
+Q2_emar,Cosopt (PF),0,0,2
+Q2_emar,Dornase Alfa,0,0,30
+Q2_emar,teriparatide,0,0,1
+Q2_emar,Chlorothiazide,1,0,13
+Q2_emar,Piroxicam,0,0,1
+Q2_emar,Selenium Sulfide,0,0,1
+Q2_emar,Bacitracin-Polymyxin Ointment,0,0,5
+Q2_emar,Hydrocortisone Cream 1%,1,1,5
+Q2_emar,Povidone Iodine 1/4 Strength,0,0,3
+Q2_emar,EPINEPHrine,0,0,17
+Q2_emar,DiphenhydrAMINE,0,1,47
+Q2_emar,Heparin Dwell (1000 Units/mL),0,1,55
+Q2_emar,OxyCODONE (Immediate Release),1,0,3
+Q2_emar,Oxymetazoline,0,1,17
+Q2_emar,Naproxen,0,0,34
+Q2_emar,Estradiol,0,0,8
+Q2_emar,Isosorbide Dinitrate,1,0,1
+Q2_emar,Vancomycin (2 mg/mL)-Heparin (10 units/mL) Lock *STANDARD*,1,1,1
+Q2_emar,moxifloxacin,0,0,5
+Q2_emar,ferrous fumarate,0,0,1
+Q2_emar,Lithium Carbonate SR (Lithobid),0,0,16
+Q2_emar,Entecavir Oral Solution,0,0,16
+Q2_emar,Azopt,0,1,1
+Q2_emar,Thiamine Study Drug ,1,1,1
+Q2_emar,DULoxetine,0,1,18
+Q2_emar,Mupirocin Ointment 2%,1,0,2
+Q2_emar,Nitroglycerin,0,1,1
+Q2_emar,Simethicone,1,1,60
+Q2_emar,Carbidopa-Levodopa CR (50-200),0,1,1
+Q2_emar,Vecuronium Bromide,1,1,8
+Q2_emar,Miconazole Nitrate Vag Cream 2%,1,1,4
+Q2_emar,Cyproheptadine,0,0,12
+Q2_emar,Aspirin Desensitization (AERD),0,0,10
+Q2_emar,brimonidine-timolol,0,0,1
+Q2_emar,CISplatin,0,0,4
+Q2_emar,riluzole,0,0,5
+Q2_emar,Carbidopa-Levodopa (25-250),0,0,20
+Q2_emar,Terbinafine 1% Cream,0,0,9
+Q2_emar,Citalopram,1,1,40
+Q2_emar,Phenylephrine 2.5 % Ophth Soln,0,0,3
+Q2_emar,Tigecycline,1,1,7
+Q2_emar,Domeboro,1,1,1
+Q2_emar,Emtricitabine-Tenofovir alafen (200mg-25mg) *DESCOVY*,0,1,5
+Q2_emar,Nystatin,1,1,16
+Q2_emar,Atazanavir,0,0,5
+Q2_emar,Clobetasol Propionate 0.05% Ointment,1,1,4
+Q2_emar,Gentamicin 0.3% Ophth. Soln,0,0,10
+Q2_emar,Nimodipine,0,1,1
+Q2_emar,Fluticasone-Salmeterol Diskus (500/50) ,1,1,11
+Q2_emar,AzaTHIOprine,0,1,4
+Q2_emar,cariprazine,0,0,1
+Q2_emar,Myrbetriq,0,0,3
+Q2_emar,felbamate,0,0,4
+Q2_emar,Ethanol 70% Catheter DWELL (Tunneled Access Line),0,0,5
+Q2_emar,Ceftolozane-Tazobactam,0,1,1
+Q2_emar,Carvedilol,1,1,12
+Q2_emar,treprostinil diolamine,1,1,1
+Q2_emar,Aztreonam,1,1,15
+Q2_emar,dantrolene,0,1,1
+Q2_emar,PENTobarbital Sodium,1,1,4
+Q2_emar,Cefepime Graded Challenge,0,1,2
+Q2_emar,Acetaminophen-Caff-Butalbital,0,1,2
+Q2_emar,"Vancomycin in Sodium Citrate 4%, ",0,1,1
+Q2_emar,ValACYclovir,0,1,7
+Q2_emar,0.9% NaCl - 100 mL Bag (esmolol study control),0,0,1
+Q2_emar,LaMIVudine-Zidovudine (Combivir),1,1,1
+Q2_emar,Nimodipine 60mg/placebo,0,0,1
+Q2_emar,Phenytoin Sodium (IV),0,1,10
+Q2_emar,Aluminum Hydroxide Suspension,1,1,8
+Q2_emar,Flumazenil,0,1,1
+Q2_emar,Nitrofurantoin (Macrodantin),1,1,4
+Q2_emar,Bicitra,1,1,1
+Q2_emar,Acetaminophen-Caff-Butalbital,1,1,5
+Q2_emar,Leronlimab,0,0,1
+Q2_emar,Methimazole,1,1,6
+Q2_emar,Brivaracetam,0,0,6
+Q2_emar,Larotrectinib,0,0,1
+Q2_emar,Cyclosporine 0.05% Ophth Emulsion,0,0,13
+Q2_emar,Ampicillin-Heparin Lock,1,1,2
+Q2_emar,Salmeterol Xinafoate Diskus (50 mcg),1,1,5
+Q2_emar,Orthopedic Solution,0,0,2
+Q2_emar,Sodium Phosphate,1,0,8
+Q2_emar,OxyCODONE SR (OxyCONTIN),0,1,8
+Q2_emar,Apixaban,1,0,2
+Q2_emar,Calcitriol,1,0,2
+Q2_emar,Donnatal,0,0,2
+Q2_emar,dalfampridine,1,1,1
+Q2_emar,APAP/PLACEBO,0,0,3
+Q2_emar,Betamethasone Dipro 0.05% Lot.,0,0,4
+Q2_emar,EPINEPHrine 1 mg/1 mL,0,0,2
+Q2_emar,Betamethasone Valerate 0.1% Ointment,0,0,4
+Q2_emar,Epidiolex,0,0,2
+Q2_emar,LeVETiracetam Oral Solution,1,1,2
+Q2_emar,Bacitracin Ointment,0,1,4
+Q2_emar,Prevalite,0,0,1
+Q2_emar,copper gluconate,0,1,1
+Q2_emar,WP Thyroid,0,0,2
+Q2_emar,Promethazine,1,1,4
+Q2_emar,"MENINGOcoccal Conj Vaccine (Menactra,Menveo)",0,0,7
+Q2_emar,Calcium Gluconate Replacement (Oncology),1,0,1
+Q2_emar,Trametinib *NF*,1,1,1
+Q2_emar,tadalafil (antihypertensive),0,0,2
+Q2_emar,Clozapine,1,1,4
+Q2_emar,Tobramycin-Dexamethasone Ophth Susp,1,1,2
+Q2_emar,Buivacaine 0.25%,0,0,1
+Q2_emar,Thiamine study drug,1,1,3
+Q2_emar,NIFEdipine (Immediate Release),1,1,1
+Q2_emar,LevoCARNitine,1,1,2
+Q2_emar,Miconazole Nitrate Vag Cream 2%,0,1,1
+Q2_emar,Nadolol,1,0,1
+Q2_emar,Potassium Citrate,1,0,2
+Q2_emar,Peridex,0,0,1
+Q2_emar,lamoTRIgine,0,0,3
+Q2_emar,Tobramycin 2.5 mg/mL in Sodium Citrate 4%,1,1,2
+Q2_emar,Cosyntropin,1,0,2
+Q2_emar,Maxzide-25mg,0,0,1
+Q2_emar,OxyCODONE SR (OxyCONTIN),1,1,5
+Q2_emar,Refresh Plus,0,1,1
+Q2_emar,emtricitabine-tenofovir alafen,0,0,1
+Q2_emar,Verapamil SR,0,1,3
+Q2_emar,alteplase,1,1,2
+Q2_emar,levothyroxine,0,0,1
+Q2_emar,Daptomycin,1,0,1
+Q2_emar,sacubitril-valsartan,0,0,1
+Q2_emar,Isordil Titradose,0,0,1
+Q2_emar,Nirmatrelvir-Ritonavir (EUA),0,0,1
+Q2_emar,Mannitol,1,0,1
+Q2_emar,Albuterol,0,0,3
+Q2_emar,Divalproex Sod. Sprinkles,0,1,5
+Q2_emar,FeroSuL,0,0,1
+Q2_emar,glatiramer,0,0,2
+Q2_emar,Combivent Respimat,0,0,1
+Q2_emar,Sarilumab 400 mg/placebo,1,1,1
+Q2_emar,L-carnitine study drug infusion,0,0,1
+Q2_emar,Emtricitabine-Tenofovir (Truvada),0,1,1
+Q2_emar,milk thistle,0,0,1
+Q2_emar,Epclusa,0,0,3
+Q2_emar,lipase-protease-amylase,0,0,1
+Q2_emar,Carboprost Tromethamine,0,0,1
+Q2_emar,letrozole,0,0,1
+Q2_emar,LaMIVudine Oral Soln.,1,1,1
+Q2_emar,Prazosin,0,1,2
+Q2_emar,Fosfomycin Tromethamine,0,1,1
+Q2_emar,Tetracaine 0.5% Ophth Soln,0,0,2
+Q2_emar,Perphenazine,0,1,1
+Q2_emar,Multiple Vitamins Liq.,1,0,1
+Q2_emar,Lialda,0,0,3
+Q2_emar,Adenosine,1,0,1
+Q2_emar,Jolessa,0,0,1
+Q2_emar,Betamethasone Valerate 0.1% Cream,0,1,1
+Q2_emar,Anti-Inhibitor Coagulant Complex (FEIBA),1,1,1
+Q2_emar,Selzentry,0,0,1
+Q2_emar,Potassium Iodide,1,1,1
+Q2_emar,Trelegy Ellipta,1,1,1
+Q2_emar,Junel FE 1/20 (28),0,0,1
+Q2_emar,Lidocaine 4%,0,1,1
+Q2_emar,Hydrocortisone Study drug,1,1,1
+Q2_emar,NovoLIN R Regular U-100 Insuln,1,1,1
+Q2_emar,NYSTATIN ORAL SUSPENSION,0,0,1
+Q2_emar,Acetaminophen/PLacebo,0,0,1
+Q2_emar,NMB Study Control (0.9% NaCl 100mL) Study Med,0,0,1
+Q2_emar,Acetaminophen w/Codeine Elixir,1,1,1
+Q2_emar,Lioresal,0,0,1
+Q2_emar,Torsemide,1,0,1
+Q2_emar,PACLItaxel (TaxOL),0,1,1
+Q2_emar,Magnesium Sulfate Replacement (Critical Care and Oncology),0,0,11410
+Q2_emar,OLANZapine (Disintegrating Tablet),0,0,708
+Q2_emar,FoLIC Acid,1,0,13
+Q2_emar,DiphenhydrAMINE,0,0,1325
+Q2_emar,Octreotide Acetate,0,0,205
+Q2_emar,OxyCODONE (Immediate Release),0,0,10951
+Q2_emar,Emtricitabine-Tenofovir (Truvada),0,0,99
+Q2_emar,Acetaminophen-Caff-Butalbital,0,0,773
+Q2_emar,Dexamethasone,0,0,2688
+Q2_emar,Multivitamins,0,0,3350
+Q2_emar,Ipratropium Bromide MDI,0,1,67
+Q2_emar,Bumetanide,0,0,284
+Q2_emar,Artificial Tears,0,0,865
+Q2_emar,Albuterol 0.083% Neb Soln,0,1,145
+Q2_emar,Spironolactone,0,1,21
+Q2_emar,Warfarin,0,1,59
+Q2_emar,Oxymetazoline,0,0,230
+Q2_emar,Heparin,0,1,926
+Q2_emar,Hydrocortisone,0,0,140
+Q2_emar,DULoxetine,0,0,396
+Q2_emar,Latanoprost 0.005% Ophth. Soln.,0,0,896
+Q2_emar,Heparin (CRRT Machine Priming),0,1,40
+Q2_emar,Chlorhexidine Gluconate 0.12% Oral Rinse,0,1,453
+Q2_emar,Niacinamide or placebo,0,0,6
+Q2_emar,Heparin,1,1,1641
+Q2_emar,Verapamil SR,0,0,112
+Q2_emar,Ondansetron,1,1,397
+Q2_emar,Mupirocin Ointment 2%,1,1,46
+Q2_emar,Apixaban,1,1,64
+Q2_emar,Cosyntropin,1,1,41
+Q2_emar,Alteplase 1mg/1mL ( Clearance ie. Temp TLCL ),0,0,185
+Q2_emar,Fleet Enema (Mineral Oil),0,0,125
+Q2_emar,Midazolam,0,0,1446
+Q2_emar,Bacitracin Ointment,0,0,213
+Q2_emar,Heparin Dwell (1000 Units/mL),0,0,708
+Q2_emar,Morphine Sulfate (Concentrated Oral Solution) 20 mg/mL,1,1,11
+Q2_emar,Daptomycin,1,1,62
+Q2_emar,Phenytoin Sodium (IV),0,0,111
+Q2_emar,Cosyntropin,0,0,195
+Q2_emar,Chlorothiazide,1,1,288
+Q2_emar,OxyCODONE (Immediate Release),1,1,306
+Q2_emar,Nadolol,1,1,3
+Q2_emar,Prazosin,0,0,98
+Q2_emar,Ferrous Sulfate,0,1,44
+Q2_emar,AndroGel,0,0,3
+Q2_emar,Sodium Phosphate,1,1,449
+Q2_emar,Ascorbic acid/thiamine/placebo,0,0,34
+Q2_emar,Tocilizumab,0,0,79
+Q2_emar,Linezolid,0,0,441
+Q2_emar,Fluocinonide 0.05% Ointment,0,0,5
+Q2_emar,Octreotide Acetate,1,0,4
+Q2_emar,AzaTHIOprine,0,0,86
+Q2_emar,macitentan,0,0,10
+Q2_emar,Clarithromycin,0,0,18
+Q2_emar,Divalproex (DELayed Release),1,1,3
+Q2_emar,Emtricitabine-Tenofovir alafen (200mg-25mg) *DESCOVY*,0,0,98
+Q2_emar,Mannitol,1,1,128
+Q2_emar,Clindamycin 1% Solution,0,0,18
+Q2_emar,Ceftolozane-Tazobactam,0,0,23
+Q2_emar,Estrogens Conjugated,0,0,17
+Q2_emar,Glycopyrrolate,0,1,175
+Q2_emar,Torsemide,1,1,20
+Q2_emar,Ambrisentan,0,0,12
+Q2_emar,Esomeprazole sodium,0,1,10
+Q2_emar,OxyCODONE SR (OxyCONTIN),0,0,123
+Q2_emar,CycloPHOSPHAMIDE,0,0,20
+Q2_emar,Calcitriol,1,1,25
+Q2_emar,Piperacillin-Tazobactam,1,0,15
+Q2_emar,Etravirine,0,0,28
+Q2_emar,Acetaminophen IV,1,0,20
+Q2_emar,Perphenazine,0,0,31
+Q2_emar,Magnesium Citrate,1,1,16
+Q2_emar,Vasopressin,0,0,3
+Q2_emar,Adenosine,1,1,37
+Q2_emar,brinzolamide-brimonidine,0,0,4
+Q2_emar,Cefepime Graded Challenge,0,0,25
+Q2_emar,Meclizine,0,0,82
+Q2_emar,CycloPHOSPHAMIDE,1,1,5
+Q2_emar,Berinert,0,0,8
+Q2_emar,LACOSamide - STAT Dose,1,1,11
+Q2_emar,Isosorbide Dinitrate,1,1,64
+Q2_emar,Aluminum-Magnesium Hydrox.-Simethicone,0,1,11
+Q2_emar,Erythromycin 0.5% Ophth Oint,0,1,21
+Q2_emar,Sodium Zirconium Cyclosilicate,1,1,11
+Q2_emar,Atorvastatin,1,0,13
+Q2_emar,Calquence (Acalabrutinib),0,0,1
+Q2_emar,Refresh Liquigel,0,0,1
+Q2_emar,Vitamin D3/placebo,0,0,14
+Q2_emar,Vitamin B Complex,0,1,9
+Q2_emar,Divalproex Sod. Sprinkles,0,0,54
+Q2_emar,Buprenorphine-Naloxone Film (4mg-1mg),1,1,1
+Q2_emar,Silver Sulfadiazine 1% Cream,1,1,2
+Q2_emar,PHENYLephrine,0,0,11
+Q2_emar,Acetylcysteine (IV),1,1,1
+Q2_emar,ValACYclovir,0,0,79
+Q2_emar,Famotidine,1,0,17
+Q2_emar,Nimodipine,0,0,29
+Q2_emar,LevETIRAcetam,1,0,8
+Q2_emar,Breo Ellipta,0,0,12
+Q2_emar,Firdapse,0,0,1
+Q2_emar,RITUXimab,0,0,3
+Q2_emar,Fosfomycin Tromethamine,0,0,14
+Q2_emar,Potassium Citrate,1,1,16
+Q2_emar,Physostigmine Salicylate,0,0,5
+Q2_emar,dutasteride,0,0,5
+Q2_emar,Aztreonam,0,1,12
+Q2_emar,Ascorbic acid/Thiamine/Placebo Study Med,1,1,1
+Q2_emar,Tresiba FlexTouch U-200,0,0,1
+Q2_emar,Lidocaine 4%,0,0,13
+Q2_emar,Cephalexin,0,1,3
+Q2_emar,lenvatinib,0,0,1
+Q2_emar,Miconazole Nitrate Vag Cream 2%,0,0,33
+Q2_emar,cabozantinib,0,0,3
+Q2_emar,Albuterol 0.5%,0,0,19
+Q2_emar,Penicillamine,0,0,4
+Q2_emar,Carbidopa-Levodopa CR (50-200),0,0,14
+Q2_emar,Amitriptyline,1,1,7
+Q2_emar,Calcium Gluconate Replacement (Oncology),1,1,10
+Q2_emar,Multiple Vitamins Liq.,1,1,9
+Q2_emar,Rivaroxaban,0,1,8
+Q2_emar,Nafcillin,0,1,19
+Q2_emar,Colchicine,1,1,10
+Q2_emar,Carbidopa-Levodopa (25-250),0,1,1
+Q2_emar,abiraterone,0,0,2
+Q2_emar,Betamethasone Valerate 0.1% Cream,0,0,7
+Q2_emar,LevETIRAcetam Oral Solution,0,1,12
+Q2_emar,Azopt,0,0,10
+Q2_emar,dexAMETHasone,0,0,1
+Q2_emar,Tetanus-Diphtheria Tox (DECAVAC),0,0,1
+Q2_emar,MoviPrep,0,1,7
+Q2_emar,Potassium Phosphate,1,0,8
+Q2_emar,MethylPREDNISolone Sodium Succ,1,0,3
+Q2_emar,Nitroglycerin,0,0,9
+Q2_emar,Fycompa,0,0,4
+Q2_emar,Myrbetriq,0,1,1
+Q2_emar,Lithium Carbonate SR (Lithobid),0,1,1
+Q2_emar,Mupirocin Nasal Ointment 2%,1,1,1
+Q2_emar,Ibuprofen Suspension,1,1,6
+Q2_emar,PHENObarbital,1,0,1
+Q2_emar,NYSTATIN ORAL SUSPENSION,0,1,1
+Q2_emar,Rasagiline,0,1,3
+Q2_emar,Biotene Oralbalance (glycerin),0,0,2
+Q2_emar,Benzoyl Peroxide Gel 10%,0,0,5
+Q2_emar,pilocarpine HCl,0,0,9
+Q2_emar,Sucralfate Enema,0,0,5
+Q2_emar,aclidinium bromide,0,0,1
+Q2_emar,Axitinib *NF*,1,1,1
+Q2_emar,Neostigmine,0,1,6
+Q2_emar,Dextromethorphan-Guaifenesin (Sugar Free),1,1,2
+Q2_emar,Leucovorin Calcium,1,1,1
+Q2_emar,Filgrastim,0,1,9
+Q2_emar,Dabigatran Etexilate,1,1,2
+Q2_emar,Danazol,0,0,3
+Q2_emar,riociguat,1,1,1
+Q2_emar,Xiidra,0,0,1
+Q2_emar,Famotidine (IV),0,0,6
+Q2_emar,Lanthanum,0,1,3
+Q2_emar,Vancomycin Enema,0,1,5
+Q2_emar,olopatadine,0,0,3
+Q2_emar,Darunavir,1,1,3
+Q2_emar,Tobramycin,1,0,1
+Q2_emar,TiCAGRELOR,1,0,3
+Q2_emar,Ocuvite,0,0,2
+Q2_emar,Decitabine,0,0,3
+Q2_emar,Bacitracin Ophthalmic Oint,1,1,2
+Q2_emar,Shingrix (PF),0,0,1
+Q2_emar,DOPamine,0,0,1
+Q2_emar,Simethicone,1,0,1
+Q2_emar,CarBAMazepine Suspension,1,1,1
+Q2_emar,Ropinirole,0,0,5
+Q2_emar,urea,0,1,1
+Q2_emar,Erythromycin,0,1,2
+Q2_emar,Dexamethasone Ophthalmic Susp 0.1%,1,1,5
+Q2_emar,Glucagon,1,1,7
+Q2_emar,MetroNIDAZOLE Gel 0.75%-Vaginal,0,0,1
+Q2_emar,Naproxen,0,1,1
+Q2_emar,Promethazine,0,1,4
+Q2_emar,"Vancomycin in Sodium Citrate 4%, ",0,0,2
+Q2_emar,Sodium Bicarbonate,1,0,6
+Q2_emar,Magnesium Sulfate (OB),1,1,1
+Q2_emar,EPINEPHrine 1 mg/1 mL,0,1,1
+Q2_emar,Morphine Sulfate For Inhalation,0,0,3
+Q2_emar,darolutamide,0,0,2
+Q2_emar,Aminocaproic Acid,0,1,7
+Q2_emar,Mouth Care Oral Rinse,1,0,4
+Q2_emar,ASENapine,0,0,4
+Q2_emar,Budesonide,1,0,2
+Q2_emar,Rufinamide,0,0,6
+Q2_emar,budesonide-formoterol,0,0,2
+Q2_emar,Tiotropium Bromide,1,0,3
+Q2_emar,Lithium Carbonate CR (Eskalith),0,0,5
+Q2_emar,Cyclosporine 0.05% Ophth Emulsion,0,1,3
+Q2_emar,PrimiDONE,1,1,4
+Q2_emar,sotalol,0,0,2
+Q2_emar,Flumazenil,0,0,7
+Q2_emar,Concerta,0,0,1
+Q2_emar,Vitamin A,1,1,6
+Q2_emar,Aluminum Hydroxide Suspension,1,0,1
+Q2_emar,EPINEPHrine,0,1,3
+Q2_emar,Ruxolitinib,0,1,1
+Q2_emar,Medium Chain Triglycerides,0,0,1
+Q2_emar,potassium chloride,0,0,1
+Q2_emar,Calcium Gluconate Replacement (Oncology),0,1,4
+Q2_emar,binimetinib,0,0,1
+Q2_emar,Fluticasone-Salmeterol Diskus (250/50) ,1,0,1
+Q2_emar,Norethindrone-Estradiol,0,0,2
+Q2_emar,Adcirca,0,0,3
+Q2_emar,Copaxone,0,0,2
+Q2_emar,Metolazone,1,0,3
+Q2_emar,Gentamicin 0.3% Ophth. Ointment,1,0,1
+Q2_emar,Botulinum Toxin Type A,0,0,2
+Q2_emar,CoQ10 (300 mg) or placebo,0,0,3
+Q2_emar,LaMICtaL,0,0,1
+Q2_emar,carisoprodol,0,0,4
+Q2_emar,Thyroid,1,1,2
+Q2_emar,Atazanavir,0,1,1
+Q2_emar,calcitonin (salmon),0,0,1
+Q2_emar,Genvoya,1,1,2
+Q2_emar,Bacitracin,0,0,1
+Q2_emar,midodrine,0,0,1
+Q2_emar,Carbidopa-Levodopa (25-250) ODT,0,0,3
+Q2_emar,Dornase Alfa,0,1,5
+Q2_emar,NexIUM 24HR,0,0,1
+Q2_emar,Clobetasol Propionate 0.05% Ointment,0,1,2
+Q2_emar,acyclovir,0,0,1
+Q2_emar,citrulline,0,0,1
+Q2_emar,Refresh Plus,0,0,1
+Q2_emar,Albuterol,0,1,1
+Q2_emar,Isavuconazonium Sulfate,0,1,1
+Q2_emar,Sodium Chloride Nasal,1,0,1
+Q2_emar,Ascorbic Acid/placebo,1,1,1
+Q2_emar,Bupivcaine 0.25%,0,0,1
+Q2_emar,riociguat,0,0,2
+Q2_emar,Tuberculin Protein,0,1,1
+Q2_emar,Alteplase 1mg/1mL ( Clearance ie. Temp TLCL ),1,0,1
+Q2_emar,crizotinib,0,0,1
+Q2_emar,Linezolid Desensitization,0,0,1
+Q2_emar,PENTObarbital Sodium,1,1,1
+Q2_emar,Niacinamide/Placebo,0,0,1
+Q2_emar,COVID-19 Vaccine (Moderna),0,0,1
+Q2_emar,Ephedrine Sulfate (Pressors),0,0,1
+Q2_emar,Lactic Acid 12% Lotion,1,1,1
+Q2_emar,Dexamethasone,1,0,1
+Q2_emar,Hepatitis B Vaccine,1,1,1
+Q2_emar,Riboflavin (Vitamin B-2),0,1,1
+Q2_emar,Amphotericin B,0,1,1
+Q2_emar,moxifloxacin,0,1,1
+Q2_emar,teriparatide,1,1,1
+Q2_emar,Mesna,1,1,1
+Q2_emar,Vitamin D3 / placebo ,0,0,1
+Q2_emar,Ciprofloxacin HCl,1,0,2
+Q2_emar,praziquantel,0,0,1
+Q2_emar,CloniDINE,1,1,1
+Q2_emar,TraMADOL (Ultram),0,1,1
+Q2_emar,Ranitidine,1,0,1
+Q2_emar,Terbinafine 1% Cream,0,1,1
+Q2_emar,umeclidinium,0,0,1
+Q2_emar,lidocaine-epinephrine (PF),0,0,1
+Q2_emar,Promacta,1,1,1
+Q2_emar,valproic acid (as sodium salt),0,0,1
+Q2_emar,Micardis HCT,0,0,1
+Q2_emar,Nature-Throid,0,0,1
+Q2_emar,Albumin 5% (12.5g / 250mL),0,0,2733
+Q2_emar,Cyanocobalamin,0,0,1179
+Q2_emar,Midodrine,0,0,1294
+Q2_emar,Simethicone,0,0,860
+Q2_emar,Enoxaparin (Prophylaxis),0,0,1099
+Q2_emar,Chlorhexidine Gluconate 0.12% Oral Rinse,1,1,1672
+Q2_emar,Finasteride,0,0,877
+Q2_emar,Lactulose,0,0,2115
+Q2_emar,Metoprolol Succinate XL,0,0,1448
+Q2_emar,Sodium Bicarbonate,0,1,187
+Q2_emar,OXcarbazepine,0,0,198
+Q2_emar,Readi-Cat 2 (Barium Sulfate 2% Suspension),1,1,95
+Q2_emar,Omeprazole,1,1,152
+Q2_emar,Ketorolac 0.5% Ophth Soln,0,0,37
+Q2_emar,Polyethylene Glycol,0,1,314
+Q2_emar,Budesonide,0,0,207
+Q2_emar,BuPROPion,0,0,255
+Q2_emar,Epoetin Alfa,0,0,199
+Q2_emar,Pamidronate,0,0,11
+Q2_emar,Phenytoin (Suspension),0,0,54
+Q2_emar,Vitamin A,0,1,6
+Q2_emar,HYDROmorphone (Dilaudid),1,1,783
+Q2_emar,Enoxaparin Sodium,0,0,758
+Q2_emar,ARIPiprazole,0,0,278
+Q2_emar,Ondansetron,0,1,259
+Q2_emar,Sodium Chloride 0.9 % INHALED (*IND*),0,0,1
+Q2_emar,Enalapril Maleate,0,0,64
+Q2_emar,Verapamil,1,1,8
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology) ,1,0,8
+Q2_emar,Carbidopa-Levodopa (25-100),1,1,21
+Q2_emar,Lidocaine 1% (For PICC/Midline Insertions),1,1,263
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, tunneled access line )",1,1,21
+Q2_emar,Methotrexate Sodium P.F.,1,1,1
+Q2_emar,BuPROPion (Sustained Release),0,1,11
+Q2_emar,Sildenafil,0,1,4
+Q2_emar,Acetylcysteine 20%,1,1,115
+Q2_emar,Azithromycin,0,1,204
+Q2_emar,mometasone-formoterol,0,0,2
+Q2_emar,Ondansetron ODT,1,1,8
+Q2_emar,Insulin (Regular) for Hyperkalemia,0,1,93
+Q2_emar,MetRONIDAZOLE (FLagyl),0,0,275
+Q2_emar,Multivitamins W/minerals Liquid,0,0,139
+Q2_emar,HydrALAZINE,0,1,169
+Q2_emar,TraMADol,0,1,57
+Q2_emar,Entecavir,0,1,9
+Q2_emar,Carbamazepine Suspension,0,0,4
+Q2_emar,NIFEdipine CR,0,0,66
+Q2_emar,OxycoDONE Liquid,1,1,38
+Q2_emar,Triamcinolone Acetonide 0.1% Cream,0,0,87
+Q2_emar,Acetylcysteine 20%,0,1,61
+Q2_emar,Aspirin,1,0,17
+Q2_emar,Tranexamic Acid,1,1,60
+Q2_emar,Hydrocortisone study drug,1,1,6
+Q2_emar,Doxazosin,1,1,13
+Q2_emar,Mexiletine,1,1,12
+Q2_emar,Vitamin D,1,0,10
+Q2_emar,Potassium Chloride (Powder),0,1,74
+Q2_emar,Sulfamethoxazole-Trimethoprim,0,1,14
+Q2_emar,Heparin INTRAPERITONEAL,0,0,3
+Q2_emar,Ferric Gluconate,1,1,17
+Q2_emar,Levalbuterol Neb,1,1,26
+Q2_emar,Aquaphor Ointment,1,0,1
+Q2_emar,BRIVAracetam,1,1,3
+Q2_emar,Ciprofloxacin 0.3% Ophth Soln,0,1,11
+Q2_emar,Ferrous Sulfate (Liquid),0,0,59
+Q2_emar,Gentamicin 0.1% Cream,0,0,23
+Q2_emar,Fluticasone Propionate 110mcg,0,1,40
+Q2_emar,Bethanechol,0,0,20
+Q2_emar,Guaifenesin-CODEINE Phosphate,1,1,8
+Q2_emar,Ketamine,0,0,60
+Q2_emar,Theophylline SR,0,0,7
+Q2_emar,Simvastatin,1,1,62
+Q2_emar,Ramelteon,0,1,135
+Q2_emar,Rocuronium,0,1,36
+Q2_emar,Montelukast,0,1,28
+Q2_emar,CefTAZidime,0,1,136
+Q2_emar,Ethacrynic Acid,0,0,18
+Q2_emar,brivaracetam,0,0,1
+Q2_emar,Mestinon,0,0,1
+Q2_emar,BuPROPion,1,1,30
+Q2_emar,Bisacodyl,1,0,11
+Q2_emar,NovoLOG,0,0,1
+Q2_emar,Aprepitant,0,0,2
+Q2_emar,Vancomycin,1,0,33
+Q2_emar,Pilocarpine 1%,0,0,9
+Q2_emar,Insulin (Regular) for Hyperkalemia,1,0,7
+Q2_emar,Creon 12,0,1,17
+Q2_emar,Gentamicin - Dosing by pharmacy,1,1,2
+Q2_emar,Zolpidem Tartrate,1,1,6
+Q2_emar,HydrOXYzine,1,1,15
+Q2_emar,Systane (propylene glycol),0,0,1
+Q2_emar,Posaconazole Delayed Release Tablet,0,1,20
+Q2_emar,Amantadine,1,1,4
+Q2_emar,Betamethasone Dipro 0.05% Cream,0,0,29
+Q2_emar,ketorolac,0,0,2
+Q2_emar,Protein C Concentrate Human,0,0,2
+Q2_emar,Donepezil,0,1,14
+Q2_emar,Opium Tincture (morphine 10 mg/mL),0,0,21
+Q2_emar,Albumin 25% (12.5g / 50mL),1,0,9
+Q2_emar,Miconazole 2% Cream,0,1,6
+Q2_emar,Clozapine,0,0,35
+Q2_emar,Flumazenil,1,1,6
+Q2_emar,ValACYclovir,1,1,13
+Q2_emar,Dapsone,1,1,4
+Q2_emar,Filgrastim-sndz,0,1,16
+Q2_emar,HydrALAZINE,1,0,5
+Q2_emar,osimertinib,0,1,2
+Q2_emar,Emtricitabine Oral Solution,0,0,5
+Q2_emar,Alteplase (External Ventricular Drain),0,1,2
+Q2_emar,Etoposide,0,0,10
+Q2_emar,Dextromethorphan Polistirex,1,1,6
+Q2_emar,Multivitamins W/minerals,1,0,12
+Q2_emar,DAPTOmycin,1,1,21
+Q2_emar,Pyrazinamide,0,0,8
+Q2_emar,Vitamin D2 (Ergocalciferol),0,0,20
+Q2_emar,Calcium Gluconate sliding scale (Critical Care-Ionized calcium),1,0,11
+Q2_emar,Ketamine,1,1,17
+Q2_emar,Metronidazole Gel 0.75%-Vaginal,0,0,5
+Q2_emar,Vasopressin,1,1,7
+Q2_emar,RisperiDONE (Disintegrating Tablet),0,0,21
+Q2_emar,CefazoLIN,0,1,6
+Q2_emar,ChlordiazePOXIDE,0,0,16
+Q2_emar,Fondaparinux,0,1,8
+Q2_emar,Thyroid,0,1,2
+Q2_emar,LamoTRIgine,0,1,17
+Q2_emar,Vitamin B Complex w/C,0,1,12
+Q2_emar,Fluorometholone 0.1% Ophth Susp.,0,0,14
+Q2_emar,LevOCARNitine,0,1,1
+Q2_emar,Calcitriol,0,1,27
+Q2_emar,Ascorbic acid/Thiamine/Placebo,0,0,1
+Q2_emar,Thiamine study drug,0,0,13
+Q2_emar,Morphine SR (MS Contin),0,1,11
+Q2_emar,Triamterene-HCTZ (37.5/25),1,1,1
+Q2_emar,CP/Placebo Lactated Ringers with MVI,0,0,2
+Q2_emar,Moexipril,0,0,13
+Q2_emar,Clobazam,0,1,4
+Q2_emar,Triamcinolone Acetonide 0.1% Ointment,0,1,5
+Q2_emar,Midodrine or placebo,0,0,2
+Q2_emar,Sotrovimab (EUA),0,0,1
+Q2_emar,Aveeno Bath,0,0,1
+Q2_emar,Hepatitis B Vaccine,0,0,8
+Q2_emar,CefTAZidime,1,0,7
+Q2_emar,Diphenoxylate-Atropine,1,1,7
+Q2_emar,perampaneL,0,0,1
+Q2_emar,DimenhyDRINATE,0,0,2
+Q2_emar,ibrutinib,0,0,4
+Q2_emar,Robitussin Cough-Chest Cong DM,0,0,1
+Q2_emar,VitaminD 3 / placebo ,0,0,1
+Q2_emar,IDArubicin,1,1,1
+Q2_emar,Ibrutinib (Imbruvica),0,0,1
+Q2_emar,Phenazopyridine,0,1,3
+Q2_emar,daclatasvir,0,0,1
+Q2_emar,LevoCARNitine,0,0,12
+Q2_emar,ValGANCIclovir,1,1,7
+Q2_emar,Lithium Carbonate,0,1,4
+Q2_emar,Albuterol 0.5%,1,1,1
+Q2_emar,nintedanib,0,0,2
+Q2_emar,Theophylline (Oral Solution),0,0,6
+Q2_emar,tranexamic acid,0,0,2
+Q2_emar,zonisamide,0,0,1
+Q2_emar,Maraviroc,0,0,8
+Q2_emar,Zioptan (PF),0,0,2
+Q2_emar,Tenofovir Disoproxil (Viread),0,1,6
+Q2_emar,Penicillin G Benzathine,0,0,8
+Q2_emar,Dextrose 50%,1,0,12
+Q2_emar,dornase alfa,0,0,5
+Q2_emar,Morphine Sulfate (Concentrated Oral Soln),0,1,1
+Q2_emar,difluprednate,0,0,3
+Q2_emar,EPINEPHrine (EpiPEN),1,1,2
+Q2_emar,Influenza Vaccine Quadrivalent,0,1,1
+Q2_emar,liraglutide,0,0,1
+Q2_emar,Minocycline,0,1,1
+Q2_emar,Fenofibrate,1,1,11
+Q2_emar,Chloroprocaine 3% MPF,0,0,1
+Q2_emar,galantamine,0,0,6
+Q2_emar,Quinine Sulfate,0,0,1
+Q2_emar,"Tretinoin (ATRA, All-Transretinoic Acid)",1,1,3
+Q2_emar,econazole,0,0,3
+Q2_emar,Mycophenolate Mofetil Suspension,0,1,4
+Q2_emar,Tolterodine,0,1,1
+Q2_emar,Benztropine Mesylate,0,1,2
+Q2_emar,Diltiazem Extended-Release,1,0,1
+Q2_emar,Brovana,0,0,2
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology),1,0,9
+Q2_emar,Tizanidine,1,1,4
+Q2_emar,CeftriaXONE,0,1,14
+Q2_emar,deferoxamine (DFO) study drug,0,0,1
+Q2_emar,Chloraseptic Throat Spray,1,0,2
+Q2_emar,icosapent ethyl,0,0,1
+Q2_emar,Gentamicin - Dosing by pharmacy,0,1,1
+Q2_emar,Tizanidine,0,1,2
+Q2_emar,OxyCODONE Liquid,1,0,1
+Q2_emar,Ascorbic acid/thiamine study drug,0,0,1
+Q2_emar,MetroNIDAZOLE Topical 1 % Gel,0,0,3
+Q2_emar,Dakins 1/4 Strength,0,1,2
+Q2_emar,Coreg,0,0,1
+Q2_emar,APAP/placebo,0,0,3
+Q2_emar,Clotrimazole 1% Vaginal Cream,0,0,3
+Q2_emar,baclofen,0,0,1
+Q2_emar,hydrocortisone Study drug,1,1,1
+Q2_emar,Acyclovir,1,0,1
+Q2_emar,NeilMed NasaFlo,0,0,1
+Q2_emar,Procainamide,1,1,2
+Q2_emar,prednisolone-moxiflo-nepafenac,0,0,1
+Q2_emar,Cinacalcet,1,0,2
+Q2_emar,AZITHROMYCIN,0,1,1
+Q2_emar,Praluent Pen,0,0,1
+Q2_emar,Flucytosine Suspension,1,1,1
+Q2_emar,Prasugrel,0,1,1
+Q2_emar,COQ10 (300 mg) or placebo Study ,0,0,1
+Q2_emar,L-carnitine study bolus study ,0,0,1
+Q2_emar,Polymyxin B -Trimethoprim Ophth Soln,1,1,2
+Q2_emar,cefTAZidime,0,0,2
+Q2_emar,Ayr Saline Gel,0,0,1
+Q2_emar,Tretinoin (ATRA-All Transretinoic Acid),0,1,1
+Q2_emar,domperidone,0,0,1
+Q2_emar,LevoxyL,0,0,1
+Q2_emar,Aspirin (Buffered),0,0,5
+Q2_emar,MetronidAZOLE Topical 1 % Gel,1,1,1
+Q2_emar,L-carnitine Study Drug Bolus,1,1,1
+Q2_emar,Mesalamine DR,0,1,1
+Q2_emar,Warfarin,1,0,1
+Q2_emar,ZIPRASidone Mesylate,0,0,2
+Q2_emar,dexlansoprazole,0,0,1
+Q2_emar,IDArubicin,0,1,1
+Q2_emar,NMB study control (0.9% NACL 100 ML) Study Med,0,0,1
+Q2_emar,IPRATROPIUM BROMIDE NEB,0,1,1
+Q2_emar,PNEUMOcoccal 20-valent conjugate vaccine,0,0,1
+Q2_emar,escitalopram oxalate,0,0,1
+Q2_emar,Dihydroergotamine Mesylate,0,0,1
+Q2_emar,BUpivacaine 0.25%/Placebo,0,0,1
+Q2_emar,Opium Tincture (morphine 10 mg/mL),1,1,2
+Q2_emar,hydroxocobalamin,1,1,1
+Q2_emar,Triple Omega 3-6-9,0,0,1
+Q2_emar,sucralfate,0,0,1
+Q2_emar,Microgestin FE 1/20 (28),0,0,2
+Q2_emar,ascorbic acid/ thiamine/ placebo,0,0,1
+Q2_emar,MEMAntine,0,0,1
+Q2_emar,Acetaminophen/Placebo Study Drug,0,0,1
+Q2_emar,Botox,0,0,1
+Q2_emar,riTUXimab,1,1,1
+Q2_emar,Terazosin,0,1,4
+Q2_emar,gatifloxacin,0,1,1
+Q2_emar,anakinra,0,1,1
+Q2_emar,Fat Emulsion 20% (INTRAlipid),0,1,1
+Q2_emar,Excedrin Extra Strength,0,0,1
+Q2_emar,lamiVUDine,0,0,1
+Q2_emar,Edurant,0,0,1
+Q2_emar,PALIvizumab,0,0,1
+Q2_emar,Sotrovimab (EUA),1,1,1
+Q2_emar,tadalafiL (pulm. hypertension),0,0,1
+Q2_emar,Emtricitabine-Tenofovir alafen (Descovy),0,0,1
+Q2_emar,Acetaminophen/placebo ,0,0,1
+Q2_emar,Atorvastatin 40 mg or placebo,0,0,1
+Q2_emar,Paricalcitol,1,1,1
+Q2_emar,Tobramycin-Dexamethasone Ophth Oint,0,1,1
+Q2_emar,Brivaracetam Oral Solution,0,0,1
+Q2_emar,MENINGOcoccal Conj Vaccine (Menactra),0,1,1
+Q2_emar,hydrocortisone/ placebo,0,0,1
+Q2_emar,Docusate Sodium,0,0,14903
+Q2_emar,Acetaminophen IV,0,0,13079
+Q2_emar,Magnesium Sulfate Replacement (Critical Care and Oncology),1,1,1284
+Q2_emar,QUEtiapine Fumarate,0,0,2970
+Q2_emar,Torsemide,0,1,24
+Q2_emar,Senna,1,1,1046
+Q2_emar,Calcium Carbonate,0,0,1971
+Q2_emar,Sodium Chloride 0.9%  Flush,0,0,3712
+Q2_emar,Ascorbic Acid,1,1,288
+Q2_emar,Labetalol,0,0,3014
+Q2_emar,Captopril,0,0,1001
+Q2_emar,Bisacodyl,0,0,3620
+Q2_emar,Ibuprofen,0,0,478
+Q2_emar,Epoetin alfa-epbx (Retacrit),1,1,16
+Q2_emar,Acetaminophen,0,1,685
+Q2_emar,Phosphorus,0,0,2597
+Q2_emar,Daptomycin,0,0,232
+Q2_emar,Ketoconazole 2% ,0,0,63
+Q2_emar,Potassium Phosphate,0,0,2142
+Q2_emar,Fluticasone-Salmeterol Diskus (500/50) ,0,0,434
+Q2_emar,Sulfameth/Trimethoprim Suspension,0,0,276
+Q2_emar,Adenosine,0,0,92
+Q2_emar,DULoxetine DR,0,0,384
+Q2_emar,SulfaSALAzine_,0,0,36
+Q2_emar,LevoFLOXacin,0,0,162
+Q2_emar,FoLIC Acid,0,1,276
+Q2_emar,Hydrochlorothiazide,0,0,741
+Q2_emar,Allopurinol,1,1,149
+Q2_emar,Sodium CITRATE 4%,1,1,315
+Q2_emar,Levothyroxine Sodium,1,0,8
+Q2_emar,Darunavir,0,0,87
+Q2_emar,Thiamine or Placebo,1,1,16
+Q2_emar,LACOSamide,0,0,378
+Q2_emar,23.4% Sodium Chloride,0,0,56
+Q2_emar,Atropine Sulfate Ophth 1%,0,0,38
+Q2_emar,Nexium,0,0,3
+Q2_emar,Iohexol 240 (Omnipaque 240),0,0,236
+Q2_emar,TiCAGRELOR,0,0,718
+Q2_emar,Fleet Enema (Saline),0,0,180
+Q2_emar,Methadone (Oral Solution)  2 mg/1 mL,0,0,36
+Q2_emar,Nystatin Ointment,0,0,34
+Q2_emar,Oxybutynin,0,0,230
+Q2_emar,Pancrelipase 5000,0,0,66
+Q2_emar,Clobetasol Propionate 0.05% Cream,0,0,54
+Q2_emar,Divalproex (EXTended Release),0,0,107
+Q2_emar,Sertraline,0,1,61
+Q2_emar,Cholestyramine,0,1,6
+Q2_emar,amLODIPine,1,1,97
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, midline, tunneled access line, PA )",0,1,27
+Q2_emar,Memantine,0,0,169
+Q2_emar,Micafungin,0,0,307
+Q2_emar,NiMODipine,1,1,36
+Q2_emar,Ranolazine ER,0,0,58
+Q2_emar,Mineral Oil,0,0,45
+Q2_emar,Ganciclovir,0,0,24
+Q2_emar,OSELTAMivir,1,1,24
+Q2_emar,Insulin Glargine  (CVICU Protocol),1,1,7
+Q2_emar,Rasburicase,1,1,20
+Q2_emar,Fluticasone Propionate NASAL,1,1,45
+Q2_emar,Divalproex (DELayed Release),0,1,8
+Q2_emar,Amlodipine,1,1,12
+Q2_emar,Etomidate,1,1,58
+Q2_emar,GlipiZIDE XL,0,0,75
+Q2_emar,Alteplase,0,0,50
+Q2_emar,PHENYLEPHrine,0,0,48
+Q2_emar,Fluocinolone Acetonide 0.01% Cream,1,1,1
+Q2_emar,Sarna Lotion,1,1,42
+Q2_emar,Amikacin,1,1,11
+Q2_emar,Amoxicillin,0,0,54
+Q2_emar,Ibuprofen Suspension,0,0,42
+Q2_emar,Emtricitabine-Tenofovir alafen (200mg-25mg) *DESCOVY*,1,1,6
+Q2_emar,Dextrose 10% in Water (D10W),0,1,9
+Q2_emar,Acetaminophen (Liquid),0,1,65
+Q2_emar,Paricalcitol,0,0,14
+Q2_emar,Aptivus,0,0,2
+Q2_emar,Tacrolimus Suspension,0,0,131
+Q2_emar,Odefsey,0,0,3
+Q2_emar,TraZODone,1,0,5
+Q2_emar,Docusate Sodium (Liquid),1,0,1
+Q2_emar,Midodrine,1,0,7
+Q2_emar,Milrinone,0,0,5
+Q2_emar,Basiliximab,0,0,46
+Q2_emar,Ketorolac,1,1,24
+Q2_emar,OxycoDONE (Concentrated Oral Soln),0,1,2
+Q2_emar,CeftriaXONE,1,1,23
+Q2_emar,Rilpivirine,0,0,16
+Q2_emar,alfuzosin,0,0,7
+Q2_emar,Amantadine,0,0,82
+Q2_emar,Cepacol (Sore Throat Lozenge),1,1,21
+Q2_emar,Methazolamide,0,0,5
+Q2_emar,Bictegrav-Emtricit-Tenofov Ala,0,0,45
+Q2_emar,Oxycodone-Acetaminophen (5mg-325mg),0,0,15
+Q2_emar,PARoxetine,1,1,11
+Q2_emar,Bismuth Subsalicylate Chewable,0,0,14
+Q2_emar,PNEUMOcoccal 23-valent polysaccharide vaccine,0,0,19
+Q2_emar,NIFEdipine (Immediate Release),0,0,15
+Q2_emar,Synthroid,0,0,3
+Q2_emar,Qvar RediHaler,0,0,1
+Q2_emar,Brimonidine Tartrate 0.2% Ophth.,1,1,12
+Q2_emar,Heparin Flush (10 units/ml),0,1,12
+Q2_emar,CefePIME,1,0,20
+Q2_emar,23.4% Sodium Chloride,1,0,2
+Q2_emar,levonorgestrel-ethinyl estrad,0,0,1
+Q2_emar,Diclofenac Topical Gel 1%,0,1,8
+Q2_emar,Methylphenidate SR,0,0,11
+Q2_emar,Hydrocortisone Study Drug,0,0,17
+Q2_emar,Isoniazid,0,1,3
+Q2_emar,Hydrocortisone study drug,0,0,33
+Q2_emar,Brimonidine Tartrate 0.15% Ophth.,0,1,24
+Q2_emar,glimepiride,0,0,16
+Q2_emar,Esomeprazole sodium,1,1,43
+Q2_emar,OxycoDONE (Immediate Release) ,1,1,17
+Q2_emar,Timolol Maleate 0.5%,1,1,22
+Q2_emar,Buprenorphine-Naloxone Tablet (2mg-0.5mg),0,0,12
+Q2_emar,Megestrol Acetate,0,1,3
+Q2_emar,Succinylcholine,0,1,12
+Q2_emar,Nafcillin Desensitization,0,1,2
+Q2_emar,Posaconazole,0,1,6
+Q2_emar,0.9% NaCl - 100 mL bag (Esmolol study control),1,1,1
+Q2_emar,Atovaquone-Proguanil (250mg-100mg),0,0,2
+Q2_emar,Keppra,0,0,2
+Q2_emar,Lidocaine Viscous 2%,0,1,8
+Q2_emar,maraviroc,0,0,2
+Q2_emar,Enalaprilat,0,0,23
+Q2_emar,Tacrolimus (Extended Release),0,0,1
+Q2_emar,RifAMPin,0,0,20
+Q2_emar,amphotericin B (bulk),0,0,1
+Q2_emar,Activated Charcoal-Sorbitol,0,0,4
+Q2_emar,Morphine Sulfate (Concentrated Oral Solution) 20 mg/mL,0,0,29
+Q2_emar,Mercaptopurine,0,0,9
+Q2_emar,Lovastatin,0,0,24
+Q2_emar,Dextroamphetamine,0,0,9
+Q2_emar,CeFAZolin,1,0,4
+Q2_emar,CIPROFLOXACIN,0,0,6
+Q2_emar,Travoprost 0.004 % Ophth Soln  (*NF*),0,0,2
+Q2_emar,Valproic Acid,0,1,18
+Q2_emar,Aminolevulinic Acid,0,0,5
+Q2_emar,OxyCODONE SR (OxyconTIN),0,1,18
+Q2_emar,Namzaric,0,0,1
+Q2_emar,Penicillin G K Desensitization,0,0,6
+Q2_emar,Epinephrine 1:1000,0,1,1
+Q2_emar,Emtricitabine-Tenofovir (Truvada),1,1,2
+Q2_emar,Thioridazine HCl,0,0,1
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, midline, tunneled access line, PA )",1,0,2
+Q2_emar,ValGANCIclovir Oral Solution,0,1,1
+Q2_emar,Ascorbic Acid/Thiamine/Placebo,0,0,8
+Q2_emar,VANCOMYCIN,1,1,2
+Q2_emar,mesalamine,0,0,2
+Q2_emar,Amantadine/Placebo,1,1,1
+Q2_emar,Diazepam - CIWA protocol,0,1,4
+Q2_emar,Morphine Sulfate For Inhalation,1,1,1
+Q2_emar,Dexilant,0,0,4
+Q2_emar,Gentamicin 0.1% Cream,1,1,2
+Q2_emar,cromolyn,1,1,1
+Q2_emar,Vancomycin Oral Liquid,1,0,3
+Q2_emar,Guaifenesin ER,0,1,1
+Q2_emar,Acetamiinophen/Placebo,0,0,1
+Q2_emar,Efavirenz,1,1,2
+Q2_emar,Thrombin,0,1,2
+Q2_emar,Hydromorphone (Oral Solution) 1 mg/1 mL,1,1,3
+Q2_emar,GuaiFENesin-CODEINE Phosphate,0,1,5
+Q2_emar,Venetoclax,1,1,1
+Q2_emar,Stribild,0,0,5
+Q2_emar,Pentoxifylline,0,1,1
+Q2_emar,Tessalon Perles,0,0,2
+Q2_emar,gentamicin in NaCl (iso-osm),0,0,1
+Q2_emar,ranolazine,0,0,2
+Q2_emar,Lactaid Fast Act,0,0,1
+Q2_emar,Fluoxetine,1,1,4
+Q2_emar,Vancomycin-Heparin Lock,0,0,4
+Q2_emar,Flovent HFA,0,0,3
+Q2_emar,Dolutegravir,1,1,7
+Q2_emar,0.9% NaCl - 100 ml bag (esmolol study control) study med,0,0,1
+Q2_emar,hexylresorcinol,0,0,1
+Q2_emar,travoprost (benzalkonium),0,0,1
+Q2_emar,Betamethasone Dipro 0.05% Lot.,1,1,2
+Q2_emar,Lovenox,0,0,1
+Q2_emar,Biofreeze (menthol),0,0,1
+Q2_emar,aluminum hydrox-magnesium carb,0,0,1
+Q2_emar,CPPlacebo Lactated ringers with MVI,0,0,1
+Q2_emar,Oxervate,0,0,1
+Q2_emar,Propafenone (Immediate Release),0,0,3
+Q2_emar,Dantrolene,0,0,3
+Q2_emar,perampanel,0,0,2
+Q2_emar,CarBAMazepine,1,1,5
+Q2_emar,Morphine Sulfate IR,1,1,3
+Q2_emar,lidocaine HCl,0,0,2
+Q2_emar,esomeprazole magnesium,0,0,1
+Q2_emar,eltrombopag,1,1,1
+Q2_emar,Pfizer-BioNTech mRNA COVID-19 Vaccine,0,0,1
+Q2_emar,Copper Chloride,1,1,3
+Q2_emar,Imipramine,1,1,2
+Q2_emar,Multivitamins,1,0,5
+Q2_emar,Deferoxamine (DFO) Study Drug,0,0,1
+Q2_emar,Sargramostim,0,0,1
+Q2_emar,ciprofloxacin HCl,0,0,1
+Q2_emar,Triamcinolone Acetonide 0.025% Cream,1,1,2
+Q2_emar,Wixela Inhub,0,0,2
+Q2_emar,Haloperidol,1,0,5
+Q2_emar,Hydrocortisone Enema,0,1,1
+Q2_emar,Levemir,0,0,2
+Q2_emar,Benzocaine 20% Spray,0,1,1
+Q2_emar,niMODipine,0,0,4
+Q2_emar,NIFEdipine (Extended Release),0,1,1
+Q2_emar,OxyCODONE--Acetaminophen (5mg-325mg),0,1,3
+Q2_emar,Thiamine of Placebo,1,1,1
+Q2_emar,Gabapentin,1,0,2
+Q2_emar,Atorvaststin 40 mg or placebo ,0,0,1
+Q2_emar,Tobramycin - Dosing by pharmacy,1,1,1
+Q2_emar,Venlafaxine,1,0,1
+Q2_emar,Citrate Dextrose 3% (ACD-A) CRRT,0,0,1
+Q2_emar,Sulindac,0,0,1
+Q2_emar,OxyCODONE SR (OxyconTIN),1,0,1
+Q2_emar,Acetaminophen (Liquid),1,0,6
+Q2_emar,LOXO-101,0,0,1
+Q2_emar,diclofenac sodium,0,0,3
+Q2_emar,Buprenorphine-Naloxone Film (8mg-2mg),1,1,1
+Q2_emar,Biscolax,0,0,1
+Q2_emar,Hyaluronidase,0,0,3
+Q2_emar,Nystatin Ointment,1,1,5
+Q2_emar,Desmopressin Acetate,1,0,2
+Q2_emar,Piperacillin-Tazo Graded Challenge,0,0,3
+Q2_emar,Sucralfate,1,0,1
+Q2_emar,TheraTears Gel 1%,0,0,2
+Q2_emar,doravirine,0,1,1
+Q2_emar,Prolensa,0,1,1
+Q2_emar,Brimonidine Tartrate 0.2% Ophth.,0,1,2
+Q2_emar,Ruxolinitib 5mg ,0,0,1
+Q2_emar,Chlorpheniramine-Hydrocodone,1,1,1
+Q2_emar,ATRIPLA,0,0,1
+Q2_emar,Wegovy,0,0,1
+Q2_emar,terbinafine HCl,0,0,1
+Q2_emar,Zonegran,0,0,1
+Q2_emar,Vitamin D3 /Placebo,0,0,1
+Q2_emar,GenTeal Tears Severe Gel,0,0,1
+Q2_emar,Clobetasol Propionate 0.05% Gel,1,1,1
+Q2_emar,Levemir FlexTouch U-100 Insuln,0,0,1
+Q2_emar,Hydrocerin,0,1,2
+Q2_emar,Phenylephrine  0.5% Nasal Spray,0,0,1
+Q2_emar,Simbrinza,0,1,1
+Q2_emar,Rabies Vaccine,0,0,1
+Q2_emar,0.25% Bupivicaine or placebo,0,0,1
+Q2_emar,Dexamethasone Ophthalmic Susp 0.1%,0,1,1
+Q2_emar,Tetanus-DiphTox-Acellular Pertuss (Adacel),1,1,1
+Q2_emar,calcium polycarbophil,1,1,1
+Q2_emar,sevelamer carbonate,0,0,1
+Q2_emar,Suvorexant/ placebo,0,0,1
+Q2_emar,Quinapril,1,1,1
+Q2_emar,CoEnzyme Q10 (300 mg) or Placebo,1,1,1
+Q2_emar,hydrocortisone study drug,0,0,1
+Q2_emar,Telavancin *NF*,0,1,1
+Q2_emar,Neupogen,0,0,1
+Q2_emar,hydrocortisone ,1,1,1
+Q2_emar,Systane (PF),0,1,1
+Q2_emar,Pioglitazone,0,1,1
+Q2_emar,Albumin 5% (25g / 500mL),1,0,1
+Q2_emar,selexipag,1,1,1
+Q2_emar,Readi-Cat 2,1,1,1
+Q2_emar,Temazepam,0,1,1
+Q2_emar,Amikacin - Dosing by pharmacy,0,0,1
+Q2_emar,MedroxyPROGESTERone Acetate,0,1,1
+Q2_emar,Sacubitril-Valsartan (24mg-26mg),1,1,1
+Q2_emar,Nasonex,0,0,1
+Q2_emar,Thiamine vs. placebo,1,1,1
+Q2_emar,acetaminophen,0,0,1
+Q2_emar,RITONAvir,0,1,1
+Q2_emar,Travatan 0.004% Ophth Soln  (*NF*),0,0,1
+Q2_emar,Tirofiban,1,1,1
+Q2_emar,bisoproloL fumarate,0,0,1
+Q2_emar,Insulin,0,0,15210
+Q2_emar,Albuterol Inhaler,1,1,396
+Q2_emar,Aspirin EC,0,0,5259
+Q2_emar,Magnesium Sulfate,0,0,5904
+Q2_emar,Ketorolac,0,0,2277
+Q2_emar,Thiamine,1,1,827
+Q2_emar,Atorvastatin,0,0,10568
+Q2_emar,Insulin Glargine  (CVICU Protocol),0,0,3173
+Q2_emar,Meropenem,0,0,1456
+Q2_emar,Labetalol,1,1,242
+Q2_emar,Hydrocortisone Na Succ.,0,0,930
+Q2_emar,ValGANCIclovir,0,0,280
+Q2_emar,BuPROPion XL (Once Daily),0,0,351
+Q2_emar,Rosuvastatin Calcium,1,1,90
+Q2_emar,Diltiazem,0,0,1154
+Q2_emar,Digoxin,0,0,749
+Q2_emar,Lidocaine Jelly 2% (Urojet),0,0,314
+Q2_emar,Clopidogrel,0,0,2750
+Q2_emar,Tranexamic Acid,0,1,15
+Q2_emar,Cyclobenzaprine,0,0,420
+Q2_emar,Glycopyrrolate,1,1,633
+Q2_emar,Sodium Chloride,0,0,612
+Q2_emar,Thiamine,0,1,344
+Q2_emar,Mycophenolate Mofetil,0,0,557
+Q2_emar,Exemestane,1,1,1
+Q2_emar,Nystatin Oral Suspension,1,1,79
+Q2_emar,Valproate Sodium,1,1,63
+Q2_emar,CeFAZolin,0,1,82
+Q2_emar,Sodium Polystyrene Sulfonate,0,0,196
+Q2_emar,Zinc Sulfate,0,0,267
+Q2_emar,Hydrocortisone Cream 1%,0,0,39
+Q2_emar,Ledipasvir/Sofosbuvir,0,0,8
+Q2_emar,Carbidopa-Levodopa (25-100),0,0,301
+Q2_emar,Loratadine,1,1,15
+Q2_emar,Dorzolamide 2%/Timolol 0.5% Ophth.,0,0,301
+Q2_emar,Heparin (Hemodialysis),0,0,94
+Q2_emar,Rasburicase,0,0,34
+Q2_emar,Suboxone,0,0,1
+Q2_emar,Ivermectin,0,0,27
+Q2_emar,Fexofenadine,0,0,151
+Q2_emar,Sodium Chloride Nasal,0,1,23
+Q2_emar,Calcium Gluconate sliding scale (Critical Care-Ionized calcium),0,1,169
+Q2_emar,Diazepam,0,1,24
+Q2_emar,Albumin 25%,1,1,159
+Q2_emar,Acyclovir,0,1,112
+Q2_emar,Sodium Chloride 3% Inhalation Soln,1,1,52
+Q2_emar,HydrALAzine,1,1,23
+Q2_emar,Ursodiol,0,0,324
+Q2_emar,Oxymetazoline,1,1,68
+Q2_emar,Calcium Replacement (Oncology),0,0,24
+Q2_emar,Levofloxacin,1,1,78
+Q2_emar,Naloxone,0,0,103
+Q2_emar,Sildenafil,1,1,17
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology) ,0,1,207
+Q2_emar,CarBAMazepine (Extended-Release),0,0,20
+Q2_emar,Mirtazapine,0,1,49
+Q2_emar,Cilostazol,0,1,3
+Q2_emar,Hepatitis B Immun Globulin (HepaGam B),0,0,15
+Q2_emar,Golytely,0,0,46
+Q2_emar,Clindamycin 1% Solution,1,1,2
+Q2_emar,Fleet Enema (Saline),1,1,26
+Q2_emar,Nystatin,0,0,131
+Q2_emar,Terconazole 0.4% Vag. Cream,0,0,1
+Q2_emar,Carbidopa-Levodopa (25-100) ODT,0,0,41
+Q2_emar,Albendazole,0,0,4
+Q2_emar,Insulin,1,0,28
+Q2_emar,niacinamide,0,0,2
+Q2_emar,Iohexol 240 (Omnipaque 240),1,1,51
+Q2_emar,Pyridoxine,0,1,11
+Q2_emar,Heparin Dwell (1000 Units/mL),1,1,90
+Q2_emar,MetRONIDAZOLE (FLagyl),1,1,58
+Q2_emar,CefTRIAXone Graded Challenge,0,0,14
+Q2_emar,Ranitidine,0,1,30
+Q2_emar,OLANZapine (Disintegrating Tablet),1,1,88
+Q2_emar,Voriconazole,1,1,29
+Q2_emar,thiamine study drug,1,1,7
+Q2_emar,Morphine Sulfate (Oral Solution) 2 mg/mL,0,0,60
+Q2_emar,vilazodone,0,0,6
+Q2_emar,Leucovorin Calcium,0,0,15
+Q2_emar,MetroNIDAZOLE,1,0,12
+Q2_emar,Vigamox,0,1,1
+Q2_emar,Empagliflozin,0,0,13
+Q2_emar,Collagenase Ointment,0,0,120
+Q2_emar,HydrOXYzine,0,1,13
+Q2_emar,Belumosudil *NF*,1,1,1
+Q2_emar,Heparin (via Anti-Xa Monitoring),1,1,13
+Q2_emar,Vecuronium Bromide,0,0,19
+Q2_emar,axitinib,0,0,1
+Q2_emar,LevETIRAcetam Oral Solution,1,1,19
+Q2_emar,Anoro Ellipta,0,0,22
+Q2_emar,Sulfameth/Trimethoprim SS,1,1,43
+Q2_emar,Pramipexole,0,1,3
+Q2_emar,Tamsulosin,0,1,76
+Q2_emar,PHENObarbital - ICU Alcohol Withdrawal (Initial Load / Rescue Dose),1,1,44
+Q2_emar,Phenylephrine  0.5% Nasal Spray,1,1,1
+Q2_emar,Neostigmine,1,1,15
+Q2_emar,Ampicillin,0,1,32
+Q2_emar,Gentamicin,0,1,14
+Q2_emar,Belladonna & Opium (16.2/30mg),0,0,12
+Q2_emar,Lidocaine,1,0,2
+Q2_emar,Amiodarone,1,0,9
+Q2_emar,Docusate Sodium,1,0,16
+Q2_emar,Lisinopril,1,1,38
+Q2_emar,rifAXIMin,0,1,59
+Q2_emar,Iohexol 240,1,1,7
+Q2_emar,ClonazePAM,0,1,21
+Q2_emar,Protamine Sulfate,0,1,9
+Q2_emar,Nitroglycerin Ointment 0.2%,0,0,2
+Q2_emar,CycloSPORINE (Neoral) MODIFIED,0,1,5
+Q2_emar,Rifampin,1,1,7
+Q2_emar,Posaconazole Suspension,1,1,7
+Q2_emar,Alendronate Sodium,1,1,2
+Q2_emar,Caphosol,1,1,8
+Q2_emar,NMB Study Control (0.9% NaCl 100mL) Study Med,1,1,5
+Q2_emar,PNEUMOcoccal 13-valent conjugate vaccine,1,1,1
+Q2_emar,Exemestane,0,0,23
+Q2_emar,Mineral Oil,1,1,11
+Q2_emar,Isosorbide Mononitrate,1,1,6
+Q2_emar,Daptomycin-Heparin Lock,0,1,4
+Q2_emar,MethylPHENIDATE (Ritalin),1,1,5
+Q2_emar,Ondansetron ODT,0,1,7
+Q2_emar,Potassium Chloride,1,0,13
+Q2_emar,calcium citrate-vitamin D3,0,0,1
+Q2_emar,Methylene Blue 1%,0,0,3
+Q2_emar,Losartan Potassium,0,1,15
+Q2_emar,PHENYLephrine,1,1,3
+Q2_emar,Bupivicaine 0.25% or placebo,0,0,8
+Q2_emar,Betamethasone Dipro 0.05% Oint,0,1,2
+Q2_emar,Acetaminophen w/Codeine Elixir,0,0,6
+Q2_emar,CloNIDine,0,1,23
+Q2_emar,Glutamine,1,1,5
+Q2_emar,Gastroview (Diatrizoate Meglumine & Sodium),0,1,13
+Q2_emar,gabapentin,0,0,6
+Q2_emar,travoprost,0,0,9
+Q2_emar,Rifabutin,0,0,5
+Q2_emar,Mycophenolate Mofetil Suspension,1,1,12
+Q2_emar,osimertinib,1,1,2
+Q2_emar,Charcoal Aqueous (Activated),0,0,9
+Q2_emar,Spiriva Respimat,0,0,6
+Q2_emar,Methylene Blue 0.5%,0,1,9
+Q2_emar,Emtricitabine,0,0,25
+Q2_emar,Acetaminophen,1,0,21
+Q2_emar,Flecainide Acetate,0,1,5
+Q2_emar,Alteplase,1,1,9
+Q2_emar,Triamcinolone Acetonide Inj,0,0,1
+Q2_emar,Temazepam,1,1,1
+Q2_emar,Niacinamide,0,1,8
+Q2_emar,roflumilast,0,1,1
+Q2_emar,Fluocinonide 0.05% Cream,0,0,14
+Q2_emar,cromolyn,0,0,3
+Q2_emar,Disopyramide Phosphate,0,0,3
+Q2_emar,SITagliptin,0,0,3
+Q2_emar,Clobetasol Propionate 0.05% Gel,0,0,4
+Q2_emar,CefTAZidime Graded Challenge,1,1,2
+Q2_emar,Potassium Acetate,1,1,1
+Q2_emar,Morphine SR (MS Contin),1,1,3
+Q2_emar,Lidocaine 5% Ointment,1,1,5
+Q2_emar,Vitamin D/placebo,0,0,2
+Q2_emar,Pravastatin,1,0,2
+Q2_emar,Cytarabine,0,1,1
+Q2_emar,INV-Phage INF,0,0,1
+Q2_emar,Thrombin,1,1,11
+Q2_emar,CefazoLIN,1,1,14
+Q2_emar,Casirivimab-Imdevimab (EUA),0,0,2
+Q2_emar, CoQ10 (300mg) or placebo,1,1,1
+Q2_emar,Atropine Sulfate 1%,0,1,5
+Q2_emar,Acetaminophen/ Placebo Study Drug,0,0,7
+Q2_emar,tadalafiL,0,0,4
+Q2_emar,Micafungin,1,0,2
+Q2_emar,cevimeline,0,0,4
+Q2_emar,Aminocaproic Acid 25 % Oral Rinse,1,1,1
+Q2_emar,Dabrafenib *NF*,1,1,1
+Q2_emar,Carvedilol,0,1,16
+Q2_emar,Midodrine 20mg or Placebo,0,0,1
+Q2_emar,Ascorbic acid/thiamine/placebo study med,1,1,1
+Q2_emar,hydrocortisone ,0,0,2
+Q2_emar,Oxcarbazepine,0,0,5
+Q2_emar,Neostigmine (CVICU Reversal Protocol),1,1,4
+Q2_emar,Ursodiol,1,0,1
+Q2_emar,Minoxidil,0,1,2
+Q2_emar,Alendronate Sodium,0,1,1
+Q2_emar,Captopril,1,0,2
+Q2_emar,Rifampin,0,1,4
+Q2_emar,Bicitra,0,1,3
+Q2_emar,RiTONAvir,1,1,2
+Q2_emar,Calcitonin Salmon,1,1,11
+Q2_emar,Imipenem-cilastatin-relebactam,0,0,1
+Q2_emar,Entecavir Oral Solution,1,1,3
+Q2_emar,budesonide,1,1,4
+Q2_emar,NMB study control (0.9% NACL 100mL) study med,1,1,1
+Q2_emar,Tropicamide 1 %,1,1,3
+Q2_emar,Prempro,0,0,1
+Q2_emar,Pilocarpine 1%,1,1,2
+Q2_emar,heparin (porcine),1,1,1
+Q2_emar,nimodipine 60mg/ placebo,0,0,2
+Q2_emar,BuPROPion (Sustained Release),1,0,1
+Q2_emar,LOPERamide Suspension,0,1,2
+Q2_emar,senna,1,1,1
+Q2_emar,timolol maleate,0,0,2
+Q2_emar,Capsaicin 0.025%,1,1,2
+Q2_emar,mafenide acetate,0,0,2
+Q2_emar,bimatoprost,1,1,2
+Q2_emar,Lidocaine 2% P.f.,1,1,1
+Q2_emar,Tetanus-DiphTox-Acellular Pertuss (Adacel),0,1,2
+Q2_emar,Zoledronic Acid (Zometa),0,1,1
+Q2_emar,Lidocaine Viscous 2%,1,0,2
+Q2_emar,ganaxolone,0,0,1
+Q2_emar,Daptomycin Desensitization,0,0,2
+Q2_emar,Chlordiazepoxide HCl,0,0,2
+Q2_emar,Pulmicort Flexhaler,1,1,1
+Q2_emar,Denosumab (Prolia),0,0,1
+Q2_emar,Penicillin G K Graded Challenge,0,0,2
+Q2_emar,Thaimine study drug,0,0,1
+Q2_emar,Bupivacaine0.25%,0,0,1
+Q2_emar,Dexmedetomidine Study Drug,0,0,1
+Q2_emar,Tamiflu,0,0,2
+Q2_emar,Alum Potassium,0,1,1
+Q2_emar,Dipyridamole-Aspirin,0,1,1
+Q2_emar,fentaNYL (PF)-bupivacaine-NaCl,0,0,1
+Q2_emar,Vitamin D3/placebo,1,1,1
+Q2_emar,Lantus,0,1,2
+Q2_emar,CloNIDine,1,0,1
+Q2_emar,Asmanex HFA,0,0,1
+Q2_emar,Posaconazole Suspension,0,1,1
+Q2_emar,Bupivacaine 0.25%./Placebo,0,0,1
+Q2_emar,Atripla,0,0,2
+Q2_emar,dabrafenib,0,1,1
+Q2_emar,LamiVUDine Oral Soln.,1,1,1
+Q2_emar,Mirapex ER,0,0,1
+Q2_emar,Xylocaine Ointment 5%,0,0,1
+Q2_emar,Mexiletine,0,1,3
+Q2_emar,Tamoxifen Citrate,1,1,2
+Q2_emar,Fluocinolone Acetonide 0.01% Solution,0,0,1
+Q2_emar,Protein C Concentrate Human,1,1,2
+Q2_emar,Zyflo,0,0,1
+Q2_emar,MetFORMIN (Glucophage),1,1,2
+Q2_emar,Tigan,0,0,1
+Q2_emar,Vemlidy,0,1,1
+Q2_emar,Vancomycin-Heparin Lock,1,1,2
+Q2_emar,tetrabenazine,0,1,1
+Q2_emar,Niacinamide Study Med,0,0,2
+Q2_emar,Omegaven 10% Emulsion,0,0,1
+Q2_emar,Vascepa,0,0,1
+Q2_emar,PreserVision AREDS,0,0,2
+Q2_emar,Nimodipine,1,1,1
+Q2_emar,Thiamine/Placebo ,0,0,1
+Q2_emar,permethrin,0,1,1
+Q2_emar,dexmethylphenidate,0,0,1
+Q2_emar,Dronabinol,1,0,1
+Q2_emar,Dextrose 50%,0,0,3095
+Q2_emar,Morphine Sulfate,0,0,2647
+Q2_emar,Fluconazole,0,0,843
+Q2_emar,Vitamin D3 (Cholecalciferol),1,1,37
+Q2_emar,Vitamin D3 (Cholecalciferol),0,1,32
+Q2_emar,LevETIRAcetam,0,0,4375
+Q2_emar,Vitamin D,0,0,3066
+Q2_emar,OxyCODONE Liquid,0,0,532
+Q2_emar,Mupirocin Ointment 2%,0,0,2854
+Q2_emar,MethylPREDNISolone Sodium Succ,0,0,1660
+Q2_emar,Spironolactone,1,1,41
+Q2_emar,Pantoprazole,0,0,8180
+Q2_emar,Magnesium Oxide,0,0,1058
+Q2_emar,Vancomycin,0,0,11603
+Q2_emar,Isosorbide Mononitrate (Extended Release),0,0,773
+Q2_emar,Heparin (CRRT Machine Priming),1,1,316
+Q2_emar,sevelamer CARBONATE,0,0,1104
+Q2_emar,Multivitamins W/minerals,0,0,2622
+Q2_emar,TraZODone,0,0,2086
+Q2_emar,Docusate Sodium (Liquid),0,1,47
+Q2_emar,Lactulose Enema,1,1,89
+Q2_emar,Clopidogrel,1,1,174
+Q2_emar,Famotidine,0,1,382
+Q2_emar,PHENObarbital - ICU Alcohol Withdrawal (Initial Load / Rescue Dose),0,0,947
+Q2_emar,Levothyroxine Sodium,0,1,259
+Q2_emar,Nitroglycerin SL,0,0,174
+Q2_emar,Cetirizine,0,0,473
+Q2_emar,Albumin 25%,0,0,469
+Q2_emar,NORepinephrine,0,0,20
+Q2_emar,Letrozole,0,0,31
+Q2_emar,MetOLazone,1,1,122
+Q2_emar,Tocilizumab,1,1,41
+Q2_emar,Salmeterol Xinafoate Diskus (50 mcg),0,0,86
+Q2_emar,Tetracycline,0,0,18
+Q2_emar,Hydroxychloroquine Sulfate,0,0,271
+Q2_emar,Neomycin-Polymyxin-Bacitracin,0,0,152
+Q2_emar,budesonide,0,0,40
+Q2_emar,Voriconazole,0,0,66
+Q2_emar,Triamterene-HCTZ (37.5/25),0,0,46
+Q2_emar,Mouth Care Oral Rinse,0,1,38
+Q2_emar,Finasteride,1,1,52
+Q2_emar,Terazosin,1,1,5
+Q2_emar,Zonisamide,0,0,118
+Q2_emar,Chlorthalidone,0,0,162
+Q2_emar,Neomycin-Polymyxin-Bacitracin,1,1,42
+Q2_emar,Acetaminophen/placebo,0,0,28
+Q2_emar,prednisoLONE,0,0,2
+Q2_emar,Ipratropium Bromide Neb,0,1,89
+Q2_emar,Sarilumab 400mg/200mg/placebo,0,0,17
+Q2_emar,Vitamin Cocktail ,1,1,1
+Q2_emar,Ipratropium-Albuterol Inhalation Spray,0,0,41
+Q2_emar,Phenytoin Sodium (IV),1,0,1
+Q2_emar,Methylnaltrexone,0,1,19
+Q2_emar,tafamidis,0,0,3
+Q2_emar,CPPlacebo,0,0,1
+Q2_emar,Immune Globulin Intravenous (Human),1,1,40
+Q2_emar,Polyethylene Glycol,1,0,18
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, tunneled access line, PA )",0,0,134
+Q2_emar,Valproic Acid,1,1,39
+Q2_emar,Dulera,0,0,9
+Q2_emar,thiamine ,0,0,29
+Q2_emar,Lidocaine 1%/Epinephrine 1:100000,0,0,29
+Q2_emar,Sacubitril-Valsartan (97mg-103mg),0,0,16
+Q2_emar,Fluticasone-Salmeterol Diskus (100/50),0,1,15
+Q2_emar,PHENYLEPHrine,1,1,10
+Q2_emar,ChlorproMAZINE,0,0,65
+Q2_emar,Flucytosine,1,1,4
+Q2_emar,Eltrombopag,0,0,1
+Q2_emar,Betaxolol Ophth Susp  0.25%,0,0,8
+Q2_emar,Citalopram,0,1,31
+Q2_emar,CefTRIAXone Desensitization,0,0,12
+Q2_emar,Fleet Enema,0,0,58
+Q2_emar,Morphine Sulfate,1,0,14
+Q2_emar,Glutamine,0,0,19
+Q2_emar,petrolatum,0,0,1
+Q2_emar,Triamcinolone Acetonide 0.025% Cream,0,0,18
+Q2_emar,Lidocaine 1%,1,1,39
+Q2_emar,"Tretinoin (ATRA, All-Transretinoic Acid)",0,0,10
+Q2_emar,Hydrochlorothiazide,1,1,11
+Q2_emar,Penicillin G Potassium,0,0,32
+Q2_emar,Capsaicin 0.025%,0,0,41
+Q2_emar,Levonorgestrel,0,0,5
+Q2_emar,Prezcobix,0,0,1
+Q2_emar,Ciprofloxacin HCl,0,1,23
+Q2_emar,Factor 7a recombinant ,0,0,14
+Q2_emar,Sugammadex,0,1,5
+Q2_emar,Prochlorperazine,0,1,26
+Q2_emar,INV-ruxolitinib,0,0,1
+Q2_emar,Phenytoin,0,0,10
+Q2_emar,Pomalyst,0,0,1
+Q2_emar,DAPTOmycin,0,0,41
+Q2_emar,rifAXIMin,1,0,4
+Q2_emar,Aspirin Desensitization (Urticaria/Angioedema),0,1,1
+Q2_emar,Ramipril,0,0,18
+Q2_emar,Albuterol 0.083% Neb Soln,1,0,7
+Q2_emar,Imipramine,0,0,20
+Q2_emar,DOBUTamine,0,0,5
+Q2_emar,Lansoprazole Oral Disintegrating Tab,1,0,7
+Q2_emar,Colchicine,0,1,6
+Q2_emar,Eculizumab,0,0,7
+Q2_emar,Danazol,1,1,1
+Q2_emar,Tranexamic Acid Oral Solution,1,1,5
+Q2_emar,ceftazidime-avibactam,0,0,2
+Q2_emar,liothyronine,0,0,4
+Q2_emar,Methocarbamol,0,1,1
+Q2_emar, Sarilumab 400mg/200mg/placebo,0,0,1
+Q2_emar,PARoxetine,0,1,17
+Q2_emar,Tacrolimus,0,1,24
+Q2_emar,LevoFLOXacin,1,0,2
+Q2_emar,Questran,0,0,2
+Q2_emar,Primaquine Phosphate,0,0,8
+Q2_emar,Epoetin alfa-epbx (Retacrit),0,1,9
+Q2_emar,lutein-zeaxanthin,0,0,1
+Q2_emar,Fleet Enema,1,1,7
+Q2_emar,Silver Sulfadiazine 1% Cream,0,0,38
+Q2_emar,Dabigatran Etexilate,0,1,4
+Q2_emar,Desmopressin Nasal,0,1,2
+Q2_emar,Bromocriptine Mesylate,1,1,2
+Q2_emar,Chloraseptic Throat Spray,0,1,10
+Q2_emar,Phenytoin,1,1,2
+Q2_emar,Bupivacaine 0.25%/Placebo,0,1,1
+Q2_emar,ACETAMINOPHEN/PLACEBO,0,0,1
+Q2_emar,Ranitidine (Liquid),0,1,2
+Q2_emar,Vitamin D 3/Placebo ,0,0,1
+Q2_emar,Cidofovir,0,0,2
+Q2_emar,Caltrate with Vitamin D3,0,0,1
+Q2_emar,Alteplase 1mg/Flush Volume ( Dialysis/Pheresis Catheters ),0,1,8
+Q2_emar,Timolol Maleate 0.25%,0,1,2
+Q2_emar,Evoxac,0,0,1
+Q2_emar,INV-Phage 33s2,0,0,1
+Q2_emar,Hydrocortisone Acetate Suppository,0,1,1
+Q2_emar,LamiVUDine,0,1,3
+Q2_emar,Fosphenytoin,1,0,1
+Q2_emar,PrednisoLONE Acetate 0.12% Ophth. Susp.,0,0,11
+Q2_emar,multivitamin,0,0,1
+Q2_emar,niMODipine,1,1,1
+Q2_emar,Ascorbic Acid/Thiamine/Placebo,1,1,3
+Q2_emar,Albumin 5%,1,0,3
+Q2_emar,Artificial Tears,1,0,6
+Q2_emar,Betamethasone Dipro 0.05% Oint,1,1,3
+Q2_emar,Hydrocortisone/study med,0,0,1
+Q2_emar,Indomethacin,0,0,15
+Q2_emar,Cetirizine,1,0,1
+Q2_emar,Selegiline HCl,0,0,2
+Q2_emar,Evista,0,0,3
+Q2_emar,Carbidopa-Levodopa CR (25-100),1,1,2
+Q2_emar,Hydrocortisone Na Succ.,1,0,3
+Q2_emar,Triumeq,0,0,2
+Q2_emar,dornase alfa,1,1,2
+Q2_emar,Raltegravir,0,1,2
+Q2_emar,Cepastat (Phenol) Lozenge,1,1,1
+Q2_emar,Phenazopyridine,1,1,5
+Q2_emar,Uptravi,1,1,1
+Q2_emar,GuaiFENesin-Dextromethorphan (Sugar Free),0,0,6
+Q2_emar,Niacin,0,1,6
+Q2_emar,RifAMPin,1,1,4
+Q2_emar,RisperiDONE,1,1,6
+Q2_emar,NORepinephrine,1,1,7
+Q2_emar,Imipenem-Cilastatin,0,0,2
+Q2_emar,RITONAvir,1,1,1
+Q2_emar,clonazePAM,0,0,1
+Q2_emar,Gemfibrozil,0,1,2
+Q2_emar,Amlodipine,0,1,6
+Q2_emar,gadobutrol,0,0,1
+Q2_emar,simethicone,0,0,2
+Q2_emar,Tanzeum,0,0,1
+Q2_emar,PHENObarbital Alcohol Withdrawal Dose Taper (Days 2-7),1,1,16
+Q2_emar,Doxazosin,0,1,4
+Q2_emar,Ascorbic Acid (Liquid),0,1,1
+Q2_emar,Morphine Sulfate (Oral Solution) 2 mg/mL,1,1,5
+Q2_emar,Brivaracetam Oral Solution,1,1,1
+Q2_emar,Symbicort,1,1,1
+Q2_emar,Buprenorphine-Naloxone Tablet (8mg-2mg),1,1,1
+Q2_emar,Citracal + D Maximum,0,0,1
+Q2_emar,pirfenidone,0,0,5
+Q2_emar,OxyCODONE--Acetaminophen (5mg-325mg),1,1,1
+Q2_emar,bosentan,0,0,1
+Q2_emar,Doxercalciferol,1,1,8
+Q2_emar,ecallantide,0,0,1
+Q2_emar,fluticasone furoate-vilanteroL,0,0,1
+Q2_emar,SEROquel,0,0,1
+Q2_emar,Theophylline ER,0,1,2
+Q2_emar,Etoposide,1,1,8
+Q2_emar,Rhopressa,0,0,2
+Q2_emar,Copper Chloride,0,1,3
+Q2_emar,LaMIVudine Oral Soln.,0,1,1
+Q2_emar,Pantoprazole (Granules for DR Suspension),1,0,1
+Q2_emar,GenTeal Gel,0,0,1
+Q2_emar,Ampicillin Graded Challenge,0,1,1
+Q2_emar,Lidocaine 2% P.f.,0,0,3
+Q2_emar,Jakafi (Ruxolitinib),1,1,1
+Q2_emar,0.9% NaCl - 100mL bag (Esmolol Study Control) Study Med,0,0,1
+Q2_emar,Azopt 1% Ophth  (*NF* ),0,0,2
+Q2_emar,Benzocaine 20% Spray,1,1,1
+Q2_emar,Hepatitis B Vaccine (20 mcg/mL),0,0,2
+Q2_emar,Zinc Sulfate,1,0,2
+Q2_emar,Provera,0,1,1
+Q2_emar,Imipenem-cilastatin-relebactam (Recarbrio) *NF*,0,0,1
+Q2_emar,Repaglinide,0,0,1
+Q2_emar,Vancomycin Intrathecal,0,0,2
+Q2_emar,Northera,0,0,1
+Q2_emar,Hydroxocobalamin,0,1,1
+Q2_emar,Liothyronine Sodium,1,1,3
+Q2_emar,Arava,0,0,3
+Q2_emar,Erythromycin 0.5% Ophth Oint,1,0,1
+Q2_emar,GuaiFENesin,1,0,2
+Q2_emar,tacrolimus,0,1,1
+Q2_emar,PrimiDONE,0,1,3
+Q2_emar,predniSONE,0,0,1
+Q2_emar,OxycoDONE (Concentrated Oral Soln),1,0,1
+Q2_emar,Midodrione 20 mf or Placebo,0,0,1
+Q2_emar,Nevanac,0,0,1
+Q2_emar,remdesevir,0,0,1
+Q2_emar,Ibutilide Fumarate,0,0,1
+Q2_emar,Sacubitril-Valsartan (24mg-26mg),0,1,1
+Q2_emar,Ganciclovir 0.15% Ophth Gel,1,1,1
+Q2_emar,WelChol,0,0,1
+Q2_emar,Lidocaine 0.5%/Epinephrine,1,1,4
+Q2_emar,Lopinavir-Ritonavir,0,1,1
+Q2_emar,Vitamin B Complex w/C,1,0,1
+Q2_emar,bicalutamide,0,1,2
+Q2_emar,Erleada,0,0,1
+Q2_emar,Calcium Chloride,1,0,2
+Q2_emar,cefOXitin,0,1,1
+Q2_emar,Leronlimab/placebo ,1,1,1
+Q2_emar,Rivaroxaban,1,0,1
+Q2_emar,LaMOTrigine,0,1,1
+Q2_emar,ZIPRASidone Hydrochloride,1,1,2
+Q2_emar,Vitamin d3 / placebo,0,0,1
+Q2_emar,Allegra Allergy,0,0,1
+Q2_emar,ipratropium bromide,1,1,1
+Q2_emar,Nuplazid,0,0,1
+Q2_emar,drospirenone-ethinyl estradiol,0,0,1
+Q2_emar,Doxercalciferol,0,1,1
+Q2_emar,Denosumab (Prolia),1,1,1
+Q2_emar,NP Thyroid,0,0,1
+Q2_emar,psyllium husk,0,0,1
+Q2_emar,Factor 8 recombinant,0,0,1
+Q2_emar,Niacinamide,1,0,1
+Q2_emar,febuxostat,0,0,1
+Q2_emar,Fluoxetine,0,1,1
+Q2_emar,Bimatoprost  0.03%  Ophth  (*NF*),0,0,1
+Q2_emar,dorzolamide,0,1,1
+Q2_emar,Acetaminophen IV,0,1,490
+Q2_emar,Acetaminophen,0,0,19748
+Q2_emar,FoLIC Acid,0,0,4331
+Q2_emar,Acetaminophen (Liquid),0,0,1025
+Q2_emar,Micafungin,0,1,49
+Q2_emar,BRIVAracetam,0,0,17
+Q2_emar,Diazepam - CIWA protocol,0,0,172
+Q2_emar,CefePIME,1,1,1474
+Q2_emar,Docusate Sodium (Liquid),1,1,133
+Q2_emar,Bictegrav-Emtricit-Tenofov Ala,0,1,2
+Q2_emar,23.4% Sodium Chloride,1,1,86
+Q2_emar,Multivitamins,1,1,285
+Q2_emar,Pyridostigmine Bromide,0,0,94
+Q2_emar,Sertraline,0,0,1729
+Q2_emar,Paricalcitol,0,1,1
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, midline, tunneled access line, PA )",0,0,411
+Q2_emar,Sodium Chloride 0.9%  Flush,0,1,241
+Q2_emar,Cholestyramine,0,0,73
+Q2_emar,Valproic Acid,0,0,307
+Q2_emar,Torsemide,0,0,786
+Q2_emar,Levothyroxine Sodium,1,1,402
+Q2_emar,Brimonidine Tartrate 0.15% Ophth.,0,0,385
+Q2_emar,Venlafaxine,1,1,18
+Q2_emar,Succinylcholine,0,0,209
+Q2_emar,Divalproex (DELayed Release),0,0,195
+Q2_emar,Potassium Phosphate,0,1,135
+Q2_emar,NIFEdipine (Extended Release),0,0,191
+Q2_emar,Bisacodyl,0,1,205
+Q2_emar,Gabapentin,1,1,137
+Q2_emar,Heparin Flush (10 units/ml),0,0,205
+Q2_emar,Creon 12,1,1,18
+Q2_emar,Nitroglycerin Ointment  2%,0,0,39
+Q2_emar,RITONAvir,0,0,12
+Q2_emar,Sodium CITRATE 4%,1,0,6
+Q2_emar,TraZODone,1,1,129
+Q2_emar,OxyCODONE SR (OxyconTIN),0,0,192
+Q2_emar,Phosphorus,0,1,115
+Q2_emar,Docusate Sodium,0,1,317
+Q2_emar,Betamethasone Sodium Phos/Acet,0,0,18
+Q2_emar,Sodium Thiosulfate,1,1,3
+Q2_emar,ValGANCIclovir Oral Solution,0,0,236
+Q2_emar,Diclofenac Sodium DR,0,0,6
+Q2_emar,Hydroxyurea,1,1,15
+Q2_emar,Guaifenesin ER,0,0,52
+Q2_emar,Dexamethasone Ophthalmic Susp 0.1%,0,0,27
+Q2_emar,CeFAZolin,1,1,226
+Q2_emar,Calcium Carbonate,0,1,79
+Q2_emar,Haloperidol,1,1,201
+Q2_emar,Desmopressin Acetate,1,1,161
+Q2_emar,Labetalol,0,1,132
+Q2_emar,Iohexol 240 (Omnipaque 240),0,1,17
+Q2_emar,Lidocaine Viscous 2%,0,0,125
+Q2_emar,Juluca,0,0,1
+Q2_emar,QUEtiapine Fumarate,0,1,153
+Q2_emar,Acetaminophen (Liquid),1,1,159
+Q2_emar,Midodrine,1,1,257
+Q2_emar,Fleet Enema (Mineral Oil),1,1,21
+Q2_emar,Clobetasol Propionate 0.05% Cream,1,1,10
+Q2_emar,Memantine,0,1,7
+Q2_emar,Dextrose 10% in Water (D10W),0,0,112
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, midline, tunneled access line, PA )",1,1,63
+Q2_emar,Albumin 5% (25g / 500mL),1,1,85
+Q2_emar,Diclofenac Topical Gel 1%,0,0,42
+Q2_emar,Benzocaine 20% Spray,0,0,16
+Q2_emar,GuaiFENesin-CODEINE Phosphate,0,0,59
+Q2_emar,Magnesium Sulfate Replacement (Critical Care and Oncology),1,0,22
+Q2_emar,23.4% Sodium Chloride,0,1,16
+Q2_emar,Pioglitazone,0,0,10
+Q2_emar,Thrombin,0,0,28
+Q2_emar,Daptomycin,0,1,27
+Q2_emar,Maalox/Diphenhydramine/Lidocaine,1,1,18
+Q2_emar,Anti-Thymocyte Globulin (Rabbit),0,0,59
+Q2_emar,Tirofiban,0,0,7
+Q2_emar,Enalaprilat,0,1,1
+Q2_emar,AcetaZOLamide S.R.,0,0,6
+Q2_emar,Brimonidine Tartrate 0.2% Ophth.,0,0,50
+Q2_emar,Isoniazid,0,0,36
+Q2_emar,OxyCODONE--Acetaminophen (5mg-325mg),0,0,79
+Q2_emar,Vancomycin Oral Liquid,1,1,186
+Q2_emar,PHENYLEPHrine,0,1,3
+Q2_emar,CefTAZidime-Avibactam (Avycaz),1,1,8
+Q2_emar,CARBOplatin,0,0,2
+Q2_emar,Probenecid,0,0,5
+Q2_emar,Dapagliflozin,0,0,3
+Q2_emar,Posaconazole,0,0,29
+Q2_emar,DULoxetine DR,0,1,21
+Q2_emar,Oxybutynin,0,1,10
+Q2_emar,Sulfameth/Trimethoprim Suspension,0,1,7
+Q2_emar,LevoFLOXacin,0,1,17
+Q2_emar,Pentoxifylline,0,0,23
+Q2_emar,Bismuth Subsalicylate,0,0,19
+Q2_emar,TiCAGRELOR,0,1,11
+Q2_emar,Alteplase,0,1,8
+Q2_emar,fluticasone-vilanterol,0,0,2
+Q2_emar,Lubiprostone,0,0,14
+Q2_emar,Baricitinib (EUA),1,1,5
+Q2_emar,Hydrocerin,0,0,38
+Q2_emar,Nystatin Ointment,0,1,3
+Q2_emar,Hydrochlorothiazide,0,1,9
+Q2_emar,Naloxone,1,1,18
+Q2_emar,Benztropine Mesylate,1,1,4
+Q2_emar,Morphine Sulfate (Concentrated Oral Solution) 20 mg/mL,0,1,5
+Q2_emar,Letermovir,0,0,1
+Q2_emar,Meropenem Graded Challenge,1,1,2
+Q2_emar,Synthroid,0,1,1
+Q2_emar,Allopurinol,1,0,2
+Q2_emar,Sarilumab 400mg/placebo,0,0,8
+Q2_emar,Carbamazepine (Extended-Release),0,0,17
+Q2_emar,MedroxyPROGESTERone Acetate,0,0,17
+Q2_emar,Linzess,0,0,10
+Q2_emar,TheraTears Gel 1%,0,1,2
+Q2_emar,Diclofenac Topical Gel 1%,1,1,4
+Q2_emar,CeFAZolin Desensitization,0,0,2
+Q2_emar,Ganciclovir 0.15% Ophth Gel,0,0,2
+Q2_emar,sulfamethoxazole-trimethoprim,0,0,3
+Q2_emar,PENTobarbital Sodium,0,0,2
+Q2_emar,OxycoDONE (Concentrated Oral Soln),0,0,3
+Q2_emar,Milk of Magnesia,1,1,32
+Q2_emar,Ascorbic Acid,1,0,8
+Q2_emar,Senna,1,0,18
+Q2_emar,Esomeprazole sodium,1,0,1
+Q2_emar,Tranylcypromine Sulfate,0,0,4
+Q2_emar,eltrombopag,0,0,19
+Q2_emar,HYDROcodone-Acetaminophen (5mg-325mg),1,1,2
+Q2_emar,Fluticasone-Salmeterol Diskus (500/50) ,0,1,13
+Q2_emar,tenofovir alafenamide,0,0,1
+Q2_emar,Clobetasol Propionate 0.05% Cream,0,1,1
+Q2_emar,RifAMPin,0,1,3
+Q2_emar,Captopril,0,1,39
+Q2_emar,Temazepam,0,0,23
+Q2_emar,Megestrol Acetate,0,0,30
+Q2_emar,QuiNIDine Sulfate,1,1,1
+Q2_emar,Sucralfate,1,1,23
+Q2_emar,Fleet Enema (Saline),0,1,13
+Q2_emar,Hydrocortisone study drug,0,1,1
+Q2_emar,LACOSamide,0,1,26
+Q2_emar,Tacrolimus Suspension,0,1,4
+Q2_emar,Fluphenazine DECANOATE,0,0,1
+Q2_emar,Simbrinza,0,0,5
+Q2_emar,ethosuximide,0,0,1
+Q2_emar,tadalafil,0,0,3
+Q2_emar,ruxolitinib,1,1,1
+Q2_emar,CISplatin,1,1,3
+Q2_emar,Glycopyrrolate (CVICU Reversal Protocol),1,1,3
+Q2_emar,Ganciclovir,0,1,6
+Q2_emar,Atropine Sulfate Ophth 1%,0,1,5
+Q2_emar,Kcentra,1,1,19
+Q2_emar,Carbidopa-Levodopa (25-250) ODT,1,1,2
+Q2_emar,Amoxicillin,0,1,3
+Q2_emar,Adenosine,0,1,7
+Q2_emar,OxycoDONE (Immediate Release) ,1,0,1
+Q2_emar,Mineral Oil,0,1,2
+Q2_emar,Epinephrine 1:1000,0,0,7
+Q2_emar,Ranolazine ER,0,1,4
+Q2_emar,EPINEPHrine (EpiPEN),0,0,12
+Q2_emar,Enalaprilat,1,1,1
+Q2_emar,Venetoclax,0,0,1
+Q2_emar,Methadone (Oral Solution)  2 mg/1 mL,0,1,2
+Q2_emar,dimethyl fumarate,1,1,1
+Q2_emar,Mesalamine DR,1,1,3
+Q2_emar,Darunavir,0,1,2
+Q2_emar,NMB Study Control (0.9% NACL 100mL),1,1,1
+Q2_emar,Nimodipine 60mg/Placebo,0,0,1
+Q2_emar,Nexium,0,1,1
+Q2_emar,Venlafaxine XR,1,1,6
+Q2_emar,Sarna Lotion,1,0,2
+Q2_emar,Amoxicillin-Clavulanic Acid,1,1,3
+Q2_emar,OxyCODONE SR (OxyconTIN),1,1,2
+Q2_emar,betaxolol,0,0,1
+Q2_emar,Ibuprofen,0,1,3
+Q2_emar,PARoxetine,1,0,1
+Q2_emar,Divalproex (EXTended Release),0,1,4
+Q2_emar,CoQ10 (300mg) or placebo,1,1,10
+Q2_emar,Nafcillin Desensitization,0,0,2
+Q2_emar,Levocarnitine,0,0,5
+Q2_emar,Vitamin D3,0,0,2
+Q2_emar,Ropinirole,1,1,1
+Q2_emar,APAP/Pacebo,0,0,2
+Q2_emar,Mechlorethamine,0,0,3
+Q2_emar,Tobramycin 0.3% Ophth Soln,1,1,2
+Q2_emar,Sarilumab 400mg/placebo,1,1,2
+Q2_emar,amLODIPine,1,0,2
+Q2_emar,Pancrelipase 5000,0,1,6
+Q2_emar,l-carnitine study drug blus,1,1,1
+Q2_emar,Ketoconazole 2% ,0,1,4
+Q2_emar,Bacitracin/Polymyxin B Sulfate Opht. Oint,0,0,5
+Q2_emar,0.9% NACL - 100 mL bag (esmolol study control),1,1,1
+Q2_emar,Ibuprofen Suspension,0,1,2
+Q2_emar,HumaLOG,0,0,1
+Q2_emar,Biotene Dry Mouth Oral Rinse,0,0,1
+Q2_emar,Ascorbic Acid (Liquid),1,1,1
+Q2_emar,Dexilant,0,1,1
+Q2_emar,Amantadine,0,1,2
+Q2_emar,COQ10 300 mg or placebo,0,1,1
+Q2_emar,Cepacol (Sore Throat Lozenge),1,0,1
+Q2_emar,Hydrocortisone Enema,0,0,3
+Q2_emar,Apriso,0,0,2
+Q2_emar,famciclovir,0,0,4
+Q2_emar,CARBOplatin,1,1,3
+Q2_emar,Oxycodone-Acetaminophen (5mg-325mg),0,1,1
+Q2_emar,Artificial Tears(pvalch-povid),0,0,1
+Q2_emar,Talc (Sterile) + Lidocaine 1%,0,0,2
+Q2_emar,LaMICtaL XR,0,0,1
+Q2_emar,SulfaSALAzine_,0,1,1
+Q2_emar,arginine oxoglurate,0,0,1
+Q2_emar,Vancomycin-Heparin Lock,0,1,1
+Q2_emar,vitamin d3/placebo,0,0,2
+Q2_emar,0.25% bupivacaine,0,0,1
+Q2_emar,Kalbitor,0,0,1
+Q2_emar,0.9% NaCl (Esmolol study control) study med ,1,1,1
+Q2_emar,selexipag,1,0,1
+Q2_emar,Nortriptyline,1,1,3
+Q2_emar,sodium bicarbonate in D5W,1,1,1
+Q2_emar,RITUXimab,1,1,1
+Q2_emar,Restasis,0,0,1
+Q2_emar,zoledronic acid,0,0,3
+Q2_emar,Neomycin-Polymyxin-Bacitracin Ophth. Oint,1,1,1
+Q2_emar,Mercaptopurine,0,1,1
+Q2_emar,Esbriet,0,0,1
+Q2_emar,Fluticasone Propionate NASAL,1,0,1
+Q2_emar,gabapentin,1,1,1
+Q2_emar,Cuvitru,1,1,1
+Q2_emar,PreserVision Lutein,0,0,1
+Q2_emar,ARIPiprazole Extended Release,0,0,2
+Q2_emar,doravirine,0,0,1
+Q2_emar,varicella-zoster i.glob-maltos,1,1,1
+Q2_emar,nimodipine 30mg/ placebo,0,1,1
+Q2_emar,"Vitamin D 540,000 or placebo",0,0,1
+Q2_emar,RomiPLOstim,0,0,4
+Q2_emar,Desmopressin Acetate 0.01% Nasal Spray,0,0,2
+Q2_emar,Namenda,0,0,1
+Q2_emar,aMILoride,1,1,1
+Q2_emar,desogestreL-ethinyl estradioL,0,0,1
+Q2_emar,Sodium Fluoride 1.1% (Dental Gel),1,1,1
+Q2_emar,Amphetamine-Dextroamphetamine,1,1,3
+Q2_emar,Prolensa,0,0,2
+Q2_emar,Bactrim Desensitization,0,0,1
+Q2_emar,Ashlyna,0,0,1
+Q2_emar,treprostinil,0,0,2
+Q2_emar,benztropine,1,1,1
+Q2_emar,Nivolumab Study Drug,1,1,1
+Q2_emar,Amicar,0,0,1
+Q2_emar,solifenacin,0,0,1
+Q2_emar,Ceftaroline Graded Challenge,1,1,1
+Q2_emar,Calcitonin Salmon (Test Dose),0,0,3
+Q2_emar,Isordil,1,1,1
+Q2_emar,Vitiamin D 3 / PLACEBO ,0,0,1
+Q2_emar,Lo Loestrin Fe,0,0,1
+Q2_emar,Qvar RediHaler,0,1,1
+Q2_emar,Dilaudid (PF),0,0,1
+Q2_emar,Acebutolol,0,0,1
+Q2_emar,ramelteon,0,0,1
+Q2_emar,DurezoL,0,0,1
+Q2_emar,Buprenorphine-Naloxone Film (2mg-0.5mg),1,1,1
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology),0,0,4018
+Q2_emar,NULL,0,1,854
+Q2_emar,Lansoprazole Oral Disintegrating Tab,0,0,1835
+Q2_emar,Rifaximin,0,0,422
+Q2_emar,Guaifenesin-Dextromethorphan,0,0,135
+Q2_emar,Potassium Chloride,0,0,8523
+Q2_emar,Pantoprazole (Granules for DR Suspension),0,0,233
+Q2_emar,Haloperidol,0,1,130
+Q2_emar,Cefpodoxime Proxetil,0,0,80
+Q2_emar,Chlorothiazide,0,0,703
+Q2_emar,Rocuronium,1,1,217
+Q2_emar,Phytonadione,0,0,2069
+Q2_emar,Sodium Phosphate,0,0,2621
+Q2_emar,Albumin 5% (12.5g / 250mL),1,1,293
+Q2_emar,Amitriptyline,0,0,280
+Q2_emar,Furosemide,0,1,708
+Q2_emar,Timolol Maleate 0.5%,0,0,335
+Q2_emar,Lidocaine Jelly 2% (Glydo),1,1,179
+Q2_emar,DULoxetine,1,1,10
+Q2_emar,LevETIRAcetam - STAT Dose,0,0,109
+Q2_emar,DICYCLOMine,0,0,92
+Q2_emar,MetroNIDAZOLE,0,1,367
+Q2_emar,Nephrocaps,0,1,41
+Q2_emar,Remdesivir,0,0,128
+Q2_emar,Tobramycin,0,0,166
+Q2_emar,Azithromycin,1,1,380
+Q2_emar,Metoprolol Tartrate,0,1,458
+Q2_emar,Mirtazapine,1,1,65
+Q2_emar,Phenytoin Infatab,0,0,89
+Q2_emar,Ipratropium Bromide Neb,1,1,140
+Q2_emar,Amantadine Syrup,0,0,20
+Q2_emar,Doxepin HCl,0,0,59
+Q2_emar,sevelamer CARBONATE,1,1,166
+Q2_emar,Isosorbide Dinitrate,0,0,1037
+Q2_emar,Sulfameth/Trimethoprim Suspension,1,1,26
+Q2_emar,Albumin 25% (12.5g / 50mL),0,1,143
+Q2_emar,Ciprofloxacin,1,1,100
+Q2_emar,Hydrocortisone (Rectal) 2.5% Cream,0,0,36
+Q2_emar,Aquaphor Ointment,0,0,69
+Q2_emar,OxycoDONE Liquid,0,1,25
+Q2_emar,Valproate Sodium,0,1,26
+Q2_emar,Hyoscyamine,1,1,31
+Q2_emar,Sucralfate,0,1,27
+Q2_emar,Atovaquone Suspension,0,1,56
+Q2_emar,Alteplase 1mg/5mL ( Clearance ie. Indwelling port ),0,1,6
+Q2_emar,Vancomycin 25mg/mL Ophth Soln,0,0,4
+Q2_emar,Ciprofloxacin,0,1,27
+Q2_emar,Heparin Flush (10 units/ml),1,1,15
+Q2_emar,Dakins 1/4 Strength,1,1,3
+Q2_emar,Hydroxyurea,0,1,18
+Q2_emar,Cisatracurium Besylate,1,1,220
+Q2_emar,Verapamil,0,0,118
+Q2_emar,Doxycycline Hyclate,0,1,61
+Q2_emar,Nitrofurantoin Monohyd (MacroBID),0,0,103
+Q2_emar,Methadone (Concentrated Oral Solution) 10 mg/1 mL,0,0,45
+Q2_emar,tiZANidine,0,1,2
+Q2_emar,Artificial Tears GEL 1%,0,1,68
+Q2_emar,Keppra XR,0,0,17
+Q2_emar,Hyoscyamine,0,0,30
+Q2_emar,Buprenorphine-Naloxone (2mg-0.5mg),0,0,5
+Q2_emar,LORazepam,1,0,28
+Q2_emar,sargramostim,0,0,1
+Q2_emar,Potassium Phosphate Replacement (Oncology),0,1,7
+Q2_emar,Acetylcysteine Inhaled - For interventional pulmonary use only,0,0,9
+Q2_emar,Xeljanz,0,0,2
+Q2_emar,Pancrelipase 5000,1,1,11
+Q2_emar,Polymyxin B -Trimethoprim Ophth Soln,0,0,18
+Q2_emar,Benzonatate,0,1,51
+Q2_emar,Propranolol LA,0,0,42
+Q2_emar,Abacavir Sulfate,0,0,40
+Q2_emar,ruxolitinib,0,0,11
+Q2_emar,Hizentra,0,0,7
+Q2_emar,Acetaminophen w/Codeine,0,0,19
+Q2_emar,Suvorexant or Placebo,0,0,3
+Q2_emar,BusPIRone,0,1,18
+Q2_emar,Albumin 5%,0,1,49
+Q2_emar,Vancomycin-Heparin Lock (For HD/Pheresis Catheters),0,0,4
+Q2_emar,Ganciclovir,1,1,11
+Q2_emar,Sodium Chloride 0.9%,0,1,2
+Q2_emar,Clobazam,1,1,13
+Q2_emar,Febuxostat,0,0,61
+Q2_emar,Fludrocortisone Acetate,0,1,20
+Q2_emar,ZIPRASidone Hydrochloride,0,0,43
+Q2_emar,Trintellix,0,0,8
+Q2_emar,rOPINIRole,0,1,8
+Q2_emar,CRRT,1,1,3
+Q2_emar,Sulfamethoxazole-Trimethoprim,1,1,68
+Q2_emar,LACOSamide - STAT Dose,0,0,46
+Q2_emar,Ampicillin,1,1,54
+Q2_emar,Hydrocodone-Acetaminophen (5mg-325mg),0,0,7
+Q2_emar,Chlorpheniramine Maleate,0,0,4
+Q2_emar,Etomidate,0,1,16
+Q2_emar,RisperiDONE Oral Solution,0,0,12
+Q2_emar,Enoxaparin Sodium,1,1,44
+Q2_emar,Stiolto Respimat,0,0,7
+Q2_emar,Ambisome,0,0,38
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, tunneled access line )",0,1,12
+Q2_emar,darunavir-cobicistat,0,0,1
+Q2_emar,Tetanus-Diphtheria Tox (TENIVAC),0,0,5
+Q2_emar,Sodium Chloride 3% Inhalation Soln,0,1,37
+Q2_emar,Biktarvy,0,0,1
+Q2_emar,tofacitinib,0,0,2
+Q2_emar,CARVedilol,0,1,23
+Q2_emar,"Lidocaine 1%/Epinephrine 1:100,000",0,1,6
+Q2_emar,Triamcinolone Acetonide 0.1% Ointment,1,0,1
+Q2_emar,Tamoxifen Citrate,0,0,19
+Q2_emar,Tetanus Immune Globulin,0,0,3
+Q2_emar,Sarna Lotion,0,1,23
+Q2_emar,DAUNOrubicin,0,0,4
+Q2_emar,Tranexamic Acid Oral Solution,0,0,12
+Q2_emar,Milk of Magnesia,0,1,11
+Q2_emar,Mesalamine CR,0,0,7
+Q2_emar,Pilocarpine 2%,0,0,7
+Q2_emar,dalfampridine,0,0,4
+Q2_emar,Pseudoephedrine,0,0,9
+Q2_emar,Meropenem,1,0,10
+Q2_emar,thiamine study drug,0,0,21
+Q2_emar,Efavirenz,0,0,26
+Q2_emar,Calcium Gluconate,1,0,7
+Q2_emar,Mycophenolate Mofetil,1,1,23
+Q2_emar,RISperidone,0,0,11
+Q2_emar,Dorzolamide 2% Ophth. Soln.,0,1,11
+Q2_emar,Collagenase Ointment,1,0,1
+Q2_emar,Tobramycin 0.3% Ophth Ointment,0,0,2
+Q2_emar,lurasidone,0,0,10
+Q2_emar,GuaiFENesin-CODEINE Phosphate,1,1,8
+Q2_emar,Phenytoin Sodium Extended,0,1,4
+Q2_emar,Mesalamine (Rectal),0,1,1
+Q2_emar,CeleXA,0,0,1
+Q2_emar,BusPIRone,1,1,10
+Q2_emar,Ethacrynate Sodium,0,1,1
+Q2_emar,linaCLOtide,0,0,3
+Q2_emar,Psyllium Powder,1,1,3
+Q2_emar,Topiramate (Topamax),1,1,12
+Q2_emar,Lumigan,0,1,1
+Q2_emar,Lidocaine 0.5%/Epinephrine,0,1,3
+Q2_emar,Atenolol,1,1,5
+Q2_emar,Iohexol 240,0,1,4
+Q2_emar,Testosterone Gel 1%,1,1,2
+Q2_emar,Dronabinol,0,1,14
+Q2_emar,Enoxaparin (Treatment),0,1,12
+Q2_emar,Morphine Sulfate IR,0,1,8
+Q2_emar,Tolterodine,1,1,2
+Q2_emar,Isosorbide Dinitrate ER,0,0,1
+Q2_emar,PrednisoLONE Oral Solution,0,0,4
+Q2_emar,Clotrimazole,0,0,31
+Q2_emar,MedroxyPROGESTERone Acetate,1,1,1
+Q2_emar,Ferrous Sulfate,1,0,3
+Q2_emar,Decitabine,1,1,3
+Q2_emar,Zytiga,0,0,3
+Q2_emar,Fomepizole,1,1,4
+Q2_emar,benazepril HCl (bulk),0,0,1
+Q2_emar,Atropine Sulfate Ophth 1%,1,1,3
+Q2_emar,IdaruCIZUMAB,0,0,2
+Q2_emar,cycloSPORINE,0,0,1
+Q2_emar,MethIMAzole,0,1,4
+Q2_emar,Modafinil,0,1,6
+Q2_emar,Autologous 20% Serum Tears,0,1,1
+Q2_emar,Tacrolimus Suspension,1,1,14
+Q2_emar,Hydrocerin,1,1,7
+Q2_emar,L-Carnitine Study Drug Bolus,0,0,1
+Q2_emar,Paroxetine,1,1,1
+Q2_emar,Furosemide in 0.9% Sodium Chloride,0,0,11
+Q2_emar,Mycophenolate Sodium DR,1,1,1
+Q2_emar,CefTAZidime Desensitization,0,0,1
+Q2_emar,Hydrocortisone Cream 0.5%,0,1,2
+Q2_emar,Fluocinolone Acetonide 0.01% Cream,0,0,1
+Q2_emar,Phenoxybenzamine HCl,0,1,1
+Q2_emar,sarilumab 400mg/200mg/placebo,0,1,1
+Q2_emar,Acetaminophen / Placebo Study Drug,0,0,1
+Q2_emar,DigiFab,0,1,1
+Q2_emar,Flucytosine,0,1,2
+Q2_emar,Pulmicort,0,0,3
+Q2_emar,Phenytoin Infatab,1,1,5
+Q2_emar,Anti-Thymocyte Globulin (Rabbit) - Peripheral Line,0,0,1
+Q2_emar,abacavir-lamivudine,0,1,1
+Q2_emar,Wellbutrin XL,0,0,1
+Q2_emar,L-carnitine study drug bolus,0,0,1
+Q2_emar,Excedrin Tension Headache,0,0,1
+Q2_emar,Heparin INTRAPERITONEAL,1,1,1
+Q2_emar,Ascorbic acid/Thiamine study drug,0,0,1
+Q2_emar,"Vitma,in D3/placebo",0,0,1
+Q2_emar,Lidocaine-Prilocaine,0,1,1
+Q2_emar,trospium,0,0,2
+Q2_emar,beclomethasone dipropionate,0,0,5
+Q2_emar,Iron Polysaccharides Complex,0,1,1
+Q2_emar,Vitamin D 3/ placebo ,0,0,2
+Q2_emar,Hydrocortisone Acetate Suppository,1,1,1
+Q2_emar,Itraconazole,0,0,5
+Q2_emar,Sodium Thiosulfate,0,1,2
+Q2_emar,Midodrine 20 mg or placebo,0,0,1
+Q2_emar,Rifaximin,1,0,4
+Q2_emar,sofosbuvir-velpatasvir,0,0,1
+Q2_emar,Ketamine (For Intubation),1,1,4
+Q2_emar,Phenylephrine 2.5 % Ophth Soln,1,1,1
+Q2_emar,Sotalol,0,1,4
+Q2_emar,torsemide,1,1,1
+Q2_emar,ARIPiprazole,1,1,12
+Q2_emar,Kcentra,0,1,3
+Q2_emar,Ferrous GLUCONATE,0,1,3
+Q2_emar,CoQ10 (300mg) or Placebo,1,1,2
+Q2_emar,Xalatan,0,0,1
+Q2_emar,Sirolimus,0,1,2
+Q2_emar,Heparin (Hemodialysis),1,1,6
+Q2_emar,Fluvoxamine Maleate,0,1,2
+Q2_emar,COQ10 300 mgs or placebo,1,1,1
+Q2_emar,Ganaxolone,0,0,1
+Q2_emar,Tamsulosin,1,0,2
+Q2_emar,Xeljanz XR,0,0,1
+Q2_emar,Niacinamide/placebo,0,0,1
+Q2_emar,Enoxaparin (Prophylaxis),1,0,3
+Q2_emar,Fish Oil (Omega 3),1,1,4
+Q2_emar,latanoprost,0,0,1
+Q2_emar,Lidocaine-Prilocaine,1,1,3
+Q2_emar,Vancomycin 14mg/mL Ophth Soln,0,0,3
+Q2_emar,capmatinib,0,0,2
+Q2_emar,Rilutek,0,0,2
+Q2_emar,Refresh Optive,0,0,1
+Q2_emar,Phentolamine Mesylate,1,1,5
+Q2_emar,Trandolapril,0,1,1
+Q2_emar,Sarilumab 800mg/placeb,0,0,1
+Q2_emar,Ivermectin,1,1,5
+Q2_emar,Orenitram,0,0,1
+Q2_emar,cefOXitin,1,1,2
+Q2_emar, ketamine 5%/ lidocaine 5% / amit 2%,0,0,1
+Q2_emar,Belsomra,0,0,2
+Q2_emar,omeprazole magnesium,0,0,1
+Q2_emar,sarilumab 400mg/200mg/placebo,1,1,1
+Q2_emar,Tobramycin - Dosing by pharmacy,0,1,1
+Q2_emar,DASatinib,0,1,1
+Q2_emar,Silver Nitrate Applicator,0,0,2
+Q2_emar,Citrate Dextrose 3% (ACD-A) CRRT,1,1,2
+Q2_emar,LaMIVudine,1,1,1
+Q2_emar,thiamine or placebo ,1,1,1
+Q2_emar,edrophonium chloride,1,1,1
+Q2_emar,dimethyl fumarate,0,0,1
+Q2_emar,NovoLOG U-100 Insulin aspart,0,0,1
+Q2_emar,Imipenem-cilastatin-relebactam (Recarbrio),0,0,1
+Q2_emar,Heparin (Impella),0,0,1
+Q2_emar,Terbutaline Sulfate,1,1,2
+Q2_emar,Modafinil,1,0,1
+Q2_emar,Miconazole Powder 2%,1,0,1
+Q2_emar,COQ10 (300mg or placebo),0,0,1
+Q2_emar,Tyvaso,0,0,1
+Q2_emar,Nephrocaps,1,0,1
+Q2_emar,Leuprolide Acetate,1,1,2
+Q2_emar,Kaletra,0,0,2
+Q2_emar,Alinia,0,0,1
+Q2_emar,quiniDINE Gluconate,0,0,1
+Q2_emar,cefdinir,0,0,2
+Q2_emar,Naloxone Nasal Spray,0,1,1
+Q2_emar,mycophenolate mofetil,0,0,1
+Q2_emar,imipenem-cilastatin,1,1,3
+Q2_emar,PreserVision AREDS 2,0,0,2
+Q2_emar,acetaminophen/ Placebo Study Med,0,0,1
+Q2_emar,Ruxolitinib,1,1,1
+Q2_emar,Eltrombopag,1,1,1
+Q2_emar,Sarilumab 400 mg/placebo,0,0,1
+Q2_emar,Phenytoin Sodium Extended,1,1,1
+Q2_emar,Neomycin-Polymyxin-Dexameth Ophth. Oint,0,0,1
+Q2_emar,Furosemide,0,0,13155
+Q2_emar,NULL,0,0,12343
+Q2_emar,OxycoDONE Liquid,0,0,449
+Q2_emar,Meropenem,1,1,555
+Q2_emar,Metoprolol Tartrate,0,0,11601
+Q2_emar,Haloperidol,0,0,2159
+Q2_emar,Sotalol,0,0,105
+Q2_emar,Doxycycline Hyclate,0,0,698
+Q2_emar,Enoxaparin (Treatment),0,0,218
+Q2_emar,rOPINIRole,0,0,150
+Q2_emar,Ciprofloxacin,0,0,610
+Q2_emar,Milk of Magnesia,0,0,1243
+Q2_emar,Sarna Lotion,0,0,489
+Q2_emar,Potassium Chloride Replacement (Critical Care and Oncology),0,1,295
+Q2_emar,MetroNIDAZOLE,0,0,3392
+Q2_emar,Nephrocaps,0,0,641
+Q2_emar,Fludrocortisone Acetate,0,0,268
+Q2_emar,Calcium Gluconate,1,1,683
+Q2_emar,tiZANidine,0,0,59
+Q2_emar,Ferrous GLUCONATE,0,0,108
+Q2_emar,LORazepam,1,1,1127
+Q2_emar,Etomidate,0,0,164
+Q2_emar,Valproate Sodium,0,0,346
+Q2_emar,Sucralfate,0,0,562
+Q2_emar,Buprenorphine,0,0,13
+Q2_emar,Artificial Tears GEL 1%,0,0,738
+Q2_emar,Albumin 5%,0,0,1251
+Q2_emar,Benzonatate,0,0,668
+Q2_emar,Sodium Phosphate,0,1,164
+Q2_emar,Rifaximin,1,1,98
+Q2_emar,Atovaquone Suspension,0,0,347
+Q2_emar,Atovaquone Suspension,1,1,57
+Q2_emar,Sodium Thiosulfate,0,0,17
+Q2_emar,"Alteplase 1mg/2mL ( Clearance ie. PICC, tunneled access line )",0,0,163
+Q2_emar,Enoxaparin (Prophylaxis),1,1,67
+Q2_emar,Miconazole Powder 2%,1,1,87
+Q2_emar,Vitamin D2 (Ergocalciferol),1,1,2
+Q2_emar,Albumin 25% (12.5g / 50mL),0,0,1226
+Q2_emar,BusPIRone,0,0,403
+Q2_emar,CARVedilol,0,0,743
+Q2_emar,MethIMAzole,0,0,65
+Q2_emar,Lidocaine 0.5%/Epinephrine,0,0,40
+Q2_emar,Phenytoin Sodium Extended,0,0,95
+Q2_emar,Rifaximin,0,1,78
+Q2_emar,Sodium Chloride 3% Inhalation Soln,0,0,522
+Q2_emar,Nephrocaps,1,1,69
+Q2_emar,Tamsulosin,1,1,85
+Q2_emar,Phytonadione,0,1,270
+Q2_emar,DiphenhydrAMINE,1,1,100
+Q2_emar,Morphine Sulfate IR,0,0,131
+Q2_emar,Ferrous Sulfate,1,1,47
+Q2_emar,Dorzolamide 2% Ophth. Soln.,0,0,174
+Q2_emar,Chlorothiazide,0,1,68
+Q2_emar,Potassium Phosphate Replacement (Oncology),0,0,134
+Q2_emar,Potassium Chloride,0,1,252
+Q2_emar,Collagenase Ointment,1,1,26
+Q2_emar,Pulmicort,0,1,1
+Q2_emar,Desipramine,0,0,15
+Q2_emar,Alteplase 1mg/5mL ( Clearance ie. Indwelling port ),0,0,69
+Q2_emar,Hyoscyamine,0,1,13
+Q2_emar,Timolol Maleate 0.5%,0,1,13
+Q2_emar,Mycophenolate Sodium DR,0,0,100
+Q2_emar,Cholestyramine,1,1,11
+Q2_emar,Lansoprazole Oral Disintegrating Tab,0,1,150
+Q2_emar,Tobramycin,0,1,24
+Q2_emar,Pyridoxine,1,1,38
+Q2_emar,Tenofovir Disoproxil (Viread),1,1,11
+Q2_emar,Iron Polysaccharides Complex,0,0,6
+Q2_emar,Hydroxyurea,0,0,104
+Q2_emar,Amitriptyline,0,1,5
+Q2_emar,MethIMAzole,1,1,4
+Q2_emar,Ethacrynate Sodium,0,0,15
+Q2_emar,Racepinephrine,1,1,12
+Q2_emar,Sodium Chloride 0.9%,0,0,7
+Q2_emar,Modafinil,0,0,103
+Q2_emar,Nefazodone,0,0,7
+Q2_emar,Dronabinol,0,0,75
+Q2_emar,Isosorbide Dinitrate,0,1,36
+Q2_emar,Dexmedetomidine,0,0,1
+Q2_emar,"Lidocaine 1%/Epinephrine 1:100,000",0,0,63
+Q2_emar,Sirolimus,0,0,39
+Q2_emar,Lidocaine-Prilocaine,0,0,24
+Q2_emar,Lumigan,0,0,12
+Q2_emar,Ambisome,0,1,16
+Q2_emar,Fluvoxamine Maleate,0,0,24
+Q2_emar,Nitrofurantoin Monohyd (MacroBID),1,1,3
+Q2_emar,LeVETiracetam,1,1,19
+Q2_emar,Hydrocortisone (Rectal) 2.5% Cream,0,1,3
+Q2_emar,Verapamil,0,1,6
+Q2_emar,Iohexol 240,0,0,58
+Q2_emar,Kcentra,0,0,41
+Q2_emar,Abacavir Oral Solution,0,0,6
+Q2_emar,LevETIRAcetam - STAT Dose,0,1,7
+Q2_emar,Midodrine 20 mg or placebo,0,1,1
+Q2_emar,QUEtiapine extended-release,0,0,22
+Q2_emar,Trandolapril,0,0,4
+Q2_emar,Hydrocortisone Cream 0.5%,0,0,17
+Q2_emar,olmesartan,0,0,15
+Q2_emar,Fosamprenavir,0,0,4
+Q2_emar,Valsartan,1,1,4
+Q2_emar,Enoxaparin Sodium,1,0,1
+Q2_emar,Albuterol Sulfate (Extended Release),0,0,4
+Q2_emar,rizatriptan,0,0,4
+Q2_emar,MetronidAZOLE Topical 1 % Gel,0,0,6
+Q2_emar,Ampicillin,1,0,1
+Q2_emar,Furosemide in 0.9% Sodium Chloride,0,1,5
+Q2_emar,Pantoprazole (Granules for DR Suspension),0,1,17
+Q2_emar,CefTAZidime-Heparin Lock,0,0,3
+Q2_emar,Propylthiouracil,0,0,5
+Q2_emar,Anastrozole,1,1,6
+Q2_emar,brinzolamide,0,0,4
+Q2_emar,thiamine study drug,0,1,1
+Q2_emar,AzaTHIOprine,1,1,9
+Q2_emar,LACOSamide - STAT Dose,0,1,3
+Q2_emar,Hydrocortisone Cream 0.5%,1,1,1
+Q2_emar,Albumin 5% (12.5g / 250mL),1,0,4
+Q2_emar,Toujeo SoloStar U-300 Insulin,0,0,1
+Q2_emar,DiCYCLOmine,0,0,5
+Q2_emar,Flucytosine,0,0,8
+Q2_emar,ambrisentan,0,0,8
+Q2_emar,Guaifenesin-Dextromethorphan,0,1,11
+Q2_emar,Ethacrynate Sodium,1,1,4
+Q2_emar,Remdesivir,0,1,5
+Q2_emar,OXcarbazepine,1,1,9
+Q2_emar,Dorzolamide 2% Ophth. Soln.,1,1,9
+Q2_emar,Amantadine Syrup,0,1,2
+Q2_emar,Alecensa,0,0,1
+Q2_emar,Mesna,0,0,4
+Q2_emar,Donepezil,1,1,17
+Q2_emar,Nitrofurantoin Monohyd (MacroBID),0,1,2
+Q2_emar,Azithromycin,1,0,6
+Q2_emar,Modafinil,1,1,5
+Q2_emar,Vosevi,0,0,1
+Q2_emar,DULoxetine DR,1,1,12
+Q2_emar,Febuxostat,0,1,1
+Q2_emar,Acamprosate,0,0,15
+Q2_emar,Nivolumab,0,1,1
+Q2_emar,Misoprostol,0,0,11
+Q2_emar,vitamine d3/placebo,0,0,1
+Q2_emar,Cefpodoxime Proxetil,0,1,2
+Q2_emar,Antithrombin 3 (human),1,1,4
+Q2_emar,Tamoxifen Citrate,0,1,1
+Q2_emar,Raltegravir,1,1,7
+Q2_emar,Sarilumab 400mg/200mg/placebo,1,1,6
+Q2_emar,Mesalamine (Rectal),0,0,11
+Q2_emar,milrinone,0,0,1
+Q2_emar,RISperidone,0,1,1
+Q2_emar,"Niacinamide 3g, 1g, or placebo",0,0,3
+Q2_emar,Carbidopa-Levodopa (10-100),0,0,6
+Q2_emar,RomiPLOstim,1,1,4
+Q2_emar,Felbamate,0,0,4
+Q2_emar,Hydroxocobalamin,1,1,2
+Q2_emar,Ranitidine (Liquid),1,1,2
+Q2_emar,DICYCLOMine,0,1,3
+Q2_emar,Disulfiram,0,0,1
+Q2_emar,INV-Ruxolitinib,0,0,2
+Q2_emar,Hyoscyamine,1,0,1
+Q2_emar,sevelamer HYDROCHLORIDE,0,1,1
+Q2_emar,Miconazole Nitrate (Combo Pack),1,1,2
+Q2_emar,Milrinone,1,1,3
+Q2_emar,Aquaphor Ointment,0,1,6
+Q2_emar,DASatinib,0,0,3
+Q2_emar,Neomycin-Polymyxin-Dexameth Ophth. Oint,0,1,1
+Q2_emar,Nitroglycerin Ointment  2%,1,1,7
+Q2_emar,sevelamer CARBONATE,1,0,4
+Q2_emar,Cisatracurium Besylate,1,0,1
+Q2_emar,Ogestrel (28),0,0,1
+Q2_emar,Meclizine,1,1,2
+Q2_emar,vancomycin,0,0,3
+Q2_emar,Phenytoin Infatab,0,1,4
+Q2_emar,Tacrolimus Extended Release (Envarsus XR),0,0,2
+Q2_emar,Lotemax,1,1,1
+Q2_emar,methenamine hippurate,0,0,3
+Q2_emar,Rocuronium,1,0,3
+Q2_emar,Nevirapine,0,0,7
+Q2_emar,METRONIDAZOLE,0,0,3
+Q2_emar,CIPROFLOXACIN,1,1,2
+Q2_emar,Abacavir Sulfate,0,1,5
+Q2_emar,Aspirin-Caffeine-Butalbital,0,0,4
+Q2_emar,Tobramycin Fortified Ophth. Soln.,0,0,3
+Q2_emar,Acetic Acid 2% Otic Solution,0,0,1
+Q2_emar,Xtandi,0,0,2
+Q2_emar,Doxepin HCl,0,1,2
+Q2_emar,inositoL,0,0,2
+Q2_emar,RisperiDONE Oral Solution,0,1,3
+Q2_emar,Niacinamide or Placebo,0,0,2
+Q2_emar,Veltassa,0,0,1
+Q2_emar,Adcirca,1,1,1
+Q2_emar,Tobramycin - Dosing by pharmacy,0,0,2
+Q2_emar,RISperidone (Disintegrating Tablet),1,1,1
+Q2_emar,CoEnzyme Q10 (300 mg) or Placebo ,1,1,1
+Q2_emar,Amphotericin B Oral Suspension,0,1,1
+Q2_emar,Dermoplast Spray,0,0,1
+Q2_emar,venlafaxine,1,1,1
+Q2_emar,"Lidocaine 1%/Epinephrine 1:200,000",0,0,1
+Q2_emar,Efavirenz,0,1,2
+Q2_emar,Viibryd,0,0,1
+Q2_emar,Epinephrine 1:1000,1,1,5
+Q2_emar,Clobazam,1,0,1
+Q2_emar,Sorbitol,0,0,2
+Q2_emar,EpiPen,0,0,1
+Q2_emar,evolocumab,0,0,1
+Q2_emar,trametinib,0,0,1
+Q2_emar,Triamcinolone Acetonide 0.1% Ointment,1,1,6
+Q2_emar,CefTRIAXone Graded Challenge,1,1,1
+Q2_emar,fluticasone-salmeterol,0,0,1
+Q2_emar,Florastor,0,0,3
+Q2_emar,Phospholine Iodide,0,0,1
+Q2_emar,Pilocarpine 2%,0,1,1
+Q2_emar,Ciprofloxacin,1,0,1
+Q2_emar,Testim,1,1,1
+Q2_emar,COMBIVENT RESPIMAT,0,0,1
+Q2_emar,Clotrimazole,0,1,3
+Q2_emar,paromomycin,0,0,1
+Q2_emar,Ipratropium Bromide Neb,1,0,1
+Q2_emar,Norethindrone-Estradiol,1,1,1
+Q2_emar,Ramipril,1,1,1
+Q2_emar,Toujeo Max U-300 SoloStar,0,0,1
+Q2_emar,Phenoxybenzamine HCl,0,0,2
+Q2_emar,anagrelide,0,0,1
+Q2_emar,vemurafenib,0,0,1
+Q2_emar,capmatinib,0,1,1
+Q2_emar,ruxolitinib,0,1,1
+Q2_emar,Polymyxin B -Trimethoprim Ophth Soln,0,1,2
+Q2_emar,Vitamin D3 / Placebo,0,0,1
+Q2_emar,Mirtazapine,1,0,2
+Q2_emar,carBAMazepine,0,0,1
+Q2_emar,INV apixaban,0,0,1
+Q2_emar,AMIKACIN - DOSING BY PHARMACY,1,1,1
+Q2_emar,Ibutilide Fumarate,1,1,1
+Q2_emar,colesevelam,0,0,1
+Q2_emar,Dakins 1/2 Strength,1,1,1
+Q2_emar,NovoLOG FLEXPEN,0,0,1
+Q2_emar,Leronlimab/placebo 700/0 MG,1,1,1
+Q2_emar,Pentamidine Isethionate,0,0,1
+Q2_emar,Lidocaine Jelly 2% (Glydo),1,0,2
+Q2_emar,Lidocaine Jelly 2%,1,1,1
+Q2_emar,fostamatinib/placebo,0,0,1
+Q2_emar,dexamethasone,0,0,1
+Q2_emar,neomycin-polymyxin B-dexameth,0,0,1
+Q2_emar,Tetanus-Diphtheria Tox (TENIVAC),1,1,1
+Q2_emar,alosetron,0,0,1
+Q2_emar,Tenofovir Disoproxil (Viread) Powder,0,0,1
+q,itemid,died_icu,died_hosp,n
+Q3_ing,227074,0,1,3234
+Q3_ing,220454,0,1,757
+Q3_ing,227074,1,0,90
+Q3_ing,226366,1,0,12
+Q3_ing,220490,0,1,3298
+Q3_ing,220413,0,0,4541
+Q3_ing,226060,1,1,4780
+Q3_ing,220395,1,1,1360
+Q3_ing,220454,1,1,1909
+Q3_ing,220364,1,1,1360
+Q3_ing,227079,0,1,114
+Q3_ing,220490,1,1,4914
+Q3_ing,226509,0,0,23597
+Q3_ing,226366,0,0,17632
+Q3_ing,226509,1,0,36
+Q3_ing,226221,1,0,33
+Q3_ing,220363,0,1,756
+Q3_ing,227080,0,0,426
+Q3_ing,227075,0,1,2103
+Q3_ing,226060,0,0,52437
+Q3_ing,220364,0,1,376
+Q3_ing,227075,0,0,59789
+Q3_ing,220364,0,0,4541
+Q3_ing,226060,0,1,2883
+Q3_ing,226374,1,1,36
+Q3_ing,220363,0,0,17019
+Q3_ing,227080,0,1,25
+Q3_ing,226374,0,0,2452
+Q3_ing,226221,0,1,731
+Q3_ing,220412,1,0,22
+Q3_ing,227080,1,0,2
+Q3_ing,220412,0,0,4541
+Q3_ing,227075,1,0,63
+Q3_ing,227075,1,1,3347
+Q3_ing,220412,0,1,376
+Q3_ing,220395,0,0,4541
+Q3_ing,220363,1,0,38
+Q3_ing,220413,1,0,22
+Q3_ing,226221,0,0,8974
+Q3_ing,226374,0,1,40
+Q3_ing,220412,1,1,1360
+Q3_ing,227080,1,1,98
+Q3_ing,220490,0,0,67933
+Q3_ing,227079,0,0,960
+Q3_ing,220413,0,1,376
+Q3_ing,220364,1,0,22
+Q3_ing,226060,1,0,88
+Q3_ing,220454,1,0,33
+Q3_ing,220395,1,0,22
+Q3_ing,226509,1,1,2553
+Q3_ing,226509,0,1,1273
+Q3_ing,226221,1,1,1881
+Q3_ing,226366,0,1,336
+Q3_ing,220490,1,0,90
+Q3_ing,227074,0,0,65305
+Q3_ing,220454,0,0,9183
+Q3_ing,227074,1,1,4904
+Q3_ing,226366,1,1,784
+Q3_ing,227079,1,1,237
+Q3_ing,220413,1,1,1360
+Q3_ing,220363,1,1,2488
+Q3_ing,220395,0,1,376
+q,itemid,died_icu,died_hosp,n
+Q4_inp,225869,0,0,865
+Q4_inp,226089,1,1,2303
+Q4_inp,226089,0,0,19529
+Q4_inp,225845,0,0,2095
+Q4_inp,225975,0,0,20876
+Q4_inp,225797,0,0,5566
+Q4_inp,226364,0,0,17226
+Q4_inp,221385,0,0,7140
+Q4_inp,220862,0,0,3074
+Q4_inp,225153,0,0,3665
+Q4_inp,225884,0,1,560
+Q4_inp,229233,0,0,680
+Q4_inp,220970,0,1,381
+Q4_inp,227531,0,0,314
+Q4_inp,227526,0,0,793
+Q4_inp,225154,0,1,962
+Q4_inp,221555,0,0,852
+Q4_inp,225863,1,1,125
+Q4_inp,225798,0,1,1462
+Q4_inp,228340,0,0,2313
+Q4_inp,225899,0,0,603
+Q4_inp,228351,1,1,418
+Q4_inp,229296,1,1,317
+Q4_inp,227531,1,1,180
+Q4_inp,225883,0,1,248
+Q4_inp,225161,0,1,99
+Q4_inp,223258,0,1,744
+Q4_inp,225850,1,1,393
+Q4_inp,229010,1,1,117
+Q4_inp,225934,1,1,38
+Q4_inp,225947,1,1,117
+Q4_inp,228140,0,0,40
+Q4_inp,229014,1,1,153
+Q4_inp,225914,0,0,29
+Q4_inp,227694,1,1,75
+Q4_inp,229574,0,1,8
+Q4_inp,229640,1,1,231
+Q4_inp,229069,1,1,79
+Q4_inp,225825,1,1,145
+Q4_inp,227694,0,1,71
+Q4_inp,225879,0,1,120
+Q4_inp,229061,0,0,16
+Q4_inp,229234,1,1,29
+Q4_inp,227520,0,0,171
+Q4_inp,225879,1,0,7
+Q4_inp,228359,1,1,13
+Q4_inp,225156,1,1,16
+Q4_inp,229709,1,1,6
+Q4_inp,227520,1,1,29
+Q4_inp,225847,1,1,62
+Q4_inp,225945,1,1,99
+Q4_inp,227530,0,1,20
+Q4_inp,221668,1,0,27
+Q4_inp,228140,1,1,40
+Q4_inp,221833,1,0,25
+Q4_inp,225996,0,0,9
+Q4_inp,226370,1,1,3
+Q4_inp,225898,1,1,14
+Q4_inp,220950,1,0,2
+Q4_inp,226023,1,1,1
+Q4_inp,228134,1,1,1
+Q4_inp,226882,0,0,3
+Q4_inp,228341,1,0,4
+Q4_inp,221207,1,1,3
+Q4_inp,229234,0,1,7
+Q4_inp,229063,1,1,1
+Q4_inp,227525,1,0,8
+Q4_inp,225167,1,1,5
+Q4_inp,227518,0,1,1
+Q4_inp,229574,1,0,1
+Q4_inp,225881,1,0,1
+Q4_inp,227522,0,0,16609
+Q4_inp,222011,0,0,30625
+Q4_inp,221668,0,0,8062
+Q4_inp,229072,0,0,2133
+Q4_inp,225828,0,0,25407
+Q4_inp,222168,0,0,22189
+Q4_inp,225943,0,0,34691
+Q4_inp,222168,1,1,2640
+Q4_inp,221906,1,1,3261
+Q4_inp,225832,0,0,1713
+Q4_inp,226363,0,0,2130
+Q4_inp,225171,0,1,106
+Q4_inp,229009,0,0,885
+Q4_inp,225885,1,1,381
+Q4_inp,229654,0,0,613
+Q4_inp,229071,0,0,1988
+Q4_inp,222056,0,1,91
+Q4_inp,227535,0,1,199
+Q4_inp,223259,0,0,1234
+Q4_inp,225943,1,0,66
+Q4_inp,229420,0,1,160
+Q4_inp,220864,1,1,774
+Q4_inp,228315,0,1,581
+Q4_inp,225827,0,0,936
+Q4_inp,220950,0,1,70
+Q4_inp,221828,0,1,300
+Q4_inp,225890,0,0,109
+Q4_inp,227695,1,0,1
+Q4_inp,220995,1,0,13
+Q4_inp,227691,0,0,66
+Q4_inp,225917,1,1,210
+Q4_inp,220949,1,0,88
+Q4_inp,227690,1,1,106
+Q4_inp,223260,0,1,231
+Q4_inp,225914,1,1,17
+Q4_inp,229295,0,1,69
+Q4_inp,229070,0,1,86
+Q4_inp,225865,1,1,86
+Q4_inp,225906,1,1,76
+Q4_inp,229583,0,1,14
+Q4_inp,225905,1,1,54
+Q4_inp,227530,1,1,53
+Q4_inp,223258,1,0,46
+Q4_inp,225830,0,1,21
+Q4_inp,228142,1,1,3
+Q4_inp,222051,1,0,3
+Q4_inp,227532,0,0,46
+Q4_inp,229057,0,1,19
+Q4_inp,225930,0,1,8
+Q4_inp,229760,0,0,11
+Q4_inp,225835,1,0,7
+Q4_inp,226369,1,0,4
+Q4_inp,226039,0,0,4
+Q4_inp,229632,0,1,22
+Q4_inp,229068,0,1,5
+Q4_inp,227691,1,1,4
+Q4_inp,229009,1,0,6
+Q4_inp,226046,0,0,10
+Q4_inp,221347,1,0,4
+Q4_inp,230034,0,1,2
+Q4_inp,225151,1,0,1
+Q4_inp,228133,0,0,1
+Q4_inp,225903,1,1,3
+Q4_inp,225886,0,0,4
+Q4_inp,228141,0,0,2
+Q4_inp,226002,0,0,1
+Q4_inp,225902,1,0,1
+Q4_inp,226372,0,0,7144
+Q4_inp,228135,0,0,440
+Q4_inp,225154,1,1,2345
+Q4_inp,225885,0,0,486
+Q4_inp,221347,0,0,2528
+Q4_inp,221794,0,1,972
+Q4_inp,225892,1,1,445
+Q4_inp,225936,0,1,85
+Q4_inp,225798,1,0,49
+Q4_inp,225799,1,0,44
+Q4_inp,225974,1,1,988
+Q4_inp,225847,0,0,363
+Q4_inp,225853,0,1,147
+Q4_inp,229618,0,0,102
+Q4_inp,229654,1,1,232
+Q4_inp,229297,1,1,204
+Q4_inp,221653,0,1,83
+Q4_inp,229861,0,1,2
+Q4_inp,225859,0,1,186
+Q4_inp,229299,0,0,188
+Q4_inp,222062,1,1,95
+Q4_inp,227689,1,0,5
+Q4_inp,225147,1,1,77
+Q4_inp,229295,1,1,149
+Q4_inp,225898,0,0,48
+Q4_inp,229062,0,0,9
+Q4_inp,228348,0,0,2
+Q4_inp,225840,0,0,55
+Q4_inp,225994,0,0,10
+Q4_inp,222151,0,0,19
+Q4_inp,229012,0,1,16
+Q4_inp,227534,0,0,2
+Q4_inp,225890,1,1,8
+Q4_inp,227976,0,0,1
+Q4_inp,225912,0,1,16
+Q4_inp,225832,1,0,3
+Q4_inp,225931,0,1,18
+Q4_inp,229615,0,1,2
+Q4_inp,229299,1,1,21
+Q4_inp,225937,0,1,15
+Q4_inp,225991,0,0,2
+Q4_inp,225845,1,0,4
+Q4_inp,229630,1,0,6
+Q4_inp,227698,0,0,3
+Q4_inp,228003,1,1,11
+Q4_inp,223259,1,0,1
+Q4_inp,227699,0,0,1
+Q4_inp,225868,0,0,4
+Q4_inp,225833,1,0,7
+Q4_inp,225995,0,1,2
+Q4_inp,225928,1,1,4
+Q4_inp,226372,1,0,1
+Q4_inp,229619,1,1,1
+Q4_inp,225911,1,0,1
+Q4_inp,225859,0,0,3370
+Q4_inp,221794,0,0,20347
+Q4_inp,225853,0,0,1680
+Q4_inp,225798,1,1,3275
+Q4_inp,229615,0,0,55
+Q4_inp,225799,1,1,2688
+Q4_inp,221653,0,0,618
+Q4_inp,227689,1,1,140
+Q4_inp,229630,1,1,636
+Q4_inp,225912,0,0,331
+Q4_inp,225931,0,0,240
+Q4_inp,225936,0,0,1331
+Q4_inp,225845,1,1,358
+Q4_inp,225833,1,1,492
+Q4_inp,229012,0,0,249
+Q4_inp,221347,0,1,131
+Q4_inp,221036,1,1,36
+Q4_inp,226372,1,1,110
+Q4_inp,225937,0,0,229
+Q4_inp,225873,1,1,13
+Q4_inp,225911,1,1,84
+Q4_inp,227534,0,1,5
+Q4_inp,226377,0,0,146
+Q4_inp,225832,1,1,142
+Q4_inp,225847,0,1,22
+Q4_inp,229618,0,1,39
+Q4_inp,223259,1,1,177
+Q4_inp,225995,0,0,5
+Q4_inp,225885,0,1,85
+Q4_inp,225974,1,0,20
+Q4_inp,229654,1,0,3
+Q4_inp,228135,0,1,32
+Q4_inp,225840,0,1,9
+Q4_inp,225154,1,0,36
+Q4_inp,229299,0,1,6
+Q4_inp,225892,1,0,6
+Q4_inp,225991,0,1,1
+Q4_inp,225898,0,1,8
+Q4_inp,222062,1,0,4
+Q4_inp,226372,0,1,17
+Q4_inp,221689,1,1,5
+Q4_inp,229861,0,0,16
+Q4_inp,229297,1,0,1
+Q4_inp,226044,1,1,1
+Q4_inp,221733,0,0,6
+Q4_inp,227696,0,0,3
+Q4_inp,227696,1,1,1
+Q4_inp,225877,0,0,6
+Q4_inp,229299,1,0,2
+Q4_inp,229295,1,0,3
+Q4_inp,226881,1,1,1
+Q4_inp,229709,0,0,3
+Q4_inp,228134,0,0,1
+Q4_inp,227524,1,1,1
+Q4_inp,226375,0,0,2359
+Q4_inp,220952,0,0,4541
+Q4_inp,227523,0,0,23682
+Q4_inp,223262,0,0,12780
+Q4_inp,228316,0,0,3508
+Q4_inp,225850,0,0,12122
+Q4_inp,227526,1,1,680
+Q4_inp,229010,0,0,987
+Q4_inp,225166,0,1,1077
+Q4_inp,226364,1,1,742
+Q4_inp,225881,0,0,737
+Q4_inp,221319,0,0,249
+Q4_inp,225974,0,1,472
+Q4_inp,221289,0,1,247
+Q4_inp,227524,0,0,67
+Q4_inp,227533,0,1,253
+Q4_inp,225902,0,1,45
+Q4_inp,226368,1,1,346
+Q4_inp,223261,0,0,116
+Q4_inp,225844,0,0,47
+Q4_inp,222042,0,1,137
+Q4_inp,225916,1,1,164
+Q4_inp,225934,0,0,93
+Q4_inp,221393,1,1,94
+Q4_inp,227528,0,0,17
+Q4_inp,221282,0,0,166
+Q4_inp,229640,0,1,44
+Q4_inp,225876,1,1,25
+Q4_inp,229014,0,1,51
+Q4_inp,225801,1,1,4
+Q4_inp,226048,0,1,1
+Q4_inp,225843,0,1,47
+Q4_inp,226050,0,0,14
+Q4_inp,225944,1,0,19
+Q4_inp,225851,1,0,24
+Q4_inp,225929,1,1,8
+Q4_inp,225797,1,0,20
+Q4_inp,225876,0,1,10
+Q4_inp,230034,1,1,18
+Q4_inp,220970,1,0,13
+Q4_inp,223261,1,1,11
+Q4_inp,221207,0,0,18
+Q4_inp,225156,0,1,2
+Q4_inp,225843,1,0,2
+Q4_inp,225913,1,0,2
+Q4_inp,221689,0,0,4
+Q4_inp,228339,1,0,1
+Q4_inp,221261,0,0,7
+Q4_inp,226048,1,1,2
+Q4_inp,229639,0,1,17
+Q4_inp,225174,0,1,1
+Q4_inp,225912,1,0,1
+Q4_inp,225148,0,1,5
+Q4_inp,221986,1,0,2
+Q4_inp,225842,1,0,3
+Q4_inp,221892,1,1,1
+Q4_inp,226019,0,1,1
+Q4_inp,225871,0,1,1
+Q4_inp,225941,0,1,15
+Q4_inp,220995,0,0,2025
+Q4_inp,225830,1,1,49
+Q4_inp,229616,0,0,2558
+Q4_inp,225825,0,0,1915
+Q4_inp,223262,1,1,1107
+Q4_inp,221794,1,1,2142
+Q4_inp,227525,0,0,874
+Q4_inp,225853,1,1,368
+Q4_inp,220862,1,1,872
+Q4_inp,225893,0,1,517
+Q4_inp,226361,1,0,21
+Q4_inp,229616,1,1,118
+Q4_inp,221036,0,0,87
+Q4_inp,225899,1,1,159
+Q4_inp,225151,0,0,495
+Q4_inp,226453,1,0,39
+Q4_inp,221662,0,1,183
+Q4_inp,225884,1,1,1412
+Q4_inp,225833,0,1,207
+Q4_inp,227070,0,0,164
+Q4_inp,225916,0,0,587
+Q4_inp,225860,1,1,128
+Q4_inp,225913,0,1,28
+Q4_inp,228383,0,0,175
+Q4_inp,229587,0,0,25
+Q4_inp,227071,0,0,21
+Q4_inp,229071,1,1,16
+Q4_inp,221824,1,1,292
+Q4_inp,221986,0,1,25
+Q4_inp,225973,1,0,1
+Q4_inp,225969,0,1,34
+Q4_inp,226367,0,1,84
+Q4_inp,225795,0,1,1
+Q4_inp,225905,0,0,150
+Q4_inp,222062,0,1,20
+Q4_inp,226370,0,1,1
+Q4_inp,225915,0,0,5
+Q4_inp,229632,1,0,3
+Q4_inp,229624,1,1,88
+Q4_inp,221319,1,1,30
+Q4_inp,225834,1,0,21
+Q4_inp,227072,0,1,4
+Q4_inp,225883,1,0,12
+Q4_inp,227692,0,0,37
+Q4_inp,226376,0,1,5
+Q4_inp,225855,1,0,14
+Q4_inp,228363,1,1,27
+Q4_inp,229597,0,1,6
+Q4_inp,229615,1,1,11
+Q4_inp,225873,0,1,11
+Q4_inp,221712,0,1,12
+Q4_inp,226047,1,1,4
+Q4_inp,228316,1,0,13
+Q4_inp,221429,1,0,7
+Q4_inp,225801,0,1,5
+Q4_inp,221289,1,0,8
+Q4_inp,226044,0,0,2
+Q4_inp,221342,0,0,3
+Q4_inp,225868,1,1,1
+Q4_inp,228131,1,1,1
+Q4_inp,228361,0,0,1
+Q4_inp,226036,0,0,2
+Q4_inp,225893,0,0,6523
+Q4_inp,221986,0,0,860
+Q4_inp,225913,0,0,1498
+Q4_inp,225833,0,0,3563
+Q4_inp,221712,0,0,462
+Q4_inp,226453,1,1,2451
+Q4_inp,226367,0,0,1954
+Q4_inp,226361,1,1,1151
+Q4_inp,221289,1,1,811
+Q4_inp,221662,0,0,1207
+Q4_inp,221429,1,1,158
+Q4_inp,225883,1,1,759
+Q4_inp,227072,0,0,33
+Q4_inp,225969,0,0,207
+Q4_inp,221794,1,0,42
+Q4_inp,229632,1,1,217
+Q4_inp,225916,0,1,76
+Q4_inp,225855,1,1,730
+Q4_inp,222062,0,0,311
+Q4_inp,225834,1,1,564
+Q4_inp,220995,0,1,283
+Q4_inp,226376,0,0,232
+Q4_inp,228316,1,1,502
+Q4_inp,229616,0,1,76
+Q4_inp,225941,0,0,178
+Q4_inp,229597,0,0,61
+Q4_inp,229760,1,1,8
+Q4_inp,227525,0,1,108
+Q4_inp,226370,0,0,207
+Q4_inp,225905,0,1,33
+Q4_inp,225873,0,0,55
+Q4_inp,225825,0,1,92
+Q4_inp,222021,1,1,32
+Q4_inp,225795,0,0,34
+Q4_inp,221036,0,1,6
+Q4_inp,225884,1,0,19
+Q4_inp,225801,0,0,32
+Q4_inp,226024,0,0,2
+Q4_inp,229072,1,1,20
+Q4_inp,225862,0,0,17
+Q4_inp,223262,1,0,24
+Q4_inp,225973,1,1,39
+Q4_inp,225899,1,0,2
+Q4_inp,220862,1,0,16
+Q4_inp,228383,0,1,7
+Q4_inp,225151,0,1,5
+Q4_inp,227070,0,1,6
+Q4_inp,227070,1,1,8
+Q4_inp,228356,0,0,2
+Q4_inp,221824,1,0,4
+Q4_inp,229616,1,0,2
+Q4_inp,229587,0,1,5
+Q4_inp,226020,0,0,1
+Q4_inp,226028,0,0,1
+Q4_inp,225853,1,0,7
+Q4_inp,225795,1,1,1
+Q4_inp,227071,0,1,1
+Q4_inp,225830,1,0,2
+Q4_inp,227977,1,1,1
+Q4_inp,227974,1,1,1
+Q4_inp,225877,1,1,1
+Q4_inp,221906,0,0,9461
+Q4_inp,225910,0,0,12344
+Q4_inp,225823,0,0,7996
+Q4_inp,229630,0,0,2461
+Q4_inp,225944,0,0,6309
+Q4_inp,222315,1,1,2048
+Q4_inp,225835,0,0,3331
+Q4_inp,228367,0,0,295
+Q4_inp,226369,0,0,1815
+Q4_inp,221744,1,1,2749
+Q4_inp,225907,1,1,1372
+Q4_inp,220949,0,1,2754
+Q4_inp,229297,0,0,831
+Q4_inp,220952,1,1,1360
+Q4_inp,227535,1,1,459
+Q4_inp,220864,0,1,253
+Q4_inp,225158,1,0,86
+Q4_inp,225152,1,0,22
+Q4_inp,225888,0,0,448
+Q4_inp,225150,1,1,200
+Q4_inp,225936,1,1,182
+Q4_inp,225159,1,1,249
+Q4_inp,227690,0,0,384
+Q4_inp,226877,0,0,52
+Q4_inp,225948,1,1,122
+Q4_inp,225875,1,1,117
+Q4_inp,225970,0,0,514
+Q4_inp,226371,0,0,456
+Q4_inp,225920,0,1,8
+Q4_inp,225159,0,1,108
+Q4_inp,226880,0,0,320
+Q4_inp,228359,0,0,84
+Q4_inp,225920,1,1,19
+Q4_inp,228367,1,1,62
+Q4_inp,227975,0,1,15
+Q4_inp,227529,0,1,89
+Q4_inp,225935,0,1,18
+Q4_inp,221712,1,1,83
+Q4_inp,229764,1,1,31
+Q4_inp,225903,0,0,48
+Q4_inp,228340,1,0,12
+Q4_inp,225157,0,1,2
+Q4_inp,228141,1,1,2
+Q4_inp,229063,0,0,5
+Q4_inp,229296,0,1,54
+Q4_inp,221393,0,1,19
+Q4_inp,226452,1,0,29
+Q4_inp,229068,1,1,36
+Q4_inp,225909,0,1,64
+Q4_inp,225908,0,0,92
+Q4_inp,222042,1,0,8
+Q4_inp,222318,0,0,32
+Q4_inp,226047,0,0,12
+Q4_inp,229639,1,0,3
+Q4_inp,227974,0,1,1
+Q4_inp,226880,1,0,3
+Q4_inp,229619,0,0,4
+Q4_inp,229011,1,0,3
+Q4_inp,228383,1,0,1
+Q4_inp,225909,1,0,4
+Q4_inp,229066,0,1,1
+Q4_inp,222190,0,1,1
+Q4_inp,226022,0,0,2
+Q4_inp,220949,0,0,47363
+Q4_inp,225910,0,1,829
+Q4_inp,225909,0,0,1059
+Q4_inp,222042,1,1,258
+Q4_inp,225152,1,1,1267
+Q4_inp,225158,1,1,4811
+Q4_inp,221393,0,0,197
+Q4_inp,220864,0,0,8281
+Q4_inp,225159,0,0,2510
+Q4_inp,226880,1,1,87
+Q4_inp,229296,0,0,857
+Q4_inp,226452,1,1,1231
+Q4_inp,228340,1,1,568
+Q4_inp,225920,0,0,108
+Q4_inp,227529,0,0,777
+Q4_inp,221906,0,1,1142
+Q4_inp,225969,1,1,69
+Q4_inp,225835,0,1,215
+Q4_inp,225909,1,1,174
+Q4_inp,225944,0,1,410
+Q4_inp,229639,1,1,53
+Q4_inp,227975,0,0,207
+Q4_inp,225823,0,1,303
+Q4_inp,227690,0,1,44
+Q4_inp,225935,0,0,278
+Q4_inp,225970,0,1,29
+Q4_inp,225157,0,0,147
+Q4_inp,229011,1,1,166
+Q4_inp,228383,1,1,24
+Q4_inp,229297,0,1,91
+Q4_inp,226880,0,1,21
+Q4_inp,225159,1,0,14
+Q4_inp,229630,0,1,165
+Q4_inp,228367,0,1,33
+Q4_inp,229063,0,1,1
+Q4_inp,221744,1,0,39
+Q4_inp,229066,0,0,11
+Q4_inp,226369,0,1,61
+Q4_inp,220952,1,0,22
+Q4_inp,225888,0,1,33
+Q4_inp,222037,0,0,12
+Q4_inp,222315,1,0,36
+Q4_inp,225907,1,0,32
+Q4_inp,228359,0,1,5
+Q4_inp,225150,1,0,3
+Q4_inp,226371,0,1,18
+Q4_inp,226031,0,0,5
+Q4_inp,225903,0,1,6
+Q4_inp,225875,1,0,1
+Q4_inp,228367,1,0,1
+Q4_inp,225908,0,1,9
+Q4_inp,226877,0,1,3
+Q4_inp,227974,0,0,3
+Q4_inp,222190,0,0,4
+Q4_inp,221712,1,0,1
+Q4_inp,226022,0,1,1
+Q4_inp,226045,0,0,4
+Q4_inp,227535,1,0,7
+Q4_inp,229068,1,0,1
+Q4_inp,222318,0,1,1
+Q4_inp,226047,0,1,1
+Q4_inp,225936,1,0,3
+Q4_inp,229861,1,1,1
+Q4_inp,228315,0,0,16189
+Q4_inp,222056,0,0,8128
+Q4_inp,229070,0,0,2134
+Q4_inp,229420,0,0,3585
+Q4_inp,223259,0,1,78
+Q4_inp,220949,1,1,4697
+Q4_inp,225171,0,0,631
+Q4_inp,223260,0,0,11570
+Q4_inp,225943,1,1,3980
+Q4_inp,222168,0,1,937
+Q4_inp,222011,0,1,1179
+Q4_inp,229068,0,0,360
+Q4_inp,220995,1,1,1118
+Q4_inp,221828,0,0,7645
+Q4_inp,223258,1,1,1988
+Q4_inp,230034,0,0,39
+Q4_inp,227535,0,0,1224
+Q4_inp,225943,0,1,1812
+Q4_inp,225828,0,1,987
+Q4_inp,225830,0,0,981
+Q4_inp,222051,1,1,33
+Q4_inp,220950,0,0,907
+Q4_inp,225902,1,1,185
+Q4_inp,229295,0,0,662
+Q4_inp,221668,0,1,617
+Q4_inp,227522,0,1,631
+Q4_inp,229583,0,0,303
+Q4_inp,221347,1,1,621
+Q4_inp,225832,0,1,62
+Q4_inp,229632,0,0,132
+Q4_inp,229009,0,1,69
+Q4_inp,229057,0,0,232
+Q4_inp,225930,0,0,125
+Q4_inp,229009,1,1,238
+Q4_inp,225835,1,1,536
+Q4_inp,226369,1,1,178
+Q4_inp,226058,0,1,1
+Q4_inp,227695,1,1,67
+Q4_inp,226363,0,1,56
+Q4_inp,226375,1,1,33
+Q4_inp,229654,0,1,58
+Q4_inp,225148,1,1,30
+Q4_inp,225157,1,1,10
+Q4_inp,222168,1,0,42
+Q4_inp,225151,1,1,26
+Q4_inp,225827,0,1,41
+Q4_inp,230044,1,1,4
+Q4_inp,222318,1,1,5
+Q4_inp,221906,1,0,49
+Q4_inp,229072,0,1,18
+Q4_inp,226875,0,0,1
+Q4_inp,220864,1,0,12
+Q4_inp,228142,0,0,5
+Q4_inp,225890,0,1,5
+Q4_inp,225906,1,0,2
+Q4_inp,227532,0,1,9
+Q4_inp,229071,0,1,1
+Q4_inp,225885,1,0,2
+Q4_inp,227072,1,1,1
+Q4_inp,225905,1,0,1
+Q4_inp,227071,1,1,1
+Q4_inp,225865,1,0,1
+Q4_inp,225168,0,0,13356
+Q4_inp,225158,0,0,57092
+Q4_inp,221744,0,0,17031
+Q4_inp,227522,1,1,1505
+Q4_inp,226452,0,1,1414
+Q4_inp,221749,0,0,10650
+Q4_inp,225152,0,0,8928
+Q4_inp,225947,0,0,386
+Q4_inp,225863,0,0,471
+Q4_inp,221824,0,1,164
+Q4_inp,226365,0,0,1867
+Q4_inp,227689,0,0,1065
+Q4_inp,225911,0,0,3298
+Q4_inp,225828,1,1,2056
+Q4_inp,225893,1,1,1323
+Q4_inp,226367,1,1,248
+Q4_inp,225170,1,1,835
+Q4_inp,226453,0,1,905
+Q4_inp,225166,1,1,2227
+Q4_inp,225837,0,1,128
+Q4_inp,222315,0,1,467
+Q4_inp,229013,0,1,77
+Q4_inp,222011,1,1,2544
+Q4_inp,229069,0,0,337
+Q4_inp,229583,1,1,86
+Q4_inp,229233,1,1,291
+Q4_inp,223257,0,0,249
+Q4_inp,221828,1,1,512
+Q4_inp,227533,1,1,1126
+Q4_inp,225155,1,1,210
+Q4_inp,226361,0,1,778
+Q4_inp,225970,1,1,107
+Q4_inp,225892,0,1,173
+Q4_inp,225917,0,1,76
+Q4_inp,225827,1,1,68
+Q4_inp,227536,0,1,94
+Q4_inp,225859,1,1,471
+Q4_inp,223260,1,1,479
+Q4_inp,221623,0,0,626
+Q4_inp,225928,0,0,53
+Q4_inp,227523,1,0,45
+Q4_inp,225975,1,0,22
+Q4_inp,229617,0,1,13
+Q4_inp,229064,0,0,30
+Q4_inp,227532,1,1,22
+Q4_inp,229597,1,1,48
+Q4_inp,227979,0,1,12
+Q4_inp,225866,0,1,15
+Q4_inp,225942,1,0,36
+Q4_inp,225147,0,0,195
+Q4_inp,229058,0,1,11
+Q4_inp,222021,0,1,9
+Q4_inp,229070,1,0,8
+Q4_inp,229420,1,0,7
+Q4_inp,225866,1,1,33
+Q4_inp,229618,1,0,2
+Q4_inp,221653,1,0,5
+Q4_inp,221385,1,0,27
+Q4_inp,228315,1,0,29
+Q4_inp,225153,1,0,7
+Q4_inp,228131,0,0,6
+Q4_inp,225937,1,1,23
+Q4_inp,226046,1,1,3
+Q4_inp,225167,0,0,16
+Q4_inp,225931,1,0,1
+Q4_inp,221892,0,1,1
+Q4_inp,225895,1,1,1
+Q4_inp,225930,1,0,1
+Q4_inp,226371,1,0,2
+Q4_inp,226023,0,1,1
+Q4_inp,227975,1,0,1
+Q4_inp,225837,1,0,1
+Q4_inp,228355,0,0,1
+Q4_inp,221456,1,1,2268
+Q4_inp,225170,0,0,2802
+Q4_inp,225799,0,0,15301
+Q4_inp,225842,0,0,1350
+Q4_inp,221833,0,1,578
+Q4_inp,221456,0,0,16769
+Q4_inp,227529,1,1,666
+Q4_inp,221749,1,1,1727
+Q4_inp,225150,0,0,2886
+Q4_inp,225168,1,1,1784
+Q4_inp,225834,0,0,4758
+Q4_inp,225942,0,1,798
+Q4_inp,221468,0,0,1992
+Q4_inp,225906,0,1,67
+Q4_inp,225851,0,1,890
+Q4_inp,222056,1,1,201
+Q4_inp,228351,0,0,1007
+Q4_inp,221429,0,0,883
+Q4_inp,228339,0,0,1220
+Q4_inp,225973,0,0,872
+Q4_inp,225161,1,1,308
+Q4_inp,225875,0,1,37
+Q4_inp,222051,0,1,23
+Q4_inp,225155,0,1,132
+Q4_inp,225865,0,0,279
+Q4_inp,221468,1,1,338
+Q4_inp,225907,0,1,561
+Q4_inp,227536,1,1,724
+Q4_inp,228135,1,1,69
+Q4_inp,225823,1,0,11
+Q4_inp,229624,0,0,1034
+Q4_inp,228341,0,0,101
+Q4_inp,225945,0,0,307
+Q4_inp,225855,0,1,435
+Q4_inp,225860,0,1,35
+Q4_inp,221282,1,1,60
+Q4_inp,228003,0,0,97
+Q4_inp,226368,0,1,115
+Q4_inp,225948,0,1,50
+Q4_inp,227695,0,1,32
+Q4_inp,229617,1,0,2
+Q4_inp,225888,1,1,94
+Q4_inp,222151,1,1,6
+Q4_inp,226051,0,0,27
+Q4_inp,229011,0,1,89
+Q4_inp,228363,0,1,12
+Q4_inp,227534,1,1,3
+Q4_inp,225915,1,1,2
+Q4_inp,225910,1,0,18
+Q4_inp,229587,1,1,5
+Q4_inp,221555,1,0,11
+Q4_inp,225838,0,1,33
+Q4_inp,225171,1,0,8
+Q4_inp,227973,0,0,7
+Q4_inp,229058,1,1,15
+Q4_inp,225848,0,1,8
+Q4_inp,221662,1,0,10
+Q4_inp,229013,1,0,3
+Q4_inp,226365,1,0,2
+Q4_inp,229764,0,0,4
+Q4_inp,221733,1,1,1
+Q4_inp,221261,1,1,1
+Q4_inp,226363,1,0,5
+Q4_inp,226000,0,0,2
+Q4_inp,229066,1,0,1
+Q4_inp,226038,0,0,2
+Q4_inp,221833,0,0,11297
+Q4_inp,225823,1,1,410
+Q4_inp,227695,0,0,389
+Q4_inp,225851,0,0,8863
+Q4_inp,225907,0,0,11638
+Q4_inp,226368,0,0,4046
+Q4_inp,225855,0,0,7516
+Q4_inp,221456,0,1,719
+Q4_inp,225875,0,0,661
+Q4_inp,225948,0,0,423
+Q4_inp,225799,0,1,1012
+Q4_inp,225155,0,0,1232
+Q4_inp,225942,0,0,8956
+Q4_inp,229011,0,0,1080
+Q4_inp,225860,0,0,1033
+Q4_inp,225906,0,0,1010
+Q4_inp,225150,0,1,64
+Q4_inp,225910,1,1,1780
+Q4_inp,225170,0,1,313
+Q4_inp,221555,1,1,693
+Q4_inp,228339,0,1,85
+Q4_inp,221662,1,1,537
+Q4_inp,221749,1,0,33
+Q4_inp,228363,0,0,143
+Q4_inp,222051,0,0,545
+Q4_inp,221468,0,1,140
+Q4_inp,225171,1,1,383
+Q4_inp,226051,0,1,2
+Q4_inp,225848,0,0,27
+Q4_inp,228351,0,1,114
+Q4_inp,225842,0,1,83
+Q4_inp,221623,1,1,42
+Q4_inp,229013,1,1,120
+Q4_inp,227979,1,1,36
+Q4_inp,225834,0,1,240
+Q4_inp,225838,0,0,80
+Q4_inp,229624,0,1,36
+Q4_inp,228341,0,1,21
+Q4_inp,226363,1,1,136
+Q4_inp,227529,1,0,6
+Q4_inp,227973,1,1,4
+Q4_inp,225865,0,1,25
+Q4_inp,221429,0,1,60
+Q4_inp,225941,1,1,15
+Q4_inp,226365,1,1,160
+Q4_inp,221456,1,0,35
+Q4_inp,225945,0,1,18
+Q4_inp,225168,1,0,31
+Q4_inp,226027,1,1,1
+Q4_inp,229617,1,1,42
+Q4_inp,225848,1,1,16
+Q4_inp,225973,0,1,9
+Q4_inp,225161,1,0,8
+Q4_inp,222056,1,0,2
+Q4_inp,221282,1,0,1
+Q4_inp,228003,0,1,5
+Q4_inp,226016,0,0,6
+Q4_inp,229764,0,1,5
+Q4_inp,225888,1,0,2
+Q4_inp,221468,1,0,5
+Q4_inp,225895,0,0,3
+Q4_inp,228364,0,0,2
+Q4_inp,228135,1,0,1
+Q4_inp,227536,1,0,5
+Q4_inp,229058,1,0,1
+Q4_inp,229066,1,1,1
+Q4_inp,226051,1,1,3
+Q4_inp,227973,0,1,1
+Q4_inp,228340,0,1,156
+Q4_inp,223258,0,0,21154
+Q4_inp,225879,0,0,2152
+Q4_inp,225884,0,0,5990
+Q4_inp,227694,0,0,2197
+Q4_inp,227518,0,0,5
+Q4_inp,225883,0,0,2589
+Q4_inp,225154,0,0,10882
+Q4_inp,227525,1,1,849
+Q4_inp,225879,1,1,366
+Q4_inp,225798,0,0,22573
+Q4_inp,220950,1,1,382
+Q4_inp,221833,1,1,1112
+Q4_inp,220970,0,0,3539
+Q4_inp,221668,1,1,2063
+Q4_inp,220862,0,1,351
+Q4_inp,227530,0,0,225
+Q4_inp,226089,0,1,934
+Q4_inp,225161,0,0,933
+Q4_inp,229233,0,1,54
+Q4_inp,226089,1,0,44
+Q4_inp,226364,0,1,329
+Q4_inp,221385,0,1,607
+Q4_inp,225975,0,1,781
+Q4_inp,229234,0,0,231
+Q4_inp,225881,1,1,208
+Q4_inp,227526,0,1,89
+Q4_inp,229574,0,0,118
+Q4_inp,227531,0,1,52
+Q4_inp,228341,1,1,95
+Q4_inp,225153,0,1,201
+Q4_inp,225869,0,1,78
+Q4_inp,225899,0,1,48
+Q4_inp,225797,0,1,401
+Q4_inp,225945,1,0,3
+Q4_inp,225845,0,1,163
+Q4_inp,225862,1,1,9
+Q4_inp,221555,0,1,69
+Q4_inp,228140,0,1,5
+Q4_inp,225929,0,0,32
+Q4_inp,225847,1,0,2
+Q4_inp,226026,0,0,1
+Q4_inp,225825,1,0,6
+Q4_inp,229574,1,1,15
+Q4_inp,225850,1,0,20
+Q4_inp,226877,1,1,6
+Q4_inp,225934,1,0,1
+Q4_inp,227531,1,0,8
+Q4_inp,226045,1,1,1
+Q4_inp,227520,1,0,1
+Q4_inp,229296,1,0,2
+Q4_inp,225886,1,1,1
+Q4_inp,226027,0,0,2
+Q4_inp,228351,1,0,4
+Q4_inp,229640,1,0,2
+Q4_inp,227520,0,1,10
+Q4_inp,229014,1,0,5
+Q4_inp,225896,0,0,6
+Q4_inp,225914,0,1,4
+Q4_inp,229010,1,0,1
+Q4_inp,225156,1,0,1
+Q4_inp,229234,1,0,1
+Q4_inp,226039,1,1,1
+Q4_inp,227694,1,0,2
+Q4_inp,222190,1,1,1
+Q4_inp,225974,0,0,9635
+Q4_inp,225166,0,0,26025
+Q4_inp,222042,0,0,2728
+Q4_inp,223262,0,1,550
+Q4_inp,227533,0,0,1030
+Q4_inp,228339,1,1,313
+Q4_inp,221289,0,0,2258
+Q4_inp,225902,0,0,400
+Q4_inp,225851,1,1,1988
+Q4_inp,229640,0,0,1587
+Q4_inp,225944,1,1,1290
+Q4_inp,225843,0,0,1296
+Q4_inp,228316,0,1,215
+Q4_inp,225174,0,0,38
+Q4_inp,227523,0,1,876
+Q4_inp,225850,0,1,158
+Q4_inp,229014,0,0,963
+Q4_inp,225797,1,1,1032
+Q4_inp,220970,1,1,1072
+Q4_inp,225842,1,1,115
+Q4_inp,229057,1,1,35
+Q4_inp,225876,0,0,106
+Q4_inp,225843,1,1,86
+Q4_inp,220952,0,1,376
+Q4_inp,225913,1,1,45
+Q4_inp,221986,1,1,157
+Q4_inp,229639,0,0,132
+Q4_inp,229064,1,1,14
+Q4_inp,225838,1,1,54
+Q4_inp,225881,0,1,89
+Q4_inp,226375,0,1,38
+Q4_inp,225156,0,0,63
+Q4_inp,227526,1,0,6
+Q4_inp,225934,0,1,7
+Q4_inp,227528,1,1,15
+Q4_inp,221282,0,1,15
+Q4_inp,226364,1,0,12
+Q4_inp,225148,0,0,88
+Q4_inp,229010,0,1,79
+Q4_inp,222037,1,1,4
+Q4_inp,221319,0,1,11
+Q4_inp,226368,1,0,5
+Q4_inp,225844,1,1,9
+Q4_inp,225871,0,0,6
+Q4_inp,225912,1,1,16
+Q4_inp,229781,0,0,3
+Q4_inp,226019,0,0,3
+Q4_inp,226030,0,0,3
+Q4_inp,225844,0,1,6
+Q4_inp,227528,0,1,1
+Q4_inp,226048,0,0,6
+Q4_inp,225174,1,1,3
+Q4_inp,221393,1,0,2
+Q4_inp,230044,0,0,4
+Q4_inp,227524,0,1,3
+Q4_inp,225993,0,0,2
+Q4_inp,226059,0,0,3
+Q4_inp,226882,1,1,1
+Q4_inp,225871,1,1,2
+Q4_inp,226049,0,0,2
+Q4_inp,223261,0,1,4
+Q4_inp,226452,0,0,53649
+Q4_inp,225942,1,1,2616
+Q4_inp,226453,0,0,12251
+Q4_inp,226361,0,0,13599
+Q4_inp,225173,0,0,28
+Q4_inp,225153,1,1,369
+Q4_inp,228315,1,1,1425
+Q4_inp,229013,0,0,717
+Q4_inp,222315,0,0,2207
+Q4_inp,227523,1,1,1999
+Q4_inp,229070,1,1,304
+Q4_inp,225892,0,0,2182
+Q4_inp,225869,1,1,210
+Q4_inp,221744,0,1,874
+Q4_inp,221824,0,0,3311
+Q4_inp,225158,0,1,2992
+Q4_inp,226371,1,1,81
+Q4_inp,225975,1,1,1332
+Q4_inp,225152,0,1,545
+Q4_inp,225168,0,1,870
+Q4_inp,229420,1,1,477
+Q4_inp,229618,1,1,157
+Q4_inp,227536,0,0,803
+Q4_inp,221653,1,1,357
+Q4_inp,225837,0,0,1386
+Q4_inp,225917,0,0,710
+Q4_inp,221385,1,1,1586
+Q4_inp,227975,1,1,62
+Q4_inp,221749,0,1,543
+Q4_inp,225837,1,1,167
+Q4_inp,222021,0,0,246
+Q4_inp,225866,0,0,199
+Q4_inp,227979,0,0,164
+Q4_inp,225166,1,0,45
+Q4_inp,225863,0,1,61
+Q4_inp,227522,1,0,34
+Q4_inp,225947,0,1,51
+Q4_inp,227689,0,1,88
+Q4_inp,225828,1,0,30
+Q4_inp,222011,1,0,52
+Q4_inp,226365,0,1,59
+Q4_inp,229012,1,1,49
+Q4_inp,225931,1,1,58
+Q4_inp,229069,0,1,29
+Q4_inp,225866,1,0,1
+Q4_inp,225911,0,1,20
+Q4_inp,225893,1,0,23
+Q4_inp,229617,0,0,25
+Q4_inp,223260,1,0,11
+Q4_inp,229064,0,1,5
+Q4_inp,225930,1,1,20
+Q4_inp,227533,1,0,15
+Q4_inp,223257,1,1,8
+Q4_inp,225840,1,1,26
+Q4_inp,221623,0,1,15
+Q4_inp,225147,0,1,15
+Q4_inp,225935,1,1,27
+Q4_inp,225155,1,0,3
+Q4_inp,229058,0,0,21
+Q4_inp,225908,1,1,10
+Q4_inp,225170,1,0,12
+Q4_inp,225859,1,0,6
+Q4_inp,225928,0,1,6
+Q4_inp,223257,0,1,2
+Q4_inp,229233,1,0,4
+Q4_inp,228132,0,0,2
+Q4_inp,226017,0,0,3
+Q4_inp,226367,1,0,5
+Q4_inp,225827,1,0,1
+Q4_inp,221828,1,0,11
+Q4_inp,227692,1,1,3
+Q4_inp,226376,1,1,8
+Q4_inp,221892,0,0,3
+Q4_inp,226023,0,0,2
+Q4_inp,225970,1,0,1
+Q4_inp,229597,1,0,2
+Q4_inp,229583,1,0,1
+Q4_inp,228355,0,1,1
+Q4_inp,225937,1,0,1
+q,died_icu,died_hosp,n
+Q5_denom,0,0,75664
+Q5_denom,1,0,103
+Q5_denom,0,1,3843
+Q5_denom,1,1,5632
