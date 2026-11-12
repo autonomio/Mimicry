@@ -528,7 +528,10 @@ def summarize_state_frame(anchors, states, *, min_cell=30):
     """Produce aggregate-only partitions, suppressing the complete arm/horizon
     if ANY nonzero marginal OR joint-definition cell is smaller than min_cell
     patients. The joint check prevents the nested invasive/tracheostomy definitions
-    from revealing a small tracheostomy-only group by subtraction.
+    from revealing a small tracheostomy-only group by subtraction. Death and ICU
+    exit are monotone across horizons, so consecutive-horizon increments are also
+    exact cells: the later partition is suppressed unless every increment is
+    empty or meets the threshold itself.
     """
     _check_min_cell(min_cell)
     metadata = _analysis_anchors(anchors)
@@ -542,11 +545,25 @@ def summarize_state_frame(anchors, states, *, min_cell=30):
     if len(frame) != len(states):
         raise ValueError("State/anchor identifiers disagree")
     frame = frame.loc[frame.weight > 0]
+    # The inclusive definition shares the dead and ICU-exit labels, so one
+    # increment check covers both published state breakdowns.
+    increment_suppressed = set()
+    for arm in ARMS:
+        monotone = {}
+        for horizon in horizons:
+            group = frame.loc[(frame.arm == arm) & (frame.horizon_h == horizon)]
+            monotone[horizon] = tuple(
+                group.loc[group.state == label, "subject_id"].nunique()
+                for label in (STATE_LABELS[0], STATE_LABELS[1]))
+        for previous, current in zip(horizons, horizons[1:]):
+            increments = tuple(b - a for a, b in zip(monotone[previous], monotone[current]))
+            if any(0 < inc < min_cell for inc in increments):
+                increment_suppressed.add((arm, current))
     records = []
     for horizon in horizons:
         for arm in ARMS:
             group = frame.loc[(frame.arm == arm) & (frame.horizon_h == horizon)]
-            suppress = group.subject_id.nunique() < min_cell
+            suppress = group.subject_id.nunique() < min_cell or (arm, horizon) in increment_suppressed
             for column, labels in (("state", STATE_LABELS), ("state_inclusive", INCLUSIVE_STATE_LABELS)):
                 if not set(group[column]).issubset(labels):
                     raise ValueError("Unexpected state label")

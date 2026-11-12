@@ -196,6 +196,40 @@ class StateTests(unittest.TestCase):
         self.assertEqual(control["status"], "ok")
         json.dumps(result, allow_nan=False)
 
+    def test_consecutive_horizons_suppress_small_death_increment(self):
+        # Treated arm: 30 dead at 4h, 31 at 12h; every nonzero marginal at
+        # both horizons meets the threshold. Releasing both fractions would
+        # let the one intervening death be recovered by subtraction, so the
+        # later partition is suppressed while the earlier one releases.
+        a = pd.DataFrame({
+            "anchor_id": [f"a{i}" for i in range(200)],
+            "subject_id": list(range(200)),
+            "arm": ["DNR"] * 100 + ["RISKSET"] * 100,
+            "weight": [1.] * 200,
+        })
+        rows = []
+        layouts = {
+            ("DNR", 4.): (["dead"] * 30 + ["alive_icu_invasive"] * 40 + ["alive_icu_not_invasive"] * 30, 0),
+            ("DNR", 12.): (["dead"] * 31 + ["alive_icu_invasive"] * 39 + ["alive_icu_not_invasive"] * 30, 0),
+            ("RISKSET", 4.): (["dead"] * 40 + ["alive_icu_invasive"] * 30 + ["alive_icu_not_invasive"] * 30, 100),
+            ("RISKSET", 12.): (["dead"] * 40 + ["alive_icu_invasive"] * 30 + ["alive_icu_not_invasive"] * 30, 100),
+        }
+        for (arm, horizon), (states, offset) in layouts.items():
+            for index, state in enumerate(states):
+                rows.append({"anchor_id": f"a{offset + index}", "subject_id": offset + index,
+                             "horizon_h": float(horizon), "state": state,
+                             "state_inclusive": "dead" if state == "dead"
+                             else "alive_icu_invasive_or_tracheostomy" if state == "alive_icu_invasive"
+                             else "alive_icu_no_invasive_or_tracheostomy"})
+        result = outcomes.summarize_state_frame(a, pd.DataFrame(rows))
+        by_key = {(record["arm"], record["horizon_h"]): record for record in result["states"]}
+        self.assertEqual(by_key[("DNR", 4.)]["status"], "ok")
+        self.assertEqual(by_key[("DNR", 12.)]["status"], "suppressed")
+        self.assertNotIn("state", by_key[("DNR", 12.)])
+        self.assertEqual(by_key[("RISKSET", 4.)]["status"], "ok")
+        self.assertEqual(by_key[("RISKSET", 12.)]["status"], "ok")
+        json.dumps(result, allow_nan=False)
+
 
 @unittest.skipUnless(HAS_DUCKDB, "DuckDB is not installed; synthetic SQL integration requires DuckDB")
 class DuckDBIntegrationTests(unittest.TestCase):
