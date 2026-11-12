@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "kind": "dnr-internal-validation",
+  "track": "prophecy-2",
+  "title": "Independent computation and supported-comparison audit of newly documented DNR",
+  "provenance": {
+    "started_at_utc": "2026-10-27T17:03:22.522294+00:00",
+    "source_commit": "dab401a79bb63e563448dae29c5145d6377b3a17",
+    "frozen_implementation_commit": "f233dfd6046dc188b243859583b6df66744f3685",
+    "protocol_sha256": "3aacd22d8b28f7ff10e50410a4a6eb12344f7ffd40ae873895f32274a13fe098",
+    "implementation_sha256": {
+      "test_runner.py": "9fb9b387ac4627de707b58e16be6c1c2c138785244e57245cf395526f6e0630f",
+      "legacy_01_dnr_fork.py": "d2f0bc73aaab8a5435412f836f8fafeaaaa2eb9ac9bb8bd2c2b597dd63a3d672",
+      "run_validation.py": "b898de41b246b866b0fc1f2c7ec3a15f3e5264aa923bbf1dd3a3d5ce05f0f1d3",
+      "test_outcomes.py": "89b141e7d791d3e91752a73893c27e0d095b082c9d64fc95d3a3ba4d30b88d51",
+      "matching.py": "50e7542bd90b7acc36f37a8a0d46852d29f220416aa056cbba4a091e1beaf973",
+      "outcomes.py": "3b4426a07fa6bca47b8fe1fc1925c9ae5510f9475bc5798842cbcbd5e6f69fae",
+      "test_matching.py": "d5a982f9358353e50fc6f9e7b2d38203e59f0d2afdff19b6911d7a7eb8cc931e"
+    },
+    "legacy_calibration_source_sha256": "d2f0bc73aaab8a5435412f836f8fafeaaaa2eb9ac9bb8bd2c2b597dd63a3d672",
+    "legacy_aggregate_report_sha256": "df7f09b3696e8fee2f5bb36f53e3d5ec4bcdab68f8dd38de7cda99a966c85a94",
+    "input_sha256": {
+      "risk_treated.parquet": "da61ecd4848909bb3acd5ff7d69447556061869d9b734b1f5e50234d9549d777",
+      "risk_weighted_severityhistory.parquet": "7899eb4a4755cd50f43ce053fd249a3f4a490ad46ca7894fdc0566868c46f484",
+      "risk_support_bins.parquet": "62e9810b5d1f8174df62b7ca2bd7679e51e040c4d4e69a73bfc322cf34e6e0b9",
+      "risk_event_bins.parquet": "489dd4d938235169334ec26f44cb2e88e72c2bd10f3906b9c2009657c1830e78"
+    },
+    "dataset": "MIMIC-IV v3.1; same single-institution dataset as original study",
+    "new_external_data_downloaded": false,
+    "runtime_versions": {
+      "python": "3.14.4",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "scipy": "1.18.1",
+      "duckdb": "1.5.6"
+    },
+    "designs_frozen_at_utc": "2026-10-27T17:03:28.482516+00:00",
+    "design_diagnostics_sha256": "c7ea866415b723d35dd28477b2622d586c4c1d8a71303e49690d9b8c0ffba5e7",
+    "finished_at_utc": "2026-10-27T17:03:33.673768+00:00",
+    "database_opened_read_only": true,
+    "database_size_and_mtime_unchanged": true
+  },
+  "numerical_reproduction": {
+    "DNR_ONLY": {
+      "status": "PASS",
+      "maximum_absolute_errors": {
+        "point": 2.3869795029440866e-15,
+        "rate": 2.220446049250313e-15,
+        "denominator_h": 3.637978807091713e-11,
+        "numerator_per_h": 3.645795664477962e-15
+      },
+      "pre_denominator_reference": "12 hours per original risk set; each arm sums to one per set",
+      "numerator_reference": "Reconstructed from archived arm rates and denominator; numerator error normalized by denominator"
+    },
+    "DNR_DNI": {
+      "status": "PASS",
+      "maximum_absolute_errors": {
+        "point": 2.0872192862952943e-14,
+        "rate": 2.531308496145357e-14,
+        "denominator_h": 5.4569682106375694e-12,
+        "numerator_per_h": 2.53050899020291e-14
+      },
+      "pre_denominator_reference": "12 hours per original risk set; each arm sums to one per set",
+      "numerator_reference": "Reconstructed from archived arm rates and denominator; numerator error normalized by denominator"
+    }
+  },
+  "reproduction_scope": "Reused original baseline calibration; independent contrast arithmetic on identical cached measurements. Archived arm rates, weighted denominators, rate-implied numerators and point estimates compared; new conditional intervals use G/(G-1) finite-sample correction.",
+  "structured_status_audit": {
+    "status": "PASS",
+    "scope": "Structured code-status state at each anchor and treated POE timestamp",
+    "clinical_intent_validated": false,
+    "failure_count": 0
+  },
+  "independent_extraction": {
+    "status": "PASS",
+    "same_underlying_dataset": true,
+    "independent_source_queries": true,
+    "like_for_like_reconciled": true,
+    "definition_change_note": "Legacy-equivalent source queries must reconcile. Union intervals, positive doses and distinct MAP timestamps are separately specified changes, not automatic reproduction failures.",
+    "source_tables_shared": "MIMIC-IV ICU/admission and derived ventilation/pressor/vital tables",
+    "comparisons": {
+      "legacy_observed_h": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "legacy_invasive_capped_sum": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "legacy_pressor_capped_sum": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "legacy_map_rows": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "definition_observed_h": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "definition_invasive_union": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "definition_any_pressor_union": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      },
+      "definition_map_distinct_timestamp": {
+        "exact_agreement": true,
+        "n_people_with_different_bins": 0
+      }
+    }
+  },
+  "analyses": {
+    "DNR_ONLY_all": {
+      "design": {
+        "fit_tolerance": 0.05,
+        "postfit_balance_gate": 0.1,
+        "within_riskset_subject_cap": 0.5,
+        "global_control_subject_cap": 2.0,
+        "outcomes_used_in_design": false,
+        "features_entirely_missing_in_treated": [],
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "status": "INFEASIBLE",
+        "gate_pass": false,
+        "n_treated": 792,
+        "count_disclosure": "released"
+      },
+      "outcome_status": "NOT_ESTIMATED_DESIGN_FAILED"
+    },
+    "DNR_ONLY_part0": {
+      "design": {
+        "fit_tolerance": 0.05,
+        "postfit_balance_gate": 0.1,
+        "within_riskset_subject_cap": 0.5,
+        "global_control_subject_cap": 2.0,
+        "outcomes_used_in_design": false,
+        "features_entirely_missing_in_treated": [],
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "status": "INFEASIBLE",
+        "gate_pass": false,
+        "n_treated": 363,
+        "count_disclosure": "released"
+      },
+      "outcome_status": "NOT_ESTIMATED_DESIGN_FAILED"
+    },
+    "DNR_ONLY_part1": {
+      "design": {
+        "fit_tolerance": 0.05,
+        "postfit_balance_gate": 0.1,
+        "within_riskset_subject_cap": 0.5,
+        "global_control_subject_cap": 2.0,
+        "outcomes_used_in_design": false,
+        "features_entirely_missing_in_treated": [],
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "status": "INFEASIBLE",
+        "gate_pass": false,
+        "n_treated": 346,
+        "count_disclosure": "released"
+      },
+      "outcome_status": "NOT_ESTIMATED_DESIGN_FAILED"
+    },
+    "DNR_DNI_all": {
+      "design": {
+        "fit_tolerance": 0.05,
+        "postfit_balance_gate": 0.1,
+        "within_riskset_subject_cap": 0.5,
+        "global_control_subject_cap": 2.0,
+        "outcomes_used_in_design": false,
+        "features_entirely_missing_in_treated": [],
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "status": "PASS",
+        "gate_pass": true,
+        "max_abs_frozen_smd": 0.05000000000000531,
+        "max_abs_conventional_smd": 0.06859140816975723,
+        "undefined_unequal_constant_after_fit": false,
+        "min_effective_control_people_per_case": 2.0,
+        "max_control_person_weight_in_one_case": 0.5,
+        "max_control_person_total_weight": 2.0,
+        "effective_control_people_overall": 1468.7978729750382,
+        "max_case_normalization_error": 8.881784197001252e-15,
+        "mean_scaled_squared_distance": 17.63892047082183,
+        "n_treated": 1222,
+        "count_disclosure": "released"
+      },
+      "outcomes": {
+        "invasive_h": {
+          "status": "ok",
+          "outcome": "invasive_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.06722440213845732,
+          "se_conditional_patient_cluster": 0.010911147553539892,
+          "ci95_conditional_patient_cluster": [
+            -0.08860985837339783,
+            -0.04583894590351681
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -3,
+            -2,
+            -1
+          ],
+          "post_bins": [
+            0,
+            1,
+            2
+          ]
+        },
+        "pressor_h": {
+          "status": "ok",
+          "outcome": "pressor_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.0413208525962932,
+          "se_conditional_patient_cluster": 0.008023566029912487,
+          "ci95_conditional_patient_cluster": [
+            -0.057046753042500696,
+            -0.025594952150085705
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -3,
+            -2,
+            -1
+          ],
+          "post_bins": [
+            0,
+            1,
+            2
+          ]
+        },
+        "n_map": {
+          "status": "suppressed",
+          "reason": "Minimum patient-cell threshold not met",
+          "outcome": "n_map",
+          "estimate": null,
+          "ci95_conditional_patient_cluster": null
+        },
+        "invasive_h_near_order": {
+          "status": "ok",
+          "outcome": "invasive_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.042921241033516355,
+          "se_conditional_patient_cluster": 0.007816608324254017,
+          "ci95_conditional_patient_cluster": [
+            -0.058241511830310205,
+            -0.0276009702367225
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -1
+          ],
+          "post_bins": [
+            0
+          ]
+        },
+        "invasive_plus_trach_h": {
+          "status": "suppressed",
+          "reason": "Small population distinguishable by subtracting definitions"
+        },
+        "pressor_any_charted_h": {
+          "status": "ok",
+          "outcome": "pressor_any_charted_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.0413208525962932,
+          "se_conditional_patient_cluster": 0.008023566029912487,
+          "ci95_conditional_patient_cluster": [
+            -0.057046753042500696,
+            -0.025594952150085705
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -3,
+            -2,
+            -1
+          ],
+          "post_bins": [
+            0,
+            1,
+            2
+          ]
+        },
+        "n_map_source_rows": {
+          "status": "suppressed",
+          "reason": "Minimum patient-cell threshold not met",
+          "outcome": "n_map_source_rows",
+          "estimate": null,
+          "ci95_conditional_patient_cluster": null
+        }
+      },
+      "followup_states": {
+        "definition": "Mutually exclusive fixed-horizon states; death takes precedence over ICU exit",
+        "death_ascertainment": "Index-admission deathtime only; ICU-exit state means no recorded hospital death by horizon, not known survival after discharge",
+        "denominator": "All positive-weight anchors in the arm, including deaths and ICU exits",
+        "tracheostomy_caveat": "Inclusive state is a sensitivity, not proof of active mechanical ventilation",
+        "states": [
+          {
+            "horizon_h": 4.0,
+            "arm": "DNR",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          },
+          {
+            "horizon_h": 4.0,
+            "arm": "RISKSET",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          },
+          {
+            "horizon_h": 12.0,
+            "arm": "DNR",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          },
+          {
+            "horizon_h": 12.0,
+            "arm": "RISKSET",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          }
+        ]
+      },
+      "primary_association_status": "NEGATIVE_CONDITIONAL_ASSOCIATION",
+      "outcome_status": "ESTIMATED_WITH_CONDITIONAL_UNCERTAINTY"
+    },
+    "DNR_DNI_part0": {
+      "design": {
+        "fit_tolerance": 0.05,
+        "postfit_balance_gate": 0.1,
+        "within_riskset_subject_cap": 0.5,
+        "global_control_subject_cap": 2.0,
+        "outcomes_used_in_design": false,
+        "features_entirely_missing_in_treated": [],
+        "solver_status": 2,
+        "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "status": "INFEASIBLE",
+        "gate_pass": false,
+        "n_treated": 558,
+        "count_disclosure": "released"
+      },
+      "outcome_status": "NOT_ESTIMATED_DESIGN_FAILED"
+    },
+    "DNR_DNI_part1": {
+      "design": {
+        "fit_tolerance": 0.05,
+        "postfit_balance_gate": 0.1,
+        "within_riskset_subject_cap": 0.5,
+        "global_control_subject_cap": 2.0,
+        "outcomes_used_in_design": false,
+        "features_entirely_missing_in_treated": [],
+        "solver_status": 0,
+        "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "status": "PASS",
+        "gate_pass": true,
+        "max_abs_frozen_smd": 0.050000000000001224,
+        "max_abs_conventional_smd": 0.06241271224101938,
+        "undefined_unequal_constant_after_fit": false,
+        "min_effective_control_people_per_case": 2.0,
+        "max_control_person_weight_in_one_case": 0.5,
+        "max_control_person_total_weight": 2.0,
+        "effective_control_people_overall": 696.1288793421209,
+        "max_case_normalization_error": 4.440892098500626e-16,
+        "mean_scaled_squared_distance": 20.535804114809448,
+        "n_treated": 563,
+        "count_disclosure": "released"
+      },
+      "outcomes": {
+        "invasive_h": {
+          "status": "ok",
+          "outcome": "invasive_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.07790906288285587,
+          "se_conditional_patient_cluster": 0.015675238088387937,
+          "ci95_conditional_patient_cluster": [
+            -0.10863196498518671,
+            -0.04718616078052504
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -3,
+            -2,
+            -1
+          ],
+          "post_bins": [
+            0,
+            1,
+            2
+          ]
+        },
+        "pressor_h": {
+          "status": "ok",
+          "outcome": "pressor_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.03682948745134662,
+          "se_conditional_patient_cluster": 0.011023700179776434,
+          "ci95_conditional_patient_cluster": [
+            -0.05843554278007615,
+            -0.015223432122617096
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -3,
+            -2,
+            -1
+          ],
+          "post_bins": [
+            0,
+            1,
+            2
+          ]
+        },
+        "n_map": {
+          "status": "suppressed",
+          "reason": "Minimum patient-cell threshold not met",
+          "outcome": "n_map",
+          "estimate": null,
+          "ci95_conditional_patient_cluster": null
+        },
+        "invasive_h_near_order": {
+          "status": "ok",
+          "outcome": "invasive_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.042247183430353774,
+          "se_conditional_patient_cluster": 0.011149782966480325,
+          "ci95_conditional_patient_cluster": [
+            -0.06410035648009338,
+            -0.020394010380614176
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -1
+          ],
+          "post_bins": [
+            0
+          ]
+        },
+        "invasive_plus_trach_h": {
+          "status": "suppressed",
+          "reason": "Small population distinguishable by subtracting definitions"
+        },
+        "pressor_any_charted_h": {
+          "status": "ok",
+          "outcome": "pressor_any_charted_h",
+          "estimand": "difference in changes of weighted observed-ICU-person-time rates",
+          "estimate": -0.03682948745134662,
+          "se_conditional_patient_cluster": 0.011023700179776434,
+          "ci95_conditional_patient_cluster": [
+            -0.05843554278007615,
+            -0.015223432122617096
+          ],
+          "ci_method": "normal approximation; patient-cluster sandwich with G/(G-1) correction",
+          "conditional_on": "selected anchors, matched risk sets, and fitted analysis weights",
+          "pre_bins": [
+            -3,
+            -2,
+            -1
+          ],
+          "post_bins": [
+            0,
+            1,
+            2
+          ]
+        },
+        "n_map_source_rows": {
+          "status": "suppressed",
+          "reason": "Minimum patient-cell threshold not met",
+          "outcome": "n_map_source_rows",
+          "estimate": null,
+          "ci95_conditional_patient_cluster": null
+        }
+      },
+      "followup_states": {
+        "definition": "Mutually exclusive fixed-horizon states; death takes precedence over ICU exit",
+        "death_ascertainment": "Index-admission deathtime only; ICU-exit state means no recorded hospital death by horizon, not known survival after discharge",
+        "denominator": "All positive-weight anchors in the arm, including deaths and ICU exits",
+        "tracheostomy_caveat": "Inclusive state is a sensitivity, not proof of active mechanical ventilation",
+        "states": [
+          {
+            "horizon_h": 4.0,
+            "arm": "DNR",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          },
+          {
+            "horizon_h": 4.0,
+            "arm": "RISKSET",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          },
+          {
+            "horizon_h": 12.0,
+            "arm": "DNR",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          },
+          {
+            "horizon_h": 12.0,
+            "arm": "RISKSET",
+            "status": "suppressed",
+            "reason": "Minimum patient-cell threshold not met; whole partition suppressed"
+          }
+        ]
+      },
+      "primary_association_status": "NEGATIVE_CONDITIONAL_ASSOCIATION",
+      "outcome_status": "ESTIMATED_WITH_CONDITIONAL_UNCERTAINTY"
+    }
+  },
+  "internal_checks": {
+    "DNR_ONLY": {
+      "patient_disjoint": true,
+      "both_designs_pass": false,
+      "both_negative_conditional_intervals": false,
+      "part_statuses": [
+        "DESIGN_FAILED",
+        "DESIGN_FAILED"
+      ],
+      "external_replication": false
+    },
+    "DNR_DNI": {
+      "patient_disjoint": true,
+      "both_designs_pass": false,
+      "both_negative_conditional_intervals": false,
+      "part_statuses": [
+        "DESIGN_FAILED",
+        "NEGATIVE_CONDITIONAL_ASSOCIATION"
+      ],
+      "external_replication": false
+    }
+  },
+  "limitations": {
+    "external_replication": "NOT_ESTABLISHED; same hospital dataset",
+    "clinical_intent_validation": "NOT_ESTABLISHED; structured labels do not verify isolated CPR-only intent",
+    "full_pipeline_uncertainty": "NOT_ESTABLISHED; intervals condition on fitted design and weights",
+    "causal_identification": "NOT_ESTABLISHED",
+    "independent_clinical_review": "PENDING",
+    "previously_unseen_data": false,
+    "original_unmatched_events_recovered": false,
+    "outcome_inference": "Exploratory observed-person-time associations; death and ICU exit change observation"
+  },
+  "disclosure": "Aggregate only; minimum 30 distinct people in nonzero outcome cells; joint state and paired-definition suppression; arm means/denominators omitted to limit nested-cohort disclosure"
+}
