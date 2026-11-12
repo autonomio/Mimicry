@@ -243,7 +243,7 @@ WHERE stay_id IN ({mstays})
     ITEMS = "220045,220052,220181,220210,224690,220277,223762,223761"
     vitd = con.execute(f"""
 SELECT c.stay_id,
-  CAST(date_diff('hour', c.charttime, a.deathtime) AS INTEGER) AS hbd,
+  CAST(FLOOR(date_diff('second', c.charttime, a.deathtime) / 3600) AS INTEGER) AS hbd,
   c.itemid, AVG(c.valuenum) AS m, STDDEV(c.valuenum) AS s,
   COUNT(*) AS n
 FROM mimiciv_icu.chartevents c
@@ -255,7 +255,7 @@ WHERE c.stay_id IN ({fids}) AND c.itemid IN ({ITEMS})
 GROUP BY 1, 2, 3""").fetchdf()
     vits = con.execute(f"""
 SELECT c.stay_id,
-  CAST(date_diff('hour', c.charttime, i.outtime) AS INTEGER) AS hbd,
+  CAST(FLOOR(date_diff('second', c.charttime, i.outtime) / 3600) AS INTEGER) AS hbd,
   c.itemid, AVG(c.valuenum) AS m, STDDEV(c.valuenum) AS s,
   COUNT(*) AS n
 FROM mimiciv_icu.chartevents c

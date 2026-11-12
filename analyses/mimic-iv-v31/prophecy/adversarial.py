@@ -403,7 +403,7 @@ WHERE stay_id IN ({mstays})
     ITEMS = "220045,220052,220181,220210,224690,220277,223762,223761"
     vitd = con.execute(f"""
 SELECT c.stay_id,
-  CAST(date_diff('hour', c.charttime, a.deathtime) AS INTEGER) AS hbd,
+  CAST(FLOOR(date_diff('second', c.charttime, a.deathtime) / 3600) AS INTEGER) AS hbd,
   c.itemid, AVG(c.valuenum) AS m, STDDEV(c.valuenum) AS s,
   COUNT(*) AS n
 FROM mimiciv_icu.chartevents c
@@ -415,7 +415,7 @@ WHERE c.stay_id IN ({dids}) AND c.itemid IN ({ITEMS})
 GROUP BY 1, 2, 3""").fetchdf()
     vits = con.execute(f"""
 SELECT c.stay_id,
-  CAST(date_diff('hour', c.charttime, i.outtime) AS INTEGER) AS hbd,
+  CAST(FLOOR(date_diff('second', c.charttime, i.outtime) / 3600) AS INTEGER) AS hbd,
   c.itemid, AVG(c.valuenum) AS m, STDDEV(c.valuenum) AS s,
   COUNT(*) AS n
 FROM mimiciv_icu.chartevents c
@@ -456,6 +456,7 @@ GROUP BY 1, 2, 3""").fetchdf()
     vd_by = dict(tuple(vd.groupby("stay_id")))
     vs_by = dict(tuple(vs.groupby("stay_id")))
     sv_ids = surv["stay_id"].tolist()
+    dnrmap = stays.set_index("stay_id")["dnr_h"].to_dict()
 
     def feat_row(w, age, sepsis):
         g = w.groupby("sig")["m"].mean()
@@ -473,7 +474,7 @@ GROUP BY 1, 2, 3""").fetchdf()
 
     rng = np.random.default_rng(7)
     for H in [6, 12, 24]:
-        cases, ctrls = [], []
+        cases, ctrls, ctrl_dnr = [], [], []
         for sid, dh in dhmap.items():
             if dh - H - 6 < 0 or sid not in vd_by:
                 continue
@@ -497,6 +498,9 @@ GROUP BY 1, 2, 3""").fetchdf()
             lo = max(6.0, sv["los_h"] - 72.0)
             hi = max(lo + 1.0, sv["los_h"] - H - 6.0)
             s0 = rng.uniform(lo, hi)
+            dn = dnrmap.get(sid)
+            dnr_at_lm = (dn is not None and not np.isnan(dn) and
+                         dn < s0 + 6)
             w = vs_by[sid]
             w = w[(w["hbd"] >= sv["los_h"] - s0 - 6) &
                   (w["hbd"] < sv["los_h"] - s0)]
@@ -505,14 +509,19 @@ GROUP BY 1, 2, 3""").fetchdf()
             f = feat_row(w, sv["age"], sv["sepsis"])
             if f is not None:
                 ctrls.append((sid, f))
+                ctrl_dnr.append(dnr_at_lm)
         Xa = pd.DataFrame([f for _, f in cases] +
                           [f for _, f in ctrls])
         ya = np.array([1] * len(cases) + [0] * len(ctrls))
         fc_idx = [i for i, (sid, _) in enumerate(cases) if sid in fc_ids]
+        fc_ctrl = [i for i in range(len(ctrls)) if not ctrl_dnr[i]][:len(fc_idx)]
         Xf = pd.DataFrame([cases[i][1] for i in fc_idx] +
-                          [ctrls[i][1] for i in range(len(fc_idx))])
-        yf = np.array([1] * len(fc_idx) + [0] * len(fc_idx))
-        for tag, XX, yy in [("ALL", Xa, ya), ("FC", Xf, yf)]:
+                          [ctrls[i][1] for i in fc_ctrl])
+        yf = np.array([1] * len(fc_idx) + [0] * len(fc_ctrl))
+        datasets = [("ALL", Xa, ya)] + ([("FC", Xf, yf)] if fc_ctrl else [])
+        if not fc_ctrl:
+            print(f"[CV FC H={H}h] skipped: no DNR-free controls", flush=True)
+        for tag, XX, yy in datasets:
             Xs = StandardScaler().fit_transform(XX.fillna(XX.median()))
             aucs = []
             skf = StratifiedKFold(n_splits=5, shuffle=True,
@@ -540,10 +549,11 @@ GROUP BY 1, 2, 3""").fetchdf()
         te_all_X = pd.DataFrame([cases[i][1] for i in c_test] +
                                 [ctrls[i][1] for i in o_test])
         te_all_y = np.array([1] * len(c_test) + [0] * len(o_test))
+        o_test_fc = [i for i in o_test if not ctrl_dnr[i]][:len(fc_test)]
         te_fc_X = pd.DataFrame(
             [cases[i][1] for i in fc_test] +
-            [ctrls[i][1] for i in o_test[:len(fc_test)]])
-        te_fc_y = np.array([1] * len(fc_test) + [0] * len(fc_test))
+            [ctrls[i][1] for i in o_test_fc])
+        te_fc_y = np.array([1] * len(fc_test) + [0] * len(o_test_fc))
         gaps = []
         brng = np.random.default_rng(13)
         for _ in range(200):
@@ -551,28 +561,35 @@ GROUP BY 1, 2, 3""").fetchdf()
             io = brng.integers(0, len(o_fit), len(o_fit))
             tr_cases = [cases[c_fit[i]] for i in ic]
             tr_ctrls = [ctrls[o_fit[i]] for i in io]
+            tr_ctrl_dnr = [ctrl_dnr[o_fit[i]] for i in io]
             trA = pd.DataFrame([f for _, f in tr_cases] +
                                [f for _, f in tr_ctrls])
             ytrA = np.array([1] * len(tr_cases) + [0] * len(tr_ctrls))
             fcc = [t for t in tr_cases if t[0] in fc_ids]
             if len(fcc) < 10:
                 continue
-            trF = pd.DataFrame([f for _, f in fcc] +
-                               [f for _, f in tr_ctrls[:len(fcc)]])
-            ytrF = np.array([1] * len(fcc) + [0] * len(fcc))
+            trF_ctrls = [f for (_, f), d in zip(tr_ctrls, tr_ctrl_dnr) if not d][:len(fcc)]
+            trF = pd.DataFrame([f for _, f in fcc] + trF_ctrls)
+            ytrF = np.array([1] * len(fcc) + [0] * len(trF_ctrls))
             try:
                 med = trA.median()
                 sc = StandardScaler().fit(trA.fillna(med))
-                aa = roc_auc_score(te_all_y, LogisticRegression(
+                pa_all = LogisticRegression(
                     C=1.0, max_iter=2000).fit(
                     sc.transform(trA.fillna(med)), ytrA).predict_proba(
-                    sc.transform(te_all_X.fillna(med)))[:, 1])
+                    sc.transform(te_all_X.fillna(med)))[:, 1]
                 medf = trF.median()
                 scf = StandardScaler().fit(trF.fillna(medf))
-                af = roc_auc_score(te_fc_y, LogisticRegression(
+                pa_fc = LogisticRegression(
                     C=1.0, max_iter=2000).fit(
                     scf.transform(trF.fillna(medf)), ytrF).predict_proba(
-                    scf.transform(te_fc_X.fillna(medf)))[:, 1])
+                    scf.transform(te_fc_X.fillna(medf)))[:, 1]
+                # Test-sample uncertainty: resample each fixed test split per
+                # rep, so the gap percentiles reflect fit and test noise.
+                ta = brng.integers(0, len(te_all_y), len(te_all_y))
+                tf = brng.integers(0, len(te_fc_y), len(te_fc_y))
+                aa = roc_auc_score(te_all_y[ta], pa_all[ta])
+                af = roc_auc_score(te_fc_y[tf], pa_fc[tf])
                 gaps.append(aa - af)
             except ValueError:
                 pass

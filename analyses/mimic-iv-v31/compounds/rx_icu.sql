@@ -3,10 +3,9 @@
 -- ingredient-level and input-level IV items by stay. Aggregates only.
 CREATE TEMP TABLE fst AS
 SELECT s.stay_id, s.hadm_id, s.subject_id, s.intime, s.outtime,
-       CASE WHEN p.dod BETWEEN s.intime AND s.outtime THEN 1 ELSE 0 END AS died_icu,
+       CASE WHEN a.deathtime BETWEEN s.intime AND s.outtime THEN 1 ELSE 0 END AS died_icu,
        a.hospital_expire_flag AS died_hosp
 FROM mimiciv_icu.icustays s
-JOIN mimiciv_hosp.patients p USING (subject_id)
 JOIN mimiciv_hosp.admissions a USING (hadm_id)
 QUALIFY row_number() OVER (PARTITION BY s.hadm_id ORDER BY s.intime) = 1;
 CREATE TEMP TABLE emrx AS

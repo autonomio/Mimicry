@@ -5,7 +5,7 @@
 WITH fst AS (
   SELECT s.stay_id, s.hadm_id, s.subject_id, s.intime, s.outtime, s.los,
          p.anchor_age,
-         CASE WHEN p.dod BETWEEN s.intime AND s.outtime THEN 1 ELSE 0 END AS died_icu,
+         CASE WHEN a.deathtime BETWEEN s.intime AND s.outtime THEN 1 ELSE 0 END AS died_icu,
          a.hospital_expire_flag AS died_hosp
   FROM mimiciv_icu.icustays s
   JOIN mimiciv_hosp.patients p USING (subject_id)
